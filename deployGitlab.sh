@@ -1,4 +1,5 @@
 #!/bin/bash
+figlet STARTING DEPLOY
 commitHash="$1"
 commitAuthorEMail=$(git --no-pager log -1 --pretty="%cE")
 commitAuthorName=$(git --no-pager log -1 --pretty="%aN")
@@ -27,11 +28,17 @@ case "$commitAuthorName" in
         ;;
 esac
 
+figlet SSH
+
 # Initialize ssh
 mkdir -p ~/.ssh
 printf "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
 eval $(ssh-agent -s)
-ssh-add <(echo "sshKey")
+echo "$sshKey" > ~/.ssh/key
+chmod 600 ~/.ssh/key
+ssh-add ~/.ssh/key
+
+figlet GIT
 
 # Push the Repo
 git config --global user.email "$commitAuthorEMail"
@@ -41,3 +48,5 @@ git remote add gitlab git@github.com:aul12/Test.git
 git status
 git checkout -f master
 git push gitlab master
+
+figlet FINISHED
