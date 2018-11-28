@@ -7,7 +7,7 @@ echo "Last commit: $commitHash by $commitAuthorName with email $commitAuthorEMai
 # If some kind of formatting is necessary do it here
 
 case "$commitAuthorName" in
-    "aul12")
+    "Paul Nykiel")
         sshKey="$GITLAB_TOKEN_0"
         ;;
     "jonas-merkle")
@@ -31,7 +31,8 @@ esac
 mkdir -p ~/.ssh
 echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
 eval $(ssh-agent -s)
-ssh-add <(echo "$sshKey")
+echo "$sshKey" > ~/.ssh/key
+ssh-add ~/.ssh/key
 
 # Push the Repo
 git config --global user.email "$commitAuthorEMail"
