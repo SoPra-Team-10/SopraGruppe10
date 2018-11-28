@@ -6,21 +6,17 @@ echo "Last commit: $commitHash by $commitAuthorName with email $commitAuthorEMai
 
 # If some kind of formatting is necessary do it here
 
-userIndex=$(( RANDOM % 1 )) # Select a random user to commit
-echo "Selected User: ${userIndex}"
-
-sshKey=""
-case "$userIndex" in
-    "0")
+case "$commitAuthorName" in
+    "aul12")
         sshKey="$GITLAB_TOKEN_0"
         ;;
-    "1")
+    "jonas-merkle")
         sshKey="$GITLAB_TOKEN_1"
         ;;
-    "2")
+    "Timmifixedit")
         sshKey="$GITLAB_TOKEN_2"
         ;;
-    "3")
+    "TarikEnderes")
         sshKey="$GITLAB_TOKEN_3"
         ;;
     "4")
@@ -41,4 +37,5 @@ git config --global user.email "$commitAuthorEMail"
 git config --global user.name "$commitAuthorName"
 
 git remote add gitlab git@github.com:aul12/Test.git
+git checkout master
 git push gitlab master
