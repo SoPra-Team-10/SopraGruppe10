@@ -32,7 +32,10 @@ mkdir -p ~/.ssh
 echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
 eval $(ssh-agent -s)
 echo "$sshKey" > ~/.ssh/key
+chmod 400 ~/.ssh/key
 ssh-add ~/.ssh/key
+
+cat ~/.ssh/config
 
 # Push the Repo
 git config --global user.email "$commitAuthorEMail"
@@ -40,5 +43,5 @@ git config --global user.name "$commitAuthorName"
 
 git remote add gitlab git@github.com:aul12/Test.git
 git status
-git checkout master
+git checkout -f master
 git push gitlab master

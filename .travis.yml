@@ -11,6 +11,8 @@ script:
     - mv main.pdf ../output/Blatt01.pdf
     - cd ..
 
+notifications:
+    slack: $SLACK_TOKEN
 
 deploy:
     provider: pages
