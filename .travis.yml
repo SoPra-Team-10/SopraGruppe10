@@ -20,7 +20,7 @@ deploy:
     local-dir: output
     on:
         branch: master
-    provide: script
+    provider: script
     script: deployGitlab.sh $TRAVIS_COMMIT
     on:
         branch: master
