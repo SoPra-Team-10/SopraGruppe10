@@ -28,14 +28,16 @@ case "$commitAuthorName" in
 esac
 
 # Initialize ssh
-eval $(ssh-agent -s)
 mkdir -p ~/.ssh
 echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+eval $(ssh-agent -s)
+ssh-add <(echo "$sshKey")
 
 # Push the Repo
 git config --global user.email "$commitAuthorEMail"
 git config --global user.name "$commitAuthorName"
 
 git remote add gitlab git@github.com:aul12/Test.git
+git status
 git checkout master
 git push gitlab master
