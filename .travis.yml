@@ -21,6 +21,6 @@ deploy:
     on:
         branch: master
     provider: script
-    script: deployGitlab.sh $TRAVIS_COMMIT
+    script: sh deployGitlab.sh $TRAVIS_COMMIT
     on:
         branch: master
