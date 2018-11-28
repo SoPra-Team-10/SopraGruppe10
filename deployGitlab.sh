@@ -30,12 +30,11 @@ esac
 # Initialize ssh
 mkdir -p ~/.ssh
 echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+cat ~/.ssh/config
 eval $(ssh-agent -s)
 echo "$sshKey" > ~/.ssh/key
 chmod 400 ~/.ssh/key
 ssh-add ~/.ssh/key
-
-cat ~/.ssh/config
 
 # Push the Repo
 git config --global user.email "$commitAuthorEMail"
