@@ -22,7 +22,7 @@ deploy:
     local-dir: output
     on:
         branch: master
-    provider: script
-    script: sh deployGitlab.sh $TRAVIS_COMMIT
-    on:
-        branch: master
+        #provider: script
+        #script: sh deployGitlab.sh $TRAVIS_COMMIT
+        # on:
+        #branch: master
