@@ -13,6 +13,14 @@ script:
 
 notifications:
     slack: $SLACK_TOKEN
+    
+addons:
+  sonarcloud:
+    organization: "sopra-team-10" # the key of the org you chose at step #3
+    token:
+      secure: $SONAR_TOKEN # encrypted value of your token
+script:
+  - sonar-scanner
 
 deploy:
     provider: pages
