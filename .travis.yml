@@ -3,8 +3,15 @@ dist: trusty
 before_install:
     - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended latexmk texlive-lang-german texlive-doc-de pgf texlive-font-utils zip inkscape texlive-math-extra graphviz make git openssh-client figlet
       
+addons:
+  ssh_known_hosts: aul12.me
+  sonarcloud:
+    organization: "sopra-team-10" # the key of the org you chose at step #3
+    token:
+      secure: $SONAR_TOKEN # encrypted value of your token
 
 script:
+    - sonar-scanner
     - mkdir output
     - cd Meilenstein01
     - make
@@ -14,22 +21,27 @@ script:
 notifications:
     slack: $SLACK_TOKEN
     
-addons:
-  sonarcloud:
-    organization: "sopra-team-10" # the key of the org you chose at step #3
-    token:
-      secure: $SONAR_TOKEN # encrypted value of your token
-script:
-  - sonar-scanner
+before-deploy:
+    - eval "$(ssh-agent -s)"
+    - echo "DEPLOY_KEY" > /tmp/deployKey
+    - chmod 0666 /tmp/deployKey
+    - ssh-add /tmp/deployKey
 
 deploy:
-    provider: pages
+    provider: scriot 
     skip-cleanup: true
-    github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
     keep-history: true
     local-dir: output
+    script: scp *.pdf root@aul12.me:/var/www/html/Sopra
     on:
         branch: master
+    #   provider: pages
+    #skip-cleanup: true
+    #github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+    #keep-history: true
+    #local-dir: output
+    #on:
+    #    branch: master
         #provider: script
         #script: sh deployGitlab.sh $TRAVIS_COMMIT
         # on:
