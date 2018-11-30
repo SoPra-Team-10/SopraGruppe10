@@ -22,17 +22,18 @@ notifications:
     slack: $SLACK_TOKEN
     
 before-deploy:
+    - mkdir -p ~/.ssh
     - eval "$(ssh-agent -s)"
-    - echo "$DEPLOY_KEY" > /tmp/deployKey
-    - chmod 0666 /tmp/deployKey
-    - ssh-add /tmp/deployKey
+    - echo "$DEPLOY_KEY" > ~/.ssh/deployKey
+    - chmod 0666 ~/.ssh/deployKey
+    - ssh-add ~/.ssh/deployKey
 
 deploy:
     provider: script 
     skip-cleanup: true
     keep-history: true
     local-dir: output
-    script: scp -i /tmp/deployKey *.pdf paul@aul12.me:/var/www/html/Sopra
+    script: scp -i ~/.ssh/deployKey *.pdf paul@aul12.me:/var/www/html/Sopra
     on:
         branch: master
     #   provider: pages
