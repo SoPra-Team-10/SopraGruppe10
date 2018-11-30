@@ -28,7 +28,7 @@ before-deploy:
     - ssh-add /tmp/deployKey
 
 deploy:
-    provider: scriot 
+    provider: script 
     skip-cleanup: true
     keep-history: true
     local-dir: output
