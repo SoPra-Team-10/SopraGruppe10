@@ -32,7 +32,7 @@ deploy:
     skip-cleanup: true
     keep-history: true
     local-dir: output
-    script: scp *.pdf paul@aul12.me:/var/www/html/Sopra
+    script: scp -i /tmp/deployKey *.pdf paul@aul12.me:/var/www/html/Sopra
     on:
         branch: master
     #   provider: pages
