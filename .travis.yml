@@ -23,7 +23,7 @@ notifications:
     
 before-deploy:
     - eval "$(ssh-agent -s)"
-    - echo "DEPLOY_KEY" > /tmp/deployKey
+    - echo "$DEPLOY_KEY" > /tmp/deployKey
     - chmod 0666 /tmp/deployKey
     - ssh-add /tmp/deployKey
 
