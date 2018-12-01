@@ -21,29 +21,8 @@ script:
 notifications:
     slack: soprateam10:wlcgvL7tR63frGyGP4BCuqNj
     
-before-deploy:
-    - mkdir -p ~/.ssh
-    - eval "$(ssh-agent -s)"
-    - echo "$DEPLOY_KEY" | xxd -r -p > ~/.ssh/deployKey
-    - chmod 0666 ~/.ssh/deployKey
-    - ssh-add ~/.ssh/deployKey
-
 deploy:
-    provider: script 
-    skip-cleanup: true
-    keep-history: true
-    local-dir: output
-    script: scp -i "$HOME/.ssh/deployKey" *.pdf paul@aul12.me:/var/www/html/Sopra
-    on:
-        branch: master
-    #   provider: pages
-    #skip-cleanup: true
-    #github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
-    #keep-history: true
-    #local-dir: output
-    #on:
-    #    branch: master
-        #provider: script
-        #script: sh deployGitlab.sh $TRAVIS_COMMIT
-        # on:
-        #branch: master
+    provider: script
+        script: sh deploy.sh $TRAVIS_COMMIT
+         on:
+            branch: master

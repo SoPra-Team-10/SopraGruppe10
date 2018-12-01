@@ -5,7 +5,19 @@ commitAuthorEMail=$(git --no-pager log -1 --pretty="%cE")
 commitAuthorName=$(git --no-pager log -1 --pretty="%aN")
 echo "Last commit: $commitHash by $commitAuthorName with email $commitAuthorEMail"
 
+figlet DEPLOY PDFS
+
+mkdir -p ~/.ssh
+eval "$(ssh-agent -s)"
+echo "$DEPLOY_KEY" | xxd -r -p > ~/.ssh/deployKey
+chmod 600 ~/.ssh/deployKey
+ssh-add ~/.ssh/deployKey
+
+scp -i ~/.ssh/deployKey output/*.pdf paul@aul12.me:/var/www/html/Sopra/
+
 # If some kind of formatting is necessary do it here
+
+figlet GIT FORWARD
 
 case "$commitAuthorName" in
     "Paul Nykiel")
@@ -28,7 +40,7 @@ case "$commitAuthorName" in
         ;;
 esac
 
-figlet SSH
+figlet SSH GIT
 
 # Initialize ssh
 mkdir -p ~/.ssh
