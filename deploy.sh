@@ -5,10 +5,12 @@ commitAuthorEMail=$(git --no-pager log -1 --pretty="%cE")
 commitAuthorName=$(git --no-pager log -1 --pretty="%aN")
 echo "Last commit: $commitHash by $commitAuthorName with email $commitAuthorEMail"
 
-figlet DEPLOY PDFS
-
+figlet PREPARE SSH
 mkdir -p ~/.ssh
+printf "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
 eval "$(ssh-agent -s)"
+
+figlet DEPLOY PDFS
 echo "$DEPLOY_KEY" | xxd -r -p > ~/.ssh/deployKey
 chmod 600 ~/.ssh/deployKey
 ssh-add ~/.ssh/deployKey
@@ -43,9 +45,6 @@ esac
 figlet SSH GIT
 
 # Initialize ssh
-mkdir -p ~/.ssh
-printf "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-eval $(ssh-agent -s)
 echo "$sshKey" > ~/.ssh/key
 chmod 600 ~/.ssh/key
 ssh-add ~/.ssh/key
