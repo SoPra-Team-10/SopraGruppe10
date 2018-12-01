@@ -19,7 +19,7 @@ script:
     - cd ..
 
 notifications:
-    slack: $SLACK_TOKEN
+    slack: soprateam10:wlcgvL7tR63frGyGP4BCuqNj
     
 before-deploy:
     - mkdir -p ~/.ssh
