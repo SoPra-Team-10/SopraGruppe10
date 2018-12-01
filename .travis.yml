@@ -24,7 +24,7 @@ notifications:
 before-deploy:
     - mkdir -p ~/.ssh
     - eval "$(ssh-agent -s)"
-    - echo "$DEPLOY_KEY" > ~/.ssh/deployKey
+    - echo "$DEPLOY_KEY" | xxd -r -p > ~/.ssh/deployKey
     - chmod 0666 ~/.ssh/deployKey
     - ssh-add ~/.ssh/deployKey
 
