@@ -33,7 +33,7 @@ deploy:
     skip-cleanup: true
     keep-history: true
     local-dir: output
-    script: scp -i ~/.ssh/deployKey *.pdf paul@aul12.me:/var/www/html/Sopra
+    script: scp -i "$HOME/.ssh/deployKey" *.pdf paul@aul12.me:/var/www/html/Sopra
     on:
         branch: master
     #   provider: pages
