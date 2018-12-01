@@ -1,0 +1,152 @@
+digraph G {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+
+    node [
+        fontname = "Bitstream Vera Sans"
+        fontsize = 8
+        shape = "record"
+    ]
+
+    edge [
+        fontname = "Bitstream Vera Sans"
+        fontsize = 8
+        arrowhead = "onormal"
+    ]
+
+    Ball [
+        label = "{Ball||}"
+    ]
+
+    Quaffel [
+        label = "{Quaffel||}"
+    ]
+    Klatscher [
+        label = "{Klatscher||}"
+    ]
+    GoldenerSchnatz [
+        label = "{GoldenerSchnatz||}"
+    ]
+
+    Quaffel -> Ball
+    Klatscher -> Ball
+    GoldenerSchnatz -> Ball
+
+
+    Besen [
+        label = "{Besen||}"
+    ]
+
+    Zunderfauch [
+        label = "{Zunderfauch||}"
+    ]
+
+    Sauberwisch11 [
+        label = "{Sauberwisch11||}"
+    ]
+
+    Komet2_60 [
+        label = "{Komet2_60||}"
+    ]
+
+    Nimbus2001 [
+        label = "{Nimbus2001||}"
+    ]
+
+    Feuerblitz [
+        label = "{Feuerblitz||}"
+    ]
+
+    Zunderfauch -> Besen
+    Sauberwisch11 -> Besen
+    Komet2_60 -> Besen
+    Nimbus2001 -> Besen
+    Feuerblitz -> Besen
+
+    Team [
+        label = "{Team|name : String\lmotto: String\llogo : Image\lmainColor : color\lsecondaryColor : color\l|}"
+    ]
+
+    Player [
+        label = "{Player|type: PlayerType\lname : String\lgender : GenderType\l|}"
+    ]
+
+    PlayerType [
+        label = "{\<\<enumeration\>\>\nPlayerType|JAEGER\lTREIBER\lHUETER\lSUCHER\l}"
+    ]
+
+    GenderType [
+        label = "{\<\<enumeration\>\>GenderType|MALE\lFEMALE\lOTHER\l}"
+    ]
+
+    Player -> Team [
+        arrowhead = "diamond"
+        headlabel = "0..*"
+        taillabel = "7"
+    ]
+    PlayerType -> Player [
+        arrowhead = "diamond"
+        headlabel = "0..*"
+        taillabel = "1"
+    ]
+    GenderType -> Player [
+        arrowhead = "diamond"
+        headlabel = "0..*"
+        taillabel = "1"
+    ]
+
+    Creature [
+        label = "{Creature||}"
+    ]
+
+    Elf [
+        label = "{Elf||}"
+    ]
+
+    Kobold [
+        label = "{Kobold||}"
+    ]
+
+    Troll [
+        label = "{Troll||}"
+    ]
+
+    Niffler [
+        label = "{Niffler||}"
+    ]
+
+    Elf -> Creature
+    Kobold -> Creature
+    Troll -> Creature
+    Niffler -> Creature
+
+    Foul [
+        label = "{Foul||}"
+    ]
+
+    Flacken [
+        label = "{Flacken||}"
+    ]
+
+    Nachtaroken [
+        label = "{Nachtaroken||}"
+    ]
+
+    Stutschen [
+        label = "{Stutschen||}"
+    ]
+
+    Keilen [
+        label = "{Keilen||}"
+    ]
+
+    Schnatzeln [
+        label = "{Schnatzeln||}"
+    ]
+
+    Flacken -> Foul
+    Nachtaroken -> Foul
+    Stutschen -> Foul
+    Keilen -> Foul
+    Schnatzeln -> Foul
+}    

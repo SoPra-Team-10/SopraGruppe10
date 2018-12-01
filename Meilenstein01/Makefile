@@ -1,7 +1,11 @@
 LATEXMK=latexmk
+DOT=dot
 
-all: 
+all: domaenenmodell.pdf
 	$(LATEXMK) -pdf main.tex
+
+domaenenmodell.pdf: domaenenmodell.dot
+	$(DOT) -Tpdf -o domaenenmodell.pdf domaenenmodell.dot
 
 clean:
 	$(LATEXMK) -c
