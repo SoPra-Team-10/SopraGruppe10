@@ -45,19 +45,19 @@ esac
 figlet SSH GIT
 
 # Initialize ssh
-echo "$sshKey" > ~/.ssh/key
-chmod 600 ~/.ssh/key
-ssh-add ~/.ssh/key
+#echo "$sshKey" > ~/.ssh/key
+#chmod 600 ~/.ssh/key
+#ssh-add ~/.ssh/key
 
-figlet GIT
+#figlet GIT
 
 # Push the Repo
-git config --global user.email "$commitAuthorEMail"
-git config --global user.name "$commitAuthorName"
+#git config --global user.email "$commitAuthorEMail"
+#git config --global user.name "$commitAuthorName"
 
-git remote add gitlab git@github.com:aul12/Test.git
-git status
-git checkout -f master
-git push gitlab master
+#git remote add gitlab git@github.com:aul12/Test.git
+#git status
+#git checkout -f master
+#git push gitlab master
 
 figlet FINISHED
