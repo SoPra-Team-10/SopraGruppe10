@@ -23,6 +23,8 @@ notifications:
     
 deploy:
     provider: script
-        script: sh deploy.sh $TRAVIS_COMMIT
-         on:
-            branch: master
+    skip-cleanup: true
+    keep-history: true
+    script: sh deploy.sh $TRAVIS_COMMIT
+    on:
+        branch: master
