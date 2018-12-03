@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+
+\newcommand{\begriff}[7] {
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{p{4.5cm}|p{10cm}}
+			%\hline
+			%\toprule \\
+			\textbf{Begriff} & \textbf{#1} \\ \hline
+			%\midrule \\
+			\textbf{Beschreibung} & #2 \\ \hline
+			%\midrule
+			\textbf{Ist-ein} & #3 \\ \hline
+			%\midrule
+			\textbf{Kann-sein} & #4 \\ \hline
+			%\midrule
+			\textbf{Aspekt} & #4 \\ \hline
+			%\midrule
+			\textbf{Bemerkung} & #4 \\ \hline
+			%\midrule
+			\textbf{Beispiel} & #5 \\ %\hline
+			%\bottomrule
+		\end{tabular}
+	\end{table}
+}
+
+\begin{document}
+	\title{Softwaregrundpraktikum Meilenstein 1 }
+	\date{}
+	
+	\maketitle
+	
+\end{document}
