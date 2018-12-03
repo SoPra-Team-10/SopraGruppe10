@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/SoPra-Team-10/SopraGruppe10.svg?branch=master)](https://travis-ci.org/SoPra-Team-10/SopraGruppe10)
+[![Build Status](https://travis-ci.org/SoPra-Team-10/Uebungsblaetter.svg?branch=master)](https://travis-ci.org/SoPra-Team-10/Uebungsblaetter)
 
 # SopraGruppe10
 
