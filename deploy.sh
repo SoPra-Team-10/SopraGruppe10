@@ -5,11 +5,6 @@ commitAuthorEMail=$(git --no-pager log -1 --pretty="%cE")
 commitAuthorName=$(git --no-pager log -1 --pretty="%aN")
 echo "Last commit: $commitHash by $commitAuthorName with email $commitAuthorEMail"
 
-figlet PREPARE SSH
-mkdir -p ~/.ssh
-printf "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-eval "$(ssh-agent -s)"
-
 # If some kind of formatting is necessary do it here
 
 # Get the current gh-pages branch
@@ -58,6 +53,9 @@ esac
 sshKey="$GITLAB_TOKEN_0" # TODO remove me when everything works
 
 figlet SSH GIT
+mkdir -p ~/.ssh
+printf "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+eval "$(ssh-agent -s)"
 
 # Initialize ssh
 echo "$sshKey" > ~/.ssh/key
