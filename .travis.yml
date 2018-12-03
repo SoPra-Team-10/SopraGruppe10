@@ -15,7 +15,7 @@ script:
     - mkdir output
     - cd Meilenstein01
     - make
-    - mv main.pdf ../output/Blatt01.pdf
+    - mv main.pdf ../output/Meilenstein01.pdf
     - cd ..
 
 notifications:
