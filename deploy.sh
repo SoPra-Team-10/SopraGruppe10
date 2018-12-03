@@ -18,9 +18,17 @@ cd deployPDF
 git clone -b gh-pages "https://${GH_REPO_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
 cd Uebungsblaetter
 git config --global push.default simple
+
+ls -la .git/
+cat .git/config
+rm .git/config
 git config user.name "Travis CI"
 git config user.email "deploy@travis-ci.org"
+git checkout gh-pages
+git pull origin gh-pages
+echo "#################"
 cat .git/config
+
 rm -rf *
 cp -R ../../output/* .
 git add --all
