@@ -24,7 +24,7 @@ rm -rf *
 cp -R ../../output/* .
 git add --all
 git commit -m "Deploy code docs to GitHub Pages Travis build: ${TRAVIS_BUILD_NUMBER},  Commit: ${TRAVIS_COMMIT}"
-git push origin gh-pages --force "https://${GH_REPO_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
+git push origin gh-pages --force "https://${GH_REPO_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" > /dev/null
 cd ../..
 rm -rf /deployPDF
 
