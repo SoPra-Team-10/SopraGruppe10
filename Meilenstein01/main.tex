@@ -21,13 +21,394 @@
 \title{Softwaregrundprojekt}
 \author{Gruppe 10}
 
+\newcommand{\anf}[5] {
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{p{3.5cm}|p{10cm}}
+            \textbf{ID:} & \textbf{#1} \\ \hline
+            \textbf{Titel:} & #2 \\ \hline
+            \textbf{Beschreibung:} & #3 \\ \hline
+            \textbf{Begründung:} & #4 \\ \hline
+            \textbf{Abhängigkeiten:} & #5 \\ \hline
+        \end{tabular}
+    \end{table}
+}
+
+\newcounter{fanfCount}
+\newcommand{\fanf}[4] {
+    \stepcounter{fanfCount}
+    \anf{FA\thefanfCount}{#1}{#2}{#3}{#4}
+}
+\newcounter{qanfCount}
+\newcommand{\qanf}[4] {
+    \stepcounter{qanfCount}
+    \anf{QA\theqanfCount}{#1}{#2}{#3}{#4}
+}
+
 \begin{document}
     \maketitle
     \section{Kontextanalyse}
     %TODO
     \section{Fachwissen}
     %TODO
-    \includepdf[pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
+    %\includepdf[pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
     \section{Anforderungsdefinition}
     %TODO
+    
+    \subsection{Funktionale Anforderungen}
+    
+    \fanf	{Benutzer [Akteur]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{Client [Akteur]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{Server [Akteur]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{KI [Akteur]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\fanf	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	
+	\subsection{Nicht funktionale Anforderungen}
+	
+	\qanf 	{Plattformunabhängigkeit}
+			{Der Spielclient soll auf mindestens einer gängigen Computerbetriebssystem-Plattform (z.B. Linux, Windows) uneingeschränkt benutzbar sein. Des weiteren soll die Server- und die KI-Komponente auf mindestens zwei gängigen Computerbetriebssystem-Plattformen (z.B. Linux, Windows) uneingeschränkt benutzbar sein.}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	\qanf 	{<Titel>}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+	
+	
 \end{document}
