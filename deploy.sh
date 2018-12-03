@@ -22,7 +22,7 @@ rm -rf *
 cp -R ../../output/* .
 git add --all
 git commit -m "Deploy code docs to GitHub Pages Travis build: ${TRAVIS_BUILD_NUMBER},  Commit: ${TRAVIS_COMMIT}"
-git push -f origin gh-pages
+git push -f "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Uebungsblaetter.git" gh-pages> /dev/null
 cd ../..
 rm -rf /deployPDF
 cd ../..
