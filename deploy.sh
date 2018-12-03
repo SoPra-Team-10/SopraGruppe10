@@ -20,6 +20,7 @@ cd Uebungsblaetter
 git config --global push.default simple
 git config user.name "Travis CI"
 git config user.email "deploy@travis-ci.org"
+cat .git/config
 rm -rf *
 cp -R ../../output/* .
 git add --all
