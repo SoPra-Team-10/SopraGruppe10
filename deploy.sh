@@ -15,25 +15,17 @@ eval "$(ssh-agent -s)"
 # Get the current gh-pages branch
 mkdir deployPDF
 cd deployPDF
-git clone -b gh-pages "https://${GH_REPO_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
+git clone -b gh-pages "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Uebungsblaetter.git"
 cd Uebungsblaetter
-git config --global push.default simple
 
-ls -la .git/
-cat .git/config
-rm .git/config
+git config --global push.default simple
 git config user.name "Travis CI"
 git config user.email "deploy@travis-ci.org"
-git checkout gh-pages
-git pull origin gh-pages
-echo "#################"
-cat .git/config
-
 rm -rf *
 cp -R ../../output/* .
 git add --all
 git commit -m "Deploy code docs to GitHub Pages Travis build: ${TRAVIS_BUILD_NUMBER},  Commit: ${TRAVIS_COMMIT}"
-git push origin gh-pages --force "https://${GH_REPO_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" > /dev/null
+git push force "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Uebungsblaetter.git" > /dev/null
 cd ../..
 rm -rf /deployPDF
 
