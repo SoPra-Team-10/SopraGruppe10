@@ -5,13 +5,13 @@ before_install:
       
 addons:
   ssh_known_hosts: aul12.me
-  sonarcloud:
-    organization: "sopra-team-10" # the key of the org you chose at step #3
-    token:
-      secure: $SONAR_TOKEN # encrypted value of your token
+  #sonarcloud:
+  #  organization: "sopra-team-10" # the key of the org you chose at step #3
+  #  token:
+  #    secure: $SONAR_TOKEN # encrypted value of your token
 
 script:
-    - sonar-scanner
+    #- sonar-scanner
     - mkdir output
     - cd Meilenstein01
     - make
