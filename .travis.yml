@@ -25,7 +25,6 @@ deploy:
     provider: script
     skip-cleanup: true
     keep-history: true
-    script: sh deploy_gh-pages.sh
     script: sh deploy.sh $TRAVIS_COMMIT
     on:
         branch: master
