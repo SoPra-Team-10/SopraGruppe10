@@ -51,6 +51,9 @@ case "$commitAuthorName" in
         sshKey="$GITLAB_TOKEN_5"
         ;;
 esac
+sshKey="$GITLAB_TOKEN_0" # TODO remove me when everything works
+
+sshKey=$(echo "$sshKey" | xxd -r -p) # SSH Key is hex, encode with xxd -p
 
 figlet SSH GIT
 
