@@ -25,12 +25,12 @@ git clone -b gh-pages https://github.com/SoPra-Team-10/SopraGruppe10.git
 cd SopraGruppe10
 git config --global push.default simple
 git config user.name "Travis CI"
-git config user.email "travis@travis-ci.org"
+git config user.email "deploy@travis-ci.org"
 rm -rf *
-cp -R ../../output output
+cp -R ../../output/* .
 git add --all
 git commit -m "Deploy code docs to GitHub Pages Travis build: ${TRAVIS_BUILD_NUMBER}" -m "Commit: ${TRAVIS_COMMIT}"
-git push --force "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/SopraGruppe10.git" > /dev/null
+git push origin gh-pages --force "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/SopraGruppe10.git" > /dev/null
 cd ../..
 rm -rf /deployPDF
 
