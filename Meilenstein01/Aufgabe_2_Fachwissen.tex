@@ -8,9 +8,10 @@
 \newcommand{\begriff}[7] {
 	\begin{table}[H]
 		\centering
-		\begin{tabular}{p{4.5cm}|p{10cm}}
+		\begin{tabular}{|p{4.5cm}|p{10cm}|}
 			%\hline
 			%\toprule \\
+			\hline
 			\textbf{Begriff} & \textbf{#1} \\ \hline
 			%\midrule \\
 			\textbf{Beschreibung} & #2 \\ \hline
@@ -19,20 +20,84 @@
 			%\midrule
 			\textbf{Kann-sein} & #4 \\ \hline
 			%\midrule
-			\textbf{Aspekt} & #4 \\ \hline
+			\textbf{Aspekt} & #5 \\ \hline
 			%\midrule
-			\textbf{Bemerkung} & #4 \\ \hline
+			\textbf{Bemerkung} & #6 \\ \hline
 			%\midrule
-			\textbf{Beispiel} & #5 \\ %\hline
+			\textbf{Beispiel} & #7 \\ %\hline
 			%\bottomrule
+			\hline
 		\end{tabular}
 	\end{table}
 }
 
 \begin{document}
-	\title{Softwaregrundpraktikum Meilenstein 1 }
+	\title{Softwaregrundpraktikum Meilenstein 1 - Aufgabe 2 - Fachwissen}
 	\date{}
 	
 	\maketitle
+	\begriff{Spieler}
+	{Ein Nutzer, der das Computerspiel "Fatastic Feasts" spielt.}
+	{Nutzer}
+	{-}
+	{Zur Beschreibung des Programmverlaufs}
+	{-}
+	{-}
+	
+	\begriff{Nutzer}
+	{Ein Mensch, der einen Rechner bedient und entweder den Client zum Spielen des Spiels oder zur Beobachtung einer Partie benutzt, oder den Team-Editor bedient. Jeder Benutzer hat einen Nutzernamen, mittels dem er von anderen Nutzern erkannt werden kann.}
+	{-}
+	{Spieler, Gast}
+	{Zur Beschreibung des Programmverlaufs}
+	{-}
+	{JägerMaister69}
+	
+	\begriff{Gast}
+	{Ein Nutzer, der eine laufende Partie beobachtet}
+	{Nutzer}
+	{-}
+	{Zur Beschreibung des Programmverlaufs}
+	{-}
+	{-}
+	
+	\begriff{Client}
+	{Das Computerprogramm, das mit einer grafischen Oberfläche ausgestattet ist und einem Nutzer erlaubt, eine Verbindung mit einem Server herzustellen und damit zu Kommunizieren}
+	{-}
+	{-}
+	{Zum spielen des Spiels "Fantastic Feasts"}
+	{Der Begriff bezieht sich nicht auf den Menschen, der das Programm bedient}
+	{-}
+	
+	\begriff{Server}
+	{Die zentrale Komponente, in dem die Spiellogik implementiert ist und die Programmbefehle abwickelt und mit dem sich Clients verbinden können, um eine Partie zu spielen oder zu beobachten. Die Kommunikation erfolgt mit JSON}
+	{-}
+	{-}
+	{Ist für die Kommunikation von Clients, für das Verwalten des Spielgeschehens, Ressourcenverwaltung und die Spiellogik verantwortlich.}
+	{-}
+	{-}
+	
+	\begriff{Team-Editor}
+	{Ermöglicht einem Nutzer mit einer grafischen Oberfläche, ein eigenes Team zu erstellen und zu bearbeiten. Die Einstellungen werden danach als JSON-Datei gespeichert.}
+	{-}
+	{-}
+	{Zur Erstellung von Nutzereigenen Teams.}
+	{-}
+	{-}
+	
+	\begriff{KI-Client}
+	{Meldet sich beim Server wie ein normaler Client an und simuliert mit einer KI einen menschlichen Spieler. Hat keine grafische Oberfläche. Meldet sich mit dem Nutzernamen "KI" ein.}
+	{-}
+	{-}
+	{Zum Spielen gegen einen Computergegner}
+	{-}
+	{-}
+	
+	\begriff{KI}
+	{Definiert die Regeln, nach denen der KI-Client auf die durch den Server vermittelten Geschehen im Spiel reagiert.}
+	{-}
+	{-}
+	{Zum Spielen gegen einen Computergegner}
+	{Die KI ist die Logik, nach der der Computer das Spiel spielt und kein Programm}
+	{-}
 	
 \end{document}
