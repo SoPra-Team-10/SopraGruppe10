@@ -55,7 +55,10 @@ case "$commitAuthorName" in
         sshKey="$GITLAB_TOKEN_5"
         ;;
 esac
+<<<<<<< HEAD
 sshKey="$GITLAB_TOKEN_0" # TODO remove me when everything works
+=======
+>>>>>>> 84d1ed0a4accdde1a9ad2331ceea634a703359aa
 
 figlet SSH GIT
 
