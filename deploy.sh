@@ -17,12 +17,12 @@ git config user.email "deploy@travis-ci.org"
 echo "#############"
 cat .git/config
 echo "#############"
-git remote set-url origin 'https://github.com/SoPra-Team-10/Uebungsblaetter.git'
+#git remote set-url origin 'https://github.com/SoPra-Team-10/Uebungsblaetter.git'
 rm -rf *
 cp -R ../../output/* .
 git add --all
 git commit -m "Deploy code docs to GitHub Pages Travis build: ${TRAVIS_BUILD_NUMBER},  Commit: ${TRAVIS_COMMIT}"
-git push force "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Uebungsblaetter.git" > /dev/null
+git push -f origin gh-pages
 cd ../..
 rm -rf /deployPDF
 cd ../..
