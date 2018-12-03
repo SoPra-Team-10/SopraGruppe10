@@ -24,7 +24,7 @@ git config user.email "deploy@travis-ci.org"
 echo "#############"
 cat .git/config
 echo "#############"
-
+git remote set-url origin 'https://github.com/SoPra-Team-10/Uebungsblaetter.git'
 rm -rf *
 cp -R ../../output/* .
 git add --all
