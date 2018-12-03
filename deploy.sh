@@ -21,6 +21,10 @@ cd Uebungsblaetter
 git config --global push.default simple
 git config user.name "Travis CI"
 git config user.email "deploy@travis-ci.org"
+echo "#############"
+cat .git/config
+echo "#############"
+
 rm -rf *
 cp -R ../../output/* .
 git add --all
@@ -51,9 +55,6 @@ case "$commitAuthorName" in
         sshKey="$GITLAB_TOKEN_5"
         ;;
 esac
-sshKey="$GITLAB_TOKEN_0" # TODO remove me when everything works
-
-sshKey=$(echo "$sshKey" | xxd -r -p) # SSH Key is hex, encode with xxd -p
 
 figlet SSH GIT
 
