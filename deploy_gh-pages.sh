@@ -1,3 +1,5 @@
+figlet DEPLOY GH-PAGES
+
 echo '[deploy_gh-pages]: create new temp dir'
 mkdir deployGH-PAGES
 cd deployGH-PAGES
