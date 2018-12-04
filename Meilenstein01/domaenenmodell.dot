@@ -27,7 +27,7 @@ digraph G {
     ]
 
     Quaffel [
-        label = "{Quaffel||}"
+        label = "{Waffel||}"
     ]
     Klatscher [
         label = "{Klatscher||}"
