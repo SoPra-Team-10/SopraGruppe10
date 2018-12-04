@@ -21,28 +21,48 @@
 \title{Softwaregrundprojekt}
 \author{Gruppe 10}
 
-\newcommand{\anf}[5] {
+\newcommand{\anf}[7] {
     \begin{table}[H]
         \centering
-        \begin{tabular}{p{3.5cm}|p{10cm}}
+        \begin{tabular}{p{3.5cm}|p{9cm}}
             \textbf{ID:} & \textbf{#1} \\ \hline
             \textbf{Titel:} & #2 \\ \hline
             \textbf{Beschreibung:} & #3 \\ \hline
             \textbf{Begründung:} & #4 \\ \hline
             \textbf{Abhängigkeiten:} & #5 \\ \hline
+            \textbf{Priorität:} & #6 \\ \hline
+            \textbf{Akteure:} & #7 \\ \hline
         \end{tabular}
     \end{table}
 }
 
 \newcounter{fanfCount}
-\newcommand{\fanf}[4] {
+\newcommand{\fanf}[6] {
     \stepcounter{fanfCount}
-    \anf{FA\thefanfCount}{#1}{#2}{#3}{#4}
+    \anf{FA\thefanfCount}{#1}{#2}{#3}{#4}{#5}{#6}
 }
 \newcounter{qanfCount}
-\newcommand{\qanf}[4] {
+\newcommand{\qanf}[6] {
     \stepcounter{qanfCount}
-    \anf{QA\theqanfCount}{#1}{#2}{#3}{#4}
+    \anf{QA\theqanfCount}{#1}{#2}{#3}{#4}{#5}{#6}
+}
+
+\newcommand{\akt}[4] {
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{p{3.5cm}|p{9cm}}
+            \textbf{ID:} & \textbf{#1} \\ \hline
+            \textbf{Titel:} & #2 \\ \hline
+            \textbf{Beschreibung:} & #3 \\ \hline
+            \textbf{Rolle:} & #4 \\ \hline
+        \end{tabular}
+    \end{table}
+}
+
+\newcounter{faktCount}
+\newcommand{\fakt}[3] {
+    \stepcounter{faktCount}
+    \akt{AKT\thefaktCount}{#1}{#2}{#3}
 }
 
 \begin{document}
@@ -55,257 +75,396 @@
     \section{Anforderungsdefinition}
     %TODO
     
-    \subsection{Funktionale Anforderungen}
+    \subsection{Akteure}
     
-    \fanf	{Benutzer [Akteur]}
+    \fakt	{Benutzer}
 			{<Beschreibung>}
 			{<Begründung>}
-			{<Abhängigkeiten>}
+			
+	\fakt	{Systemadministrator}
+			{<Beschreibung>}
+			{<Begründung>}
 	
-	\fanf	{Client [Akteur]}
+	\fakt	{Team}
 			{<Beschreibung>}
 			{<Begründung>}
-			{<Abhängigkeiten>}
 	
-	\fanf	{Server [Akteur]}
+	\fakt	{Akteur}
 			{<Beschreibung>}
 			{<Begründung>}
-			{<Abhängigkeiten>}
 	
-	\fanf	{KI [Akteur]}
+	\fakt	{Akteur}
+			{<Beschreibung>}
+			{<Begründung>}
+	
+	\fakt	{Akteur}
+			{<Beschreibung>}
+			{<Begründung>}
+	
+	\fakt	{Akteur}
+			{<Beschreibung>}
+			{<Begründung>}
+	
+	\fakt	{Akteur}
+			{<Beschreibung>}
+			{<Begründung>}
+	
+	\fakt	{Akteur}
+			{<Beschreibung>}
+			{<Begründung>}
+	
+	
+	\subsection{Funktionale Anforderungen}
+	
+	\fanf	{Client [Komponente]}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Server [Komponente]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{KI [Komponente]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Quidditchteam-Editor [Komponente]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Quidditch-Spielfeld}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Mittelkreis}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Mittelfeld}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Hüterzone}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Torring}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Schussvektor}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Bälle}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Quaffel [Ball]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Klatscher [Ball]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Goldener Schnatz [Ball]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Besen}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Zauberfauch [Besen]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Sauberwisch 11 [Besen]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Komet 2-60 [Besen]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Nimbus 2001  [Besen]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Feuerblitz [Besen]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Jäger [Spielertyp]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Treiber [Spielertyp]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Hüter [Spielertyp]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{[Spielertyp] Sucher}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Fanblock]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}	
+	
+	\fanf	{Elfen [Fantyp]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Kobolde [Fantyp]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Trolle [Fantyp]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Niffler [Fantyp]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Foul}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Flacken [Foul]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Nachtarocken [Foul]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Stutschen [Foul]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Keilen [Foul]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Schnaltzeln [Foul]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
 	
 	\subsection{Nicht funktionale Anforderungen}
@@ -314,101 +473,141 @@
 			{Der Spielclient soll auf mindestens einer gängigen Computerbetriebssystem-Plattform (z.B. Linux, Windows) uneingeschränkt benutzbar sein. Des weiteren soll die Server- und die KI-Komponente auf mindestens zwei gängigen Computerbetriebssystem-Plattformen (z.B. Linux, Windows) uneingeschränkt benutzbar sein.}
 			{<Begründung>}
 			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\qanf 	{Version-Controlling}
+			{Verwaltung und Version-Controlling des Quellcodes mit Hilfe eines Git basierten Version-Controlling Tool.}
+			{<Begründung>}
+			{-}
+			{<Prio>}
+			{<Akteure>}
+	
+	\qanf 	{Continuous Integration}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+			{<Prio>}
+			{<Akteure>}
+	
+	\qanf 	{Statische Codeanalyse}
+			{Mit Hilfe des Tools 'SonarQube' bzw. 'SonarCloud' soll der gesamt Quellcode einer statischen Analyse unterzogen werden. Dabei darf die technische Codequalität von diesen Tool nicht schlechter als 'B' bewertet werden.}
+			{<Begründung>}
+			{-}
+			{<Prio>}
+			{<Akteure>}
+	
+	\qanf 	{Qualitätssicherung}
+			{80 Prozent des Quellcodes der einzelnen Komponenten soll durch automatische Test auf Korrektheit geprüft werden}
+			{<Begründung>}
+			{-}
+			{<Prio>}
+			{<Akteure>}
+	
+	\qanf 	{Docker Container}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+			{<Prio>}
+			{<Akteure>}
+	
+	\qanf 	{Dokumentation}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+			{<Prio>}
+			{<Akteure>}
+	
+	\qanf 	{Benutzerhandbuch}
+			{<Beschreibung>}
+			{<Begründung>}
+			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
+			{<Prio>}
+			{<Akteure>}
 	
 	
 \end{document}
