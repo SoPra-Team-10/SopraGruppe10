@@ -26,3 +26,4 @@ deploy:
     skip-cleanup: true
     keep-history: true
     script: sh deploy.sh $TRAVIS_COMMIT
+    all_branches: true
