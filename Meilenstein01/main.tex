@@ -97,52 +97,36 @@
 			{<Beschreibung>}
 			{<Rolle>}
 	
-	\fakt	{Akteur}
+	\fakt	{Kunde}
+			{SoPra-Tutor}
+			{<Rolle>}
+	
+	\fakt	{Client [Komponente]}
 			{<Beschreibung>}
 			{<Rolle>}
 	
-	\fakt	{Akteur}
+	\fakt	{KI-Client [Komponente]}
 			{<Beschreibung>}
 			{<Rolle>}
 	
-	\fakt	{Akteur}
+	\fakt	{Server [Komponente]}
 			{<Beschreibung>}
 			{<Rolle>}
-	
-	\fakt	{Akteur}
-			{<Beschreibung>}
-			{<Rolle>}
-	
-	
-	\subsection{Funktionale Anforderungen}
-	
-	\fanf	{Client [Komponente]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
 			
-	\fanf	{KI-Client [Komponente]}
+	\fakt	{Quidditchteam-Editor [Komponente]}
 			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+			{<Rolle>}
 	
-	\fanf	{Server [Komponente]}
+	\fakt 	{Team}
 			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+			{<Rolle>}
 	
-	\fanf	{Quidditchteam-Editor [Komponente]}
+	\fakt 	{Schiedsrichter}
 			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+			{<Rolle>}
+	
+	
+	\subsection{Funktionale Anforderungen (allgemein)}
 	
 	\fanf	{Quidditch-Spielfeld}
 			{<Beschreibung>}
@@ -367,13 +351,6 @@
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
-			
-	\fanf	{Schiedsrichter}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
 	
 	\fanf	{Wurf mit dem Quaffel}
 			{<Beschreibung>}
@@ -402,7 +379,7 @@
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
-	
+			
 	\fanf	{Partie-Konfiguration}
 			{<Beschreibung>}
 			{<Begründung>}
@@ -416,8 +393,71 @@
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}	
+			
+	\fanf	{Netzwerkinterface}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 	
-	\fanf	{<Titel>}
+	\fanf	{Runde}
+			{<Beschreibung>}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Ballphase}
+			{<Beschreibung>}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+			
+	\fanf	{Spielerphase}
+			{<Beschreibung>}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+			
+	\fanf	{Fanphase}
+			{<Beschreibung>}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+			
+	\fanf	{Zufallsgenerator}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+			
+	\fanf	{Spielende}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+			
+	\fanf	{Überlängenbehnadlung}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+			
+	\fanf	{Spiellogik}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Log-Datei}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
@@ -458,28 +498,113 @@
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
+			
 	
-	\fanf	{<Titel>}
+	\subsection{Funktionale Anforderungen (Server)}
+	
+	\subsection{Funktionale Anforderungen (Client)}
+	
+	\fanf	{Hauptmenü [Client-View]}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 	
-	\fanf	{<Titel>}
+	\fanf	{Connect to Game [Client-View]}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 	
-	\fanf	{<Titel>}
+	\fanf	{End of Game [Client-View]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+			
+	\fanf	{Import Team Config [Client-View]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+			
+	\fanf	{Game Play [Client-View]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}	
+			
+	\fanf	{Hilfe [Client-View]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+			
+	\fanf	{Beobachter [Client-View]}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 	
+	\fanf	{Game Rendering Engine}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Input Handler [Client]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+			
+	\fanf	{Input Validierung [Client]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Hotkey [Client]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{--}
+			{<Akteure>}
+			
+	\fanf	{Pausieren [Client]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{--}
+			{<Akteure>}
+			
+	
+	\subsection{Funktionale Anforderungen (Quidditchteam-Editor)}
+	
+	\fanf	{Edit Team [Team-Editor-View]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Save Team [Team-Editor-View]}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+			
 	
 	\subsection{Nicht funktionale Anforderungen}
 	
@@ -546,7 +671,7 @@
 			{<Prio>}
 			{<Akteure>}
 	
-	\qanf 	{<Titel>}
+	\qanf 	{Programmiersprache}
 			{Implementierungssprache}
 			{<Begründung>}
 			{-}
@@ -574,7 +699,7 @@
 			{<Prio>}
 			{<Akteure>}
 	
-	\qanf 	{<Titel>}
+	\qanf 	{Rundenspiel}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
