@@ -37,15 +37,6 @@ echo '[deploy_gh-pages]: remove temp dir'
 cd ../..
 rm -rf deployGH-PAGES
 
-
-echo '[deploy_gh-pages]: Posting link'
-if [ "$TRAVIS_PULL_REQUEST" != "false" ]
-then
-   curl -H "Authorization: token ${GH_REPO_TOKEN}" -X POST \
-    -d "{\"body\": \"View the pdf on: https://sopra-team-10.github.io/Uebungsblaetter/$TRAVIS_BRANCH/\"}" \
-    "https://api.github.com/repos/${TRAVIS_REPO_SLUG}/issues/${TRAVIS_PULL_REQUEST}/comments"
-fi
-
 #deploy to commplete repo, only on master
 if [ "$TRAVIS_BRANCH" == "master" ]
 then

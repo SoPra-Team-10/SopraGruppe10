@@ -21,6 +21,9 @@ script:
 notifications:
     slack: soprateam10:wlcgvL7tR63frGyGP4BCuqNj
     
+after_success:
+    - sh pullRequestComment.sh
+
 deploy:
     provider: script
     skip-cleanup: true
