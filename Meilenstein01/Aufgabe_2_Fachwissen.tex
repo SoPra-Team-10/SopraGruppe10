@@ -1,148 +1,415 @@
-	\begriff{Spieler}
-	{Ein Nutzer, der das Computerspiel "Fatastic Feasts" spielt.}
-	{Nutzer}
-	{-}
-	{Zur Beschreibung des Programmverlaufs}
-	{-}
-	{-}
-	
-	\begriff{Nutzer}
-	{Ein Mensch, der einen Rechner bedient und entweder den Client zum Spielen des Spiels oder zur Beobachtung einer Partie benutzt, oder den Team-Editor bedient. Jeder Benutzer hat einen Nutzernamen, mittels dem er von anderen Nutzern erkannt werden kann.}
-	{-}
-	{Spieler, Gast}
-	{Zur Beschreibung des Programmverlaufs}
-	{-}
-	{JägerMaister69}
-	
-	\begriff{Gast}
-	{Ein Nutzer, der eine laufende Partie beobachtet}
-	{Nutzer}
-	{-}
-	{Zur Beschreibung des Programmverlaufs}
-	{-}
-	{-}
-	
-	\begriff{Client}
-	{Das Computerprogramm, das mit einer grafischen Oberfläche ausgestattet ist und einem Nutzer erlaubt, eine Verbindung mit einem Server herzustellen und damit zu Kommunizieren}
-	{-}
-	{-}
-	{Zum spielen des Spiels "Fantastic Feasts"}
-	{Der Begriff bezieht sich nicht auf den Menschen, der das Programm bedient}
-	{-}
-	
-	\begriff{Server}
-	{Die zentrale Komponente, in dem die Spiellogik implementiert ist und die Programmbefehle abwickelt und mit dem sich Clients verbinden können, um eine Partie zu spielen oder zu beobachten. Die Kommunikation erfolgt mit JSON}
-	{-}
-	{-}
-	{Ist für die Kommunikation von Clients, für das Verwalten des Spielgeschehens, Ressourcenverwaltung und die Spiellogik verantwortlich.}
-	{-}
-	{-}
-	
-	\begriff{Team-Editor}
-	{Ermöglicht einem Nutzer mit einer grafischen Oberfläche, ein eigenes Team zu erstellen und zu bearbeiten. Die Einstellungen werden danach als JSON-Datei gespeichert.}
-	{-}
-	{-}
-	{Zur Erstellung von Nutzereigenen Teams.}
-	{-}
-	{-}
-	
-	\begriff{KI-Client}
-	{Meldet sich beim Server wie ein normaler Client an und simuliert mit einer KI einen menschlichen Spieler. Hat keine grafische Oberfläche. Meldet sich mit dem Nutzernamen "KI" ein.}
-	{-}
-	{-}
-	{Zum Spielen gegen einen Computergegner}
-	{-}
-	{-}
-	
-	\begriff{KI}
-	{Definiert die Regeln, nach denen der KI-Client auf die durch den Server vermittelten Geschehen im Spiel reagiert.}
-	{-}
-	{-}
-	{Zum Spielen gegen einen Computergegner}
-	{Die KI ist die Logik, nach der der Computer das Spiel spielt und kein Programm}
-	{-}
-	
-	\begriff{Spielfeld}
-	{Ein grafisch darstellbares Raster, auf dem sich die Spielfiguren bewegen}
-	{-}
-	{-}
-	{Dient als virtuelles Spielbrett mit klar definierten Abgrenzungen}
-	{Wird nicht Spielumgebung genannt um Verwechslung mit dem Client zu vermeiden}
-	{-}
-	
-	\begriff{Zelle}
-	{Die kleinste Einheit des Spielfeldes, also ein Quadrat davon}
-	{-}
-	{Zentrumszelle, Zielzelle, kritische Zelle}
-	{Mögliche Standorte der Spielfiguren}
-	{Wird nicht Feld genannt, da das ein eher vager Begriff ist}
-	{-}
-	
-	\begriff{Zentrum}
-	{Der 3x3 Zellen große Abschnitt in der Mitte des Spielfeldes}
-	{-}
-	{-}
-	{Summe aller Zentrumszellen}
-	{Ist das Mittelfeld im Lastenheft}
-	{-}
-	
-	\begriff{kritischer Bereich}
-	{Die Bereiche am linken und rechten Rand des Spielfeldes, in dem sich die Zielzellen befinden}
-	{-}
-	{-}
-	{Summe aller kritischen Zellen und Zielzellen}
-	{Hüterzone im Lastenheft}
-	{-}
-	
-	\begriff{Zielzelle}
-	{Die Zellen in die beide Teams die Payload bewegen wollen}
-	{Zelle}
-	{-}
-	{Hauptquelle von Punkten}
-	{Torring im Lastenheft}
-	{}
-	
-	\begriff{Zentrumszelle}
-	{Eine Zelle im Zentrum des Spielfeldes (siehe Zentrum)}
-	{Zelle}
-	{-}
-	{Startpunkt für Payload und Quälgeister}
-	{-}
-	{-}
-	
-	\begriff{kritische Zelle}
-	{Eine Zelle in einem kritischen Bereich des Spielfeldes}
-	{Zelle}
-	{-}
-	{limitierendes Element für das Abliefern der Payload}
-	{-}
-	{-}
-	
-	\begriff{Figur}
-	{Jedes Objekt, das sich auf dem Spielfeld befindet und darauf bewegt werden kann}
-	{-}
-	{Neutrale Figur, Spielfigur}
-	{Spielobjekte}
-	{Nicht zu verwechseln mit Spielfigur}
-	{-}
-	
-	\begriff{Neutrale Figur}
-	{Eine Figur, die nicht direkt, nur indirekt von einem Spieler beeinflusst werden kann}
-	{Figur}
-	{Payload, Quälgeist, Kostbarkeit}
-	{Festpunkte zur Steuerung des Spielverlaufs}
-	{Bälle im Lastenheft}
-	{-}
-	
-	\begriff{Spielfigur}
-	{Eine Figur, die von einem Spieler direkt gesteuert wird. Jede Spielfigur hat einen Namen, einen Rang und eine Rolle}
-	{Figur}
-	{Wächter, Sucher, Jäger, Kämpfer}
-	{Mitglieder eines Teams}
-	{Spieler im Lastenheft}
-	{Luke Skywalker, Wächter, Rang 5}
-	
-	\begriff{arg1}{arg2}{arg3}{arg4}{arg5}{arg6}{arg7}
-	
-	\begriff{Spielfigur}
-	{Jedes Objekt, das sich auf dem Spielfeld befindet}{arg3}{arg4}{arg5}{arg6}{arg7}
+\begriff{Nutzer}
+{Ein Mensch, der einen Rechner bedient und entweder den Client zum Spielen des Spiels oder zur Beobachtung einer Partie benutzt, oder den Team-Editor bedient. Jeder Benutzer hat einen Nutzernamen, mittels dem er von anderen Nutzern erkannt werden kann.}
+{-}
+{Spieler, Gast}
+{Zur Beschreibung des Programmverlaufs}
+{-}
+{JägerMaister69}
+
+\begriff{Gast}
+{Ein Nutzer, der eine laufende Partie beobachtet}
+{Nutzer}
+{-}
+{Zur Beschreibung des Programmverlaufs}
+{-}
+{-}
+
+\begriff{Client}
+{Das Computerprogramm, das mit einer grafischen Oberfläche ausgestattet ist und einem Nutzer erlaubt, eine Verbindung mit einem Server herzustellen und damit zu Kommunizieren}
+{-}
+{-}
+{Zum spielen des Spiels "Fantastic Feasts"}
+{Der Begriff bezieht sich nicht auf den Menschen, der das Programm bedient}
+{-}
+
+\begriff{Server}
+{Die zentrale Komponente, in dem die Spiellogik implementiert ist und die Programmbefehle abwickelt und mit dem sich Clients verbinden können, um eine Partie zu spielen oder zu beobachten. Die Kommunikation erfolgt mit JSON}
+{-}
+{-}
+{Ist für die Kommunikation von Clients, für das Verwalten des Spielgeschehens, Ressourcenverwaltung und die Spiellogik verantwortlich.}
+{-}
+{-}
+
+\begriff{Team-Editor}
+{Ermöglicht einem Nutzer mit einer grafischen Oberfläche, ein eigenes Team zu erstellen und zu bearbeiten. Die Einstellungen werden danach als JSON-Datei gespeichert.}
+{-}
+{-}
+{Zur Erstellung von Nutzereigenen Teams.}
+{-}
+{-}
+
+\begriff{KI-Client}
+{Meldet sich beim Server wie ein normaler Client an und simuliert mit einer KI einen menschlichen Spieler. Hat keine grafische Oberfläche. Meldet sich mit dem Nutzernamen "KI" ein.}
+{-}
+{-}
+{Zum Spielen gegen einen Computergegner}
+{-}
+{-}
+
+\begriff{KI}
+{Definiert die Regeln, nach denen der KI-Client auf die durch den Server vermittelten Geschehen im Spiel reagiert.}
+{-}
+{-}
+{Zum Spielen gegen einen Computergegner}
+{Die KI ist die Logik, nach der der Computer das Spiel spielt und kein Programm}
+{-}
+
+\begriff{Spielfeld}
+{Ein grafisch darstellbares Raster, auf dem sich die Spielfiguren bewegen}
+{-}
+{-}
+{Dient als virtuelles Spielbrett mit klar definierten Abgrenzungen}
+{Wird nicht Spielumgebung genannt um Verwechslung mit dem Client zu vermeiden}
+{-}
+
+\begriff{Zelle}
+{Die kleinste Einheit des Spielfeldes, also ein Quadrat davon}
+{-}
+{Zentrumszelle, Zielzelle, kritische Zelle}
+{Mögliche Standorte der Spielfiguren}
+{Wird nicht Feld genannt, da das ein eher vager Begriff ist}
+{-}
+
+\begriff{Zentrum}
+{Der 3x3 Zellen große Abschnitt in der Mitte des Spielfeldes}
+{-}
+{-}
+{Summe aller Zentrumszellen}
+{Ist das Mittelfeld im Lastenheft}
+{-}
+
+\begriff{kritischer Bereich}
+{Die Bereiche am linken und rechten Rand des Spielfeldes, in dem sich die Zielzellen befinden}
+{-}
+{-}
+{Summe aller kritischen Zellen und Zielzellen}
+{Hüterzone im Lastenheft}
+{-}
+
+\begriff{Zielzelle}
+{Die Zellen in die beide Teams die Payload bewegen wollen. Es wird zwischen eigenen und gegnerischen Zielzellen unterschieden.}
+{Zelle}
+{Eigene Zielzelle, Gegnerische Zielzelle}
+{Hauptquelle von Punkten}
+{Torring im Lastenheft}
+{}
+
+\begriff{Zentrumszelle}
+{Eine Zelle im Zentrum des Spielfeldes (siehe Zentrum)}
+{Zelle}
+{-}
+{Startpunkt für Payload und Quälgeister}
+{-}
+{-}
+
+\begriff{kritische Zelle}
+{Eine Zelle in einem kritischen Bereich des Spielfeldes}
+{Zelle}
+{-}
+{limitierendes Element für das Abliefern der Payload}
+{-}
+{-}
+
+\begriff{Figur}
+{Jedes Objekt, das sich auf dem Spielfeld befindet und darauf bewegt werden kann}
+{-}
+{Neutrale Figur, Spielfigur}
+{Spielobjekte}
+{Nicht zu verwechseln mit Spielfigur}
+{-}
+
+\begriff{Neutrale Figur}
+{Eine Figur, die nicht direkt, nur indirekt von einem Spieler beeinflusst werden kann}
+{Figur}
+{Payload, Quälgeist, Schatz}
+{Festpunkte zur Steuerung des Spielverlaufs}
+{Bälle im Lastenheft}
+{-}
+
+\begriff{Spielfigur}
+{Eine Figur, die von einem Spieler direkt gesteuert wird. Jede Spielfigur hat einen Namen, einen Rang und eine Rolle. Man unterscheidet außerdem zwischen eigenen und gegnerischen Spielfiguren.}
+{Figur}
+{Wächter, Sucher, Angreifer, Unterstützer}
+{Mitglieder eines Teams}
+{Spieler im Lastenheft}
+{Luke Skywalker, eigener Wächter, Rang 5}
+
+\begriff{Payload}
+{Passives Objekt, mit dem Angreifer und Wächter interagieren können und von ihnen nach Möglichkeit in ein gegnerisches Zielfeld befördert werden soll.}
+{Neutrale Figur}
+{-}
+{Zentrales Spielobjekt}
+{"Quaffel" im Lastenheft}
+{-}
+
+\begriff{Quälgeist}
+{Neutrales Objekt, das sich von selbst auf Spielfiguren zubewegt, die keine Unterstützer sind und diese betäuben können und von Unterstützern bewegt werden können.}
+{Neutrale Figur}
+{-}
+{Zusätzliches taktisches Spielelement}
+{"Klatscher" im Lastenheft}
+{-}
+
+\begriff{Schatz}
+{Neutrale Figur, die von den Suchern gejagt wird und deren Fund die Partie beendet}
+{Neutrale Figur}
+{-}
+{Definiert Spielende}
+{"Schnatz" im Lastenheft}
+{-}
+
+\begriff{Partie}
+{Ein einzelnes Spiel. Beginnt beim Platzieren der Figuren und endet mit dem Finden des Schatzes}
+{-}
+{-}
+{Beschreibung des Spielablaufs}
+{-}
+{VodkaVodka98 spielt gegen LongEiländ}
+
+\begriff{Wächter}
+{Spielfigur, deren Aufgabe es ist, die Payload von den eigenen Zielfeldern fernzuhalten}
+{Spielfigur}
+{Eigener Wächter, Gegnerischer Wächter}
+{Letzte Verteidigungslinie}
+{"Hüter" im Lastenheft}
+{Siehe "Spielfigur"}
+
+\begriff{Sucher}
+{Spielfigur, die den Schatz jagt}
+{Spielfigur}
+{Eigener Sucher, Gegnerischer Sucher}
+{Beendet die Partie}
+{"Jäger" wäre ein besserer Begriff, könnte aber mit den Begriffen im Lastenheft zu Verwirrungen führen.}
+{Darth Vader, gegnerischer Sucher, Rang 2}
+
+\begriff{Angreifer}
+{Spielfigur, die die Payload in ein gegnerisches Zielfeld befördern soll}
+{Spielfigur}
+{Eigener Angreifer, Gegnerischer Angreifer}
+{Holt Punkte für das eigene Team}
+{"Jäger" im Lastenheft}
+{Han Solo, eigener Angreifer, Rang 3}
+
+\begriff{Unterstützer}
+{Spielfigur, mit der der Spieler eigene Spielfiguren vor Quälgeistern schützt und gegnerische damit abschießen kann}
+{Spielfigur}
+{Eigener Unterstützer, Gegnerischer Unterstützer}
+{Interagiert mit Quälgeistern}
+{"Treiber" im Lastenheft}
+{Boba Fett, gegnerischer Unterstützer, Rang 4}
+
+\begriff{Punkte}
+{Der Spieler mit mehr Punkten am Ende der Partie gewinnt. Werden durch das Platzieren der Payload in einer gegnerische Zielzelle oder das Finden des Schatzes erhalten.}
+{-}
+{-}
+{Bestimmung des Gewinners}
+{-}
+{SchnapsNase hat 20 Punkte}
+
+\begriff{Besetzen}
+{Eine Spielfigur besetzt das Feld, auf dem sie sich befindet}
+{-}
+{-}
+{Beschreibung des Spielgeschehens}
+{Zwei Spielfiguren können sich nicht auf derselben Zelle befinden}
+{Chewbacca besetzt Zelle 5:3}
+
+\begriff{Rang}
+{Jede Spielfigur hat einen Rang von 1 bis 5, der die Wahrscheinlichkeit bestimmt, dass sie noch einmal ziehen kann. Rang 1 ist der beste.}
+{-}
+{-}
+{Unterscheidet Qualität der Spielfiguren}
+{Ersetzt die "Besen" aus dem Lastenheft}
+{Yoda ist Rang 1}
+
+\begriff{Aktion}
+{Jede durch einen Spieler hervorgerufene Änderung der Spielsituation}
+{-}
+{Ziehen, Befördern, Schlagen, Einmischung, Übernahme}
+{Weiterführung der Partie}
+{-}
+{Obi-Wan Kenobi zieht von Zelle 8:7 auf Zelle 9:7}
+
+\begriff{Ziehen}
+{Die Bewegung einer Spielfigur von einer Zelle auf eine andere durch Befehl des Spielers}
+{Aktion}
+{-}
+{Beschreibung des Spielverlaufs}
+{Bezieht sich nicht auf erzwungene Bewegungen einer Spielfigur.}
+{Obiwan Kenobi zieht von Zelle 8:7 auf Zelle 9:7}
+
+\begriff{Befördern}
+{Die Bewegung der Payload durch einen Wächter oder Angreifer auf eine andere Zelle}
+{Aktion}
+{-}
+{Bewegung der Payload um mehrere Felder}
+{"Werfen" im Lastenheft}
+{Mace Windu befördert die Payload auf Zelle 10:4}
+
+\begriff{Schlagen}
+{Die erzwungene Bewegung eines Quälgeistes durch einen Unterstützer}
+{Aktion}
+{-}
+{Interaktion mit Quälgeistern}
+{"Kloppen" im Lastenheft}
+{R2-D2 schlägt einen Quälgeist auf Zelle 5:10}
+
+\begriff{Einmischung}
+{Hilfsfähigkeiten, die nicht von Figuren benutzt werden}
+{Aktion}
+{Teleportation, Fernangriff, Impuls, Schatzjagd}
+{Zusätzliche taktische Element}
+{Ersetzt die "Fans" aus dem Lastenheft}
+{Lando Calrissian wird auf Zelle 6:6 teleportiert}
+
+\begriff{Teleportation}
+{Einmischung, die eine Spielfigur auf eine zufällige Zelle teleportiert}
+{Einmischung}
+{-}
+{-}
+{Ersetzt "Elfen" aus Lastenheft}
+{Siehe "Einmischungen"}
+
+\begriff{Fernangriff}
+{Trifft ein Ziel. Ziel verliert gegebenenfalls die Payload und wird auf eine zufällige benachbarte, freie Zelle bewegt.}
+{Einmischung}
+{-}
+{-}
+{Statt "Kobolde" im Lastenheft}
+{Jango Fett wird von Fernangriff auf Zelle 5:6 gestoßen}
+
+\begriff{Impuls}
+{Wenn eine Spielfigur die Payload hält, wird sie bei Benutzung verloren}
+{Einmischung}
+{-}
+{-}
+{Statt "Trolle" im Lastenheft}
+{C-3PO verliert wegen eines Impuls die Payload}
+
+\begriff{Schatzjagd}
+{Bewegt den Schatz zufällig um ein Feld}
+{Einmischung}
+{-}
+{-}
+{"Schnatzschnappen" im Lastenheft}
+{Eine Schatzjagd treibt den Schatz auf Zelle 4:12}
+
+\begriff{Entfernung}
+{Eine Entfernung zwischen zwei Zellen ist die minimale Anzahl von Zügen, in denen eine Spielfigur von der einen auf die andere ziehen kann.}
+{-}
+{-}
+{Spielfeldgeometrie}
+{-}
+{-}
+
+\begriff{Transportvektor}
+{Pfeil vom Mittelpunkt einer Zelle zum Mittelpunkt einer anderen}
+{-}
+{-}
+{Spielfeldgeometrie}
+{-}
+{-}
+
+\begriff{Abliefern}
+{Ein Angreifer befördert die Payload in eine Zielzelle und holt damit Punkte für sei Team}
+{-}
+{-}
+{Punkte sammeln}
+{Ein erfolgreicher Torschuss im Lastenheft}
+{Darth Sidious liefert die Payload an eigener Zielzelle ab}
+
+\begriff{Rundenphase}
+{Phase, in der eine Spielfigur Aktionen durchführt}
+{-}
+{-}
+{Zeiteinteilung}
+{}
+{Leia Organa ist dran}
+
+\begriff{Zug}
+{Von der ersten Aktion eines Spielers bis zur ersten Aktion des Gegners}
+{-}
+{-}
+{Zeiteinteilung}
+{Nicht die Rundenphase einer Spielfigur}
+{Bierdurst69 ist am Zug}
+
+\begriff{Verlieren}
+{Die Payload wird auf eine zufällige Zelle bewegt, die an die Zelle angrenzt, auf der sich die Spielfigur, die sie derzeit hält befindet.}
+{-}
+{-}
+{Spielablauf}
+{"Vertändeln" im Lastenheft}
+{Jar Jar verliert die Payload}
+
+\begriff{Übernahme}
+{Ein Angreifer neben einer gegnerischen Spielfigur, die die Payload hält, kann diesen mit einer bestimmten Wahrscheinlichkeit übernehmen und hält sie anschließend selbst.}
+{Aktion}
+{-}
+{Aggressives Spielmanöver}
+{-}
+{Darth Vader übernimmt die Payload von Anakin Skywalker}
+
+\begriff{Betäubt}
+{Eine betäubte Spielfigur kann in seiner nächsten Rundenphase keine Aktion durchführen}
+{-}
+{-}
+{Wirkung der Quälgeister}
+{"Ausgeknockt" im Lastenheft}
+{Jango Fett ist betäubt}
+
+\begriff{Riskante Strategie}
+{Handlung, wegen der eine Spielfigur vorübergehend vom Spielfeld entfernt werden kann.}
+{-}
+{Zielzelle Blockieren, Stürmen, Großoffensive, Rammen, Schatz Blockieren}
+{Taktische Elemente}
+{"Faul" im Lastenheft}
+{Qui-Gon Jinn blockiert den Schatz}
+
+\begriff{Zielzelle Blockieren}
+{Eine eigene Spielfigur besetzt eine eigene Zielzelle, was verhindert, dass die Payload dort abgeliefert wird.}
+{Riskante Strategie}
+{-}
+{Taktik}
+{"Flackern" im Pflichtenheft}
+{-}
+
+\begriff{Stürmen}
+{Ein Angreifer, der die Payload hält, zieht auf eine gegnerische Zielzelle, was das Abliefern garantiert.}
+{Riskante Strategie}
+{-}
+{Taktik}
+{"Nachtarocken" im Lastenheft}
+{Han Solo stürmt mittlere gegnerische Zielzelle}
+
+\begriff{Großoffensive}
+{Ein eigener Angreifer betritt eine gegnerische kritische Zelle während ein anderer eigener Angreifer sich auf einer anderen befindet.}
+{Riskante Strategie}
+{-}
+{Taktik}
+{"Stutschen" im Lastenheft}
+{Lando Calrissia schließt sich Chewbacca in einer Großoffensive an}
+
+\begriff{Rammen}
+{Eine eigene Spielfigur zieht auf eine Zelle, die von einer gegnerischen Spielfigur besetzt wird. Dadurch wird die gegnerische Spielfigur auf eine benachbarte Zelle bewegt und verliert die Payload}
+{Riskante Strategie}
+{-}
+{Taktik}
+{"Keilen" im Lastenheft}
+{Boba Fett rammt Jar Jar}
+
+\begriff{Schatz blockieren}
+{Eine Spielfigur, die kein Sucher ist, besetzt die Zelle, auf der sich der Schatz befindet.}
+{Riskante Strategie}
+{-}
+{Taktik}
+{"Schnatzeln" im Lastenheft}
+{Darth Maul blockiert den Schatz}
+
+\begriff{Schutzmaßnahmen}
+{Entfernt mit bestimmter Wahrscheinlichkeit eine Spielfigur, die eine riskante Strategie ausführt vom Spielfeld bis eine Payload abgeliefert wird.}
+{-}
+{-}
+{Taktik}
+{"Schiedsrichter" im Lastenheft}
+{Sheev Palpatine wurde von Schutzmaßnahmen vom Spielfeld entfernt}
