@@ -42,9 +42,9 @@ if [ "$TRAVIS_BRANCH" == "master" ]
 then
     echo '[deploy-complete]: Get data'
     commitHash="$1"
-    commitMessage=$(git --no-pager log -1 --pretty="%B")
-    commitAuthorEMail=$(git --no-pager log -1 --pretty="%cE")
-    commitAuthorName=$(git --no-pager log -1 --pretty="%aN")
+    commitMessage=$(git --no-pager log -2 --pretty="%B" | tail -n 1)
+    commitAuthorEMail=$(git --no-pager log -2 --pretty="%cE" | tail -n 1)
+    commitAuthorName=$(git --no-pager log -2 --pretty="%aN" | tail -n 1)
     echo "[deploy-complete]: Last commit: $commitHash by $commitAuthorName with email $commitAuthorEMail"
 
     # Remove all output, we don't want to commit binaries
