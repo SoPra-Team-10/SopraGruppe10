@@ -77,7 +77,15 @@
     
     \subsection{Akteure}
     
-    \fakt	{Benutzer}
+    \fakt	{Anwendungs-Benutzer}
+			{<Beschreibung>}
+			{<Begründung>}
+			
+	\fakt	{Spielender Benutzer}
+			{<Beschreibung>}
+			{<Begründung>}
+			
+	\fakt	{Beobachtender Benutzer}
 			{<Beschreibung>}
 			{<Begründung>}
 			
@@ -85,15 +93,7 @@
 			{<Beschreibung>}
 			{<Begründung>}
 	
-	\fakt	{Team}
-			{<Beschreibung>}
-			{<Begründung>}
-	
-	\fakt	{Akteur}
-			{<Beschreibung>}
-			{<Begründung>}
-	
-	\fakt	{Akteur}
+	\fakt	{KI}
 			{<Beschreibung>}
 			{<Begründung>}
 	
@@ -122,15 +122,15 @@
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
-	
-	\fanf	{Server [Komponente]}
+			
+	\fanf	{KI-Client [Komponente]}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 	
-	\fanf	{KI [Komponente]}
+	\fanf	{Server [Komponente]}
 			{<Beschreibung>}
 			{<Begründung>}
 			{<Abhängigkeiten>}
@@ -256,6 +256,13 @@
 			{<Prio>}
 			{<Akteure>}
 	
+	\fanf	{Spieler}
+			{<Beschreibung>}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}	
+	
 	\fanf	{Jäger [Spielertyp]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
@@ -284,7 +291,7 @@
 			{<Prio>}
 			{<Akteure>}
 	
-	\fanf	{Fanblock]}
+	\fanf	{Fans]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
@@ -360,15 +367,8 @@
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
-	
-	\fanf	{Partie-Konfiguration}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Quidditchteam-Konfiguration}
+			
+	\fanf	{Schiedsrichter}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
@@ -402,6 +402,20 @@
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
+	
+	\fanf	{Partie-Konfiguration}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+	
+	\fanf	{Quidditchteam-Konfiguration}
+			{<Beschreibung>}
+			{<Begründung>}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}	
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
@@ -525,7 +539,7 @@
 			{<Prio>}
 			{<Akteure>}
 	
-	\qanf 	{<Titel>}
+	\qanf 	{Anwendungssprache}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
@@ -533,27 +547,27 @@
 			{<Akteure>}
 	
 	\qanf 	{<Titel>}
+			{Implementierungssprache}
+			{<Begründung>}
+			{-}
+			{<Prio>}
+			{<Akteure>}
+	
+	\qanf 	{Dokumentationssprache}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
 			{<Prio>}
 			{<Akteure>}
 	
-	\qanf 	{<Titel>}
+	\qanf 	{Format für Konfigurationsdateien}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
 			{<Prio>}
 			{<Akteure>}
 	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{<Titel>}
+	\qanf 	{Netzwerkkommunikation}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
