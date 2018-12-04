@@ -3,7 +3,7 @@
 # SopraGruppe10
 
 # Fertige PDFs
- * [Meilenstein01.pdf](https://aul12.github.io/SoPra/Meilenstein01.pdf)
+ * [Meilenstein01.pdf](https://SoPra-Team-10.github.io/Uebungsblaetter/Meilenstein01.pdf)
 
 # Build Dependencies
  * Graphviz-Dot
