@@ -26,6 +26,3 @@ deploy:
     skip-cleanup: true
     keep-history: true
     script: sh deploy.sh $TRAVIS_COMMIT
-    on:
-        branch: master
-        #branch: ci-test
