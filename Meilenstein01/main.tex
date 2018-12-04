@@ -97,7 +97,7 @@
     %TODO
     \section{Fachwissen}
     \input{Aufgabe_2_Fachwissen.tex}
-    %\includepdf[pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
+    \includepdf[pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
     \section{Anforderungsdefinition}
     %TODO
     
@@ -625,7 +625,7 @@
 			{<Akteure>}
 	
 	\fanf	{Save Team [Team-Editor-View]}
-			{<Beschreibung>}
+			{Datei Speicher Dialog um die Team-Konfiguration an einem beliebigen Ort im Datei System ab zu legen.}
 			{<Begründung>}
 			{<Abhängigkeiten>}
 			{<Prio>}
@@ -649,7 +649,7 @@
 			{<Akteure>}
 	
 	\qanf 	{Continuous Integration}
-			{<Beschreibung>}
+			{In die Version-Controlling Lösung mit Hilfe einer CI automatisch jeder gepushte Commit Unit-Tests und der Statischen Codeanalyse unterzogen werden. Zudem soll eine automatisierte Code Dokumentation angestoßen werden. Bei erfolgreichem Abschließen alle Test soll zum Schluss der aktuelle Stand deployed werden.}
 			{<Begründung>}
 			{-}
 			{<Prio>}
@@ -662,29 +662,29 @@
 			{<Prio>}
 			{<Akteure>}
 	
-	\qanf 	{Qualitätssicherung}
-			{80 Prozent des Quellcodes der einzelnen Komponenten soll durch automatische Test auf Korrektheit geprüft werden}
+	\qanf 	{Unit-Tests}
+			{80 Prozent des Quellcodes der einzelnen Komponenten soll durch automatische Unit-Test auf Korrektheit und Funktion geprüft werden}
 			{<Begründung>}
 			{-}
 			{<Prio>}
 			{<Akteure>}
 	
 	\qanf 	{Docker Container}
-			{<Beschreibung>}
+			{Um die Plattformunabhängigkeit zu gewährleisten soll sowohl die Server Komponente, als auch die KI-Komponenten mit Hilfe eines Docker Container veröffentlicht werden.}
 			{<Begründung>}
 			{-}
 			{<Prio>}
 			{<Akteure>}
 	
 	\qanf 	{Dokumentation}
-			{<Beschreibung>}
+			{Alle Klassen und Methoden der Software müssen so dokumentiert sein..................}
 			{<Begründung>}
 			{-}
 			{<Prio>}
 			{<Akteure>}
 	
 	\qanf 	{Benutzerhandbuch}
-			{<Beschreibung>}
+			{Zu jeder Komponente des Projektes muss eine Benutzerhandbuchh existieren, in welchem alle Features unmissverständlich erklärt sind, sodass ein neuer Benutzer auf Basis des Benutzerhandbuches die Software bedienen kann.}
 			{<Begründung>}
 			{-}
 			{<Prio>}
@@ -712,7 +712,7 @@
 			{<Akteure>}
 	
 	\qanf 	{Format für Konfigurationsdateien}
-			{<Beschreibung>}
+			{Alle Konfigurationsdateien müssen dem \textit{JSON} Standard genügen. Des Weiteren sind alle vom Komitee festgelegten weiteren Standards einzuhalten.}
 			{<Begründung>}
 			{-}
 			{<Prio>}
@@ -732,41 +732,55 @@
 			{<Prio>}
 			{<Akteure>}
 	
-	\qanf 	{<Titel>}
+	\qanf 	{Funktionalität}
+			{Die Anwendungen müssen alle im Lastenheft als minimal Anforderungen aufgeführten Anforderungen erfüllen.}
+			{<Begründung>}
+			{-}
+			{<Prio>}
+			{<Akteure>}
+	
+	\qanf 	{Zuverlässigkeit}
+			{Nur in maximal einer von 50 Sessions, darf sich eine Anwendung komplett aufhängen.}
+			{<Begründung>}
+			{-}
+			{<Prio>}
+			{<Akteure>}
+	
+	\qanf 	{Robustheit}
+			{Die Anwendungen dürfen nicht aufgrund einer Falschen Benutzereingabe abstürzen, sondern müssen den Benutzer auf seinen Fehler hinweisen.}
+			{<Begründung>}
+			{-}
+			{<Prio>}
+			{<Akteure>}
+	
+	\qanf 	{Benutzbarkeit}
+			{Dem Endnutzer muss es möglich sein alle Komponenten des Projektes nur auf Basis des Mitgelieferten Benutzerhandbuches und den Hilfeseiten die Software ohne Einschränkungen bedienen zu können.}
+			{<Begründung>}
+			{-}
+			{<Prio>}
+			{<Akteure>}
+	
+	\qanf 	{Effizienz}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
 			{<Prio>}
 			{<Akteure>}
 	
+	\qanf 	{Kurze Ladezeiten}
+			{Systembedingte Ladezeiten der Software dürfen auf einem aktuellen Mittelklasse Computer fünf Sekunden pro geladenem Teil überschreiten.}
+			{Bei längeren Ladezeiten ist die User Experience massiv beeinträchtigt.}
+			{-}
+			{<Prio>}
+			{-}
+			
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
 			{<Prio>}
 			{<Akteure>}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
+			
 	\qanf 	{<Titel>}
 			{<Beschreibung>}
 			{<Begründung>}
