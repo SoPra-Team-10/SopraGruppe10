@@ -98,8 +98,8 @@
     \section{Kontextanalyse}
     %TODO
     \section{Fachwissen}
-    %\input{Aufgabe_2_Fachwissen.tex}
-    %\includepdf[pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
+    \input{Aufgabe_2_Fachwissen.tex}
+    \includepdf[pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
     \section{Anforderungsdefinition}    
     \subsection{Akteure}
     
@@ -190,107 +190,84 @@
 			{<Akteure>}
 	
 	\fanf	{Schussvektor}
-			{Als Schussvektor wird ein möglicher Wurf bezeichnet, um einen Torring zu treffen. Der Schussvektor geht dabei vom Mittelpunkt des Rasterfeldes, von dem geworfen wird zu dem Feld, zu dem geworfen wird gerade. Alle Rasterfelder, die dabei geschnitten werden, sind so genannte überstrichene Felder. Dies gilt aber nur für Felder, die wirklich geschnitten wurden und nicht nur an einer Ecke tangiert wurden.
-			Um einen möglichen Torschuss zu erzielen, muss der Torschussvektor mit einem Winkel unter 90 Grad auf das Feld eintreffen, andernfalls ist der Torschuss nicht möglich.}
+			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{FA4}
-			{++}
-			{<Akteure>}
-			
-	\fanf	{Entfernung}
-			{Die Entferunung ist die kleinst mögliche Anzahl an Zügen, die man braucht, um Feld A zu Feld B zu kommen, wobei man sich in alle Richtengen bewegen darf, also Vertikal, Horizontal und Diagonal. Dies entspricht allerdings nicht immer den überstrichenen Feldern -1!.}
-			{Die Entfernung ist wichtig für das Spiel, um angeben zu können, welcher Wurf am besten geeignet ist und welcher der ganzen möglichen Schussvektoren am idealsten ist von der Entfernung.}
-			{++}
+			{<Abhängigkeiten>}
+			{<Prio>}
 			{<Akteure>}
 	
 	\fanf	{Bälle}
-			{Es gibt 3 verschiedene Arten von Bällen. So existieren der Quaffel, der Klatscher und der Schnatz. Jeder Ball hat seine eigenen spezifischen Fähigkeiten und eigene Funktion, die er für das Spiel erfordert. In einem Quidditch Spiel kommen 4 Bälle vor. Davon ist einer ein Quaffel, einer ein Schnatz und zwei sind Klatscher.}
+			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{FA1}
-			{++}
+			{<Abhängigkeiten>}
+			{<Prio>}
 			{<Akteure>}
 	
 	\fanf	{Quaffel [Ball]}
-			{Der Quaffel ist ein roter Lederball, welcher dazu dient, dass das TEam punkten kann. Dies geschieht in dem der Quaffel von den Jägern durch einen der 3 Torringe geschmießen wird. Dies gibt dann 10 Punkte für das Team. Da der Quaffel selber keine Flugfähigkeiten oder andere magische Fähigkeiten hat, muss er immer von einem Jäger mitgetragen werden oder geworfen werden oder von einem Hüter gefangen werden. ein Jäger oder Hüter kann den Quaffel aufnehmen, in dem der Ball er auf das Feld zieht, auf dem der Quaffel liegt, oder wenn der Quaffel auf einem Feld zum liegen kommt, auf dem ein Jäger oder Hüter steht. Zieht ein Treiber oder Sucher auf das Feld des Quaffels oder konmmt der Quaffel auf einem der Felder zum liegen, so hopst der Quaffel auf ein zufälliges freies Nachbarfeld.}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.
-			Der Quaffel wird benötigt, dass das Team Punkte machen kann.}
-			{FA8}
-			{++}
+			{<Beschreibung>}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{<Abhängigkeiten>}
+			{<Prio>}
 			{<Akteure>}
 	
 	\fanf	{Klatscher [Ball]}
-			{Bei dem Spiel Quidditch gibt es 2 Klatscher, dies sind kleine schwarze Bälle, welcher magische Eigenschaften haben, was in dem Fall bedeutet, dass sie selber fliegen können. Das Ziel von den Klatschern ist es, die Spieler beider Teams von den Besen zu schmeißen. Dies geschieht, in dem der Klatscher sich jedes mal wenn er in der Rundenphase dran ist, einen zufälligen Spieler aussucht, welcher kein Treiber ist. Dann bewegt sich der Klatscher ein Feld auf den Spieler zu. Schafft der Klatscher es auf das selbe Feld wie der SPieler zu kommen, so wird dieser Spieler mit einer gewissen Wahrscheinkichkeit ausgenockt.}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.
-			DIe Klatscher sind dazu da um dem Spiel einen Witz zu geben, dass manche Spieler zeitweise nicht verfügbar sind.}
-			{FA8}
-			{++}
+			{<Beschreibung>}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{<Abhängigkeiten>}
+			{<Prio>}
 			{<Akteure>}
 	
 	\fanf	{Goldener Schnatz [Ball]}
-			{Der goldene Schnatz ist ein kleiner goldener Ball, welcher von dem Sucher gesucht werden muss. Der goldene Schnatz ist ebenfalls ein Ball, welcher eigenständig herumfliegt, wodurch er versucht zu vermeiden von den Suchern gefangen zu werden. Wird der Schnatz jedoch von einem der beiden Suchern gefangen, so gibt dieser 30 Punkte für das Team des Suchers, welcher den Schnatz gefangen hat und das Spiel ist beendet. In jeder Rundenphase sucht der Schnatz sich ein neues Feld aus, auf dass er sich dann eine Position weiter bewegt. Dies geschieht, in dem er den Sucher, der die geringste Entfernung hat nur berücksichtigt und dann unter allen Feldern, die eine größere Entfernung als seine aktuelle Position haben, ein zufälliges Feld weitergeht, so dass er sich von dem Sucher entfernt.}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.
-			Der Schnatz verleiht dem Spiel eine besonderheit, so dass ein Team durch das fangen des Schnatzes die Chance hat, evtl doch noch zu gewinnen. Außerdem ist somit das Spiel zu ende.}
-			{FA8}
-			{++}
+			{<Beschreibung>}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{<Abhängigkeiten>}
+			{<Prio>}
 			{<Akteure>}
 	
 	\fanf	{Besen}
-			{Die Besen sind essentiell für das Spiel, da alle 7 Spieler auf den Besen fliegen müssen. Es gibt im Fall von \textit{Fantastic Feasts}  verschiedene Besenmodelle, welche jeweils unterschiedliche Eigenschaften haben. Dies zeichnet sich dadurch aus, dass die Besen unterschiedliche Wahrscheinlichkeiten haben, mit denen der Spieler des Besens noch ein zweites Feld sich weiter bewegen darf. Dies bedeutet, je besser der Besen ist, desto wahrscheinlicher ist es, dass der Spieler ein zweites Feld weiter darf.}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.
-			Die Besen sind wichtig, da die Spieler sich damit fort bewegen und die Besen auch noch Eigenschaften mitbringen, welche für das Spiel wichtig sind.}
-			{FA1}
-			{++}
+			{<Beschreibung>}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{<Abhängigkeiten>}
+			{<Prio>}
 			{<Akteure>}
-			
-	%TODO Wahrscheinlichkeiten müssen festgelegt werden!
+	
 	\fanf	{Zauberfauch [Besen]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
-			
-	%TODO	Wahrscheinlichkeiten müssen festgelegt werden!
+	
 	\fanf	{Sauberwisch 11 [Besen]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
-			
-	%TODO	Wahrscheinlichkeiten müssen festgelegt werden!
+	
 	\fanf	{Komet 2-60 [Besen]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
-			
-	%TODO	Wahrscheinlichkeiten müssen festgelegt werden!
+	
 	\fanf	{Nimbus 2001  [Besen]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
-			
-	%TODO	Wahrscheinlichkeiten müssen festgelegt werden!
+	
 	\fanf	{Feuerblitz [Besen]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
-			
-	\fanf	{Teams}
-			{An einem Spiel sind 2 Teams beteiligt, die gegeneinander spielen. Diese beiden Teams haben einen Namen, ein Team-Motto, ein Logo und eine Hauptfarbe für das Trickot, aber auch eine Ersatzfarbe, falls das andere Team eine ähnliche Farbe hat, gegen das gespielt wird. Jedes Team besteht zudem aus 7 Spieler, wovon einer ein Sucher ist, einer ein Hüter, 2 sind sogenannte Treiber und die restlichen 3 sind Jäger.}
-			{Die Teams sind notwendig, da sie der Hauptbestandteil sind, in dem sich alles vereint.}
-			{FA1, FA19}
-			{++}
-			{<Akteure>}
 	
 	\fanf	{Spieler}
-			{<Begründung>}
+			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
@@ -665,8 +642,8 @@
 			{<Akteure>}
 	
 	\qanf 	{Version-Controlling}
-			{Beim Verwalten des Quellcodes}
-			{<Begründung>}
+			{Beim Verwalten des Quellcodes soll ein Git basiertes Version-Controlling Werkzeug (\textit{GitHub / GitLab}) verwendet werden.}
+			{Erl}
 			{-}
 			{++}
 			{-}
@@ -686,7 +663,7 @@
 			{<Akteure>}
 	
 	\qanf 	{Automatisierte Unit-Tests}
-			{80 Prozent des Quellcodes der einzelnen Komponenten soll durch automatische Unit-Test auf Korrektheit und Funktion geprüft werden}
+			{50 Prozent des Quellcodes der einzelnen Komponenten soll durch automatische Unit-Test auf Korrektheit und Funktion geprüft werden}
 			{Da alle Komponenten möglichst fehlerfrei funktionieren müssen ist es unerlässlich die einzelnen Teil der Software ständig auf ihre Funktionalität zu prüfen, die ist nur effizient möglich wenn automatisiert Test durchgeführt werden, damit Fehler frühzeitig erkannt werden.}
 			{-}
 			{+}
@@ -700,45 +677,52 @@
 			{<Akteure>}
 	
 	\qanf 	{Dokumentation}
-			{Alle Klassen und Methoden der Software müssen so dokumentiert werden. Dabei sollen zumindest alle Übergabeparameter und Rückgabewerte genau spezifiziert werden. Zudem ist sind komplexe Algorithmen detailliert zu dokumentieren}
-			{<Begründung>}
+			{Alle Klassen und Methoden der Software müssen dokumentiert werden. Dabei sollen mindestens alle Übergabeparameter und Rückgabewerte genau spezifiziert werden. Zudem ist sind komplexe Algorithmen detailliert zu dokumentieren.}
+			{Gut dokumentierte Software vereinfacht die Fehlersuche, die Wartung und das hinzufügen von neuen Features.}
 			{-}
 			{+}
 			{<Akteure>}
 	
 	\qanf 	{Benutzerhandbuch}
 			{Zu jeder Komponente des Projektes muss eine Benutzerhandbuchh existieren, in welchem alle Features unmissverständlich erklärt sind, sodass ein neuer Benutzer auf Basis des Benutzerhandbuches die Software bedienen kann.}
-			{<Begründung>}
+			{Das Benutzerhandbuch wird im Lastenheft gefordert.}
 			{-}
-			{+-}
+			{-+}
 			{<Akteure>}
 	
 	\qanf 	{Anwendungssprache}
 			{Das User-Interface der Anwendungen soll in deutscher Sprache gestaltet werden.}
 			{Die Anwendungssprache ist im Lastenheft vorgegeben.}
 			{-}
-			{<Prio>}
+			{-+}
 			{<Akteure>}
 	
-	\qanf 	{Programmiersprache}
-			{Implementierungssprache}
-			{<Begründung>}
+	\qanf 	{Implementierungssprache}
+			{Die Implementierung der Anwendungen soll in englischer Sprache gehalten sein.}
+			{Die Implementierungssprache ist im Lastenheft vorgegeben.}
 			{-}
-			{<Prio>}
+			{-+}
 			{<Akteure>}
 	
 	\qanf 	{Dokumentationssprache}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Die Dokumentation der Software kann in englischer oder deutscher Sprache gestaltet sein.}
+			{Die Dokumentationssprache ist im Lastenheft vorgegeben.}
 			{-}
-			{<Prio>}
+			{-+}
 			{<Akteure>}
+	
+	\qanf 	{Programmiersprache}
+			{Die Software soll in einer der folgenden Programmiersprachen geschrieben sein: Java, C++, C\# Die entgültig verwendete Sprache kann jedoch von Komponente zu Komponente variieren, müss aber mit dem Kunden abgesprochen werden.}
+			{Es soll eine Programmiersprache mit großem Funktionsumfang verwendet werden, welche von allen Teammitgliedern beherrscht wird.}
+			{-}
+			{++}
+			{<Akteure>}	
 	
 	\qanf 	{Format für Konfigurationsdateien}
 			{Alle Konfigurationsdateien müssen dem \textit{JSON} Standard genügen. Des Weiteren sind alle vom Komitee festgelegten weiteren Standards einzuhalten.}
-			{<Begründung>}
+			{Das Konfigurationsformat ist im Lastenheft vorgegeben.}
 			{-}
-			{<Prio>}
+			{+}
 			{<Akteure>}
 	
 	\qanf 	{Netzwerkkommunikation}
@@ -756,10 +740,10 @@
 			{<Akteure>}
 	
 	\qanf 	{Funktionalität}
-			{Die Anwendungen müssen alle im Lastenheft als minimal Anforderungen aufgeführten Anforderungen erfüllen.}
-			{<Begründung>}
+			{Die Anwendungen müssen alle im Lastenheft als Minimalanforderungen aufgeführten Anforderungen erfüllen.}
+			{Um die Abnahmen zu bestehen müssen die Minimalanforderungen erfüllt werden.}
 			{-}
-			{<Prio>}
+			{++}
 			{<Akteure>}
 	
 	\qanf 	{Zuverlässigkeit}
@@ -809,14 +793,6 @@
 			{<Begründung>}
 			{-}
 			{<Prio>}
-			{<Akteure>}
-			
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
+			{<Akteure>}	
 	
 \end{document}
