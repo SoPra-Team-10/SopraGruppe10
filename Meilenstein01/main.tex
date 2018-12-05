@@ -50,7 +50,8 @@
 \newcommand{\anf}[7] {
     \begin{table}[H]
         \centering
-        \begin{tabular}{p{3.2cm}|p{9.8cm}}
+        \begin{tabular}{|p{3.2cm}|p{9.8cm}|}
+        	\hline
             \textbf{ID:} & \textbf{#1} \\ \hline
             \textbf{Titel:} & #2 \\ \hline
             \textbf{Beschreibung:} & #3 \\ \hline
@@ -76,7 +77,8 @@
 \newcommand{\akt}[4] {
     \begin{table}[H]
         \centering
-        \begin{tabular}{p{3cm}|p{10cm}}
+        \begin{tabular}{|p{3cm}|p{10cm}|}
+        	\hline
             \textbf{ID:} & \textbf{#1} \\ \hline
             \textbf{Titel:} & #2 \\ \hline
             \textbf{Beschreibung:} & #3 \\ \hline
@@ -96,60 +98,58 @@
     \section{Kontextanalyse}
     %TODO
     \section{Fachwissen}
-    \input{Aufgabe_2_Fachwissen.tex}
+    %\input{Aufgabe_2_Fachwissen.tex}
     %\includepdf[pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
-    \section{Anforderungsdefinition}
-    %TODO
-    
+    \section{Anforderungsdefinition}    
     \subsection{Akteure}
     
-    \fakt	{Anwendungsbenutzer}
-			{Menschlicher Benutzer, der eine Anwendungen bedient.}
-			{<Rolle>}
+    \fakt	{Nutzer}
+			{Menschlicher Nutzer, der eine Anwendungen bedient.}
+			{Ein Mensch, welcher entweder als Spielender Nutzer Aktiv an einem Spiel teilnimmt oder als Gas passiv einem Spiel zusieht oder den Team-Konfigurator benutzt um ein Team zu erstellen oder an zu passen.}
 			
-	\fakt	{Spielender Benutzer}
-			{Anwendungsbenutzer, der mit der Client-Anwendung am tatsächlichen Spielgeschehen teilnimmt.}
-			{<Rolle>}
+	\fakt	{Spielender Nutzer}
+			{Nimmt aktiv Einfluss auf das Spielgeschehen.}
+			{Entweder Nutzer oder CI. Nimmt aktiv Einfluss auf das Spielgeschehen indem er Züge vorgibt, wenn er an der Reihe ist. Muss vor Spielbeginn eine Konfiguration für sein Team angeben.}
 			
-	\fakt	{Anwendungsbenutzer, der mit der Client-Anwendung ein laufendes Spiel beobachtet.}
-			{<Beschreibung>}
-			{<Rolle>}
-			
+	\fakt	{Gast}
+			{Beobachtet eine Partie als Außenstehender.}
+			{Nutzer, der mit der Client-Anwendung ein laufendes Spiel beobachtet, jedoch keinen Einfluss auf das Spielgeschehen nehmen kann.}
+		
 	\fakt	{Systemadministrator}
 			{Anwendungsnutzer mit Zusatzqualifikation um Server zu verwalten.}
 			{Der Systemadministrator hat zugriff auf die Server Anwendung. Er ist dafür verantwortlich eine Instanz der Server Anwendung zu starten und zu betreuen. Zudem hat er Zugriff auf die Partie-Konfiguration und kann diese bei bedarf verändern.}
 	
 	\fakt	{KI}
-			{Spielender Benutzer, welcher von einem Computerprogramm gesteuert wird.}
-			{<Rolle>}
+			{Vom Computer Gesteuerter Spielender Nutzer.}
+			{Spielender Nutzer dessen Entscheidungen und Züge auf einem Computer von der KI-Client Software getroffen werden.}
 	
 	\fakt	{Kunde}
 			{SoPra-Tutor}
-			{<Rolle>}
+			{Der Kunde kann Anforderungen und zusätzliche Wünsche an das Produkt stellen. Er entscheidet schlussendlich auch darüber, ob das Endprodukt den Anforderungen genügt.}
 	
-	\fakt	{Client [Komponente]}
-			{Anwendung, mit der ein Anwendungsbenutzer aktiv an einem Spiel teilnehmen kann oder ein Spiel beobachten kann.}
-			{<Rolle>}
+	\fakt	{Client}
+			{Software eines Nutzers}
+			{Mit Hilfe der Client Software kann der Nutzer entweder als spielender Nutzer oder als Gast einem von einem Server zu Verfügung gestellten Spiel beitreten.}
 	
-	\fakt	{KI-Client [Komponente]}
+	\fakt	{KI-Client}
 			{Anwendung, die als KI an einem Spiel teilnimmt.}
 			{<Rolle>}
 	
-	\fakt	{Server [Komponente]}
-			{Anwendung, auf der die Spiellogik zur Verfügung gestellt wird und mit der sich Clients über das Netzwerk verbinden.}
-			{<Rolle>}
+	\fakt	{Server}
+			{Zentraler Computer mit spezieller Software zu dem alle am beteiligten Clients ein Verbindung aufbauen.}
+			{Auf dem Server läuft die eigentliche Spiellogik. ER fungiert dabei als Bindeglied zwischen den am Spiel beteiligten Clients und stellt für diese alle benötigten Informationen, wie etwas die Spielfeldkonfiguration oder die Züge des Gegners bereit.}
 			
-	\fakt	{Quidditchteam-Editor [Komponente]}
-			{Anwendung, mit der ein Quidditchteam-Konfiguration erstellt und bearbeitet werden kann.}
-			{<Rolle>}
+	\fakt	{Quidditchteam-Editor}
+			{Editor für die Team Konfiguration.}
+			{Mit dieser Anwendung kann ein Nutzer sein für eine Partie gewünschtes Quiddichteam im Rahmen bestimmter Grenzen beliebig konfigurieren.}
 	
 	\fakt 	{Team}
-			{<Beschreibung>}
+			{Einheit aus Spielern die einem spielenden Nutzer zugeordnet sind.}
 			{<Rolle>}
 	
 	\fakt 	{Schiedsrichter}
-			{<Beschreibung>}
-			{<Rolle>}
+			{Ahndet Fouls.}
+			{Der Schiedsrichter wird durch eine Software Repräsentiert die mit Hilfe eines Zufallsgenerator entscheidet ob ein Foul geahndet wird oder nicht.}
 	
 	
 	\subsection{Funktionale Anforderungen (allgemein)}
@@ -658,14 +658,14 @@
 	\subsection{Nicht funktionale Anforderungen}
 	
 	\qanf 	{Plattformunabhängigkeit}
-			{Der Spielclient soll auf mindestens einer gängigen Computerbetriebssystem-Plattform (z.B. Linux, Windows) uneingeschränkt benutzbar sein. Des weiteren soll die Server- und die KI-Komponente auf mindestens zwei gängigen Computerbetriebssystem-Plattformen (z.B. Linux, Windows) uneingeschränkt benutzbar sein.}
+			{Der Client und der Team-Konfigurator soll auf mindestens einer gängigen Computerbetriebssystem-Plattform (z.B. Linux, Windows) uneingeschränkt benutzbar sein. Des weiteren soll die Serveranwendung und der KI-Client auf mindestens zwei gängigen Computerbetriebssystem-Plattformen (z.B. Linux, Windows) uneingeschränkt benutzbar sein.}
 			{Die Plattformunabhängigkeit ist im Lastenheft gefordert.}
 			{<Abhängigkeiten>}
 			{++}
 			{<Akteure>}
 	
 	\qanf 	{Version-Controlling}
-			{Der Quellcodes soll mit Hilfe eines Git basierten Version-Controlling Tool verwaltet werden.}
+			{Beim Verwalten des Quellcodes}
 			{<Begründung>}
 			{-}
 			{++}
