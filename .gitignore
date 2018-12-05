@@ -4,6 +4,11 @@
 *.fls
 *.log
 *.pdf
+*.bib
+*.out
+*.run.xml
+*.toc
+
 
 ### Eclipse ###
 
