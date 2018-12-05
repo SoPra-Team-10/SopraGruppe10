@@ -122,9 +122,11 @@ digraph G {
     Quaffel [
         label = "Quaffel|PunktGewinn : Integer"
     ]
+
     Klatscher [
         label = "Klatscher|"
     ]
+
     GoldenerSchnatz [
         label = "GoldenerSchnatz|PunktGewinn : Integer"
     ]
