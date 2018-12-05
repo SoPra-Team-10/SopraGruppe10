@@ -97,7 +97,7 @@
     %TODO
     \section{Fachwissen}
     \input{Aufgabe_2_Fachwissen.tex}
-    \includepdf[pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
+    %\includepdf[pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
     \section{Anforderungsdefinition}
     %TODO
     
@@ -155,38 +155,38 @@
 	\subsection{Funktionale Anforderungen (allgemein)}
 	
 	\fanf	{Quidditch-Spielfeld}
-			{<Beschreibung>}
+			{Das Quidditch-Spielfeld ist eine Ovale Form, welche in ein Raster von 17x13 quadratischen Feldern eingepasst ist. Auf diesem Feld finden alle Spielhandlungen statt, welche während dem Spiel getätigt werden können. Auf dem Spielfeld gibt es noch ein Mittelkreis und an den jeweils gegenüberliegenden Enden noch Hüterzonen.}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+			{++}
+			{\textbf{ALLE?}}
 	
 	\fanf	{Mittelkreis}
-			{<Beschreibung>}
+			{Der Mittelkreis ist ein Bereich auf dem Quidditch-Spielfeld, welcher in der Mitte angeordnet ist und aus 3x3 quadratischen Kacheln besteht. In dem Mittelkreis befindet sich das Mittelfeld, welches die mittlere Kachel des Mittelkreises ist und durch ein \textit{M} gekennzeichnet ist.}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{FA1}
+			{++}
 			{<Akteure>}
 	
 	\fanf	{Mittelfeld}
-			{<Beschreibung>}
+			{Das Mittelfeld stellt den mittleren Punkt des Mittelkreises dar, welcher im Zentrum des Quidditch-Spielfeldes ist.}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{FA2}
+			{++}
 			{<Akteure>}
 	
 	\fanf	{Hüterzone}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{Die Hüterzonen sind jeweils an den jeweils gegenüberliegenden Seiten des Quidditch-Spielfeldes. Die Hüterzonen beinhalten jeweils 3 Torringe und sind somit die Zonen in den die Teams Punkten können. Die Hüterzonen sind in einer Ovalen Form, welche 11 quadratische Felder hoch ist und 5 quadratische Felder breit ist an den jeweilgen Maximalen Punkten.}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor. Außerdem beinhaltet diese Zone die Torringe, durch welche die Teams Punkte machen können.}
+			{FA1}
+			{++}
 			{<Akteure>}
 	
 	\fanf	{Torring}
-			{<Beschreibung>}
+			{Die Torringe sind in der Hüterzone angebracht und dazu da, dass die Teams jeweils Punkten können. Die 3 torringe werden jeweils von einem Torhüter bewacht, welcher verhindern kann, dass das gegnerische Team ein Tor schiessen kann.}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{FA4}
+			{++}
 			{<Akteure>}
 	
 	\fanf	{Schussvektor}
