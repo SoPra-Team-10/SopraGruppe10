@@ -10,3 +10,25 @@
  * Gnu-Make
  * latexmk
  * pdflatex
+
+ # Graphviz on Windows
+1. Graphviz runterladen ([Download link](https://graphviz.gitlab.io/download/))
+2. Graphviz installieren (am besten in default location, is ja nich so groß)
+<a name="SysPath"></a>
+3. Graphviz zu Systempfad hinzufügen:
+    * Windows+R, dann `"sysdm.cpl"` eingeben
+    * Tab "Erweitert" -> Umgebungsvariablen
+    * Unter "Systemvariablen" -> Doppelklick auf Path
+    * Neu und dann Pfad zur binary also z.B. `"C:\Program Files (x86)\Graphviz2.38\bin"`
+4. Jetzt sollte man `.dot`-Files über die Kommandozeile kompillieren können: 
+    >`dot -Tpdf -o <file name> <outputfile>`
+    
+    Hinweis: Das outputfile sollte die Endung `.pdf` haben.
+
+# Make on Windows
+1. Make runterladen und installieren ([Download link](http://gnuwin32.sourceforge.net/packages/make.htm))
+2. Pathvariablen setzen (siehe [hier](#SysPath))
+3. Jetzt kann Make mit
+    >`make <target>`
+
+    aus der Kommandozeile aufgerufen werden (geht auch mit git bash)
