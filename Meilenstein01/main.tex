@@ -636,17 +636,17 @@
 	
 	\qanf 	{Plattformunabhängigkeit}
 			{Der Spielclient soll auf mindestens einer gängigen Computerbetriebssystem-Plattform (z.B. Linux, Windows) uneingeschränkt benutzbar sein. Des weiteren soll die Server- und die KI-Komponente auf mindestens zwei gängigen Computerbetriebssystem-Plattformen (z.B. Linux, Windows) uneingeschränkt benutzbar sein.}
-			{<Begründung>}
+			{Die Plattformunabhängigkeit ist im Lastenheft gefordert.}
 			{<Abhängigkeiten>}
-			{<Prio>}
+			{++}
 			{<Akteure>}
 	
 	\qanf 	{Version-Controlling}
-			{Verwaltung und Version-Controlling des Quellcodes mit Hilfe eines Git basierten Version-Controlling Tool.}
+			{Der Quellcodes soll mit Hilfe eines Git basierten Version-Controlling Tool verwaltet werden.}
 			{<Begründung>}
 			{-}
-			{<Prio>}
-			{<Akteure>}
+			{++}
+			{-}
 	
 	\qanf 	{Continuous Integration}
 			{In die Version-Controlling Lösung mit Hilfe einer CI automatisch jeder gepushte Commit Unit-Tests und der Statischen Codeanalyse unterzogen werden. Zudem soll eine automatisierte Code Dokumentation angestoßen werden. Bei erfolgreichem Abschließen alle Test soll zum Schluss der aktuelle Stand deployed werden.}
@@ -657,42 +657,42 @@
 	
 	\qanf 	{Statische Codeanalyse}
 			{Mit Hilfe des Tools 'SonarQube' bzw. 'SonarCloud' soll der gesamt Quellcode einer statischen Analyse unterzogen werden. Dabei darf die technische Codequalität von diesen Tool nicht schlechter als 'B' bewertet werden.}
-			{<Begründung>}
+			{}
 			{-}
 			{<Prio>}
 			{<Akteure>}
 	
-	\qanf 	{Unit-Tests}
+	\qanf 	{Automatisierte Unit-Tests}
 			{80 Prozent des Quellcodes der einzelnen Komponenten soll durch automatische Unit-Test auf Korrektheit und Funktion geprüft werden}
-			{<Begründung>}
+			{Da alle Komponenten möglichst fehlerfrei funktionieren müssen ist es unerlässlich die einzelnen Teil der Software ständig auf ihre Funktionalität zu prüfen, die ist nur effizient möglich wenn automatisiert Test durchgeführt werden, damit Fehler frühzeitig erkannt werden.}
 			{-}
-			{<Prio>}
+			{+}
 			{<Akteure>}
 	
 	\qanf 	{Docker Container}
 			{Um die Plattformunabhängigkeit zu gewährleisten soll sowohl die Server Komponente, als auch die KI-Komponenten mit Hilfe eines Docker Container veröffentlicht werden.}
-			{<Begründung>}
+			{Docker Container bieten den Vorteil, dass die Software nicht auf jedem Zielsystem neu compiliert werden muss sondern, sobald sie auf einem System in einem Docker-Container lauffähig gemacht wurde lässt sich dieser Container in der Regel auf diversen anderen Zielsystemen ausführen.}
 			{-}
-			{<Prio>}
+			{+}
 			{<Akteure>}
 	
 	\qanf 	{Dokumentation}
-			{Alle Klassen und Methoden der Software müssen so dokumentiert sein..................}
+			{Alle Klassen und Methoden der Software müssen so dokumentiert werden. Dabei sollen zumindest alle Übergabeparameter und Rückgabewerte genau spezifiziert werden. Zudem ist sind komplexe Algorithmen detailliert zu dokumentieren}
 			{<Begründung>}
 			{-}
-			{<Prio>}
+			{+}
 			{<Akteure>}
 	
 	\qanf 	{Benutzerhandbuch}
 			{Zu jeder Komponente des Projektes muss eine Benutzerhandbuchh existieren, in welchem alle Features unmissverständlich erklärt sind, sodass ein neuer Benutzer auf Basis des Benutzerhandbuches die Software bedienen kann.}
 			{<Begründung>}
 			{-}
-			{<Prio>}
+			{+-}
 			{<Akteure>}
 	
 	\qanf 	{Anwendungssprache}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Das User-Interface der Anwendungen soll in deutscher Sprache gestaltet werden.}
+			{Die Anwendungssprache ist im Lastenheft vorgegeben.}
 			{-}
 			{<Prio>}
 			{<Akteure>}
@@ -719,17 +719,17 @@
 			{<Akteure>}
 	
 	\qanf 	{Netzwerkkommunikation}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Die Netzwerkkommunikation zwischen Client und Server soll über sogenannte \textit{Web-Socket-Sessions} realisiert werden, sodass Client und Server ortsunabhängig von einander betrieben werden können.}
+			{Die Netzwerkkommunikation muss gewissen Standards genügen, damit Client- und Serveranwendungen von unterschiedlichen Entwicklerteams mit einander kompatibel sind und Client und Server ortsunabhängig von einander betrieben werden können.}
 			{-}
 			{<Prio>}
 			{<Akteure>}
 	
-	\qanf 	{Rundenspiel}
-			{<Beschreibung>}
-			{<Begründung>}
+	\qanf 	{Log-Dateien}
+			{Log-Dateien anlegen um unter anderem den Spielverlauf zu Speichern und eventuelle Fehlfunktionen der Software fest zu halten.}
+			{Log-Dateien können unter anderen die Wartung der Software erleichtern und für zusätzliche Features, wie eine Statistik über den Spielverlauf verwendet werden.}
 			{-}
-			{<Prio>}
+			{-}
 			{<Akteure>}
 	
 	\qanf 	{Funktionalität}
@@ -741,37 +741,44 @@
 	
 	\qanf 	{Zuverlässigkeit}
 			{Nur in maximal einer von 50 Sessions, darf sich eine Anwendung komplett aufhängen.}
-			{<Begründung>}
+			{Durch zu häufiges Abstürzen der Software ist das Benutzererlebnis massiv beeinträchtigt.}
 			{-}
-			{<Prio>}
+			{+}
 			{<Akteure>}
 	
 	\qanf 	{Robustheit}
 			{Die Anwendungen dürfen nicht aufgrund einer Falschen Benutzereingabe abstürzen, sondern müssen den Benutzer auf seinen Fehler hinweisen.}
-			{<Begründung>}
+			{Um das Benutzererlebnis nicht zu beeinträchtigen und keine Sicherheitslücken zu verursachen ist es notwendig, dass die Funktion der Software nicht durch fehlerhafte Benutzereingaben beeinträchtigt wird.}
 			{-}
-			{<Prio>}
+			{++}
 			{<Akteure>}
 	
 	\qanf 	{Benutzbarkeit}
 			{Dem Endnutzer muss es möglich sein alle Komponenten des Projektes nur auf Basis des Mitgelieferten Benutzerhandbuches und den Hilfeseiten die Software ohne Einschränkungen bedienen zu können.}
-			{<Begründung>}
+			{Wenn es für die Endnutzer der Software zu kompliziert ist die Software zu Benutzen, dann ist das Benutzererlebnis erheblich gestört und die Software wird nicht Benutzt werden, da die Endbenutzer unzufrieden sind.}
 			{-}
-			{<Prio>}
+			{+}
+			{<Akteure>}
+			
+	\qanf 	{Wartbarkeit}
+			{Die Software muss so aufgebaut sein, dass einzelne Teilstücke bei Bedarf ohne Umbauten der übrigen Software ersetzbar sind.}
+			{Im Falle einer Fehlfunktion in einem Teilstück der Software muss diese einfach austauschbar sein um den Fehler schnellst möglich beheben zu können. Zudem sollte das Hinzufügen weiterer Features möglich sein um das Produkt stetig weiter entwickeln zu können.}
+			{-}
+			{-+}
 			{<Akteure>}
 	
 	\qanf 	{Effizienz}
 			{<Beschreibung>}
 			{<Begründung>}
 			{-}
-			{<Prio>}
+			{-}
 			{<Akteure>}
 	
 	\qanf 	{Kurze Ladezeiten}
 			{Systembedingte Ladezeiten der Software dürfen auf einem aktuellen Mittelklasse Computer fünf Sekunden pro geladenem Teil überschreiten.}
-			{Bei längeren Ladezeiten ist die User Experience massiv beeinträchtigt.}
+			{Bei längeren Ladezeiten ist das Benutzererlebnis massiv beeinträchtigt.}
 			{-}
-			{<Prio>}
+			{-+}
 			{-}
 			
 	\qanf 	{<Titel>}
