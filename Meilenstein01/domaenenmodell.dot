@@ -14,72 +14,173 @@ digraph G {
         arrowhead = "onormal"
     ]
 
-    Feld [
-        label = "{Feld||}"
+    Spielfeld [
+        label = "{Spielfeld|Zellen : Zelle[193]\l}"
+    ]
+
+    Zelle [
+        label = "{Zelle|PositionX : Integer\lPositionY : Integer\l}"
+    ]
+
+    Torring [
+        label = "{Torring|}"
+    ]
+
+    ZentrumsZelle [
+        label = "{ZentrumsZelle|}"
+    ]
+
+    Hueterzelle [
+        label = "{Hüterzelle|}"
+    ]
+
+    StandardZelle [
+        label = "{StandardZelle|}"
+    ]
+
+    Hueterzone [
+        label = "{Hüterzone|}"
+    ]
+
+    Zentrum [
+        label = "{Zentrum|}"
+    ]
+
+    Torring -> Zelle
+    ZentrumsZelle -> Zelle
+    Hueterzelle -> Zelle
+    StandardZelle -> Zelle
+
+    Hueterzelle -> Hueterzone [
+        arrowhead = "odiamond"
+        headlabel = "1"
+        taillabel = "36"
+    ]
+
+    Torring -> Hueterzone [
+        arrowhead = "odiamond"
+        headlabel = "1"
+        taillabel = "3"
+    ]
+
+    ZentrumsZelle -> Zentrum [
+        arrowhead = "odiamond"
+        headlabel = "1"
+        taillabel = "9"
+    ]   
+
+    Hueterzone -> Spielfeld [
+        arrowhead = "odiamond"
+        headlabel = "1"
+        taillabel = "2"
+    ]
+
+    Zentrum -> Spielfeld [
+        arrowhead = "odiamond"
+        headlabel = "1"
+        taillabel = "1"
+    ]
+
+    StandardZelle -> Spielfeld [
+        arrowhead = "odiamond"
+        headlabel = "1"
+        taillabel = "106"
     ]
 
     Schussvektor [
-        label = "{Schussvektor|+ start : Point\l+ ziel : Point\l|+ getEntfernung() : Integer\l+ getÜberstricheneFelder() : Integer\l}"
+        label = "{Schussvektor|Start : Zelle\lZiel : Zelle\lEntfernung : Integer\lÜberstricheneSpielFelder : Integer\l}"
+    ]
+
+    Torschussvektor [
+        label = "{Torschussvektor|}"
+    ]
+
+    Torschussvektor -> Schussvektor
+
+    Wurf [
+        label = "{Wurf|WurfSchussvektor: Schussvektor\lWurfWahrscheinlichkeit : Real\l}"
+    ]
+
+    Schussvektor -> Wurf [
+        arrowhead = "odiamond";
+        headlabel = "0..*"
+        taillabel = "2"
+    ]
+
+    Zelle -> Schussvektor [
+        arrowhead = "odiamond";
+        headlabel = "0..*"
+        taillabel = "2"
     ]
 
     Ball [
-        label = "{Ball||}"
+        label = "{Ball|Position: Zelle\l}"
     ]
 
     Quaffel [
-        label = "{Quaffel||}"
+        label = "{Quaffel|PunktGewinn : Integer}"
     ]
     Klatscher [
-        label = "{Klatscher||}"
+        label = "{Klatscher|}"
     ]
     GoldenerSchnatz [
-        label = "{GoldenerSchnatz||}"
+        label = "{GoldenerSchnatz|PunktGewinn : Integer}"
     ]
 
     Quaffel -> Ball
     Klatscher -> Ball
     GoldenerSchnatz -> Ball
 
-    Quaffel -> Feld [
+    Quaffel -> Spielfeld [
         arrowhead = "diamond"
         headlabel = "0..*"
         taillabel = "1"
     ]
 
-    Klatscher -> Feld [
+    Klatscher -> Spielfeld [
         arrowhead = "diamond"
         headlabel = "0..*"
         taillabel = "2"
     ]
 
-    GoldenerSchnatz -> Feld [
+    GoldenerSchnatz -> Spielfeld [
         arrowhead = "diamond"
         headlabel = "0..*"
         taillabel = "1"
     ]
 
     Besen [
-        label = "{Besen||}"
+        label = "{Besen|Rang : Real}"
+    ]
+
+    BesenAnnotation [
+        label = "Rang ist proportional zur\nWahrscheinlichkeit eine zusätzliche\nBewegung ausführen zu dürfen"
+        shape = "note"
+    ]
+
+    BesenAnnotation -> Besen [
+        arrowhead = "none"
+        style = "dotted"
     ]
 
     Zunderfauch [
-        label = "{Zunderfauch||}"
+        label = "{Zunderfauch|}"
     ]
 
     Sauberwisch11 [
-        label = "{Sauberwisch11||}"
+        label = "{Sauberwisch11|}"
     ]
 
     Komet2_60 [
-        label = "{Komet2_60||}"
+        label = "{Komet2_60|}"
     ]
 
     Nimbus2001 [
-        label = "{Nimbus2001||}"
+        label = "{Nimbus2001|}"
     ]
 
     Feuerblitz [
-        label = "{Feuerblitz||}"
+        label = "{Feuerblitz|}"
     ]
 
     Zunderfauch -> Besen
@@ -89,101 +190,138 @@ digraph G {
     Feuerblitz -> Besen
 
     Team [
-        label = "{Team|name : String\lmotto: String\llogo : Image\lmainColor : color\lsecondaryColor : color\l|}"
+        label = "{Team|Name : String\lMotto: String\lLogo : Image\lPrimärFarbe: Color\lSekundärFarbe: Color\l}"
     ]
 
-    Player [
-        label = "{Player|type: PlayerType\lname : String\lgender : GenderType\l|}"
+    TeamAnn [
+        label = "Maximal 4 Spieler eines Geschlechts"
+        shape = "note"
     ]
 
-    PlayerType [
-        label = "{\<\<enumeration\>\>\nPlayerType|JAEGER\lTREIBER\lHUETER\lSUCHER\l}"
+    TeamAnn -> Team [
+        arrowhead = "none"
+        style = "dotted"
     ]
 
-    GenderType [
-        label = "{\<\<enumeration\>\>GenderType|MALE\lFEMALE\lOTHER\l}"
+    Spieler [
+        label = "{Spieler|Typ: SpielerTyp\lName : String\lGeschlecht : \{männlich, weiblich\}\l}"
     ]
 
-    Player -> Team [
+    Jaeger [
+        label = "{Jäger|}"
+    ]
+
+    Treiber [
+        label = "{Treiber|}"
+    ]
+    Hueter [
+        label = "{Hüter|}"
+    ]
+    Sucher [
+        label = "{Sucher|}"
+    ]
+
+    Jaeger -> Spieler
+    Treiber -> Spieler
+    Hueter -> Spieler
+    Sucher -> Spieler
+
+    Jaeger -> Team [
         arrowhead = "diamond"
         headlabel = "0..*"
-        taillabel = "7"
+        taillabel = "3"
     ]
-    PlayerType -> Player [
+    Treiber -> Team [
+        arrowhead = "diamond"
+        headlabel = "0..*"
+        taillabel = "2"
+    ]
+    Hueter -> Team [
         arrowhead = "diamond"
         headlabel = "0..*"
         taillabel = "1"
     ]
-    GenderType -> Player [
+    Sucher -> Team [
         arrowhead = "diamond"
         headlabel = "0..*"
         taillabel = "1"
     ]
-    Player -> Besen [
+    Spieler -> Besen [
         arrowhead = "diamond"
-        headlabel = "0..*"
+        headlabel = "1"
         taillabel = "1"
     ]
 
-    Team -> Feld [
+    Team -> Spielfeld [
         arrowhead = "diamond"
         headlabel = "0..*"
         taillabel = "2"
     ]
 
-    Creature [
-        label = "{Creature||}"
+
+    Fan [
+        label = "{Fan|Bestrafungswahrscheinlichekeit : Real\l}"
     ]
 
     Elf [
-        label = "{Elf||}"
+        label = "{Elf|}"
     ]
 
     Kobold [
-        label = "{Kobold||}"
+        label = "{Kobold|}"
     ]
 
     Troll [
-        label = "{Troll||}"
+        label = "{Troll|}"
     ]
 
     Niffler [
-        label = "{Niffler||}"
+        label = "{Niffler|}"
     ]
 
-    Elf -> Creature
-    Kobold -> Creature
-    Troll -> Creature
-    Niffler -> Creature
+    Elf -> Fan
+    Kobold -> Fan
+    Troll -> Fan
+    Niffler -> Fan
 
-    Creature -> Team [
+    Fan -> Team [
         arrowhead = "diamond"
         headlabel = "0..*"
         taillabel = "0..7"
     ]
 
+    FanAnn [
+        label = "Jede der vier Rassen muss\nmindestens einmal pro Teamvorkommen"
+        shape = "note"
+    ]
+
+    FanAnn -> Fan [
+        arrowhead = "none"
+        style = "dotted"
+    ]
+
     Foul [
-        label = "{Foul||}"
+        label = "{Foul|Bestrafungswahrscheinlichkeit : Real\l}"
     ]
 
     Flacken [
-        label = "{Flacken||}"
+        label = "{Flacken|}"
     ]
 
     Nachtaroken [
-        label = "{Nachtaroken||}"
+        label = "{Nachtaroken|}"
     ]
 
     Stutschen [
-        label = "{Stutschen||}"
+        label = "{Stutschen|}"
     ]
 
     Keilen [
-        label = "{Keilen||}"
+        label = "{Keilen|}"
     ]
 
     Schnatzeln [
-        label = "{Schnatzeln||}"
+        label = "{Schnatzeln|}"
     ]
 
     Flacken -> Foul
@@ -193,11 +331,18 @@ digraph G {
     Schnatzeln -> Foul
 
     Schiedsrichter [
-        label = "{Schiedsrichter|+ bestrafungsWahrscheinlichkeit\l||}"
+        label = "{Schiedsrichter|\l}"
     ]
-    Schiedsrichter -> Feld [
-        arrowhead = "diamond"
-        headlabel = "1"
-        taillabel = "1"
+
+    Schiedsrichter -> Foul [
+        style = "dotted"
+        arrowhead = "normal"
+        label = "ahndet"
+    ]
+
+    Schiedsrichter -> Fan [
+        style = "dotted"
+        arrowhead = "normal"
+        label = "ahndet"
     ]
 }    
