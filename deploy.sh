@@ -17,7 +17,7 @@ git config user.email "deploy@travis-ci.org"
 
 echo '[deploy_gh-pages]: copy new files'
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
-if [[ "$BRANCH" != "master" ]]; then
+if [ "$BRANCH" != "master" ]; then
   rm -f *
     cp ../../output/* .
 else
@@ -39,7 +39,7 @@ rm -rf deployGH-PAGES
 
 #deploy to commplete repo, only on master
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
-if [[ "$BRANCH" != "master" ]]; then
+if [ "$BRANCH" != "master" ]; then
   echo '[deploy-complete]: Get data'
     commitHash="$1"
     commitMessage=$(git --no-pager log -2 --pretty="%B" | tail -n 1)
