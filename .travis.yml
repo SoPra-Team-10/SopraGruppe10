@@ -4,7 +4,6 @@ before_install:
     - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended latexmk texlive-lang-german texlive-doc-de pgf texlive-font-utils zip inkscape texlive-math-extra graphviz make git openssh-client figlet
       
 addons:
-  ssh_known_hosts: aul12.me
   #sonarcloud:
   #  organization: "sopra-team-10" # the key of the org you chose at step #3
   #  token:
@@ -21,11 +20,13 @@ script:
 notifications:
     slack: soprateam10:wlcgvL7tR63frGyGP4BCuqNj
     
+after_success:
+    - sh pullRequestComment.sh
+
 deploy:
     provider: script
     skip-cleanup: true
     keep-history: true
     script: sh deploy.sh $TRAVIS_COMMIT
-    on:
-        branch: master
-        #branch: ci-test
+    on: 
+        all_branches: true
