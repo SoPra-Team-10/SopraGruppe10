@@ -17,7 +17,7 @@ digraph G {
     ]
 
     Spielfeld [
-        label = "Spielfeld|Zellen : Zelle[193]\l"
+        label = "Spielfeld|"
     ]
 
     Zelle [
@@ -32,16 +32,16 @@ digraph G {
         label = "ZentrumsZelle|"
     ]
 
-    Hueterzelle [
-        label = "Hüterzelle|"
+    HueterZelle [
+        label = "HüterZelle|"
     ]
 
     StandardZelle [
         label = "StandardZelle|"
     ]
 
-    Hueterzone [
-        label = "Hüterzone|"
+    HueterZone [
+        label = "HüterZone|"
     ]
 
     Zentrum [
@@ -50,16 +50,16 @@ digraph G {
 
     Torring -> Zelle
     ZentrumsZelle -> Zelle
-    Hueterzelle -> Zelle
+    HueterZelle -> Zelle
     StandardZelle -> Zelle
 
-    Hueterzelle -> Hueterzone [
+    HueterZelle -> HueterZone [
         arrowhead = "diamond"
         headlabel = "1"
         taillabel = "36"
     ]
 
-    Torring -> Hueterzone [
+    Torring -> HueterZone [
         arrowhead = "diamond"
         headlabel = "1"
         taillabel = "3"
@@ -71,7 +71,7 @@ digraph G {
         taillabel = "9"
     ]   
 
-    Hueterzone -> Spielfeld [
+    HueterZone -> Spielfeld [
         arrowhead = "diamond"
         headlabel = "1"
         taillabel = "2"
@@ -100,7 +100,7 @@ digraph G {
     Torschussvektor -> Schussvektor
 
     Wurf [
-        label = "Wurf|WurfSchussvektor: Schussvektor\lWurfWahrscheinlichkeit : Real\l"
+        label = "Wurf|WurfWahrscheinlichkeit : Real\l"
     ]
 
     Schussvektor -> Wurf [
@@ -330,6 +330,15 @@ digraph G {
     Foul [
         label = "Foul|Bestrafungswahrscheinlichkeit : Real\l"
     ]
+    
+    Foul -> Spieler [
+        style = "dotted"
+        arrowtail = "normal"
+        arrowhead = "none"
+        dir = "both"
+        label = "Begeht"
+    ]  
+
 
     Flacken [
         label = "Flacken|"
