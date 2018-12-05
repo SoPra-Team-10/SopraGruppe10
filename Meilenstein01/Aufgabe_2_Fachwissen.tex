@@ -31,7 +31,7 @@
 {-}
 
 \begriff{Server}
-{Die zentrale Komponente, in dem die Spiellogik implementiert ist und die Programmbefehle abwickelt und mit dem sich Clients verbinden können, um eine Partie zu spielen oder zu beobachten. Die Kommunikation erfolgt mit JSON}
+{Die zentrale Komponente, in dem die Spiellogik implementiert ist, die Programmbefehle abwickelt und mit dem sich Clients verbinden können, um eine Partie zu spielen oder zu beobachten. Die Kommunikation erfolgt mit JSON}
 {-}
 {-}
 {Ist für die Kommunikation von Clients, für das Verwalten des Spielgeschehens, Ressourcenverwaltung und die Spiellogik verantwortlich.}
@@ -74,8 +74,8 @@
 {Die kleinste Einheit des Spielfeldes, also ein Quadrat davon}
 {-}
 {Zentrumszelle, Torring, Hüterzonenzelle}
-{Mögliche Standorte der Spielfiguren}
-{Wird nicht Feld genannt, da das ein eher vager Begriff ist}
+{Mögliche Standorte der Spielobjekte}
+{Wird nicht Feld genannt, um Verwechselungen mit dem Spielfeld zu vermeiden}
 {-}
 
 \begriff{Zentrum}
@@ -90,7 +90,7 @@
 {Die Bereiche am linken und rechten Rand des Spielfeldes, in dem sich die Torringe befinden}
 {-}
 {-}
-{Summe aller kritischen Zellen und Torring}
+{Summe aller Hüterzonenzellen und Torringe}
 {-}
 {-}
 
@@ -99,8 +99,8 @@
 {Zelle}
 {Eigener Torring, Gegnerischer Torring}
 {Hauptquelle von Punkten}
-{Torring im Lastenheft}
-{}
+{-}
+{-}
 
 \begriff{Zentrumszelle}
 {Eine Zelle im Zentrum des Spielfeldes (siehe Zentrum)}
@@ -111,7 +111,7 @@
 {-}
 
 \begriff{Hüterzonenzelle}
-{Eine Zelle in einem kritischen Bereich des Spielfeldes}
+{Eine Zelle in einer Hüterzone}
 {Zelle}
 {-}
 {limitierendes Element für das Abliefern der Quaffel}
@@ -137,13 +137,13 @@
 \begriff{Spielfigur}
 {Ein Spielobjekt, das von einem Spieler direkt gesteuert wird. Jede Spielfigur hat einen Namen, einen Besenrang, ein Geschlecht, ein Team und eine Rolle. Man unterscheidet außerdem zwischen eigenen und gegnerischen Spielfiguren.}
 {Spielobjekt}
-{Hüter, Sucher, Angreifer, Treiber}
+{Hüter, Sucher, Jäger, Treiber}
 {Mitglieder eines Teams}
 {Spieler im Lastenheft}
 {Luke Skywalker, Hüter des Teams \glqq{}Jedi\grqq{}, männlich, Besenrang 5}
 
 \begriff{Quaffel}
-{Passives Objekt, mit dem Angreifer und Hüter interagieren können und von ihnen nach Möglichkeit in ein gegnerisches Zielfeld befördert werden soll.}
+{Ball, den Jäger und Hüter aufnehmen und werfen können. Nach Möglichkeit wird er durch einen gegnerischen Torring geworfen, um Punkte zu erzielen.}
 {Ball}
 {-}
 {Zentrales Spielobjekt}
@@ -151,7 +151,7 @@
 {-}
 
 \begriff{Klatscher}
-{Ball, der sich von selbst auf Spielfiguren zubewegt, die keine Treiber sind und diese betäuben können und von Treibern bewegt werden können.}
+{Ball, der sich von selbst auf Spielfiguren zubewegt, die keine Treiber sind und diese betäuben kann. Kann von Treibern geschlagen werden, was technisch gesehen einem Wurf entspricht}
 {Ball}
 {-}
 {Zusätzliches taktisches Spielelement}
@@ -159,11 +159,11 @@
 {-}
 
 \begriff{Schnatz}
-{Ball, der von den Suchern gejagt wird und deren Fund die Partie beendet}
+{Beschreibung: "Ball, der sich selbstständig bewegt und von den Suchern gejagt wird. Wird er von einem Sucher gefangen, bekommt dessen Team 30 Punkte und die Partie ist zu Ende}
 {Ball}
 {-}
 {Definiert Spielende}
-{\glqq{}Schnatz\grqq{}  im Lastenheft}
+{-}
 {-}
 
 \begriff{Partie}
@@ -190,13 +190,13 @@
 {\glqq{}Jäger\grqq{}  wäre ein besserer Begriff, könnte aber mit den Begriffen im Lastenheft zu Verwirrungen führen.}
 {Darth Vader, gegnerischer Sucher, Besenrang 2}
 
-\begriff{Angreifer}
+\begriff{Jäger}
 {Spielfigur, die den Quaffel in ein einen gegnerischen Torring befördern soll}
 {Spielfigur}
-{Eigener Angreifer, Gegnerischer Angreifer}
+{Eigener Jäger, Gegnerischer Jäger}
 {Holt Punkte für das eigene Team}
-{\glqq{}Jäger\grqq{}  im Lastenheft. Angreifer beschreibt die Rolle der Spielfigur aber besser.}
-{Han Solo, eigener Angreifer, Besenrang 3}
+{-}
+{Han Solo, eigener Jäger, Besenrang 3}
 
 \begriff{Treiber}
 {Spielfigur, mit der der Spieler eigene Spielfiguren vor Klatschern schützt und gegnerische damit abschießen kann}
@@ -239,7 +239,7 @@
 {Chewbacca besetzt Zelle 5:3}
 
 \begriff{Besenrang}
-{Jede Spielfigur hat einen Besenrang von 1 bis 5, der die Wahrscheinlichkeit bestimmt, dass sie noch einmal ziehen kann. Besenrang 1 ist der beste.}
+{Jede Spielfigur hat einen Besenrang von 1 bis 5, der die Wahrscheinlichkeit bestimmt, dass sie nach einer Bewegung erneut eine Bewegung um ein Feld ausführen darf. Besenrang 1 ist der beste.}
 {-}
 {-}
 {Unterscheidet Qualität der Spielfiguren.}
@@ -271,7 +271,7 @@
 {-}
 
 \begriff{Schießen}
-{Die Bewegung des Quaffel durch einen Hüter oder Angreifer auf eine andere, entfernte Zelle ohne Bewegung der Spielfigur}
+{Die Bewegung des Quaffel durch einen Hüter oder Jäger auf eine andere, entfernte Zelle ohne Bewegung der Spielfigur}
 {Aktion}
 {-}
 {Bewegung des Quaffel um mehrere Felder}
@@ -336,8 +336,8 @@
 
 \begriff{Schussvektor}
 {Pfeil vom Mittelpunkt einer Zelle zum Mittelpunkt einer anderen}
-{Torschussvektor}
 {-}
+{Torschussvektor}
 {Spielfeldgeometrie}
 {-}
 {-}
@@ -351,7 +351,7 @@
 {-}
 
 \begriff{Torschuss}
-{Ein Angreifer schießt den Quaffel in einen Torring und holt damit Punkte für sei Team}
+{Ein Jäger schießt den Quaffel in einen Torring und holt damit Punkte für sei Team}
 {-}
 {-}
 {Punkte sammeln}
@@ -375,7 +375,7 @@
 {Bierdurst69 ist am Zug}
 
 \begriff{Verlieren}
-{Der Quaffel wird auf eine zufällige Zelle bewegt, die an die Zelle angrenzt, auf der sich die Spielfigur, die sie derzeit hält befindet.}
+{Der Quaffel wird auf eine zufällige Zelle bewegt, die an die Zelle angrenzt, auf der sich die Spielfigur, die bis jetzt in Ballbesitz war, befindet.}
 {-}
 {-}
 {Spielablauf}
@@ -383,7 +383,7 @@
 {Jar Jar verliert den Quaffel}
 
 \begriff{Halten}
-{Ein Angreifer oder Hüter kann den Quaffel halten. Ist das der Fall, bewegt sich der Quaffel auf die Zelle, auf die die Spielfigur zieht.}
+{Ein Jäger oder Hüter kann den Quaffel halten. Ist das der Fall, bewegt sich der Quaffel auf die Zelle, auf die die Spielfigur zieht.}
 {-}
 {-}
 {Beschreibung des Spielgeschehens}
@@ -391,7 +391,7 @@
 {-}
 
 \begriff{Übernahme}
-{Ein Angreifer neben einer gegnerischen Spielfigur, die den Quaffel hält, kann diesen mit einer bestimmten Wahrscheinlichkeit übernehmen und hält sie anschließend selbst.}
+{Ein Jäger neben einer gegnerischen Spielfigur, die den Quaffel hält, kann diesen mit einer bestimmten Wahrscheinlichkeit übernehmen und hält ihn anschließend selbst.}
 {Aktion}
 {-}
 {Aggressives Spielmanöver}
@@ -406,12 +406,12 @@
 {\glqq{}Ausgeknockt\grqq{}  im Lastenheft}
 {Jango Fett ist betäubt}
 
-\begriff{Riskante Strategie}
+\begriff{Foul}
 {Handlung, wegen der eine Spielfigur vorübergehend vom Spielfeld entfernt werden kann.}
 {-}
 {Torring Blockieren, Stürmen, Großoffensive, Rammen, Schnatz Blockieren}
 {Taktische Elemente}
-{\glqq{}Faul\grqq{}  im Lastenheft}
+{-}
 {Qui-Gon Jinn blockiert den Schnatz}
 
 \begriff{Torring Blockieren}
@@ -423,7 +423,7 @@
 {-}
 
 \begriff{Stürmen}
-{Ein Angreifer, der den Quaffel hält, zieht auf einen gegnerischen Torring, was das Abliefern garantiert.}
+{Ein Jäger, der den Quaffel hält, zieht auf einen gegnerischen Torring, was das Abliefern garantiert.}
 {Riskante Strategie}
 {-}
 {Taktik}
@@ -431,7 +431,7 @@
 {Han Solo stürmt mittleren gegnerischen Torring}
 
 \begriff{Großoffensive}
-{Ein eigener Angreifer betritt eine gegnerische Hüterzonenzelle während ein anderer eigener Angreifer sich auf einer anderen befindet.}
+{Ein eigener Jäger betritt eine gegnerische Hüterzonenzelle während ein anderer eigener Jäger sich auf einer anderen befindet.}
 {Riskante Strategie}
 {-}
 {Taktik}
@@ -455,7 +455,7 @@
 {Darth Maul blockiert den Schnatz}
 
 \begriff{Schiedsrichter}
-{Entfernt mit bestimmter Wahrscheinlichkeit eine Spielfigur, die eine riskante Strategie ausführt vom Spielfeld bis ein Torschuss erfolgt und deaktiviert permanent eine Einmischung für den Rest der Partie.}
+{Entfernt mit bestimmter Wahrscheinlichkeit eine Spielfigur, die ein Foul begeht, vom Spielfeld bis ein Torschuss erfolgt bzw. deaktiviert permanent eine Einmischung für den Rest der Partie.}
 {-}
 {-}
 {Taktik}
@@ -463,7 +463,7 @@
 {Sheev Palpatine wurde vom Schiedsrichter vom Spielfeld entfernt}
 
 \begriff{Disqualifikation}
-{Tritt ein wenn fünf Spielfiguren eines Spielers gleichzeitig durch den Schiedsrichter aus dem Spiel entfernt sind. Führt zur Niederlage des Spielers.}
+{Tritt ein wenn drei oder mehr Spielfiguren eines Spielers in der selben Rundenphase durch den Schiedsrichter aus dem Spiel entfernt wurden. Führt zur Niederlage des Spielers.}
 {-}
 {-}
 {Erhöhtes Risiko}
