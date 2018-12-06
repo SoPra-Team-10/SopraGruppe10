@@ -1,4 +1,13 @@
-\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\NeedsTeXFormat{LaTeX2e}
+\documentclass[a4paper,12pt,
+headsepline,           % Linie zw. Kopfzeile und Text
+oneside,               % einseitig
+pointlessnumbers,      % keine Punkte nach den letzten Ziffern in Überschriften
+bibtotoc,              % LV im IV
+%DIV=15,               % Satzspiegel auf 15er Raster, schmalere Ränder   
+%BCOR15mm               % Bindekorrektur
+%,draft
+]{scrartcl}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -15,37 +24,78 @@
 \usepackage{tikz}
 \usepackage{multirow}
 \usepackage[final]{pdfpages}
+\usepackage{blindtext}
+\usepackage[scaled]{helvet}
+\usepackage{hyperref}
 
 \usetikzlibrary{calc,shapes.multipart,chains,arrows}
 
-\newcommand{\begriff}[7] {
-	\begin{table}[H]
-		\centering
-		\begin{tabular}{|p{4.5cm}|p{10cm}|}
-			%\hline
-			%\toprule \\
-			\hline
-			\textbf{Begriff} & \textbf{#1} \\ \hline
-			%\midrule \\
-			\textbf{Beschreibung} & #2 \\ \hline
-			%\midrule
-			\textbf{Ist-ein} & #3 \\ \hline
-			%\midrule
-			\textbf{Kann-sein} & #4 \\ \hline
-			%\midrule
-			\textbf{Aspekt} & #5 \\ \hline
-			%\midrule
-			\textbf{Bemerkung} & #6 \\ \hline
-			%\midrule
-			\textbf{Beispiel} & #7 \\ %\hline
-			%\bottomrule
-			\hline
-		\end{tabular}
-	\end{table}
+\KOMAoptions{DIV=last} % Neuberechnung Satzspiegel nach Laden von Paket helvet
+
+\usepackage{scrpage2}
+\pagestyle{useheadings}
+
+\renewcommand{\familydefault}{\sfdefault} 
+
+\setlength{\parindent}{0pt}   % kein linker Einzug der ersten Absatzzeile
+\setlength{\parskip}{1.4ex plus 0.35ex minus 0.3ex} % Absatzabstand, leicht variabel
+
+\newcommand{\fullname}{Gruppe 10}
+\newcommand{\titel}{Softwaregrundprojekt Meilenstein 1}
+\newcommand{\jahr}{2018}
+\newcommand{\dozent}{Florian Ege}
+\newcommand{\betreuer}{Stefanos Mytilineos}
+\newcommand{\fakultaet}{Ingenieurwissenschaften, Informatik und\\Psychologie}
+\newcommand{\institut}{Institut für Softwaretechnik und Programmiersprachen}
+
+\pdfinfo{
+    /Author (\fullname)
+    /Title (\titel)
+    /Producer     (pdfeTex 3.14159-1.30.6-2.2)
+    /Keywords ()
 }
 
-\title{Softwaregrundprojekt}
-\author{Gruppe 10}
+\hypersetup{
+    pdftitle=\titel,
+    pdfauthor=\fullname,
+    pdfsubject={Softwaregrundprojekt-Abgabe},
+    pdfproducer={pdfeTex 3.14159-1.30.6-2.2},
+    colorlinks=false,
+    pdfborder=0 0 0	% keine Box um die Links!
+}
+
+% Trennungsregeln
+\hyphenation{Sil-ben-trenn-ung}
+
+
+\newcommand{\begriff}[7] {
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|p{4.5cm}|p{10cm}|}
+            %\hline
+            %\toprule \\
+            \hline
+            \textbf{Begriff} & \textbf{#1} \\ \hline
+            %\midrule \\
+            \textbf{Beschreibung} & #2 \\ \hline
+            %\midrule
+            \textbf{Ist-ein} & #3 \\ \hline
+            %\midrule
+            \textbf{Kann-sein} & #4 \\ \hline
+            %\midrule
+            \textbf{Aspekt} & #5 \\ \hline
+            %\midrule
+            \textbf{Bemerkung} & #6 \\ \hline
+            %\midrule
+            \textbf{Beispiel} & #7 \\ %\hline
+            %\bottomrule
+            \hline
+        \end{tabular}
+    \end{table}
+}
+
+%\title{Softwaregrundprojekt}
+%\author{Gruppe 10}
 
 \newcommand{\anf}[7] {
     \begin{table}[H]
@@ -94,7 +144,35 @@
 }
 
 \begin{document}
-    \maketitle
+    \thispagestyle{empty}
+    \begin{addmargin*}[4mm]{-10mm}
+
+        \includegraphics[height=1.8cm]{images/unilogo_bild}
+        \hfill
+        \includegraphics[height=1.8cm]{images/unilogo_wort}\\[1em]
+
+        {\footnotesize
+        %{\bfseries Universität Ulm} \textbar ~89069 Ulm \textbar ~Germany
+        \hspace*{115mm}\parbox[t]{35mm}{\bfseries Fakultät für\\
+        \fakultaet\\
+        \mdseries \institut}\\[2cm]
+
+        \parbox{140mm}{\bfseries \LARGE \titel}\\[2.5em]
+        {\footnotesize Softwaregrundprojekt an der Universität Ulm}\\[3em]
+
+        {\footnotesize \bfseries Vorgelegt von:}\\
+        {\footnotesize \fullname\\}\\ [1em]
+        {\footnotesize \bfseries Dozent:}\\
+        {\footnotesize \dozent\\}\\[1em]
+        {\footnotesize \bfseries Betreuer:}\\
+        {\footnotesize \betreuer}\\ [1em]
+        {\footnotesize \jahr}
+        }
+    \end{addmargin*}
+    \pagebreak
+    \tableofcontents
+    \pagebreak
+
     \section{Kontextanalyse}
     %TODO
     
@@ -102,7 +180,6 @@
     \input{Aufgabe_2_Fachwissen.tex}
     
     \includepdf[pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
-    
     \section{Anforderungsdefinition}    
     
     \subsection{Akteure}
@@ -818,4 +895,5 @@
 			{<Prio>}
 			{<Akteure>}	
 	
+    
 \end{document}
