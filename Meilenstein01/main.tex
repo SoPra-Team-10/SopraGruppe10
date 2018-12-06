@@ -186,9 +186,9 @@ bibtotoc,              % LV im IV
     
     \fakt	{Nutzer}
 			{Menschlicher Nutzer, der eine Anwendungen bedient.}
-			{Ein Mensch, welcher entweder als Spielender Nutzer Aktiv an einem Spiel teilnimmt oder als Gas passiv einem Spiel zusieht oder den Team-Konfigurator benutzt um ein Team zu erstellen oder an zu passen.}
+			{Ein Mensch, welcher entweder als Spieler Aktiv an einem Spiel teilnimmt oder als Gas passiv einem Spiel zusieht oder den Team-Konfigurator benutzt um ein Team zu erstellen oder an zu passen.}
 			
-	\fakt	{Spielender Nutzer}
+	\fakt	{Spieler}
 			{Nimmt aktiv Einfluss auf das Spielgeschehen.}
 			{Entweder Nutzer oder CI. Nimmt aktiv Einfluss auf das Spielgeschehen indem er Züge vorgibt, wenn er an der Reihe ist. Muss vor Spielbeginn eine Konfiguration für sein Team angeben.}
 			
@@ -201,8 +201,8 @@ bibtotoc,              % LV im IV
 			{Der Systemadministrator hat zugriff auf die Server Anwendung. Er ist dafür verantwortlich eine Instanz der Server Anwendung zu starten und zu betreuen. Zudem hat er Zugriff auf die Partie-Konfiguration und kann diese bei bedarf verändern.}
 	
 	\fakt	{KI}
-			{Vom Computer Gesteuerter Spielender Nutzer.}
-			{Spielender Nutzer dessen Entscheidungen und Züge auf einem Computer von der KI-Client Software getroffen werden.}
+			{Vom Computer gesteuerter Spieler.}
+			{Spieler dessen Entscheidungen und Züge auf einem Computer von der KI-Client Software getroffen werden.}
 	
 	\fakt	{Kunde}
 			{SoPra-Tutor}
@@ -210,11 +210,11 @@ bibtotoc,              % LV im IV
 	
 	\fakt	{Client}
 			{Software eines Nutzers}
-			{Mit Hilfe der Client Software kann der Nutzer entweder als spielender Nutzer oder als Gast einem von einem Server zu Verfügung gestellten Spiel beitreten.}
+			{Mit Hilfe der Client Software kann der Nutzer entweder als Spieler oder als Gast einem von einem Server zu Verfügung gestellten Spiel beitreten.}
 	
 	\fakt	{KI-Client}
-			{Anwendung, die als KI an einem Spiel teilnimmt.}
-			{<Rolle>}
+			{Anwendung, welche die KI steuert.}
+			{Der KI-Client ist die Anwendung, welche eine KI steuert. Der Nutzer kann von außen kennen Einfluss auf die Züge und Entscheidungen des KI-Clients nehmen.}
 	
 	\fakt	{Server}
 			{Zentraler Computer mit spezieller Software zu dem alle am beteiligten Clients ein Verbindung aufbauen.}
@@ -225,15 +225,18 @@ bibtotoc,              % LV im IV
 			{Mit dieser Anwendung kann ein Nutzer sein für eine Partie gewünschtes Quiddichteam im Rahmen bestimmter Grenzen beliebig konfigurieren.}
 	
 	\fakt 	{Team}
-			{Einheit aus Spielern die einem spielenden Nutzer zugeordnet sind.}
-			{<Rolle>}
+			{Einheit aus Spielfiguren die einem spielenden Nutzer zugeordnet sind.}
+			{Im Spiel ist jedem Spieler ein Team aus 7 Spielfiguren zugeordnet. Die Zusammensetzung des Team lässt sich mit der Quidditchteam-Editor den persönlichen Wünschen entsprechend anpassen.}
 	
 	\fakt 	{Schiedsrichter}
 			{Ahndet Fouls.}
 			{Der Schiedsrichter wird durch eine Software Repräsentiert die mit Hilfe eines Zufallsgenerator entscheidet ob ein Foul geahndet wird oder nicht.}
 	
+	\fakt	{Spiel}
+			{Eine Partie Fantastic Feasts.}
+			{Ein Spiel besteht aus genau 2 Teams, Fans, dem Schiedsrichter und einem Spielfeld. Das steuern der Spiellogik übernimmt der Server. Die Spieler der beiden Teams spielen gegeneinander um den Sieg.}	
 	
-	\subsection{Funktionale Anforderungen (allgemein)}
+	\subsection{Allgemeine funktionale Anforderungen}
 	
 	\fanf	{Quidditch-Spielfeld}
 			{Das Quidditch-Spielfeld ist eine Ovale Form, welche in ein Raster von 17x13 quadratischen Feldern eingepasst ist. Auf diesem Feld finden alle Spielhandlungen statt, welche während dem Spiel getätigt werden können. Auf dem Spielfeld gibt es noch ein Mittelkreis und an den jeweils gegenüberliegenden Enden noch Hüterzonen.}
@@ -626,107 +629,114 @@ bibtotoc,              % LV im IV
 			{<Akteure>}
 			
 	
-	\subsection{Funktionale Anforderungen (Server)}
+	\subsection{Server spezifische funktionale Anforderungen}
 	
-	\subsection{Funktionale Anforderungen (Client)}
+	\subsection{Client spezifische Funktionale Anforderungen}
 	
 	\fanf	{Hauptmenü [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Erste grafische Oberfläche die dem Nutzer angezeigt wird, wenn die Anwendung gestartet wurde.}
+			{Das Hauptmenü soll den Zentralen Punkt darstellen von dem aus alle Funktionen der Software zu erreichen.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 	
 	\fanf	{Connect to Game [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Grafische Oberfläche um sich mit einem Server auf dem ein Spiel bereit gestellt wird zu verbinden.}
+			{Der Nutzer muss die Möglichkeit haben sich komfortabel mit einem Server verbinden zu können.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 	
 	\fanf	{End of Game [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Grafische Oberfläche die, die Spieler sehen nachdem eine Partie zu ende ist.}
+			{Nach dem Ende einer Partie muss dem Nutzer mitgeteilt werden ob er gewonnen hat oder nicht. Optional ist hier auch platz für etwaige Statistiken über den Spielverlauf.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 			
 	\fanf	{Import Team Config [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Grafische Oberfläche zum importieren bzw. öffen einer Team-Konfiguration für ein Spiel.}
+			{Es muss für den Benutzer eine einfachen Weg geben eine Team Konfiguration im Dateisystem zu suchen und an die Anwendung zu übergeben.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 			
 	\fanf	{Game Play [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Grafische Oberfläche die der Spieler sieht.}
+			{}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}	
 			
 	\fanf	{Hilfe [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Grafische Oberfläche in der zum einen das Spielprinzip erklärt wird und zum anderen wie genau man die Clientsoftware bedient.}
+			{Um unerfahren Benutzer die Bedienung der Software zu erleichtern.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 			
 	\fanf	{Beobachter [Client-View]}
-			{<Beschreibung>}
+			{Grafische Oberfläche die ein Gast sieht.}
 			{<Begründung>}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 	
 	\fanf	{Game Rendering Engine}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Einheit, welche die Ansicht des Spielfelds grafisch aufbereitet.}
+			{}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 	
 	\fanf	{Input Handler [Client]}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Einheit die für Benutzereingaben verantwortlich ist.}
+			{Jede Benutzereingabe muss ausgewertet werden und na der Validierung eine Entscheidung getroffen werden was als Reaktion auf diese Eingaben passieren muss.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 			
 	\fanf	{Input Validierung [Client]}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Einheit die Benutzereingaben auf Korrektheit prüft.}
+			{Um etwaige falsche Benutzereingaben zu erkennen und den Nuzer darauf hin weisen zu können ist es von Nöten, dass alle Benutzereingaben geprüft werden.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 	
 	\fanf	{Hotkey [Client]}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Oft benötigte Funktionen auf Bestimmte (besondere) Testen (-Kombinationen) mappen.}
+			{Hotkeys sind optionale Features, die im Lastenheft aufgeführt sind und zu einer einfacheren Spielsteuerung betragen können.}
 			{<Abhängigkeiten>}
 			{--}
 			{<Akteure>}
 			
 	\fanf	{Pausieren [Client]}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Das aktuelle Spiel pausieren.}
+			{Pausieren ist ein optionales Feature, das im Lastenheft aufgeführt ist und einem menschliche Spieler im Client zur Verfügung stehen sollte.}
 			{<Abhängigkeiten>}
 			{--}
 			{<Akteure>}
 			
 	
-	\subsection{Funktionale Anforderungen (Quidditchteam-Editor)}
+	\subsection{Quidditchteam-Editor spezifische funktionale Anforderungen}
 	
-	\fanf	{Edit Team [Team-Editor-View]}
-			{<Beschreibung>}
-			{<Begründung>}
+	\fanf	{Edit Team View}
+			{Grafische Oberfläche in der der Nutzer sein Team nach seinen Wünschen entsprechend anpassen kann.}
+			{Für das Bearbeiten des Teams soll dem Nutzer eine grafische Oberfläche bereit gestellt werden.}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
+			
+	\fanf	{Open Team View}
+			{'Datei Öffnen' Dialog um die Team-Konfiguration von einem beliebigen Ort im Dateisystem zu öffen}
+			{}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 	
-	\fanf	{Save Team [Team-Editor-View]}
-			{Datei Speicher Dialog um die Team-Konfiguration an einem beliebigen Ort im Datei System ab zu legen.}
-			{<Begründung>}
+	\fanf	{Save Team View}
+			{'Datei Speichern' Dialog um die Team-Konfiguration an einem beliebigen Ort im Dateisystem abzulegen.}
+			{}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
@@ -743,30 +753,30 @@ bibtotoc,              % LV im IV
 	
 	\qanf 	{Version-Controlling}
 			{Beim Verwalten des Quellcodes soll ein Git basiertes Version-Controlling Werkzeug (\textit{GitHub / GitLab}) verwendet werden.}
-			{Erl}
+			{Durch das Verwenden eines Versionierungswerkzeuges wird das zusammenarbeiten unterschiedlicher Entwickler erleichtert, da das zusammenführen des Codes größtenteils automatisiert abläuft.}
 			{-}
 			{++}
 			{-}
 	
 	\qanf 	{Continuous Integration}
 			{In die Version-Controlling Lösung mit Hilfe einer CI automatisch jeder gepushte Commit Unit-Tests und der Statischen Codeanalyse unterzogen werden. Zudem soll eine automatisierte Code Dokumentation angestoßen werden. Bei erfolgreichem Abschließen alle Test soll zum Schluss der aktuelle Stand deployed werden.}
-			{<Begründung>}
+			{Die CI nimmt den Entwicklern Arbeit ab und kann dazu beitragen, dass Fehler frühzeitig erkannt und behoben werden können.}
 			{-}
-			{<Prio>}
+			{-+}
 			{<Akteure>}
 	
 	\qanf 	{Statische Codeanalyse}
 			{Mit Hilfe des Tools 'SonarQube' bzw. 'SonarCloud' soll der gesamt Quellcode einer statischen Analyse unterzogen werden. Dabei darf die technische Codequalität von diesen Tool nicht schlechter als 'B' bewertet werden.}
-			{}
+			{Quellcode mit einer hohen Codequalität ist weniger problemanfällig.}
 			{-}
-			{<Prio>}
+			{+}
 			{<Akteure>}
 	
 	\qanf 	{Automatisierte Unit-Tests}
 			{50 Prozent des Quellcodes der einzelnen Komponenten soll durch automatische Unit-Test auf Korrektheit und Funktion geprüft werden}
 			{Da alle Komponenten möglichst fehlerfrei funktionieren müssen ist es unerlässlich die einzelnen Teil der Software ständig auf ihre Funktionalität zu prüfen, die ist nur effizient möglich wenn automatisiert Test durchgeführt werden, damit Fehler frühzeitig erkannt werden.}
 			{-}
-			{+}
+			{-+}
 			{<Akteure>}
 	
 	\qanf 	{Docker Container}
@@ -875,8 +885,8 @@ bibtotoc,              % LV im IV
 			{<Akteure>}
 	
 	\qanf 	{Effizienz}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Die Software sollte Ressourcen schonend arbeiten.}
+			{Eine ressourcenschonende Anwendung ist auch auf älteren Zielsystemen poblemlos nutzbar.}
 			{-}
 			{-}
 			{<Akteure>}
