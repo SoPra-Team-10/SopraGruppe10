@@ -67,5 +67,5 @@ BRANCH=$(git rev-parse --abbrev-ref HEAD)
     #git push -f  "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git" master
 	cat .git/config 
 	echo '######################################'
-	cat ~/.git/config
+	cat ~/.gitconfig
 #fi
