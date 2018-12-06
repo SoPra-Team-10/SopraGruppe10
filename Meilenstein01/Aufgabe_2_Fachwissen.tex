@@ -137,13 +137,13 @@
 \begriff{Spielfigur}
 {Ein Spielobjekt, das von einem Spieler direkt gesteuert wird. Jede Spielfigur hat einen Namen, einen Besenrang, ein Geschlecht, ein Team und eine Rolle. Man unterscheidet außerdem zwischen eigenen und gegnerischen Spielfiguren.}
 {Spielobjekt}
-{Hüter, Sucher, Angreifer, Treiber}
+{Hüter, Sucher, Jäger, Treiber}
 {Mitglieder eines Teams}
 {Spieler im Lastenheft}
-{Luke Skywalker, Hüter des Teams \glqq{}Jedi\grqq{}, männlich, Besenrang 5}
+{Name: Luke Skywalker, Rolle: Hüter des Teams \glqq{}Jedi\grqq{}, Geschlecht: männlich, Besenrang: 5}
 
 \begriff{Quaffel}
-{Passives Objekt, mit dem Angreifer und Hüter interagieren können und von ihnen nach Möglichkeit in ein gegnerisches Zielfeld befördert werden soll.}
+{Passives Objekt, mit dem Jäger und Hüter interagieren können und von ihnen nach Möglichkeit in ein gegnerisches Zielfeld befördert werden soll.}
 {Ball}
 {-}
 {Zentrales Spielobjekt}
@@ -172,7 +172,7 @@
 {-}
 {Beschreibung des Spielablaufs}
 {-}
-{VodkaVodka98 spielt gegen LongEiländ}
+{Spieler VodkaVodka98 spielt gegen Spieler LongEiländ}
 
 \begriff{Hüter}
 {Spielfigur, deren Aufgabe es ist, den Quaffel von den eigenen Zielfeldern fernzuhalten}
@@ -187,16 +187,16 @@
 {Spielfigur}
 {Eigener Sucher, Gegnerischer Sucher}
 {Beendet die Partie}
-{\glqq{}Jäger\grqq{}  wäre ein besserer Begriff, könnte aber mit den Begriffen im Lastenheft zu Verwirrungen führen.}
+{-}
 {Darth Vader, gegnerischer Sucher, Besenrang 2}
 
-\begriff{Angreifer}
+\begriff{Jäger}
 {Spielfigur, die den Quaffel in ein einen gegnerischen Torring befördern soll}
 {Spielfigur}
-{Eigener Angreifer, Gegnerischer Angreifer}
+{Eigener Jäger, Gegnerischer Jäger}
 {Holt Punkte für das eigene Team}
-{\glqq{}Jäger\grqq{}  im Lastenheft. Angreifer beschreibt die Rolle der Spielfigur aber besser.}
-{Han Solo, eigener Angreifer, Besenrang 3}
+{\glqq{}Jäger\grqq{}  im Lastenheft. Jäger beschreibt die Rolle der Spielfigur aber besser.}
+{Han Solo, eigener Jäger, Besenrang 3}
 
 \begriff{Treiber}
 {Spielfigur, mit der der Spieler eigene Spielfiguren vor Klatschern schützt und gegnerische damit abschießen kann}
@@ -271,7 +271,7 @@
 {-}
 
 \begriff{Schießen}
-{Die Bewegung des Quaffel durch einen Hüter oder Angreifer auf eine andere, entfernte Zelle ohne Bewegung der Spielfigur}
+{Die Bewegung des Quaffel durch einen Hüter oder Jäger auf eine andere, entfernte Zelle ohne Bewegung der Spielfigur}
 {Aktion}
 {-}
 {Bewegung des Quaffel um mehrere Felder}
@@ -319,7 +319,7 @@
 {C-3PO verliert wegen eines Impuls den Quaffel}
 
 \begriff{Schnatzstoß}
-{Bewegt den Schnatz zufällig um ein Feld}
+{Bewegt den Schnatz in eine zufällige Richtung um ein Feld}
 {Einmischung}
 {-}
 {-}
@@ -336,14 +336,14 @@
 
 \begriff{Schussvektor}
 {Pfeil vom Mittelpunkt einer Zelle zum Mittelpunkt einer anderen}
-{Torschussvektor}
 {-}
+{Torschussvektor}
 {Spielfeldgeometrie}
 {-}
 {-}
 
 \begriff{Torschussvektor}
-{Schussvektor zu einem Schuss, der möglicherweise in einem Torschuss resultiert.}
+{Schussvektor zu einem Schuss, der möglicherweise in einem Torschuss resultiert. (Ein Schussvektor, der die linke oder rechte Seite eines Torrings schneidet.)}
 {Schussvektor}
 {-}
 {Punkte sammeln}
@@ -351,28 +351,36 @@
 {-}
 
 \begriff{Torschuss}
-{Ein Angreifer schießt den Quaffel in einen Torring und holt damit Punkte für sei Team}
+{Ein Jäger schießt den Quaffel in einen Torring und holt damit Punkte für sei Team}
 {-}
 {-}
 {Punkte sammeln}
 {Nur erfolgreiche Schüsse auf das Tor werden als Torschüsse bezeichnet.}
 {Darth Sidious schießt den Quaffel in ein eigenes Tor}
 
-\begriff{Rundenphase}
-{Phase, in der eine Spielfigur Aktionen durchführt}
+\begriff{Zugphase}
+{Phase, in der eine Spielfigur Aktionen durchführt. Beginnt, sobald der Spieler die Möglichkeit hat, die jeweilige Spielfigur zu steuern und endet, sobald er ihr den letzten Befehl für diesen Zug gegeben hat. Ein Zug enthält mehrere Zugphasen.}
 {-}
 {-}
 {Zeiteinteilung}
 {}
-{Leia Organa ist dran}
+{Leia Organa ist dran.}
 
 \begriff{Zug}
 {Von der ersten Aktion eines Spielers bis zur ersten Aktion des Gegners}
 {-}
 {-}
 {Zeiteinteilung}
-{Nicht die Rundenphase einer Spielfigur}
+{Nicht die Zugphase einer Spielfigur}
 {Bierdurst69 ist am Zug}
+
+\begriff{Endphase}
+{Letzter Teil eines Zuges. Der Spieler kann darin Einmischungen vornehmen.}
+{-}
+{-}
+{Zeiteinteilung}
+{-}
+{-}
 
 \begriff{Verlieren}
 {Der Quaffel wird auf eine zufällige Zelle bewegt, die an die Zelle angrenzt, auf der sich die Spielfigur, die sie derzeit hält befindet.}
@@ -383,7 +391,7 @@
 {Jar Jar verliert den Quaffel}
 
 \begriff{Halten}
-{Ein Angreifer oder Hüter kann den Quaffel halten. Ist das der Fall, bewegt sich der Quaffel auf die Zelle, auf die die Spielfigur zieht.}
+{Ein Jäger oder Hüter kann den Quaffel halten. Ist das der Fall, bewegt sich der Quaffel auf die Zelle, auf die die Spielfigur zieht.}
 {-}
 {-}
 {Beschreibung des Spielgeschehens}
@@ -391,7 +399,7 @@
 {-}
 
 \begriff{Übernahme}
-{Ein Angreifer neben einer gegnerischen Spielfigur, die den Quaffel hält, kann diesen mit einer bestimmten Wahrscheinlichkeit übernehmen und hält sie anschließend selbst.}
+{Ein Jäger neben einer gegnerischen Spielfigur, die den Quaffel hält, kann diesen mit einer bestimmten Wahrscheinlichkeit übernehmen und hält sie anschließend selbst.}
 {Aktion}
 {-}
 {Aggressives Spielmanöver}
@@ -399,40 +407,40 @@
 {Darth Vader übernimmt den Quaffel von Anakin Skywalker}
 
 \begriff{Betäubt}
-{Eine betäubte Spielfigur kann in seiner nächsten Rundenphase keine Aktion durchführen}
+{Eine betäubte Spielfigur kann in seiner nächsten Zugphase keine Aktion durchführen}
 {-}
 {-}
 {Wirkung der Klatscher}
 {\glqq{}Ausgeknockt\grqq{}  im Lastenheft}
 {Jango Fett ist betäubt}
 
-\begriff{Riskante Strategie}
+\begriff{Foul}
 {Handlung, wegen der eine Spielfigur vorübergehend vom Spielfeld entfernt werden kann.}
 {-}
 {Torring Blockieren, Stürmen, Großoffensive, Rammen, Schnatz Blockieren}
 {Taktische Elemente}
-{\glqq{}Faul\grqq{}  im Lastenheft}
+{-}
 {Qui-Gon Jinn blockiert den Schnatz}
 
 \begriff{Torring Blockieren}
 {Eine eigene Spielfigur besetzt einen eigenen Torring, was eine Torschuss verhindert.}
-{Riskante Strategie}
+{Foul}
 {-}
 {Taktik}
 {\glqq{}Flackern\grqq{}  im Pflichtenheft}
 {-}
 
 \begriff{Stürmen}
-{Ein Angreifer, der den Quaffel hält, zieht auf einen gegnerischen Torring, was das Abliefern garantiert.}
-{Riskante Strategie}
+{Ein Jäger, der den Quaffel hält, zieht auf einen gegnerischen Torring, was das Abliefern garantiert.}
+{Foul}
 {-}
 {Taktik}
 {\glqq{}Nachtarocken\grqq{}  im Lastenheft}
 {Han Solo stürmt mittleren gegnerischen Torring}
 
 \begriff{Großoffensive}
-{Ein eigener Angreifer betritt eine gegnerische Hüterzonenzelle während ein anderer eigener Angreifer sich auf einer anderen befindet.}
-{Riskante Strategie}
+{Ein eigener Jäger betritt eine gegnerische Hüterzonenzelle während ein anderer eigener Jäger sich auf einer anderen befindet.}
+{Foul}
 {-}
 {Taktik}
 {\glqq{}Stutschen\grqq{}  im Lastenheft}
@@ -440,7 +448,7 @@
 
 \begriff{Rammen}
 {Eine eigene Spielfigur zieht auf eine Zelle, die von einer gegnerischen Spielfigur besetzt wird. Dadurch wird die gegnerische Spielfigur auf eine benachbarte Zelle bewegt und verliert den Quaffel}
-{Riskante Strategie}
+{Foul}
 {-}
 {Taktik}
 {\glqq{}Keilen\grqq{}  im Lastenheft}
@@ -448,14 +456,14 @@
 
 \begriff{Schnatz blockieren}
 {Eine Spielfigur, die kein Sucher ist, besetzt die Zelle, auf der sich der Schnatz befindet.}
-{Riskante Strategie}
+{Foul}
 {-}
 {Taktik}
 {\glqq{}Schnatzeln\grqq{}  im Lastenheft}
 {Darth Maul blockiert den Schnatz}
 
 \begriff{Schiedsrichter}
-{Entfernt mit bestimmter Wahrscheinlichkeit eine Spielfigur, die eine riskante Strategie ausführt vom Spielfeld bis ein Torschuss erfolgt und deaktiviert permanent eine Einmischung für den Rest der Partie.}
+{Entfernt mit bestimmter Wahrscheinlichkeit eine Spielfigur, die ein Foul ausführt vom Spielfeld bis ein Torschuss erfolgt und deaktiviert permanent eine Einmischung für den Rest der Partie.}
 {-}
 {-}
 {Taktik}
