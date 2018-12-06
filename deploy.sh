@@ -39,7 +39,7 @@ rm -rf deployGH-PAGES
 
 #deploy to commplete repo, only on master
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
-#if [ "$BRANCH" != "master" ]; then
+if [ "$BRANCH" != "master" ]; then
   echo '[deploy-complete]: Get data'
     commitHash="$1"
     commitMessage=$(git --no-pager log -2 --pretty="%B" | tail -n 1)
@@ -53,7 +53,7 @@ BRANCH=$(git rev-parse --abbrev-ref HEAD)
     git clone "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git"
     cd Complete/
     git config --global push.default simple
-    git config user.name "$commitAuthorName"
+	git config user.name "$commitAuthorName"
     git config user.email "$commitAuthorEMail"
     echo '[deploy-complete]: Copy'
     rm -rf Uebungsblaetter
@@ -64,8 +64,9 @@ BRANCH=$(git rev-parse --abbrev-ref HEAD)
     echo '[deploy-complete]: Commit'
     git add -A
     git commit -m "$commitMessage"
-    #git push -f  "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git" master
+    git push -f  "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git" master
+	echo '######################################'
 	cat .git/config 
 	echo '######################################'
 	cat ~/.gitconfig
-#fi
+fi
