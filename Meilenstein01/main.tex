@@ -1,4 +1,13 @@
-\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+\NeedsTeXFormat{LaTeX2e}
+\documentclass[a4paper,12pt,
+headsepline,           % Linie zw. Kopfzeile und Text
+oneside,               % einseitig
+pointlessnumbers,      % keine Punkte nach den letzten Ziffern in Überschriften
+bibtotoc,              % LV im IV
+%DIV=15,               % Satzspiegel auf 15er Raster, schmalere Ränder   
+%BCOR15mm               % Bindekorrektur
+%,draft
+]{scrartcl}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -15,8 +24,49 @@
 \usepackage{tikz}
 \usepackage{multirow}
 \usepackage[final]{pdfpages}
+\usepackage{blindtext}
+\usepackage[scaled]{helvet}
+\usepackage{hyperref}
 
 \usetikzlibrary{calc,shapes.multipart,chains,arrows}
+
+\KOMAoptions{DIV=last} % Neuberechnung Satzspiegel nach Laden von Paket helvet
+
+\usepackage{scrpage2}
+\pagestyle{useheadings}
+
+\renewcommand{\familydefault}{\sfdefault} 
+
+\setlength{\parindent}{0pt}   % kein linker Einzug der ersten Absatzzeile
+\setlength{\parskip}{1.4ex plus 0.35ex minus 0.3ex} % Absatzabstand, leicht variabel
+
+\newcommand{\fullname}{Gruppe 10}
+\newcommand{\titel}{Softwaregrundprojekt Meilenstein 1}
+\newcommand{\jahr}{2018}
+\newcommand{\dozent}{Florian Ege}
+\newcommand{\betreuer}{Stefanos Mytilineos}
+\newcommand{\fakultaet}{Ingenieurwissenschaften, Informatik und\\Psychologie}
+\newcommand{\institut}{Institut für Softwaretechnik und Programmiersprachen}
+
+\pdfinfo{
+    /Author (\fullname)
+    /Title (\titel)
+    /Producer     (pdfeTex 3.14159-1.30.6-2.2)
+    /Keywords ()
+}
+
+\hypersetup{
+    pdftitle=\titel,
+    pdfauthor=\fullname,
+    pdfsubject={Softwaregrundprojekt-Abgabe},
+    pdfproducer={pdfeTex 3.14159-1.30.6-2.2},
+    colorlinks=false,
+    pdfborder=0 0 0	% keine Box um die Links!
+}
+
+% Trennungsregeln
+\hyphenation{Sil-ben-trenn-ung}
+
 
 \newcommand{\begriff}[7] {
 	\begin{table}[H]
@@ -44,13 +94,14 @@
 	\end{table}
 }
 
-\title{Softwaregrundprojekt}
-\author{Gruppe 10}
+%\title{Softwaregrundprojekt}
+%\author{Gruppe 10}
 
 \newcommand{\anf}[7] {
     \begin{table}[H]
         \centering
-        \begin{tabular}{p{3.2cm}|p{9.8cm}}
+        \begin{tabular}{|p{3.2cm}|p{9.8cm}|}
+            \hline 
             \textbf{ID:} & \textbf{#1} \\ \hline
             \textbf{Titel:} & #2 \\ \hline
             \textbf{Beschreibung:} & #3 \\ \hline
@@ -76,7 +127,8 @@
 \newcommand{\akt}[4] {
     \begin{table}[H]
         \centering
-        \begin{tabular}{p{3cm}|p{10cm}}
+        \begin{tabular}{|p{3cm}|p{10cm}|}
+            \hline
             \textbf{ID:} & \textbf{#1} \\ \hline
             \textbf{Titel:} & #2 \\ \hline
             \textbf{Beschreibung:} & #3 \\ \hline
@@ -92,7 +144,35 @@
 }
 
 \begin{document}
-    \maketitle
+    \thispagestyle{empty}
+    \begin{addmargin*}[4mm]{-10mm}
+
+        \includegraphics[height=1.8cm]{images/unilogo_bild}
+        \hfill
+        \includegraphics[height=1.8cm]{images/unilogo_wort}\\[1em]
+
+        {\footnotesize
+        %{\bfseries Universität Ulm} \textbar ~89069 Ulm \textbar ~Germany
+        \hspace*{115mm}\parbox[t]{35mm}{\bfseries Fakultät für\\
+        \fakultaet\\
+        \mdseries \institut}\\[2cm]
+
+        \parbox{140mm}{\bfseries \LARGE \titel}\\[2.5em]
+        {\footnotesize Softwaregrundprojekt an der Universität Ulm}\\[3em]
+
+        {\footnotesize \bfseries Vorgelegt von:}\\
+        {\footnotesize \fullname\\}\\ [1em]
+        {\footnotesize \bfseries Dozent:}\\
+        {\footnotesize \dozent\\}\\[1em]
+        {\footnotesize \bfseries Betreuer:}\\
+        {\footnotesize \betreuer}\\ [1em]
+        {\footnotesize \jahr}
+        }
+    \end{addmargin*}
+    \pagebreak
+    \tableofcontents
+    \pagebreak
+
     \section{Kontextanalyse}
     %TODO
     \section{Fachwissen}
@@ -100,679 +180,679 @@
     \includepdf[pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
     \section{Anforderungsdefinition}
     %TODO
-    
+
     \subsection{Akteure}
-    
+
     \fakt	{Anwendungsbenutzer}
-			{Menschlicher Benutzer, der die Anwendungen bedient.}
-			{<Rolle>}
-			
-	\fakt	{Spielender Benutzer}
-			{Anwendungsbenutzer, der mit der Client-Anwendung am tatsächlichen Spielgeschehen teilnimmt.}
-			{<Rolle>}
-			
-	\fakt	{Beobachtender Benutzer}
-			{<Beschreibung>}
-			{<Rolle>}
-			
-	\fakt	{Systemadministrator}
-			{Anwendungsnutzer mit Zusatzqualifikation um Server zu verwalten.}
-			{Der Systemadministrator hat zugriff auf die Server Anwendung. Er ist dafür verantwortlich eine Instanz der Server Anwendung zu starten und zu betreuen. Zudem hat er Zugriff auf die Partie-Konfiguration und kann diese bei bedarf verändern.}
-	
-	\fakt	{KI}
-			{<Beschreibung>}
-			{<Rolle>}
-	
-	\fakt	{Kunde}
-			{SoPra-Tutor}
-			{<Rolle>}
-	
-	\fakt	{Client [Komponente]}
-			{<Beschreibung>}
-			{<Rolle>}
-	
-	\fakt	{KI-Client [Komponente]}
-			{<Beschreibung>}
-			{<Rolle>}
-	
-	\fakt	{Server [Komponente]}
-			{<Beschreibung>}
-			{<Rolle>}
-			
-	\fakt	{Quidditchteam-Editor [Komponente]}
-			{<Beschreibung>}
-			{<Rolle>}
-	
-	\fakt 	{Team}
-			{<Beschreibung>}
-			{<Rolle>}
-	
-	\fakt 	{Schiedsrichter}
-			{<Beschreibung>}
-			{<Rolle>}
-	
-	
-	\subsection{Funktionale Anforderungen (allgemein)}
-	
-	\fanf	{Quidditch-Spielfeld}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Mittelkreis}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Mittelfeld}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Hüterzone}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Torring}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Schussvektor}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Bälle}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Quaffel [Ball]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Klatscher [Ball]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Goldener Schnatz [Ball]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Besen}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Zauberfauch [Besen]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Sauberwisch 11 [Besen]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Komet 2-60 [Besen]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Nimbus 2001  [Besen]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Feuerblitz [Besen]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Spieler}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}	
-	
-	\fanf	{Jäger [Spielertyp]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Treiber [Spielertyp]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Hüter [Spielertyp]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{[Spielertyp] Sucher}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Fans]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}	
-	
-	\fanf	{Elfen [Fantyp]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Kobolde [Fantyp]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Trolle [Fantyp]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Niffler [Fantyp]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Foul}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Flacken [Foul]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Nachtarocken [Foul]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Stutschen [Foul]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Keilen [Foul]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Schnaltzeln [Foul]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Wurf mit dem Quaffel}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Quaffel Abfangen}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Torschuss}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Klatscher kloppen}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	\fanf	{Partie-Konfiguration}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Quidditchteam-Konfiguration}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}	
-			
-	\fanf	{Netzwerkinterface}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Runde}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Ballphase}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	\fanf	{Spielerphase}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	\fanf	{Fanphase}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	\fanf	{Zufallsgenerator}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	\fanf	{Spielende}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	\fanf	{Überlängenbehnadlung}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	\fanf	{Spiellogik}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Log-Datei}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	
-	\subsection{Funktionale Anforderungen (Server)}
-	
-	\subsection{Funktionale Anforderungen (Client)}
-	
-	\fanf	{Hauptmenü [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Connect to Game [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{End of Game [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	\fanf	{Import Team Config [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	\fanf	{Game Play [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}	
-			
-	\fanf	{Hilfe [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	\fanf	{Beobachter [Client-View]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Game Rendering Engine}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Input Handler [Client]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	\fanf	{Input Validierung [Client]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Hotkey [Client]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{--}
-			{<Akteure>}
-			
-	\fanf	{Pausieren [Client]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{--}
-			{<Akteure>}
-			
-	
-	\subsection{Funktionale Anforderungen (Quidditchteam-Editor)}
-	
-	\fanf	{Edit Team [Team-Editor-View]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Save Team [Team-Editor-View]}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-			
-	
-	\subsection{Nicht funktionale Anforderungen}
-	
-	\qanf 	{Plattformunabhängigkeit}
-			{Der Spielclient soll auf mindestens einer gängigen Computerbetriebssystem-Plattform (z.B. Linux, Windows) uneingeschränkt benutzbar sein. Des weiteren soll die Server- und die KI-Komponente auf mindestens zwei gängigen Computerbetriebssystem-Plattformen (z.B. Linux, Windows) uneingeschränkt benutzbar sein.}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Version-Controlling}
-			{Verwaltung und Version-Controlling des Quellcodes mit Hilfe eines Git basierten Version-Controlling Tool.}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Continuous Integration}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Statische Codeanalyse}
-			{Mit Hilfe des Tools 'SonarQube' bzw. 'SonarCloud' soll der gesamt Quellcode einer statischen Analyse unterzogen werden. Dabei darf die technische Codequalität von diesen Tool nicht schlechter als 'B' bewertet werden.}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Qualitätssicherung}
-			{80 Prozent des Quellcodes der einzelnen Komponenten soll durch automatische Test auf Korrektheit geprüft werden}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Docker Container}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Dokumentation}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Benutzerhandbuch}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Anwendungssprache}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Programmiersprache}
-			{Implementierungssprache}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Dokumentationssprache}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Format für Konfigurationsdateien}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Netzwerkkommunikation}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{Rundenspiel}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}
-	
-	
+            {Menschlicher Benutzer, der die Anwendungen bedient.}
+            {<Rolle>}
+
+    \fakt	{Spielender Benutzer}
+            {Anwendungsbenutzer, der mit der Client-Anwendung am tatsächlichen Spielgeschehen teilnimmt.}
+            {<Rolle>}
+
+    \fakt	{Beobachtender Benutzer}
+            {<Beschreibung>}
+            {<Rolle>}
+
+    \fakt	{Systemadministrator}
+            {Anwendungsnutzer mit Zusatzqualifikation um Server zu verwalten.}
+            {Der Systemadministrator hat zugriff auf die Server Anwendung. Er ist dafür verantwortlich eine Instanz der Server Anwendung zu starten und zu betreuen. Zudem hat er Zugriff auf die Partie-Konfiguration und kann diese bei bedarf verändern.}
+
+    \fakt	{KI}
+            {<Beschreibung>}
+            {<Rolle>}
+
+    \fakt	{Kunde}
+            {SoPra-Tutor}
+            {<Rolle>}
+
+    \fakt	{Client [Komponente]}
+            {<Beschreibung>}
+            {<Rolle>}
+
+    \fakt	{KI-Client [Komponente]}
+            {<Beschreibung>}
+            {<Rolle>}
+
+    \fakt	{Server [Komponente]}
+            {<Beschreibung>}
+            {<Rolle>}
+
+    \fakt	{Quidditchteam-Editor [Komponente]}
+            {<Beschreibung>}
+            {<Rolle>}
+
+    \fakt 	{Team}
+            {<Beschreibung>}
+            {<Rolle>}
+
+    \fakt 	{Schiedsrichter}
+            {<Beschreibung>}
+            {<Rolle>}
+
+
+    \subsection{Funktionale Anforderungen (allgemein)}
+
+    \fanf	{Quidditch-Spielfeld}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Mittelkreis}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Mittelfeld}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Hüterzone}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Torring}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Schussvektor}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Bälle}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Quaffel [Ball]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Klatscher [Ball]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Goldener Schnatz [Ball]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Besen}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Zauberfauch [Besen]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Sauberwisch 11 [Besen]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Komet 2-60 [Besen]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Nimbus 2001  [Besen]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Feuerblitz [Besen]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Spieler}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}	
+
+    \fanf	{Jäger [Spielertyp]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Treiber [Spielertyp]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Hüter [Spielertyp]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{[Spielertyp] Sucher}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Fans]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}	
+
+    \fanf	{Elfen [Fantyp]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Kobolde [Fantyp]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Trolle [Fantyp]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Niffler [Fantyp]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Foul}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Flacken [Foul]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Nachtarocken [Foul]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Stutschen [Foul]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Keilen [Foul]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Schnaltzeln [Foul]}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Wurf mit dem Quaffel}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Quaffel Abfangen}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Torschuss}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Klatscher kloppen}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Partie-Konfiguration}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Quidditchteam-Konfiguration}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}	
+
+    \fanf	{Netzwerkinterface}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Runde}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Ballphase}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Spielerphase}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Fanphase}
+            {<Beschreibung>}
+            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Zufallsgenerator}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Spielende}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Überlängenbehnadlung}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Spiellogik}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Log-Datei}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{<Titel>}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{<Titel>}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{<Titel>}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{<Titel>}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{<Titel>}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+
+    \subsection{Funktionale Anforderungen (Server)}
+
+    \subsection{Funktionale Anforderungen (Client)}
+
+    \fanf	{Hauptmenü [Client-View]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Connect to Game [Client-View]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{End of Game [Client-View]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Import Team Config [Client-View]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Game Play [Client-View]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}	
+
+    \fanf	{Hilfe [Client-View]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Beobachter [Client-View]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Game Rendering Engine}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Input Handler [Client]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Input Validierung [Client]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Hotkey [Client]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {--}
+            {<Akteure>}
+
+    \fanf	{Pausieren [Client]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {--}
+            {<Akteure>}
+
+
+    \subsection{Funktionale Anforderungen (Quidditchteam-Editor)}
+
+    \fanf	{Edit Team [Team-Editor-View]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \fanf	{Save Team [Team-Editor-View]}
+            {<Beschreibung>}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+
+    \subsection{Nicht funktionale Anforderungen}
+
+    \qanf 	{Plattformunabhängigkeit}
+            {Der Spielclient soll auf mindestens einer gängigen Computerbetriebssystem-Plattform (z.B. Linux, Windows) uneingeschränkt benutzbar sein. Des weiteren soll die Server- und die KI-Komponente auf mindestens zwei gängigen Computerbetriebssystem-Plattformen (z.B. Linux, Windows) uneingeschränkt benutzbar sein.}
+            {<Begründung>}
+            {<Abhängigkeiten>}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Version-Controlling}
+            {Verwaltung und Version-Controlling des Quellcodes mit Hilfe eines Git basierten Version-Controlling Tool.}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Continuous Integration}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Statische Codeanalyse}
+            {Mit Hilfe des Tools 'SonarQube' bzw. 'SonarCloud' soll der gesamt Quellcode einer statischen Analyse unterzogen werden. Dabei darf die technische Codequalität von diesen Tool nicht schlechter als 'B' bewertet werden.}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Qualitätssicherung}
+            {80 Prozent des Quellcodes der einzelnen Komponenten soll durch automatische Test auf Korrektheit geprüft werden}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Docker Container}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Dokumentation}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Benutzerhandbuch}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Anwendungssprache}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Programmiersprache}
+            {Implementierungssprache}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Dokumentationssprache}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Format für Konfigurationsdateien}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Netzwerkkommunikation}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{Rundenspiel}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{<Titel>}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{<Titel>}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{<Titel>}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{<Titel>}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{<Titel>}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+    \qanf 	{<Titel>}
+            {<Beschreibung>}
+            {<Begründung>}
+            {-}
+            {<Prio>}
+            {<Akteure>}
+
+
 \end{document}
