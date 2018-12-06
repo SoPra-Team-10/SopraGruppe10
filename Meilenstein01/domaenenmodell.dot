@@ -1,17 +1,17 @@
 digraph G {
-    fontname = "Bitstream Vera Sans"
+    fontname = "Helvetica"
     fontsize = 8
     rankdir="LR";
     nodesep = "0.4"
 
     node [
-        fontname = "Bitstream Vera Sans"
+        fontname = "Helvetica"
         fontsize = 8
         shape = "record"
     ]
 
     edge [
-        fontname = "Bitstream Vera Sans"
+        fontname = "Helvetica"
         fontsize = 8
         arrowhead = "onormal"
     ]
