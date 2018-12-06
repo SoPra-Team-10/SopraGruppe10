@@ -53,7 +53,7 @@ if [ "$BRANCH" != "master" ]; then
     git clone "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git"
     cd Complete/
     git config --global push.default simple
-    git config user.name "$commitAuthorName"
+	git config user.name "$commitAuthorName"
     git config user.email "$commitAuthorEMail"
     echo '[deploy-complete]: Copy'
     rm -rf Uebungsblaetter
@@ -65,4 +65,8 @@ if [ "$BRANCH" != "master" ]; then
     git add -A
     git commit -m "$commitMessage"
     git push -f  "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git" master
+	echo '######################################'
+	cat .git/config 
+	echo '######################################'
+	cat ~/.gitconfig
 fi
