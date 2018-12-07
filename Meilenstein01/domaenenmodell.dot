@@ -198,7 +198,7 @@ digraph G {
     ]
 
     TeamAnn [
-        label = "Maximal 4 Spieler eines Geschlechts\nJeder Besentyp mindestens 1 mal"
+        label = "Maximal 4 Spielfigur eines Geschlechts\nJeder Besentyp mindestens 1 mal"
         shape = "note"
     ]
 
@@ -207,8 +207,8 @@ digraph G {
         style = "dotted"
     ]
 
-    Spieler [
-        label = "Spieler|Typ: SpielerTyp\lName : String\lGeschlecht : \{männlich, weiblich\}\l"
+    Spielfigur [
+        label = "Spielfigur|Name : String\lGeschlecht : \{männlich, weiblich\}\l"
     ]
 
     Jaeger [
@@ -225,10 +225,10 @@ digraph G {
         label = "Sucher|"
     ]
 
-    Jaeger -> Spieler
-    Treiber -> Spieler
-    Hueter -> Spieler
-    Sucher -> Spieler
+    Jaeger -> Spielfigur
+    Treiber -> Spielfigur
+    Hueter -> Spielfigur
+    Sucher -> Spielfigur
 
     Jaeger -> Team [
         arrowhead = "diamond"
@@ -250,7 +250,7 @@ digraph G {
         headlabel = "1"
         taillabel = "1"
     ]
-    Spieler -> Besen [
+    Spielfigur -> Besen [
         arrowhead = "diamond"
         headlabel = "1"
         taillabel = "1"
@@ -331,7 +331,7 @@ digraph G {
         label = "Foul|Bestrafungswahrscheinlichkeit : Real\l"
     ]
     
-    Foul -> Spieler [
+    Foul -> Spielfigur [
         style = "dotted"
         arrowtail = "normal"
         arrowhead = "none"
