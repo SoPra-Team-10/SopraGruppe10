@@ -184,7 +184,7 @@ bibtotoc,              % LV im IV
     
     \fakt	{Nutzer}
 			{Menschlicher Nutzer, der eine Anwendungen bedient.}
-			{Ein Mensch, welcher entweder als Spieler aktiv an einem Spiel teilnimmt oder als Gas passiv einem Spiel zusieht oder den Quidditchteam-Editor benutzt um ein Team zu erstellen oder an zu passen.}
+			{Ein Mensch, welcher entweder als Spieler aktiv an einem Spiel teilnimmt oder als Gast passiv einem Spiel zusieht oder den Quidditchteam-Editor benutzt um ein Team zu erstellen oder an zu passen.}
 			
 	\fakt	{Spieler}
 			{Nimmt aktiv Einfluss auf das Spielgeschehen.}
@@ -216,7 +216,7 @@ bibtotoc,              % LV im IV
 	
 	\fakt	{Server}
 			{Zentraler Computer mit spezieller Software zu dem alle am Spiel beteiligten Clients ein Verbindung aufbauen.}
-			{Auf dem Server läuft die eigentliche Spiellogik. Er fungiert dabei als Bindeglied zwischen den am Spiel beteiligten Clients und stellt für diese alle benötigten Informationen, wie etwas die Spielfeldkonfiguration oder die Züge des Gegners bereit.}
+			{Auf dem Server läuft die eigentliche Spiellogik. Er fungiert dabei als Bindeglied zwischen den am Spiel beteiligten Clients und stellt für diese alle benötigten Informationen, wie etwa die Spielfeldkonfiguration oder die Züge des Gegners bereit.}
 			
 	\fakt	{Quidditchteam-Editor}
 			{Editor für die Team-Konfiguration.}
@@ -280,7 +280,7 @@ bibtotoc,              % LV im IV
 			{<Akteure>}	
 	
 	\fanf	{Entfernung}
-			{Die Entferunung ist die kleinst mögliche Anzahl an Zügen, die man braucht, um Feld A zu Feld B zu kommen, wobei man sich in alle Richtengen bewegen darf, also Vertikal, Horizontal und Diagonal. Dies entspricht allerdings nicht immer den überstrichenen Feldern -1!.}
+			{Die Entfernung ist die kleinst mögliche Anzahl an Zügen, die man braucht, um Feld A zu Feld B zu kommen. Dabei darf  man sich in alle Richtengen bewegen, also Vertikal, Horizontal und Diagonal. Dies entspricht allerdings nicht immer den überstrichenen Feldern -1!.}
 			{Die Entfernung ist wichtig für das Spiel, um angeben zu können, welcher Wurf am besten geeignet ist und welcher der ganzen möglichen Schussvektoren am idealsten ist von der Entfernung.}
 			{<Abhängigkeiten>}
 			{++}
@@ -340,7 +340,7 @@ bibtotoc,              % LV im IV
 			{<Akteure>}
 
 	\fanf	{Komet 2-60 [Besen]}
-			{Der Komet 2-60 ist der mittel beste Besen den ein Spieler auswählen kann. Die Wahrscheinlichkeit, dass der Spieler ein zweites Feld in einem Zug vorrücken kann beträgt bei dem Besen 50\%.}
+			{Der Komet 2-60 ist der Besen mittlerer Güte den ein Spieler auswählen kann. Die Wahrscheinlichkeit, dass der Spieler ein zweites Feld in einem Zug vorrücken kann beträgt bei dem Besen 50\%.}
 			{Der Besen ist ein wichtiges Feature, welches Einfluss auf das Spiel hat, da je nach Besen der Spieler einen zweiten Zug machen darf.}
 			{<Abhängigkeiten>}
 			{<Prio>}
@@ -361,7 +361,7 @@ bibtotoc,              % LV im IV
 			{<Akteure>}
 			
 	\fanf	{Teams}
-			{An einem Spiel sind 2 Teams beteiligt, die gegeneinander spielen. Diese beiden Teams haben einen Namen, ein Team-Motto, ein Logo und eine Hauptfarbe für das Trickot, aber auch eine Ersatzfarbe, falls das andere Team eine ähnliche Farbe hat, gegen das gespielt wird. Jedes Team besteht zudem aus 7 Spieler, wovon einer ein Sucher ist, einer ein Hüter, 2 sind sogenannte Treiber und die restlichen 3 sind Jäger.}
+			{An einem Spiel sind 2 Teams beteiligt, die gegeneinander spielen. Diese beiden Teams haben einen Namen, ein Team-Motto, ein Logo und eine Hauptfarbe für das Trikot, aber auch eine Ersatzfarbe, falls das andere Team eine ähnliche Farbe hat, gegen das gespielt wird. Jedes Team besteht zudem aus 7 Spieler, wovon einer ein Sucher ist, einer ein Hüter, 2 sind sogenannte Treiber und die restlichen 3 sind Jäger.}
 			{Die Teams sind notwendig, da sie der Hauptbestandteil sind, in dem sich alles vereint.}
 			{FA1, FA19}
 			{++}
@@ -397,12 +397,12 @@ bibtotoc,              % LV im IV
 	
 	\fanf	{Sucher [Spielertyp]}
 			{Der Sucher hat in dem gesamten Spiel nur eine einzige Aufgabe. Seine Aufgabe ist es, den goldenen Schnatz zu suchen und ihn genau dann zu fangen, wenn sein Team durch die zusätzlichen 30 Punkte das Spiel gewinnt.}
-			{Der Sucher ist wichtig für das Spiel, da er die Möglichkeit hat, dass Spiel am ende noch zu drehen und somit dem Spiel einen zusätzlichen Kick zu verleihen, außerdem ist das Spiel sofort zu Ende, sobald der Schnatz gefangen wurde.}
+			{Der Sucher ist wichtig für das Spiel, da er die Möglichkeit hat, dass Spiel am Ende noch zu drehen und somit dem Spiel einen zusätzlichen Kick zu verleihen, außerdem ist das Spiel sofort zu Ende, sobald der Schnatz gefangen wurde.}
 			{Spielfeld,Spieler, goldener Schnatz}
 			{++}
 			{<Akteure>}
 	
-	\fanf	{Fans]}
+	\fanf	{Fans}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
@@ -638,21 +638,21 @@ bibtotoc,              % LV im IV
 			{+}
 			{<Akteure>}
 	
-	\fanf	{Connect to Game [Ansicht]}
+	\fanf	{Spiel beitreten [Ansicht]}
 			{Grafische Oberfläche um sich mit einem Server auf dem ein Spiel bereit gestellt wird zu verbinden. Dabei soll man außerdem die Möglichkeit haben seine Team-Konfiguration an zu geben, die man für das neue Spiel verwenden möchte.}
 			{Der Nutzer muss die Möglichkeit haben sich komfortabel mit einem Server verbinden zu können.}
 			{Abb}
 			{+}
 			{<Akteure>}
 	
-	\fanf	{End of Game [Ansicht]}
+	\fanf	{Spiel Ende [Ansicht]}
 			{Grafische Oberfläche die, die Spieler sehen nachdem eine Partie zu Ende ist. Der Nutzer sollte hier auch die Möglichkeit haben die Anwendung zu verlassen oder wieder ins Hauptmenü zurück kehren. Optional ist hier auch Platz für etwaige Statistiken über den Spielverlauf.}
 			{Nach dem Ende einer Partie muss dem Nutzer mitgeteilt werden ob er gewonnen hat oder nicht und wie es von da an weiter geht. }
 			{<Abhängigkeiten>}
 			{-+}
 			{<Akteure>}
 			
-	\fanf	{Import Team Config [Ansicht]}
+	\fanf	{Team-Konfiguration importieren [Ansicht]}
 			{Grafische Oberfläche zum importieren bzw. öffen einer Team-Konfiguration für ein Spiel.}
 			{Es muss für den Benutzer eine einfachen Weg geben eine Team Konfiguration im Dateisystem zu suchen und an die Anwendung zu übergeben.}
 			{<Abhängigkeiten>}
@@ -680,21 +680,21 @@ bibtotoc,              % LV im IV
 			{+}
 			{<Akteure>}
 	
-	\fanf	{Game Rendering Engine}
-			{Die Game Rendering Engine bereitet die Ansicht des Spielfelds grafisch auf.}
+	\fanf	{Spiel Rendering Engine}
+			{Die Spiel Rendering Engine bereitet die Ansicht des Spielfelds grafisch auf.}
 			{Die Benutzeroberfläche muss während des Spiels mit Inhalt gefüllt werden. Dieser Inhalt muss je nach Spielgeschehen automatisch generiert werden.}
 			{<Abhängigkeiten>}
 			{++}
 			{<Akteure>}
 	
-	\fanf	{Input Handler}
+	\fanf	{Eingabenverarbeitung}
 			{Diese Einheit ist für die Verarbeitung von Benutzereingaben verantwortlich.}
 			{Jede Benutzereingabe muss ausgewertet werden.Nach der Validierung muss dann eine Entscheidung getroffen werden was als Reaktion auf diese Eingaben passieren muss.}
 			{<Abhängigkeiten>}
 			{++}
 			{<Akteure>}
 			
-	\fanf	{Input Validierung}
+	\fanf	{Eingaben Validierung}
 			{Einheit die Benutzereingaben auf Korrektheit prüft.}
 			{Um etwaige falsche Benutzereingaben zu erkennen und den Nuzer darauf hin weisen zu können ist es von Nöten, dass alle Benutzereingaben geprüft werden.}
 			{<Abhängigkeiten>}
@@ -702,7 +702,7 @@ bibtotoc,              % LV im IV
 			{<Akteure>}
 	
 	\fanf	{Hotkey}
-			{Oft benötigte Funktionen auf Bestimmte (besondere) Testen (-Kombinationen) mappen.}
+			{Oft benötigte Funktionen auf bestimmte (besondere) Testen (-Kombinationen) abzubilden.}
 			{Hotkeys sind optionale Features, die im Lastenheft aufgeführt sind und zu einer einfacheren Spielsteuerung und höherem Spielkomfort betragen können.}
 			{<Abhängigkeiten>}
 			{--}
