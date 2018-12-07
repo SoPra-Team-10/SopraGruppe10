@@ -69,29 +69,29 @@ bibtotoc,              % LV im IV
 
 
 \newcommand{\begriff}[7] {
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{|p{4.5cm}|p{10cm}|}
-            %\hline
-            %\toprule \\
-            \hline
-            \textbf{Begriff} & \textbf{#1} \\ \hline
-            %\midrule \\
-            \textbf{Beschreibung} & #2 \\ \hline
-            %\midrule
-            \textbf{Ist-ein} & #3 \\ \hline
-            %\midrule
-            \textbf{Kann-sein} & #4 \\ \hline
-            %\midrule
-            \textbf{Aspekt} & #5 \\ \hline
-            %\midrule
-            \textbf{Bemerkung} & #6 \\ \hline
-            %\midrule
-            \textbf{Beispiel} & #7 \\ %\hline
-            %\bottomrule
-            \hline
-        \end{tabular}
-    \end{table}
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|p{2,5cm}|p{12cm}|}
+			%\hline
+			%\toprule \\
+			\hline
+			\textbf{Begriff} & \textbf{#1} \\ \hline
+			%\midrule \\
+			\textbf{Beschreibung} & #2 \\ \hline
+			%\midrule
+			\textbf{Ist-ein} & #3 \\ \hline
+			%\midrule
+			\textbf{Kann-sein} & #4 \\ \hline
+			%\midrule
+			\textbf{Aspekt} & #5 \\ \hline
+			%\midrule
+			\textbf{Bemerkung} & #6 \\ \hline
+			%\midrule
+			\textbf{Beispiel} & #7 \\ %\hline
+			%\bottomrule
+			\hline
+		\end{tabular}
+	\end{table}
 }
 
 %\title{Softwaregrundprojekt}
@@ -174,13 +174,11 @@ bibtotoc,              % LV im IV
     \pagebreak
 
     \section{Kontextanalyse}
-    %TODO
-    
+    \input{kontextanalyse.tex}
     \section{Fachwissen}
     \input{Aufgabe_2_Fachwissen.tex}
-    
-    \includepdf[pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
-    \section{Anforderungsdefinition}    
+    \includepdf[scale = 0.8, pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
+    \section{Anforderungsdefinition}
     
     \subsection{Akteure}
     

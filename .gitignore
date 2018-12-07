@@ -4,6 +4,7 @@
 *.fls
 *.log
 *.pdf
+*.texpadtmp
 *.bib
 *.out
 *.run.xml
