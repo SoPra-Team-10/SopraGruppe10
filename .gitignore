@@ -5,6 +5,11 @@
 *.log
 *.pdf
 *.texpadtmp
+*.bib
+*.out
+*.run.xml
+*.toc
+
 
 ### Eclipse ###
 
