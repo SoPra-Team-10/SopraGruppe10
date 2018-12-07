@@ -234,6 +234,10 @@ bibtotoc,              % LV im IV
 			{Ahndet Fouls.}
 			{Der Schiedsrichter wird durch eine Software Repräsentiert die mit Hilfe eines Zufallsgenerator entscheidet, ob ein Foul geahndet wird oder nicht.}
 	
+	\fakt	{Spielfigur}	
+			{Spielfigur auf dem Spielfeld}
+			{Eine Spielfigur ist ein Teil eines Teams und kann einen der folgenden Typen besitzen: Sucher, Hüter , Treiber oder Jäger.}
+			
 	\fakt	{Spiel}
 			{Eine Partie Fantastic Feasts.}
 			{Ein Spiel besteht aus genau 2 Teams, Fans, dem Schiedsrichter und einem Spielfeld. Das Steuern der Spiellogik übernimmt der Server. Die Spieler der beiden Teams spielen gegeneinander um den Sieg.}	
@@ -245,35 +249,35 @@ bibtotoc,              % LV im IV
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{++}
-			{\textbf{ALLE?}}
+			{Team, Spiel, Spieler, KI, Gast}
 	
 	\fanf	{Mittelkreis}
 			{Der Mittelkreis ist ein Bereich auf dem Quidditch-Spielfeld, welcher in der Mitte angeordnet ist und aus 3x3 quadratischen Kacheln besteht. In dem Mittelkreis befindet sich das Mittelfeld, welches die mittlere Kachel des Mittelkreises ist und durch ein \textit{M} gekennzeichnet ist.}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{FA1}
 			{++}
-			{<Akteure>}
+			{Spiel}
 	
 	\fanf	{Mittelfeld}
 			{Das Mittelfeld stellt den mittleren Punkt des Mittelkreises dar, welcher im Zentrum des Quidditch-Spielfeldes ist.}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{FA2}
 			{++}
-			{<Akteure>}
+			{Spiel}
 	
 	\fanf	{Hüterzone}
 			{Die Hüterzonen sind jeweils an den jeweils gegenüberliegenden Seiten des Quidditch-Spielfeldes. Die Hüterzonen beinhalten jeweils 3 Torringe und sind somit die Zonen in den die Teams Punkten können. Die Hüterzonen sind in einer Ovalen Form, welche 11 quadratische Felder hoch ist und 5 quadratische Felder breit ist an den jeweilgen Maximalen Punkten.}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor. Außerdem beinhaltet diese Zone die Torringe, durch welche die Teams Punkte machen können.}
 			{FA1}
 			{++}
-			{<Akteure>}
+			{Spiel}
 	
 	\fanf	{Torring}
 			{Die Torringe sind in der Hüterzone angebracht und dazu da, dass die Teams jeweils Punkten können. Die 3 torringe werden jeweils von einem Torhüter bewacht, welcher verhindern kann, dass das gegnerische Team ein Tor schiessen kann.}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{FA4}
 			{++}
-			{<Akteure>}
+			{Spiel}
 			
 	\fanf	{Schussvektor}
 			{Als Schussvektor wird ein möglicher Wurf bezeichnet, um einen Torring zu treffen. Der Schussvektor geht dabei vom Mittelpunkt des Rasterfeldes, von dem geworfen wird zu dem Feld, zu dem geworfen wird gerade. Alle Rasterfelder, die dabei geschnitten werden, sind so genannte überstrichene Felder. Dies gilt aber nur für Felder, die wirklich geschnitten wurden und nicht nur an einer Ecke tangiert wurden.
@@ -288,7 +292,7 @@ bibtotoc,              % LV im IV
 			{Die Entfernung ist wichtig für das Spiel, um angeben zu können, welcher Wurf am besten geeignet ist und welcher der ganzen möglichen Schussvektoren am idealsten ist von der Entfernung.}
 			{<Abhängigkeiten>}
 			{++}
-			{<Akteure>}
+			{Spieler}
 	
 	\fanf	{Bälle}
 			{Es gibt 3 verschiedene Arten von Bällen. So existieren der Quaffel, der Klatscher und der Schnatz. Jeder Ball hat seine eigenen spezifischen Fähigkeiten und eigene Funktion, die er für das Spiel erfordert. In einem Quidditch Spiel kommen 4 Bälle vor. Davon ist einer ein Quaffel, einer ein Schnatz und zwei sind Klatscher.}
@@ -371,117 +375,117 @@ bibtotoc,              % LV im IV
 			{++}
 			{<Akteure>}
 	
-	\fanf	{Spieler}
-			{Es gibt 4 Arten von Spielern, welche in einem Quidditch Spiel unterschiedliche Aufgaben haben. Ein Team besteht insgesamt aus 7 Spielern, wovon es einen Sucher gibt, einen Hüter, 2 Treiber und 3 Jäger. Jeder dieser Spieler besitzt einen Namen und ein Geschlecht. Jedes Team muss dabei ausgeglichen sein, was das Geschlecht angeht, womit immer nur 4 Spieler dem selben Geschlecht angehören dürfen. In der Rundenphase, machen die Spieler zuerst ihre Bewegung, und dann ihre Aktion. Dies bedeutet, dass sie sich erst ein Feld weiterbewegen, und anschließend je nach Wahrscheinlichkeit des Besens ein zweites Feld weiterbewegen, und danach dann erst ihre Aktion wie Quaffel werfen oder Klatscher klopfen durchführen.}
+	\fanf	{Spielfiguren}
+			{Es gibt 4 Arten von Spielfiguren, welche in einem Quidditch Spiel unterschiedliche Aufgaben haben. Ein Team besteht insgesamt aus 7 Spielern, wovon es einen Sucher gibt, einen Hüter, 2 Treiber und 3 Jäger. Jeder dieser Spieler besitzt einen Namen und ein Geschlecht. Jedes Team muss dabei ausgeglichen sein, was das Geschlecht angeht, womit immer nur 4 Spieler dem selben Geschlecht angehören dürfen. In der Rundenphase, machen die Spieler zuerst ihre Bewegung, und dann ihre Aktion. Dies bedeutet, dass sie sich erst ein Feld weiterbewegen, und anschließend je nach Wahrscheinlichkeit des Besens ein zweites Feld weiterbewegen, und danach dann erst ihre Aktion wie Quaffel werfen oder Klatscher klopfen durchführen.}
 			{Spieler sind absolut notwendig für das Spiel, da sie die Aktionen durchführen, welche von dem Menschen gesteuert werden.}
 			{FA1}
 			{++}
-			{<Akteure>}
+			{Team}
 	
 	\fanf	{Jäger [Spielertyp]}
 			{Die Jäger sind die Spieler auf dem Spielfeld, welche versuchen die Punkte für das Team mithilfe des Quaffels zu erzielen. Dabei darf jedoch immer nur ein angreifender Jäger in der gegnerischen Hüterzone sein. Trifft der Jäger auf ein Feld auf dem der Quaffel ist, hebt er ihn auf. Um zu werfen, bewegt sich der Jäger auf das gewünschte Feld und nach seiner Bewegung wirft er den Ball auf einen der 3 Torringe.}
 			{Jäger sind wichtig für das Spiel, da diese die Punkte machen, die das Team sammelt.}
 			{Spielfeld, Quaffel, Torring, Quaffel Wurf}
 			{++}
-			{<Akteure>}
+			{Team, Spieler, Spielfigur, Spiel}
 	
 	\fanf	{Treiber [Spielertyp]}
 			{Die Treiber sind ausgestattet mit Kloppern, welcher dazu dient, die Klatscher von den eigenen Teamkameraden fern zu halten und sie auf die gegnerischen Spieler zu lenken. Kommt ein Treiber auf das Feld eines Klatschers oder falls er bereits schon dort ist, so kann der Treiber in dieser Rundenphase den Klatscher kloppen. Er macht also einen Wurf mit dem Klatscher auf ein Zielfeld.}
 			{Treiber haben die Funktion die eigenen Spieler vor den Klatschern zu beschützen, so dass nicht alle Spieler des Teams vom Besen fliegen.}
 			{Klatscher, Spielfeld, Spieler, Kloppen}
 			{++}
-			{<Akteure>}
+			{Team, Spieler, Spielfigur, Spiel}
 	
 	\fanf	{Hüter [Spielertyp]}
 			{Hüter sind die Beschützer der jeweils eigenen Torringe. Hüter können allerdings nur einen Quaffel aufnehmen und dann wieder werfen, zum Beispiel zu einem eigenen Jäger, die Hüter können aber keine Tore erzielen, dies ist nur durch Jäger möglich.}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{Spielfeld, Torringe, Hüterzone, Quaffel, Quaffel werfen,Spieler}
 			{++}
-			{<Akteure>}
+			{Team, Spieler, Spielfigur, Spiel}
 	
 	\fanf	{Sucher [Spielertyp]}
 			{Der Sucher hat in dem gesamten Spiel nur eine einzige Aufgabe. Seine Aufgabe ist es, den goldenen Schnatz zu suchen und ihn genau dann zu fangen, wenn sein Team durch die zusätzlichen 30 Punkte das Spiel gewinnt.}
 			{Der Sucher ist wichtig für das Spiel, da er die Möglichkeit hat, dass Spiel am Ende noch zu drehen und somit dem Spiel einen zusätzlichen Kick zu verleihen, außerdem ist das Spiel sofort zu Ende, sobald der Schnatz gefangen wurde.}
-			{Spielfeld,Spieler, goldener Schnatz}
+			{Spielfeld, Spieler, goldener Schnatz}
 			{++}
-			{<Akteure>}
+			{Team, Spieler, Spielfigur, Spiel}
 	
 	\fanf	{Fans}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
-			{<Akteure>}	
+			{Spiel}	
 	
 	\fanf	{Elfen [Fantyp]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
+			{Fans}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel}
 	
 	\fanf	{Kobolde [Fantyp]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
+			{Fans}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel}
 	
 	\fanf	{Trolle [Fantyp]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
+			{Fans}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel}
 	
 	\fanf	{Niffler [Fantyp]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
+			{Fans}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel}
 	
 	\fanf	{Foul}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel, Schiedsrichter}
 	
 	\fanf	{Flacken [Foul]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel, Schiedsrichter}
 	
 	\fanf	{Nachtarocken [Foul]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel, Schiedsrichter}
 	
 	\fanf	{Stutschen [Foul]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel, Schiedsrichter}
 	
 	\fanf	{Keilen [Foul]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel, Schiedsrichter}
 	
 	\fanf	{Schnaltzeln [Foul]}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel, Schiedsrichter}
 	
 	\fanf	{Wurf mit dem Quaffel}
 			{<Beschreibung>}
@@ -495,28 +499,28 @@ bibtotoc,              % LV im IV
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel}
 	
 	\fanf	{Torschuss}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel}
 	
 	\fanf	{Klatscher kloppen}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel}
 			
 	\fanf	{Partie-Konfiguration}
-			{<Beschreibung>}
+			{JSON Datei mit Informationen über eine Spiel.}
 			{<Begründung>}
-			{<Abhängigkeiten>}
+			{Spiellogik}
 			{<Prio>}
-			{<Akteure>}
+			{Server, Spiel, Systemadministrator}
 	
 	\fanf	{Quidditchteam-Konfiguration}
 			{Lokal hinterlegte Datei im JSON Format in der die Zusammensetzung des Teams eines Spielers hinterlegt ist.}
@@ -536,29 +540,29 @@ bibtotoc,              % LV im IV
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+			{+}
+			{Spiel}
 	
 	\fanf	{Ballphase}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+			{+}
+			{Spiel}
 			
 	\fanf	{Spielerphase}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+			{+}
+			{Spiel}
 			
 	\fanf	{Fanphase}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{<Abhängigkeiten>}
 			{<Prio>}
-			{<Akteure>}
+			{Spiel}
 			
 	\fanf	{Zufallsgenerator}
 			{Einheit die per Zufall entscheidet, ob bestimmt Ereignisse eintreten oder nicht.}
@@ -572,7 +576,7 @@ bibtotoc,              % LV im IV
 			{Bei bestimmt Ereignissen oder Gegebenheiten ist das Spiel zu ende und ein Sieger muss bestimmt werden.}
 			{Spiellogik, Runde}
 			{+}
-			{<Akteure>}
+			{Spiel, Spieler}
 			
 	\fanf	{Überlängenbehnadlung}
 			{Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft.}
@@ -586,14 +590,14 @@ bibtotoc,              % LV im IV
 			{Ohne eine Spiellogik wären alle Anwendungen nutzlos.}
 			{<Abhängigkeiten>}
 			{++}
-			{<Akteure>}
+			{Server, Spiel}
 	
 	\fanf	{Log-Datei}
 			{Datei zum Speichern bestimmter Ereignisse. Diese Datei wird lokal auf dem Endgerät hinterlegt.}
 			{Um die während der Nutzung der Software aufgetretenen Aktionen im Nachhinein nachvollziehen zu können und daraus Informationen für Statistiken und Wartung ziehen zu können ist es wichtig das diese Aktionen lokal hinterlegt werden.}
 			{<Abhängigkeiten>}
 			{<Prio>}
-			{<Akteure>}
+			{Client, KI-Client, Server}
 	
 	\fanf	{<Titel>}
 			{<Beschreibung>}
@@ -640,84 +644,84 @@ bibtotoc,              % LV im IV
 			{Das Hauptmenü soll den Zentralen Punkt darstellen von dem aus alle Funktionen der Software zu erreichen. Es soll also unter anderem ein Spiel gestartet werden können, die Hilfe aufgerufen werden können, die Einstellungen der Anwendung angepasst werden können und eventuell vorhandene Statistiken aufgerufen werden können.}
 			{<Abhängigkeiten>}
 			{+}
-			{<Akteure>}
+			{Nutzer}
 	
 	\fanf	{Spiel beitreten [Ansicht]}
 			{Grafische Oberfläche um sich mit einem Server auf dem ein Spiel bereit gestellt wird zu verbinden. Dabei soll man außerdem die Möglichkeit haben seine Team-Konfiguration an zu geben, die man für das neue Spiel verwenden möchte.}
 			{Der Nutzer muss die Möglichkeit haben sich komfortabel mit einem Server verbinden zu können.}
 			{Abb}
 			{+}
-			{<Akteure>}
+			{Spieler, Gast}
 	
 	\fanf	{Spiel Ende [Ansicht]}
 			{Grafische Oberfläche die, die Spieler sehen nachdem eine Partie zu Ende ist. Der Nutzer sollte hier auch die Möglichkeit haben die Anwendung zu verlassen oder wieder ins Hauptmenü zurück kehren. Optional ist hier auch Platz für etwaige Statistiken über den Spielverlauf.}
 			{Nach dem Ende einer Partie muss dem Nutzer mitgeteilt werden ob er gewonnen hat oder nicht und wie es von da an weiter geht. }
 			{<Abhängigkeiten>}
 			{-+}
-			{<Akteure>}
+			{Spieler}
 			
 	\fanf	{Team-Konfiguration importieren [Ansicht]}
 			{Grafische Oberfläche zum importieren bzw. öffen einer Team-Konfiguration für ein Spiel.}
 			{Es muss für den Benutzer eine einfachen Weg geben eine Team Konfiguration im Dateisystem zu suchen und an die Anwendung zu übergeben.}
 			{<Abhängigkeiten>}
 			{-+}
-			{<Akteure>}
+			{Spieler}
 			
 	\fanf	{Spiel [Ansicht]}
 			{Grafische Oberfläche die der Spieler sieht.}
 			{Es handelt sich um eine Anwendung mit grafischer Benutzeroberfläche. Es ist also zwingend von Nöten, dass such das aktuelle Spielgeschehen angezeigt werden kann.}
 			{<Abhängigkeiten>}
 			{++}
-			{<Akteure>}	
+			{Spieler}	
 			
 	\fanf	{Hilfe [Ansicht]}
 			{Grafische Oberfläche, in der zum einen das Spielprinzip erklärt wird und zum anderen gezeigt wird wie genau man die Client-Software bedient wird.}
 			{Um unerfahren Benutzer die Bedienung der Software zu erleichtern.}
 			{<Abhängigkeiten>}
 			{-+}
-			{<Akteure>}
+			{Nutzer}
 			
 	\fanf	{Beobachter [Ansicht]}
 			{Grafische Oberfläche, die ein Gast sieht.}
 			{Wenn ein Nutzer einem Spiel nur als Gast zuschaut muss ihm das Spiel trotzdem in eine grafische Oberfläche aufbereitet werden.}
 			{<Abhängigkeiten>}
 			{+}
-			{<Akteure>}
+			{Gast}
 	
 	\fanf	{Spiel Rendering Engine}
 			{Die Spiel Rendering Engine bereitet die Ansicht des Spielfelds grafisch auf.}
 			{Die Benutzeroberfläche muss während des Spiels mit Inhalt gefüllt werden. Dieser Inhalt muss je nach Spielgeschehen automatisch generiert werden.}
 			{<Abhängigkeiten>}
 			{++}
-			{<Akteure>}
+			{Client, Spieler}
 	
 	\fanf	{Eingabenverarbeitung}
 			{Diese Einheit ist für die Verarbeitung von Benutzereingaben verantwortlich.}
 			{Jede Benutzereingabe muss ausgewertet werden.Nach der Validierung muss dann eine Entscheidung getroffen werden was als Reaktion auf diese Eingaben passieren muss.}
-			{<Abhängigkeiten>}
+			{Spiellogik}
 			{++}
-			{<Akteure>}
+			{Spieler, KI}
 			
 	\fanf	{Eingaben Validierung}
 			{Einheit die Benutzereingaben auf Korrektheit prüft.}
 			{Um etwaige falsche Benutzereingaben zu erkennen und den Nuzer darauf hin weisen zu können ist es von Nöten, dass alle Benutzereingaben geprüft werden.}
-			{<Abhängigkeiten>}
+			{Spiellogik}
 			{<Prio>}
-			{<Akteure>}
+			{Spieler, KI}
 	
 	\fanf	{Hotkey}
 			{Oft benötigte Funktionen auf bestimmte (besondere) Testen (-Kombinationen) abzubilden.}
 			{Hotkeys sind optionale Features, die im Lastenheft aufgeführt sind und zu einer einfacheren Spielsteuerung und höherem Spielkomfort betragen können.}
 			{<Abhängigkeiten>}
 			{--}
-			{<Akteure>}
+			{Spieler}
 			
 	\fanf	{Pausieren}
 			{Das aktuelle Spiel pausieren.}
 			{Pausieren ist ein optionales Feature, das im Lastenheft aufgeführt ist und einem menschliche Spieler im Client zur Verfügung stehen sollte um den Spielkomfort zu erhöhen.}
 			{<Abhängigkeiten>}
 			{--}
-			{<Akteure>}
+			{Spieler}
 			
 	
 	\subsection{Quidditchteam-Editor spezifische funktionale Anforderungen}
