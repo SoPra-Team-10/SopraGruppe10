@@ -198,6 +198,10 @@ bibtotoc,              % LV im IV
 			{Anwendungsnutzer mit Zusatzqualifikation um Server zu verwalten.}
 			{Der Systemadministrator hat zugriff auf die Server-Anwendung. Er ist dafür verantwortlich, eine Instanz der Server Anwendung zu starten und zu betreuen. Zudem hat er Zugriff auf die Partie-Konfiguration und kann diese bei Bedarf verändern.}
 	
+	\fakt	{Entwickler}
+			{Person die an der Entwicklung der Anwendung beteiligt ist.}
+			{Diese Software wird von einem Team aus 6 Entwicklern entwickelt und umgesetzt.}	
+	
 	\fakt	{KI}
 			{Vom Computer gesteuerter Spieler.}
 			{Spieler, dessen Entscheidungen und Züge auf einem Computer von der KI-Client Software getroffen werden.}
@@ -744,45 +748,45 @@ bibtotoc,              % LV im IV
 	
 	\qanf 	{Plattformunabhängigkeit}
 			{Der Client und der Team-Konfigurator soll auf mindestens einer gängigen Computerbetriebssystem-Plattform (z.B. Linux, Windows) uneingeschränkt benutzbar sein. Des weiteren soll die Serveranwendung und der KI-Client auf mindestens zwei gängigen Computerbetriebssystem-Plattformen (z.B. Linux, Windows) uneingeschränkt benutzbar sein.}
-			{Die Plattformunabhängigkeit ist im Lastenheft gefordert.}
-			{<Abhängigkeiten>}
+			{Die Plattformunabhängigkeit ist von großer Bedeutung, da die Anwendungen auf möglichst vielen Zielsystemen funktionieren sollen um die Menge an Endnutzer so wenig wie möglich einzuschränken.}
+			{Programmiersprache}
 			{++}
-			{<Akteure>}
+			{Nutzer, Entwickler}
 	
 	\qanf 	{Version-Controlling}
 			{Beim Verwalten des Quellcodes soll ein Git basiertes Version-Controlling Werkzeug (\textit{GitHub / GitLab}) verwendet werden.}
 			{Durch das Verwenden eines Versionierungswerkzeuges wird das zusammenarbeiten unterschiedlicher Entwickler erleichtert, da das zusammenführen des Codes größtenteils automatisiert abläuft.}
 			{-}
 			{++}
-			{-}
+			{Entwickler}
 	
 	\qanf 	{Continuous Integration}
 			{In die Version-Controlling Lösung mit Hilfe einer CI automatisch jeder gepushte Commit Unit-Tests und der Statischen Codeanalyse unterzogen werden. Zudem soll eine automatisierte Code Dokumentation angestoßen werden. Bei erfolgreichem Abschließen alle Test soll zum Schluss der aktuelle Stand deployed werden.}
 			{Die CI nimmt den Entwicklern Arbeit ab und kann dazu beitragen, dass Fehler frühzeitig erkannt und behoben werden können.}
 			{-}
 			{-+}
-			{<Akteure>}
+			{Entwickler}
 	
 	\qanf 	{Statische Codeanalyse}
 			{Mit Hilfe des Tools 'SonarQube' bzw. 'SonarCloud' soll der gesamt Quellcode einer statischen Analyse unterzogen werden. Dabei darf die technische Codequalität von diesen Tool nicht schlechter als 'B' bewertet werden.}
-			{Quellcode mit einer hohen Codequalität ist weniger problemanfällig.}
+			{Quellcode mit einer hohen Codequalität ist weniger anfällig für Fehler und Probleme.}
 			{-}
 			{+}
-			{<Akteure>}
+			{Entwickler}
 	
 	\qanf 	{Automatisierte Unit-Tests}
 			{50 Prozent des Quellcodes der einzelnen Komponenten soll durch automatische Unit-Test auf Korrektheit und Funktion geprüft werden}
 			{Da alle Komponenten möglichst fehlerfrei funktionieren müssen ist es unerlässlich die einzelnen Teil der Software ständig auf ihre Funktionalität zu prüfen, die ist nur effizient möglich wenn automatisiert Test durchgeführt werden, damit Fehler frühzeitig erkannt werden.}
 			{-}
 			{-+}
-			{<Akteure>}
+			{Entwickler}
 	
 	\qanf 	{Docker Container}
 			{Um die Plattformunabhängigkeit zu gewährleisten soll sowohl die Server Komponente, als auch die KI-Komponenten mit Hilfe eines Docker Container veröffentlicht werden.}
 			{Docker Container bieten den Vorteil, dass die Software nicht auf jedem Zielsystem neu compiliert werden muss sondern, sobald sie auf einem System in einem Docker-Container lauffähig gemacht wurde lässt sich dieser Container in der Regel auf diversen anderen Zielsystemen ausführen.}
-			{-}
+			{Plattformunabhängigkeit}
 			{+}
-			{<Akteure>}
+			{Entwickler}
 	
 	\qanf 	{Dokumentation}
 			{Alle Klassen und Methoden der Software müssen dokumentiert werden. Dabei sollen mindestens alle Übergabeparameter und Rückgabewerte genau spezifiziert werden. Zudem ist sind komplexe Algorithmen detailliert zu dokumentieren.}
@@ -794,93 +798,93 @@ bibtotoc,              % LV im IV
 	\qanf 	{Benutzerhandbuch}
 			{Zu jeder Komponente des Projektes muss eine Benutzerhandbuchh existieren, in welchem alle Features unmissverständlich erklärt sind, sodass ein neuer Benutzer auf Basis des Benutzerhandbuches die Software bedienen kann.}
 			{Das Benutzerhandbuch wird im Lastenheft gefordert.}
-			{-}
+			{Dokumentation}
 			{-+}
-			{<Akteure>}
+			{Nutzer}
 	
 	\qanf 	{Anwendungssprache}
 			{Das User-Interface der Anwendungen soll in deutscher Sprache gestaltet werden.}
 			{Die Anwendungssprache ist im Lastenheft vorgegeben.}
 			{-}
 			{-+}
-			{<Akteure>}
+			{Nutzer}
 	
 	\qanf 	{Implementierungssprache}
 			{Die Implementierung der Anwendungen soll in englischer Sprache gehalten sein.}
 			{Die Implementierungssprache ist im Lastenheft vorgegeben.}
 			{-}
 			{-+}
-			{<Akteure>}
+			{Entwickler}
 	
 	\qanf 	{Dokumentationssprache}
 			{Die Dokumentation der Software kann in englischer oder deutscher Sprache gestaltet sein.}
 			{Die Dokumentationssprache ist im Lastenheft vorgegeben.}
 			{-}
 			{-+}
-			{<Akteure>}
+			{Entwickler}
 	
 	\qanf 	{Programmiersprache}
 			{Die Software soll in einer der folgenden Programmiersprachen geschrieben sein: Java, C++, C\# Die entgültig verwendete Sprache kann jedoch von Komponente zu Komponente variieren, müss aber mit dem Kunden abgesprochen werden.}
-			{Es soll eine Programmiersprache mit großem Funktionsumfang verwendet werden, welche von allen Teammitgliedern beherrscht wird.}
+			{Es soll eine Programmiersprache verwendet werden, welche von allen Teammitgliedern beherrscht wird.}
 			{-}
 			{++}
-			{<Akteure>}	
+			{Entwickler}	
 	
 	\qanf 	{Format für Konfigurationsdateien}
 			{Alle Konfigurationsdateien müssen dem \textit{JSON} Standard genügen. Des Weiteren sind alle vom Komitee festgelegten weiteren Standards einzuhalten.}
-			{Das Konfigurationsformat ist im Lastenheft vorgegeben.}
+			{Durch Einheitliche Formate der Konfigurationsdateien lässt sich sicherstellen, das einzelne Komponenten zwischen den Entwicklungsteams ausgetauscht werden können und diese miteinander kompatibel sind. }
 			{-}
 			{+}
-			{<Akteure>}
+			{Entwickler, Nutzer}
 	
 	\qanf 	{Netzwerkkommunikation}
 			{Die Netzwerkkommunikation zwischen Client und Server soll über sogenannte \textit{Web-Socket-Sessions} realisiert werden, sodass Client und Server ortsunabhängig von einander betrieben werden können.}
 			{Die Netzwerkkommunikation muss gewissen Standards genügen, damit Client- und Serveranwendungen von unterschiedlichen Entwicklerteams mit einander kompatibel sind und Client und Server ortsunabhängig von einander betrieben werden können.}
 			{-}
-			{<Prio>}
-			{<Akteure>}
+			{++}
+			{Spiel}
 	
 	\qanf 	{Log-Dateien}
 			{Log-Dateien anlegen um unter anderem den Spielverlauf zu Speichern und eventuelle Fehlfunktionen der Software fest zu halten.}
 			{Log-Dateien können unter anderen die Wartung der Software erleichtern und für zusätzliche Features, wie eine Statistik über den Spielverlauf verwendet werden.}
 			{-}
 			{-}
-			{<Akteure>}
+			{Spiel}
 	
 	\qanf 	{Funktionalität}
 			{Die Anwendungen müssen alle im Lastenheft als Minimalanforderungen aufgeführten Anforderungen erfüllen.}
 			{Um die Abnahmen zu bestehen müssen die Minimalanforderungen erfüllt werden.}
 			{-}
 			{++}
-			{<Akteure>}
+			{Kunde, Nutzer, Entwickler}
 	
 	\qanf 	{Zuverlässigkeit}
 			{Die Anwendungen dürfen niemals komplett abstürzen.}
 			{Durch zu häufiges Abstürzen der Software ist das Benutzererlebnis massiv beeinträchtigt.}
-			{-}
+			{Robustheit}
 			{+}
-			{<Akteure>}
+			{Nutzer}
 	
 	\qanf 	{Robustheit}
 			{Die Anwendungen dürfen nicht aufgrund einer Falschen Benutzereingabe abstürzen, sondern müssen den Benutzer auf seinen Fehler hinweisen.}
 			{Um das Benutzererlebnis nicht zu beeinträchtigen und keine Sicherheitslücken zu verursachen ist es notwendig, dass die Funktion der Software nicht durch fehlerhafte Benutzereingaben beeinträchtigt wird.}
 			{-}
 			{++}
-			{<Akteure>}
+			{Nutzer}
 	
 	\qanf 	{Benutzbarkeit}
 			{Dem Endnutzer muss es möglich sein alle Komponenten des Projektes nur auf Basis des Mitgelieferten Benutzerhandbuches und den Hilfeseiten die Software ohne Einschränkungen bedienen zu können.}
 			{Wenn es für die Endnutzer der Software zu kompliziert ist die Software zu Benutzen, dann ist das Benutzererlebnis erheblich gestört und die Software wird nicht Benutzt werden, da die Endbenutzer unzufrieden sind.}
 			{-}
 			{+}
-			{<Akteure>}
+			{Nutzer}
 			
 	\qanf 	{Wartbarkeit}
 			{Die Software muss so aufgebaut sein, dass einzelne Teilstücke bei Bedarf ohne Umbauten der übrigen Software ersetzbar sind.}
 			{Im Falle einer Fehlfunktion in einem Teilstück der Software muss diese einfach austauschbar sein um den Fehler schnellst möglich beheben zu können. Zudem sollte das Hinzufügen weiterer Features möglich sein um das Produkt stetig weiter entwickeln zu können.}
 			{-}
 			{-+}
-			{<Akteure>}
+			{Entwickler}
 	
     
 \end{document}
