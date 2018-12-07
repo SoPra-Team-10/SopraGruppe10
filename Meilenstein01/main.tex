@@ -519,18 +519,18 @@ bibtotoc,              % LV im IV
 			{<Akteure>}
 	
 	\fanf	{Quidditchteam-Konfiguration}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}	
+			{Lokal hinterlegte Datei im JSON Format in der die Zusammensetzung des Teams eines Spielers hinterlegt ist.}
+			{Die Konfiguration eines Teams muss zwischen dem Team-Editor und dem Client ausgetauscht werden können und muss daher in einer einheitlichen Datei lokal hinterlegt werden.}
+			{Team, Spielfiguren}
+			{+}
+			{Nutzer, Client, KI-Client, Quidditchteam-Editor, Server}	
 			
-	\fanf	{Netzwerkinterface}
-			{<Beschreibung>}
-			{<Begründung>}
+	\fanf	{Netzwerkschnittstelle}
+			{Zwei Clients sollen über eine Netzwerkschnittstelle miteinander kommunizieren können.}
+			{Bei \textit{Fantastic Feasts} handelt sich es um ein Online Multiplayer Spiel. Es ist also notwendig, dass einzelne Komponenten miteinander Kommunizieren können.}
 			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+			{++}
+			{Systemadministrator, Entwickler, Client, KI-Client, Server}
 	
 	\fanf	{Runde}
 			{<Beschreibung>}
@@ -561,36 +561,36 @@ bibtotoc,              % LV im IV
 			{<Akteure>}
 			
 	\fanf	{Zufallsgenerator}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+			{Einheit die per Zufall entscheidet, ob bestimmt Ereignisse eintreten oder nicht.}
+			{An mehreren Stellen in der Spiellogik ist es notwendig, dass via Zufall Entschieden wird ob ein Ereigniss eintritt oder nicht. Dies ist z.B. der Fall wen entschieden werden muss ob der Schiedsrichter ein Foul ahndet oder wenn entschieden werden muss ob ein geworfener Ball geblockt wird.}
+			{Spiellogik}
+			{-+}
+			{Server, Schiedsrichter}
 			
 	\fanf	{Spielende}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{Die Partie ist vorüber und es gibt einen Gewinner}
+			{Bei bestimmt Ereignissen oder Gegebenheiten ist das Spiel zu ende und ein Sieger muss bestimmt werden.}
+			{Spiellogik, Runde}
+			{+}
 			{<Akteure>}
 			
 	\fanf	{Überlängenbehnadlung}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+			{Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft.}
+			{Zieht sich ein Spiel über zu viele Runden hin, ohne dass ein Sieger ermittelt werden kann, so müssen laut Regelwerk Maßnahmen eingeleitet werden, damit die Partie zum Ende kommt.}
+			{Spielende, Spiellogik, Runde}
+			{-+}
+			{Spiel, Spieler}
 			
 	\fanf	{Spiellogik}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Einheit, in der die Züge der Teams verarbeitet werden und auf Basis der Spielregeln im Lastenheft Entscheidungen getroffen werden.}
+			{Ohne eine Spiellogik wären alle Anwendungen nutzlos.}
 			{<Abhängigkeiten>}
-			{<Prio>}
+			{++}
 			{<Akteure>}
 	
 	\fanf	{Log-Datei}
-			{<Beschreibung>}
-			{<Begründung>}
+			{Datei zum Speichern bestimmter Ereignisse. Diese Datei wird lokal auf dem Endgerät hinterlegt.}
+			{Um die während der Nutzung der Software aufgetretenen Aktionen im Nachhinein nachvollziehen zu können und daraus Informationen für Statistiken und Wartung ziehen zu können ist es wichtig das diese Aktionen lokal hinterlegt werden.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
@@ -671,7 +671,7 @@ bibtotoc,              % LV im IV
 			{<Akteure>}	
 			
 	\fanf	{Hilfe [Ansicht]}
-			{Grafische Oberfläche, in der zum einen das Spielprinzip erklärt wird und zum anderen gezeigt wird wie genau man die Clientsoftware bedient wird.}
+			{Grafische Oberfläche, in der zum einen das Spielprinzip erklärt wird und zum anderen gezeigt wird wie genau man die Client-Software bedient wird.}
 			{Um unerfahren Benutzer die Bedienung der Software zu erleichtern.}
 			{<Abhängigkeiten>}
 			{-+}
@@ -722,26 +722,26 @@ bibtotoc,              % LV im IV
 	
 	\subsection{Quidditchteam-Editor spezifische funktionale Anforderungen}
 	
-	\fanf	{Edit Team View}
+	\fanf	{Team Konfiguration bearbeiten}
 			{Grafische Oberfläche in der der Nutzer sein Team nach seinen Wünschen entsprechend anpassen kann.}
 			{Für das Bearbeiten des Teams soll dem Nutzer eine grafische Oberfläche bereit gestellt werden.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+			{Quidditchteam-Konfiguration}
+			{-}
+			{Nutzer}
 			
-	\fanf	{Open Team View}
-			{'Datei Öffnen' Dialog um die Team-Konfiguration von einem beliebigen Ort im Dateisystem zu öffen}
-			{}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+	\fanf	{Team Konfiguration öffnen}
+			{'Datei Öffnen' Dialog um die im JSON Format gespeicherte Team-Konfiguration von einem beliebigen Ort im Dateisystem zu öffnen.}
+			{Um eine hohe Benutzerfeindlichkeit zu garantieren muss es den Nutzer möglich sein einfach eine bereits erstellt Konfiguration für ein Team einzulesen und die zu bearbeiten.}
+			{Team Konfiguration bearbeiten, Quidditchteam-Konfiguration}
+			{-}
+			{Nutzer}
 	
-	\fanf	{Save Team View}
-			{'Datei Speichern' Dialog um die Team-Konfiguration an einem beliebigen Ort im Dateisystem abzulegen.}
-			{}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
+	\fanf	{Team Konfiguration speichern}
+			{'Datei Speichern' Dialog um die Team-Konfiguration an einem beliebigen Ort im Dateisystem im JSON Format abzulegen.}
+			{Ohne die Möglichkeit die Team-Konfiguration lokal permanent zu speichern wäre das Benutzererlebnis und die Bedienbarkeit der Software massiv beeinträchtigt.}
+			{Team Konfiguration bearbeiten, Quidditchteam-Konfiguration}
+			{-}
+			{Nutzer}
 			
 	
 	\subsection{Nicht funktionale Anforderungen}
