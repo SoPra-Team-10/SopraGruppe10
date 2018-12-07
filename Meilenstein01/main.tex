@@ -186,7 +186,7 @@ bibtotoc,              % LV im IV
     
     \fakt	{Nutzer}
 			{Menschlicher Nutzer, der eine Anwendungen bedient.}
-			{Ein Mensch, welcher entweder als Spieler Aktiv an einem Spiel teilnimmt oder als Gas passiv einem Spiel zusieht oder den Team-Konfigurator benutzt um ein Team zu erstellen oder an zu passen.}
+			{Ein Mensch, welcher entweder als Spieler aktiv an einem Spiel teilnimmt oder als Gas passiv einem Spiel zusieht oder den Quidditchteam-Editor benutzt um ein Team zu erstellen oder an zu passen.}
 			
 	\fakt	{Spieler}
 			{Nimmt aktiv Einfluss auf das Spielgeschehen.}
@@ -217,7 +217,7 @@ bibtotoc,              % LV im IV
 			{Der KI-Client ist die Anwendung, welche eine KI steuert. Der Nutzer kann von Außen keinen Einfluss auf die Züge und Entscheidungen des KI-Clients nehmen.}
 	
 	\fakt	{Server}
-			{Zentraler Computer mit spezieller Software zu dem alle am beteiligten Clients ein Verbindung aufbauen.}
+			{Zentraler Computer mit spezieller Software zu dem alle am Spiel beteiligten Clients ein Verbindung aufbauen.}
 			{Auf dem Server läuft die eigentliche Spiellogik. Er fungiert dabei als Bindeglied zwischen den am Spiel beteiligten Clients und stellt für diese alle benötigten Informationen, wie etwas die Spielfeldkonfiguration oder die Züge des Gegners bereit.}
 			
 	\fakt	{Quidditchteam-Editor}
@@ -633,86 +633,86 @@ bibtotoc,              % LV im IV
 	
 	\subsection{Client spezifische Funktionale Anforderungen}
 	
-	\fanf	{Hauptmenü [Client-View]}
+	\fanf	{Hauptmenü [Ansicht]}
 			{Erste grafische Oberfläche die dem Nutzer angezeigt wird, wenn die Anwendung gestartet wurde.}
-			{Das Hauptmenü soll den Zentralen Punkt darstellen von dem aus alle Funktionen der Software zu erreichen.}
+			{Das Hauptmenü soll den Zentralen Punkt darstellen von dem aus alle Funktionen der Software zu erreichen. Es soll also unter anderem ein Spiel gestartet werden können, die Hilfe aufgerufen werden können, die Einstellungen der Anwendung angepasst werden können und eventuell vorhandene Statistiken aufgerufen werden können.}
 			{<Abhängigkeiten>}
-			{<Prio>}
+			{+}
 			{<Akteure>}
 	
-	\fanf	{Connect to Game [Client-View]}
-			{Grafische Oberfläche um sich mit einem Server auf dem ein Spiel bereit gestellt wird zu verbinden.}
+	\fanf	{Connect to Game [Ansicht]}
+			{Grafische Oberfläche um sich mit einem Server auf dem ein Spiel bereit gestellt wird zu verbinden. Dabei soll man außerdem die Möglichkeit haben seine Team-Konfiguration an zu geben, die man für das neue Spiel verwenden möchte.}
 			{Der Nutzer muss die Möglichkeit haben sich komfortabel mit einem Server verbinden zu können.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{Abb}
+			{+}
 			{<Akteure>}
 	
-	\fanf	{End of Game [Client-View]}
-			{Grafische Oberfläche die, die Spieler sehen nachdem eine Partie zu ende ist.}
-			{Nach dem Ende einer Partie muss dem Nutzer mitgeteilt werden ob er gewonnen hat oder nicht. Optional ist hier auch platz für etwaige Statistiken über den Spielverlauf.}
+	\fanf	{End of Game [Ansicht]}
+			{Grafische Oberfläche die, die Spieler sehen nachdem eine Partie zu Ende ist. Der Nutzer sollte hier auch die Möglichkeit haben die Anwendung zu verlassen oder wieder ins Hauptmenü zurück kehren. Optional ist hier auch Platz für etwaige Statistiken über den Spielverlauf.}
+			{Nach dem Ende einer Partie muss dem Nutzer mitgeteilt werden ob er gewonnen hat oder nicht und wie es von da an weiter geht. }
 			{<Abhängigkeiten>}
-			{<Prio>}
+			{-+}
 			{<Akteure>}
 			
-	\fanf	{Import Team Config [Client-View]}
+	\fanf	{Import Team Config [Ansicht]}
 			{Grafische Oberfläche zum importieren bzw. öffen einer Team-Konfiguration für ein Spiel.}
 			{Es muss für den Benutzer eine einfachen Weg geben eine Team Konfiguration im Dateisystem zu suchen und an die Anwendung zu übergeben.}
 			{<Abhängigkeiten>}
-			{<Prio>}
+			{-+}
 			{<Akteure>}
 			
-	\fanf	{Game Play [Client-View]}
+	\fanf	{Spiel [Ansicht]}
 			{Grafische Oberfläche die der Spieler sieht.}
-			{}
+			{Es handelt sich um eine Anwendung mit grafischer Benutzeroberfläche. Es ist also zwingend von Nöten, dass such das aktuelle Spielgeschehen angezeigt werden kann.}
 			{<Abhängigkeiten>}
-			{<Prio>}
+			{++}
 			{<Akteure>}	
 			
-	\fanf	{Hilfe [Client-View]}
-			{Grafische Oberfläche in der zum einen das Spielprinzip erklärt wird und zum anderen wie genau man die Clientsoftware bedient.}
+	\fanf	{Hilfe [Ansicht]}
+			{Grafische Oberfläche, in der zum einen das Spielprinzip erklärt wird und zum anderen gezeigt wird wie genau man die Clientsoftware bedient wird.}
 			{Um unerfahren Benutzer die Bedienung der Software zu erleichtern.}
 			{<Abhängigkeiten>}
-			{<Prio>}
+			{-+}
 			{<Akteure>}
 			
-	\fanf	{Beobachter [Client-View]}
-			{Grafische Oberfläche die ein Gast sieht.}
-			{<Begründung>}
+	\fanf	{Beobachter [Ansicht]}
+			{Grafische Oberfläche, die ein Gast sieht.}
+			{Wenn ein Nutzer einem Spiel nur als Gast zuschaut muss ihm das Spiel trotzdem in eine grafische Oberfläche aufbereitet werden.}
 			{<Abhängigkeiten>}
-			{<Prio>}
+			{+}
 			{<Akteure>}
 	
 	\fanf	{Game Rendering Engine}
-			{Einheit, welche die Ansicht des Spielfelds grafisch aufbereitet.}
-			{}
+			{Die Game Rendering Engine bereitet die Ansicht des Spielfelds grafisch auf.}
+			{Die Benutzeroberfläche muss während des Spiels mit Inhalt gefüllt werden. Dieser Inhalt muss je nach Spielgeschehen automatisch generiert werden.}
 			{<Abhängigkeiten>}
-			{<Prio>}
+			{++}
 			{<Akteure>}
 	
-	\fanf	{Input Handler [Client]}
-			{Einheit die für Benutzereingaben verantwortlich ist.}
-			{Jede Benutzereingabe muss ausgewertet werden und na der Validierung eine Entscheidung getroffen werden was als Reaktion auf diese Eingaben passieren muss.}
+	\fanf	{Input Handler}
+			{Diese Einheit ist für die Verarbeitung von Benutzereingaben verantwortlich.}
+			{Jede Benutzereingabe muss ausgewertet werden.Nach der Validierung muss dann eine Entscheidung getroffen werden was als Reaktion auf diese Eingaben passieren muss.}
 			{<Abhängigkeiten>}
-			{<Prio>}
+			{++}
 			{<Akteure>}
 			
-	\fanf	{Input Validierung [Client]}
+	\fanf	{Input Validierung}
 			{Einheit die Benutzereingaben auf Korrektheit prüft.}
 			{Um etwaige falsche Benutzereingaben zu erkennen und den Nuzer darauf hin weisen zu können ist es von Nöten, dass alle Benutzereingaben geprüft werden.}
 			{<Abhängigkeiten>}
 			{<Prio>}
 			{<Akteure>}
 	
-	\fanf	{Hotkey [Client]}
+	\fanf	{Hotkey}
 			{Oft benötigte Funktionen auf Bestimmte (besondere) Testen (-Kombinationen) mappen.}
-			{Hotkeys sind optionale Features, die im Lastenheft aufgeführt sind und zu einer einfacheren Spielsteuerung betragen können.}
+			{Hotkeys sind optionale Features, die im Lastenheft aufgeführt sind und zu einer einfacheren Spielsteuerung und höherem Spielkomfort betragen können.}
 			{<Abhängigkeiten>}
 			{--}
 			{<Akteure>}
 			
-	\fanf	{Pausieren [Client]}
+	\fanf	{Pausieren}
 			{Das aktuelle Spiel pausieren.}
-			{Pausieren ist ein optionales Feature, das im Lastenheft aufgeführt ist und einem menschliche Spieler im Client zur Verfügung stehen sollte.}
+			{Pausieren ist ein optionales Feature, das im Lastenheft aufgeführt ist und einem menschliche Spieler im Client zur Verfügung stehen sollte um den Spielkomfort zu erhöhen.}
 			{<Abhängigkeiten>}
 			{--}
 			{<Akteure>}
@@ -857,7 +857,7 @@ bibtotoc,              % LV im IV
 			{<Akteure>}
 	
 	\qanf 	{Zuverlässigkeit}
-			{Nur in maximal einer von 50 Sessions, darf sich eine Anwendung komplett aufhängen.}
+			{Die Anwendungen dürfen niemals komplett abstürzen.}
 			{Durch zu häufiges Abstürzen der Software ist das Benutzererlebnis massiv beeinträchtigt.}
 			{-}
 			{+}
@@ -883,27 +883,6 @@ bibtotoc,              % LV im IV
 			{-}
 			{-+}
 			{<Akteure>}
-	
-	\qanf 	{Effizienz}
-			{Die Software sollte Ressourcen schonend arbeiten.}
-			{Eine ressourcenschonende Anwendung ist auch auf älteren Zielsystemen poblemlos nutzbar.}
-			{-}
-			{-}
-			{<Akteure>}
-	
-	\qanf 	{Kurze Ladezeiten}
-			{Systembedingte Ladezeiten der Software dürfen auf einem aktuellen Mittelklasse Computer fünf Sekunden pro geladenem Teil überschreiten.}
-			{Bei längeren Ladezeiten ist das Benutzererlebnis massiv beeinträchtigt.}
-			{-}
-			{-+}
-			{-}
-			
-	\qanf 	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{-}
-			{<Prio>}
-			{<Akteure>}	
 	
     
 \end{document}
