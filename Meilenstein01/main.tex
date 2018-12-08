@@ -103,7 +103,7 @@ bibtotoc,              % LV im IV
 \newcommand{\anf}[7] {
     \begin{table}[H]
         \centering
-        \begin{tabular}{|p{3.2cm}|p{9.8cm}|}
+        \begin{tabular}{|p{3.2cm}|p{11.3cm}|}
         	\hline
             \textbf{ID:} & \textbf{#1} \\ \hline
             \textbf{Titel:} & #2 \\ \hline
@@ -130,7 +130,7 @@ bibtotoc,              % LV im IV
 \newcommand{\akt}[4] {
     \begin{table}[H]
         \centering
-        \begin{tabular}{|p{3cm}|p{10cm}|}
+        \begin{tabular}{|p{3cm}|p{11.5cm}|}
         	\hline
             \textbf{ID:} & \textbf{#1} \\ \hline
             \textbf{Titel:} & #2 \\ \hline
@@ -198,7 +198,7 @@ bibtotoc,              % LV im IV
 			{Nutzer, der mit der Client-Anwendung ein laufendes Spiel beobachtet, jedoch keinen Einfluss auf das Spielgeschehen nehmen kann.}
 		
 	\fakt	{Systemadministrator}
-			{Anwendungsnutzer mit Zusatzqualifikation um Server zu verwalten.}
+			{Anwendungsnutzer mit erweiterten Rechten um Server zu verwalten.}
 			{Der Systemadministrator hat zugriff auf die Server-Anwendung. Er ist dafür verantwortlich, eine Instanz der Server Anwendung zu starten und zu betreuen. Zudem hat er Zugriff auf die Partie-Konfiguration und kann diese bei Bedarf verändern.}
 	
 	\fakt	{Entwickler}
@@ -227,7 +227,7 @@ bibtotoc,              % LV im IV
 			
 	\fakt	{Quidditchteam-Editor}
 			{Editor für die Team-Konfiguration.}
-			{Mit dieser Anwendung kann ein Nutzer sein für eine Partie gewünschtes Quiddichteam im Rahmen bestimmter Grenzen beliebig konfigurieren.}
+			{Mit dieser Anwendung kann ein Nutzer sein für eine Partie gewünschtes Quiddichteam im Rahmen bestimmter Grenzen konfigurieren.}
 	
 	\fakt 	{Team}
 			{Einheit aus Spielfiguren die einem spielenden Nutzer zugeordnet ist.}
@@ -345,7 +345,7 @@ bibtotoc,              % LV im IV
 			{Die Besen sind essentiell für das Spiel, da alle 7 Spieler auf den Besen fliegen müssen. Es gibt im Fall von \textit{Fantastic Feasts}  verschiedene Besenmodelle, welche jeweils unterschiedliche Eigenschaften haben. Dies zeichnet sich dadurch aus, dass die Besen unterschiedliche Wahrscheinlichkeiten haben, mit denen der Spieler des Besens noch ein zweites Feld sich weiter bewegen darf. Dies bedeutet, je besser der Besen ist, desto wahrscheinlicher ist es, dass der Spieler ein zweites Feld weiter darf. Zusätzlich gilt die Besen-Repräsentanz-Regel, welche besagt, dass in jedem Team jeder Typ eines Besens einmal vorkommen muss.}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.
 			Die Besen sind wichtig, da die Spieler sich damit fort bewegen und die Besen auch noch Eigenschaften mitbringen, welche für das Spiel wichtig sind.}
-			{Quidditch-Spielfeld, Team, Spieler, Spielfigur, Team-Konfiguration}
+			{Team, Spieler, Spielfigur, Team-Konfiguration}
 			{++}
 			{Spielfigur}
 
@@ -428,7 +428,7 @@ bibtotoc,              % LV im IV
 			
 	\fanf	{Quaffel-Werfen}
 			{Der Quaffel kann nur von Jägern und Hütern geworfen werden. Die beiden Typen von Spielern können den Quaffel aufheben, in dem sie einfach auf das Feld des Quaffels sich bewegen und ihn dadurch aufheben. Möchte ein Spieler den Quaffel werfen, so wählt dieser ein Zielfeld aus, und dadurch wird der Schussvektor erstellt. Die von dem Schussvektor überstrichenen Felder werden nun der Reihe nach betrachtet. Jeder Gegner, der auf einem der überstrichenen Felder steht, hat eine bestimmte Wahrscheinlichkeit den Quaffel abzufangen. Gelingt dies einem gegnerischen Hüter oder Jäger, so geht der Ball in seinen Besitz über. Passiert dies aber bei einem Sucher oder Treiber, so springt der Quaffel auf ein zufälliges freies Nachbarfeld des Spielers. 
-			Falls der Quaffel jedoch die überstrichenen Felder durchquert, ohne abgefangen zu werden, so wird der eigentliche Wurf abgehandelt. Der Erfolg des Wurfes ist ebenfalls an eine Wahrscheinlichkeit $P^{d}$ gebunden, dass dieser Erfolgreich ist, wobei \textit{P} eine elementare Wurferfolgswahrscheinlichkeit ist, und \textit{d} die Entfernung zum Zielfeld. BHandelt es sich um einen erfolgreichen Wurf, so landet der Quaffel auf dem Zielfeld, ist dies jedoch nicht der Fsll, so wird der Quaffel zufällig verteilt auf einem \textit{n x n} großen Feld um das Zielfeld, wobei $n = \ceil{\frac{d}{7}}$. Torringfelder gelten hierbei auch als freie Felder, wenn kein Spieler drauf steht und im Zuge dessen können bei einem missglückten Wurf auch Eigentore passieren, wenn der Quaffel dadurch auf einem Torringfeld kommt. 
+			Falls der Quaffel jedoch die überstrichenen Felder durchquert, ohne abgefangen zu werden, so wird der eigentliche Wurf abgehandelt. Der Erfolg des Wurfes ist ebenfalls an eine Wahrscheinlichkeit $P^{d}$ gebunden, dass dieser Erfolgreich ist, wobei $P$ eine elementare Wurferfolgswahrscheinlichkeit ist, und $d$ die Entfernung zum Zielfeld. Handelt es sich um einen erfolgreichen Wurf, so landet der Quaffel auf dem Zielfeld, ist dies jedoch nicht der Fsll, so wird der Quaffel zufällig verteilt auf einem $n x n$ großen Feld um das Zielfeld, wobei $n = \ceil{\frac{d}{7}}$. Torringfelder gelten hierbei auch als freie Felder, wenn kein Spieler drauf steht und im Zuge dessen können bei einem missglückten Wurf auch Eigentore passieren, wenn der Quaffel dadurch auf einem Torringfeld kommt. 
 			Für einen erfolgreichen Torschuss muss der Spieler der den Quaffel wirft einen Torschussvektor haben. Dieser ist allerdings nur dann gültig, wenn der Vektor durch eine der Rot markierten Seiten eines Torfeldes läuft, wobei dies auch diagonal erlaubt ist. Der Wurf zählt nicht als Tor, wenn der Vektor über eine der anderen Kanten in das Tor geht.} 
 			{Diese Anforderung ist sehr wichtig, da sie essentiell wichtig ist, dass das Team punkten kann. Ohne den Quaffel werfen zu können, kann das Team auch keine Punkte erzielen.}			
 			{Spielfeld, Jäger, Hüter, Quaffel}
@@ -556,7 +556,7 @@ bibtotoc,              % LV im IV
 			{Spiel} 
 	
 	\fanf	{Quidditchteam-Konfiguration}
-			{Lokal hinterlegte Datei im JSON Format in der die Zusammensetzung des Teams eines Spielers hinterlegt ist.}
+			{Lokal hinterlegte Datei im \textit{JSON} Format in der die Zusammensetzung des Teams eines Spielers hinterlegt ist.}
 			{Die Konfiguration eines Teams muss zwischen dem Team-Editor und dem Client ausgetauscht werden können und muss daher in einer einheitlichen Datei lokal hinterlegt werden.}
 			{Team, Spielfiguren}
 			{+}
@@ -616,7 +616,7 @@ bibtotoc,              % LV im IV
 	
 	\fanf	{Spiellogik}
 			{Einheit, in der die Züge der Teams verarbeitet werden und auf Basis der Spielregeln im Lastenheft Entscheidungen getroffen werden. Zudem wird von der Spiellogik bestimmt welcher Spieler grade am Zug ist.}
-			{Ohne eine Spiellogik wären alle Anwendungen nutzlos.}
+			{Ohne eine Spiellogik wären alle Anwendungen nutzlos, da die Spiellogik die Einheit bildet, welche alles für das Spiel relevanten Informationen verarbeitet.}
 			{Spiel, Benutzereingaben Validierung}
 			{++}
 			{Server, Spiel}
@@ -740,14 +740,14 @@ bibtotoc,              % LV im IV
 			{Nutzer}
 			
 	\fanf	{Team Konfiguration öffnen}
-			{'Datei Öffnen' Dialog um die im JSON Format gespeicherte Team-Konfiguration von einem beliebigen Ort im Dateisystem zu öffnen.}
+			{'Datei Öffnen' Dialog um die im \textit{JSON} Format gespeicherte Team-Konfiguration von einem beliebigen Ort im Dateisystem zu öffnen.}
 			{Um eine hohe Benutzerfeindlichkeit zu garantieren muss es den Nutzer möglich sein einfach eine bereits erstellt Konfiguration für ein Team einzulesen und die zu bearbeiten.}
 			{Team Konfiguration bearbeiten, Quidditchteam-Konfiguration}
 			{-}
 			{Nutzer}
 	
 	\fanf	{Team Konfiguration speichern}
-			{'Datei Speichern' Dialog um die Team-Konfiguration an einem beliebigen Ort im Dateisystem im JSON Format abzulegen.}
+			{'Datei Speichern' Dialog um die Team-Konfiguration an einem beliebigen Ort im Dateisystem im \textit{JSON} Format abzulegen.}
 			{Ohne die Möglichkeit die Team-Konfiguration lokal permanent zu speichern wäre das Benutzererlebnis und die Bedienbarkeit der Software massiv beeinträchtigt.}
 			{Team Konfiguration bearbeiten, Quidditchteam-Konfiguration}
 			{-}
@@ -799,7 +799,7 @@ bibtotoc,              % LV im IV
 			{Entwickler}
 	
 	\qanf 	{Dokumentation}
-			{Alle Klassen und Methoden der Software müssen dokumentiert werden. Dabei sollen mindestens alle Übergabeparameter und Rückgabewerte genau spezifiziert werden. Zudem ist sind komplexe Algorithmen detailliert zu dokumentieren.}
+			{Alle Klassen und Methoden der Software müssen dokumentiert werden. Dabei sollen mindestens alle Übergabeparameter und Rückgabewerte genau spezifiziert werden. Zudem ist sind komplexe Algorithmen detailliert zu dokumentieren. Die gesamte Dokumente ist dabei mit dem Tool Doxygen zu erstellen.}
 			{Gut dokumentierte Software vereinfacht die Fehlersuche, die Wartung und das hinzufügen von neuen Features.}
 			{-}
 			{+}
@@ -897,14 +897,14 @@ bibtotoc,              % LV im IV
 			{Entwickler}
 	
 	\qanf 	{Effizienz}
-			{Die Software sollte Ressourcen schonend arbeiten. Keine Komponente darf mehr als ein Gigabyte Arbeitsspeicher benötigen und Keine Komponente darf mehr als 50\% der auf dem System zur Verfügung stehenden Prozessorleistung benötigen. Zu keiner Zeit darf während einer Party mehr als 1MBit/s an Netzwerkbandbreite benötigt werden um das Spiel ohne Einschränkungen nutzen zu können.}
+			{Die Software sollte Ressourcen schonend arbeiten. Keine Komponente darf mehr als ein Gigabyte Arbeitsspeicher benötigen und Keine Komponente darf mehr als 50\% der auf dem System zur Verfügung stehenden Prozessorleistung benötigen. Zudem darf im Durchschnitt während einer Partie nicht mehr als 1MBit/s an Netzwerkbandbreite benötigt werden um das Spiel ohne Einschränkungen nutzen zu können.}
 			{Eine ressourcenschonende Anwendung ist auch auf älteren Zielsystemen problemlos nutzbar.}
 			{-}
 			{-}
 			{Nutzer, Entwickler}
 	
 	\qanf 	{Kurze Ladezeiten}
-			{Systembedingte Ladezeiten der Software dürfen auf einem aktuellen Computer zwei Sekunden pro geladenem Teil überschreiten.}
+			{Systembedingte Ladezeiten der Software dürfen auf einem aktuellen Computer zwei Sekunden pro geladenem Teil nicht überschreiten.}
 			{Bei längeren Ladezeiten ist das Benutzererlebnis massiv beeinträchtigt.}
 			{-}
 			{-+}
