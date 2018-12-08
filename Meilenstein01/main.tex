@@ -249,49 +249,49 @@ bibtotoc,              % LV im IV
 	
 	\fanf	{Quidditch-Spielfeld}
 			{Das Quidditch-Spielfeld ist eine Ovale Form, welche in ein Raster von 17x13 quadratischen Feldern eingepasst ist. Auf diesem Feld finden alle Spielhandlungen statt, welche während dem Spiel getätigt werden können. Auf dem Spielfeld gibt es noch ein Mittelkreis und an den jeweils gegenüberliegenden Enden noch Hüterzonen.}
-			{Diese Anforderung ist wichtig, da auf dem gesamten Quidditch-Spielfeld das gesamte Geschehen sich abspielt. Also ohne das Spielfeld könnte das Spiel nicht laufen.}
-			{-}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{Spiellogik}
 			{++}
 			{Team, Spiel, Spieler, KI, Gast}
 	
 	\fanf	{Mittelkreis}
 			{Der Mittelkreis ist ein Bereich auf dem Quidditch-Spielfeld, welcher in der Mitte angeordnet ist und aus 3x3 quadratischen Kacheln besteht. In dem Mittelkreis befindet sich das Mittelfeld, welches die mittlere Kachel des Mittelkreises ist und durch ein \textit{M} gekennzeichnet ist.}
-			{Der Mittelkreis ist in der Mitte von dem Spielfeld angelegt und dient dem Beginn des Spieles und kennzeichnet die Mitte des Feldes.}
-			{Spielfeld}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{FA1}
 			{++}
 			{Spiel}
 	
 	\fanf	{Mittelfeld}
 			{Das Mittelfeld stellt den mittleren Punkt des Mittelkreises dar, welcher im Zentrum des Quidditch-Spielfeldes ist.}
-			{Das Mittelfeld ist der Startpunkt sozusagen, da von dem Feld das Spiel beginnt.}
-			{Spielfeld, Mittelkreis}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{FA2}
 			{++}
 			{Spiel}
 	
 	\fanf	{Hüterzone}
-			{Die Hüterzonen sind jeweils an den jeweils gegenüberliegenden Seiten des Quidditch-Spielfeldes. Die Hüterzonen beinhalten jeweils 3 Torringe und sind somit die Zonen in den die Teams Punkten können. Diese Zonen sind jeweils auch in einer Ovalen Form angeordnet, welche 11 x 5 Rasterfelder groß sind.}
-			{Außerdem beinhaltet diese Zone die Torringe, durch welche die Teams Punkte machen können.}
-			{Spielfeld}
+			{Die Hüterzonen sind jeweils an den jeweils gegenüberliegenden Seiten des Quidditch-Spielfeldes. Die Hüterzonen beinhalten jeweils 3 Torringe und sind somit die Zonen in den die Teams Punkten können. Die Hüterzonen sind in einer Ovalen Form, welche 11 quadratische Felder hoch ist und 5 quadratische Felder breit ist an den jeweilgen Maximalen Punkten.}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor. Außerdem beinhaltet diese Zone die Torringe, durch welche die Teams Punkte machen können.}
+			{FA1}
 			{++}
 			{Spiel}
 			
 	\fanf	{Rasterfelder}
 			{Auf einem Rasterfeld darf sich immer nur maximal ein Spieler befinden. Bei Bällen ist es anders, da dürfen mehrere gleichzeitig auf einem Feld sein, auch zusammen mit einem Spieler.}
 			{Diese Anforderung ist bedeutend für die Spiellogik, dass nicht alle Spieler sich auf einem Rasterfeld versammeln, sondern verteilt sind.}
-			{Spielfeld}
+			{Spiel}
 			{++}
 			{Spiel}
 	
 	\fanf	{Torring}
 			{Die Torringe sind in der Hüterzone angebracht und dazu da, dass die Teams jeweils Punkten können. Die 3 torringe werden jeweils von einem Torhüter bewacht, welcher verhindern kann, dass das gegnerische Team ein Tor schiessen kann.}
 			{Diese Anforderung ist bedeutend, da durch die Torringe die Punkte erzielt werden können, welche für beide Teams relevant sind.}
-			{Hüterzone}
+			{FA4}
 			{++}
 			{Spiel}
 			
 	\fanf	{Schussvektor}
-			{Als Schussvektor wird ein möglicher Wurf bezeichnet, um den Quaffel auf ein Zielfeld zu werfen, um entweder ein Tor zu machen oder den Ball an einen anderen Spieler weiterzugeben. Der Schussvektor geht dabei vom Mittelpunkt des Rasterfeldes, von dem geworfen wird, zu dem Feld, zu dem geworfen wird. Alle Rasterfelder, die dabei geschnitten werden, sind so genannte überstrichene Felder. Dies gilt aber nur für Felder, die wirklich geschnitten wurden und nicht nur an einer Ecke tangiert wurden.}
-			{Der Schussvektor ist wichtig, da über den Vektor entscheiden wird, ob ein Wurf erfolgreich ist oder nicht und auch je nachdem wie der Vektor ausfällt kann ein Tor erzielt werden oder nicht.}
+			{Als Schussvektor wird ein möglicher Wurf bezeichnet, um einen Torring zu treffen. Der Schussvektor geht dabei vom Mittelpunkt des Rasterfeldes, von dem geworfen wird zu dem Feld, zu dem geworfen wird gerade. Alle Rasterfelder, die dabei geschnitten werden, sind so genannte überstrichene Felder. Dies gilt aber nur für Felder, die wirklich geschnitten wurden und nicht nur an einer Ecke tangiert wurden.}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{Hüterzone}
 			{++}
 			{Spiel}	
@@ -302,109 +302,106 @@ bibtotoc,              % LV im IV
 			{Spiel, Quaffel, Quaffel-Werfen, Jäger, Hüter}
 			{++}
 			{Spiel}
-			
-	\fanf	{Punkte}
-			{In dem Spiel \textit{Fantastic Feasts} gibt es zwei verschiedene Möglichkeiten an Punkte zu kommen. Die eine Möglichkeit ist, dass die Jäger und der Hüter versuchen den Quaffel in einen der drei gegnerischen Torringe zu werfen, bzw verhindern dass das gegnerische team tore erzielt. Schafft es jedoch ein Team den Quaffel durch eines der Tore zu werfen, so erhält das Team 10 Punkte. Die andere Möglichkeit ist es den Schnatz zu fangen durch den Sucher. Dies bringt den Team des Suchers, der den Schnatz gefangen hat, 30 Punkte, allerdings ist das Spiel direkt beendet anschließend, wodurch dies nur zu empfehlen ist, wenn man dadurch mehr Punkte als das gegnerische Team bekommt.}
-			{Die punkte sind ein wichtiger Bestandteil des Spiels, da durch sie ein Gewinner und ein Verlierer ermittelt wird.}
-			{Spielfeld, Torschuss, Schnatz fangen}
-			{++}
-			{Spiel}
 	
 	\fanf	{Entfernung}
 			{Die Entfernung ist die kleinst mögliche Anzahl an Zügen, die man braucht, um Feld A zu Feld B zu kommen. Dabei darf  man sich in alle Richtengen bewegen, also Vertikal, Horizontal und Diagonal. Dies entspricht allerdings nicht immer den überstrichenen Feldern -1!.}
 			{Die Entfernung ist wichtig für das Spiel, um angeben zu können, welcher Wurf am besten geeignet ist und welcher der ganzen möglichen Schussvektoren am idealsten ist von der Entfernung.}
-			{Spielfeld, Schussvektor}
+			{Zelle}
 			{++}
 			{Spieler}
 	
 	\fanf	{Bälle}
-			{Es gibt 3 verschiedene Arten von Bällen. So existieren der Quaffel, der Klatscher und der Schnatz. Jeder Ball hat seine eigenen spezifischen Fähigkeiten und eigene Funktion in dem Spiel. In einem Quidditch Spiel kommen 4 Bälle vor. Davon ist einer ein Quaffel, einer ein Schnatz und zwei sind Klatscher.}
-			{Die Bälle sind essentieller Bestandteil des Spiels, da sie dem Spiel den Sinn verleihen, dass man Punkte machen kann oder einen Spieler ausnocken kann.}
-			{Spielfeld}
+			{Es gibt 3 verschiedene Arten von Bällen. So existieren der Quaffel, der Klatscher und der Schnatz. Jeder Ball hat seine eigenen spezifischen Fähigkeiten und eigene Funktion, die er für das Spiel erfordert. In einem Quidditch Spiel kommen 4 Bälle vor. Davon ist einer ein Quaffel, einer ein Schnatz und zwei sind Klatscher.}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{FA1}
 			{++}
-			{Spiel}
+			{Spiel, Spielfigur}
 	
 	\fanf	{Quaffel [Ball]}
-			{Der Quaffel ist ein roter Lederball, welcher dazu dient, dass das TEam punkten kann. Dies geschieht in dem der Quaffel von den Jägern durch einen der 3 Torringe geschmießen wird. Dies gibt dann 10 Punkte für das Team. Da der Quaffel selber keine Flugfähigkeiten oder andere magische Fähigkeiten hat, muss er immer von einem Jäger mitgetragen werden oder geworfen werden oder von einem Hüter gefangen werden. ein Jäger oder Hüter kann den Quaffel aufnehmen, in dem der Ball er auf das Feld zieht, auf dem der Quaffel liegt, oder wenn der Quaffel auf einem Feld zum liegen kommt, auf dem ein Jäger oder Hüter steht. Zieht ein Treiber oder Sucher auf das Feld des Quaffels oder konmmt der Quaffel auf einem der Felder zum liegen, so springt der Quaffel auf ein zufälliges freies Nachbarfeld.}
-			{Der Quaffel wird benötigt, dass das Team Punkte machen kann.}
-			{Bälle}
+			{Der Quaffel ist ein roter Lederball, welcher dazu dient, dass das TEam punkten kann. Dies geschieht in dem der Quaffel von den Jägern durch einen der 3 Torringe geschmießen wird. Dies gibt dann 10 Punkte für das Team. Da der Quaffel selber keine Flugfähigkeiten oder andere magische Fähigkeiten hat, muss er immer von einem Jäger mitgetragen werden oder geworfen werden oder von einem Hüter gefangen werden. ein Jäger oder Hüter kann den Quaffel aufnehmen, in dem der Ball er auf das Feld zieht, auf dem der Quaffel liegt, oder wenn der Quaffel auf einem Feld zum liegen kommt, auf dem ein Jäger oder Hüter steht. Zieht ein Treiber oder Sucher auf das Feld des Quaffels oder konmmt der Quaffel auf einem der Felder zum liegen, so hopst der Quaffel auf ein zufälliges freies Nachbarfeld.}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.
+			Der Quaffel wird benötigt, dass das Team Punkte machen kann.}
+			{FA8}
 			{++}
-			{Spiel}
+			{Spiel, Spielfigur}
 	
 	\fanf	{Klatscher [Ball]}
-			{Bei dem Spiel Quidditch gibt es 2 Klatscher, dies sind kleine schwarze Bälle, welcher magische Eigenschaften haben, was in dem Fall bedeutet, dass sie selber fliegen können. Das Ziel von den Klatschern ist es, die Spieler beider Teams von den Besen zu schmeißen. Dies geschieht, in dem der Klatscher sich jedes mal wenn er in der Rundenphase dran ist, einen zufälligen Spieler aussucht, welcher kein Treiber ist. Dann bewegt sich der Klatscher ein Feld auf den Spieler zu. Schafft der Klatscher es auf das selbe Feld wie der Spieler zu kommen, so wird dieser Spieler mit einer gewissen Wahrscheinlichkeit ausgenockt.}
-			{Die Klatscher sind dazu da um dem Spiel einen Witz zu geben, dass manche Spieler zeitweise nicht verfügbar sind.}
-			{Bälle}
+			{Bei dem Spiel Quidditch gibt es 2 Klatscher, dies sind kleine schwarze Bälle, welcher magische Eigenschaften haben, was in dem Fall bedeutet, dass sie selber fliegen können. Das Ziel von den Klatschern ist es, die Spieler beider Teams von den Besen zu schmeißen. Dies geschieht, in dem der Klatscher sich jedes mal wenn er in der Rundenphase dran ist, einen zufälligen Spieler aussucht, welcher kein Treiber ist. Dann bewegt sich der Klatscher ein Feld auf den Spieler zu. Schafft der Klatscher es auf das selbe Feld wie der SPieler zu kommen, so wird dieser Spieler mit einer gewissen Wahrscheinkichkeit ausgenockt.}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.
+			DIe Klatscher sind dazu da um dem Spiel einen Witz zu geben, dass manche Spieler zeitweise nicht verfügbar sind.}
+			{FA8}
 			{++}
-			{Spiel}
+			{Spiel, Spielfigur}
 	
 	\fanf	{Goldener Schnatz [Ball]}
-			{Der goldene Schnatz ist ein kleiner goldener Ball, welcher von dem Sucher gesucht werden muss. Der goldene Schnatz fliegt ebenfalls eigenständig über das Spielfeld, wodurch er versucht zu vermeiden von den Suchern gefangen zu werden. Wird der Schnatz jedoch von einem der beiden Suchern gefangen, so gibt dies 30 Punkte für das Team des Suchers, welcher den Schnatz gefangen hat und das Spiel ist beendet. In jeder Rundenphase sucht der Schnatz sich ein neues Feld aus, auf dass er sich dann eine Position weiter bewegt. Dies geschieht, in dem er den Sucher, der die geringste Entfernung hat nur berücksichtigt und dann unter allen Feldern, die eine größere Entfernung als seine aktuelle Position haben, ein zufälliges Feld weitergeht, so dass er sich von dem Sucher entfernt.}
-			{Der Schnatz verleiht dem Spiel eine Besonderheit, so dass ein Team durch das fangen des Schnatzes die Chance hat, eventuell doch noch zu gewinnen. Außerdem ist somit das Spiel zu ende.}
-			{Bälle}
+			{Der goldene Schnatz ist ein kleiner goldener Ball, welcher von dem Sucher gesucht werden muss. Der goldene Schnatz ist ebenfalls ein Ball, welcher eigenständig herumfliegt, wodurch er versucht zu vermeiden von den Suchern gefangen zu werden. Wird der Schnatz jedoch von einem der beiden Suchern gefangen, so gibt dieser 30 Punkte für das Team des Suchers, welcher den Schnatz gefangen hat und das Spiel ist beendet. In jeder Rundenphase sucht der Schnatz sich ein neues Feld aus, auf dass er sich dann eine Position weiter bewegt. Dies geschieht, in dem er den Sucher, der die geringste Entfernung hat nur berücksichtigt und dann unter allen Feldern, die eine größere Entfernung als seine aktuelle Position haben, ein zufälliges Feld weitergeht, so dass er sich von dem Sucher entfernt.}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.
+			Der Schnatz verleiht dem Spiel eine besonderheit, so dass ein Team durch das fangen des Schnatzes die Chance hat, evtl doch noch zu gewinnen. Außerdem ist somit das Spiel zu ende.}
+			{FA8}
 			{++}
-			{Spiel}
+			{Spiel, Spielfigur}
 	
 	\fanf	{Besen}
 			{Die Besen sind essentiell für das Spiel, da alle 7 Spieler auf den Besen fliegen müssen. Es gibt im Fall von \textit{Fantastic Feasts}  verschiedene Besenmodelle, welche jeweils unterschiedliche Eigenschaften haben. Dies zeichnet sich dadurch aus, dass die Besen unterschiedliche Wahrscheinlichkeiten haben, mit denen der Spieler des Besens noch ein zweites Feld sich weiter bewegen darf. Dies bedeutet, je besser der Besen ist, desto wahrscheinlicher ist es, dass der Spieler ein zweites Feld weiter darf. Zusätzlich gilt die Besen-Repräsentanz-Regel, welche besagt, dass in jedem Team jeder Typ eines Besens einmal vorkommen muss.}
-			{Die Besen sind wichtig, da die Spieler sich damit fort bewegen und die Besen auch noch Eigenschaften mitbringen, welche für das Spiel wichtig sind.}
-			{Spielfeld}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.
+			Die Besen sind wichtig, da die Spieler sich damit fort bewegen und die Besen auch noch Eigenschaften mitbringen, welche für das Spiel wichtig sind.}
+			{FA1}
 			{++}
-			{Spiel}
+			{<Akteure>}
 
 	\fanf	{Zauberfauch [Besen]}
 			{Der Zauberfauch ist der schlechteste Besen den ein Spieler auswählen kann. Die Wahrscheinlichkeit, dass der Spieler ein zweites Feld in einem Zug vorrücken kann beträgt bei dem Besen 10\%.}
 			{Der Besen ist ein wichtiges Feature, welches Einfluss auf das Spiel hat, da je nach Besen der Spieler einen zweiten Zug machen darf.}
-			{Besen}
-			{++}
-			{Spiel}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 
 	\fanf	{Sauberwisch 11 [Besen]}
 			{Der Sauberwisch 11 ist der zweit schlechteste Besen den ein Spieler auswählen kann. Die Wahrscheinlichkeit, dass der Spieler ein zweites Feld in einem Zug vorrücken kann beträgt bei dem Besen 30\%.}
 			{Der Besen ist ein wichtiges Feature, welches Einfluss auf das Spiel hat, da je nach Besen der Spieler einen zweiten Zug machen darf.}
-			{Besen}
-			{++}
-			{Spiel}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 
 	\fanf	{Komet 2-60 [Besen]}
 			{Der Komet 2-60 ist der Besen mittlerer Güte den ein Spieler auswählen kann. Die Wahrscheinlichkeit, dass der Spieler ein zweites Feld in einem Zug vorrücken kann beträgt bei dem Besen 50\%.}
 			{Der Besen ist ein wichtiges Feature, welches Einfluss auf das Spiel hat, da je nach Besen der Spieler einen zweiten Zug machen darf.}
-			{Besen}
-			{++}
-			{Spiel}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 
 	\fanf	{Nimbus 2001  [Besen]}
 			{DerNimbus 2001 ist der zweit beste Besen den ein Spieler auswählen kann. Die Wahrscheinlichkeit, dass der Spieler ein zweites Feld in einem Zug vorrücken kann beträgt bei dem Besen 70\%.}
 			{Der Besen ist ein wichtiges Feature, welches Einfluss auf das Spiel hat, da je nach Besen der Spieler einen zweiten Zug machen darf.}
-			{Besen}
-			{++}
-			{Spiel}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 
 	\fanf	{Feuerblitz [Besen]}
 			{Der Feuerblitz ist der beste Besen den ein Spieler auswählen kann. Die Wahrscheinlichkeit, dass der Spieler ein zweites Feld in einem Zug vorrücken kann beträgt bei dem Besen 90\%.}
 			{Der Besen ist ein wichtiges Feature, welches Einfluss auf das Spiel hat, da je nach Besen der Spieler einen zweiten Zug machen darf.}
-			{Besen}
-			{++}
-			{Spiel}
+			{<Abhängigkeiten>}
+			{<Prio>}
+			{<Akteure>}
 			
 	\fanf	{Teams}
 			{An einem Spiel sind 2 Teams beteiligt, die gegeneinander spielen. Diese beiden Teams haben einen Namen, ein Team-Motto, ein Logo und eine Hauptfarbe für das Trikot, aber auch eine Ersatzfarbe, falls das andere Team eine ähnliche Farbe hat, gegen das gespielt wird. Jedes Team besteht zudem aus 7 Spieler, wovon einer ein Sucher ist, einer ein Hüter, 2 sind sogenannte Treiber und die restlichen 3 sind Jäger. Zusätzlich darf jedes Team noch 7 Fans einladen, die das Team durch Zaubersprüche unterstützen können.}
 			{Die Teams sind notwendig, da sie der Hauptbestandteil sind, in dem sich alles vereint.}
-			{Spielfeld,Spielfiguren, Fans}
+			{FA1, FA19, Fans}
 			{++}
 			{Team, Spieler, Spielfiguren, Spiel}
 	
 	\fanf	{Spielfiguren}
 			{Es gibt 4 Arten von Spielfiguren, welche in einem Quidditch Spiel unterschiedliche Aufgaben haben. Ein Team besteht insgesamt aus 7 Spielern, wovon es einen Sucher gibt, einen Hüter, 2 Treiber und 3 Jäger. Jeder dieser Spieler besitzt einen Namen und ein Geschlecht. Jedes Team muss dabei ausgeglichen sein, was das Geschlecht angeht, womit immer nur 4 Spieler dem selben Geschlecht angehören dürfen. In der Rundenphase, machen die Spieler zuerst ihre Bewegung, und dann ihre Aktion. Dies bedeutet, dass sie sich erst ein Feld weiterbewegen, und anschließend je nach Wahrscheinlichkeit des Besens ein zweites Feld weiterbewegen, und danach dann erst ihre Aktion wie Quaffel werfen oder Klatscher klopfen durchführen.}
 			{Spieler sind absolut notwendig für das Spiel, da sie die Aktionen durchführen, welche von dem Menschen gesteuert werden.}
-			{Spielfeld}
+			{FA1}
 			{++}
 			{Team}
 	
 	\fanf	{Jäger [Spielertyp]}
 			{Die Jäger sind die Spieler auf dem Spielfeld, welche versuchen die Punkte für das Team mithilfe des Quaffels zu erzielen. Dabei darf jedoch immer nur ein angreifender Jäger in der gegnerischen Hüterzone sein. Trifft der Jäger auf ein Feld auf dem der Quaffel ist, hebt er ihn auf. Um zu werfen, bewegt sich der Jäger auf das gewünschte Feld und nach seiner Bewegung wirft er den Ball auf einen der 3 Torringe.}
 			{Jäger sind wichtig für das Spiel, da diese die Punkte machen, die das Team sammelt.}
-			{Spielfeld, Quaffel, Torring, Quaffel-Werfen}
+			{Spielfeld, Quaffel, Torring, Quaffel Wurf}
 			{++}
 			{Team, Spieler, Spielfigur, Spiel}
 	
@@ -417,8 +414,8 @@ bibtotoc,              % LV im IV
 	
 	\fanf	{Hüter [Spielertyp]}
 			{Hüter sind die Beschützer der jeweils eigenen Torringe. Hüter können allerdings nur einen Quaffel aufnehmen und dann wieder werfen, zum Beispiel zu einem eigenen Jäger, die Hüter können aber keine Tore erzielen, dies ist nur durch Jäger möglich.}
-			{Der Hüter ist wichtig für das Spiel, da er verhindern soll, dass das gegnerische Team es schafft Punkte zu machen in dem sie den Quaffel durch einen der 3 Torringe werfen.}
-			{Spielfeld, Torringe, Hüterzone, Quaffel, Quaffel-Werfen,Spieler}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{Spielfeld, Torringe, Hüterzone, Quaffel, Quaffel werfen,Spieler}
 			{++}
 			{Team, Spieler, Spielfigur, Spiel}
 	
@@ -471,13 +468,6 @@ bibtotoc,              % LV im IV
 			{Klatscher}
 			{+}
 			{Spiel}
-			
-	\fanf	{Schnatz fangen}
-			{Der Schnatz kann nur von einem der Sucher aus jedem Team gefangen werden. Dies geschieht, in dem der Sucher aus einem der beiden Teams es schafft auf das selbe Feld wie der Schnatz zu kommen. In dem Moment gilt der Schnatz als gefangen und das Spiel ist beendet.}
-			{Durch das fangen des Schnatzes kriegt das Spiel ein Ende und man hat als team die Chance eventuell durch die 30 Punkte noch den Sieg zu erreichen.}
-			{goldener Schnatz, Punkte}
-			{++}
-			{Spiel, Spieler}
 			
 	
 	\fanf	{Fans}
@@ -552,7 +542,7 @@ bibtotoc,              % LV im IV
 	
 	\fanf	{Schnaltzeln [Foul]}
 			{Dieses Foul können alle Spieler machen außer der Sucher. Dazu bewegt sich ein Spieler auf das Feld des Schnatzes, obwohl er kein Sucher ist, wodurch er verhindert, dass der Sucher den Schnatz fangen kann, da er das Feld blockiert und somit der Schnatz nicht gefangen werden kann.}
-			{Diese Anforderung soll es dem Sucher schwerer machen den Schnatz zu fangen, da das gegnerische Team den Schnatz so blockieren kann.}
+			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{Foul}
 			{+}
 			{Spiel, Schiedsrichter}
@@ -657,56 +647,56 @@ bibtotoc,              % LV im IV
 	\fanf	{Hauptmenü [Ansicht]}
 			{Erste grafische Oberfläche die dem Nutzer angezeigt wird, wenn die Anwendung gestartet wurde.}
 			{Das Hauptmenü soll den Zentralen Punkt darstellen von dem aus alle Funktionen der Software zu erreichen. Es soll also unter anderem ein Spiel gestartet werden können, die Hilfe aufgerufen werden können, die Einstellungen der Anwendung angepasst werden können und eventuell vorhandene Statistiken aufgerufen werden können.}
-			{<Abhängigkeiten>}
+			{-}
 			{+}
-			{Nutzer}
+			{Client, Nutzer}
 	
 	\fanf	{Spiel beitreten [Ansicht]}
 			{Grafische Oberfläche um sich mit einem Server auf dem ein Spiel bereit gestellt wird zu verbinden. Dabei soll man außerdem die Möglichkeit haben seine Team-Konfiguration an zu geben, die man für das neue Spiel verwenden möchte.}
 			{Der Nutzer muss die Möglichkeit haben sich komfortabel mit einem Server verbinden zu können.}
-			{Abb}
+			{-}
 			{+}
-			{Spieler, Gast}
+			{Client, Server, Spieler, Gast}
 	
 	\fanf	{Spiel Ende [Ansicht]}
 			{Grafische Oberfläche die, die Spieler sehen nachdem eine Partie zu Ende ist. Der Nutzer sollte hier auch die Möglichkeit haben die Anwendung zu verlassen oder wieder ins Hauptmenü zurück kehren. Optional ist hier auch Platz für etwaige Statistiken über den Spielverlauf.}
 			{Nach dem Ende einer Partie muss dem Nutzer mitgeteilt werden ob er gewonnen hat oder nicht und wie es von da an weiter geht. }
-			{<Abhängigkeiten>}
+			{Spiel, Spiellogik}
 			{-+}
-			{Spieler}
+			{Client, Spieler}
 			
 	\fanf	{Team-Konfiguration importieren [Ansicht]}
 			{Grafische Oberfläche zum importieren bzw. öffen einer Team-Konfiguration für ein Spiel.}
 			{Es muss für den Benutzer eine einfachen Weg geben eine Team Konfiguration im Dateisystem zu suchen und an die Anwendung zu übergeben.}
-			{<Abhängigkeiten>}
+			{Quidditchteam-Konfiguration}
 			{-+}
-			{Spieler}
+			{Client, Spieler}
 			
 	\fanf	{Spiel [Ansicht]}
 			{Grafische Oberfläche die der Spieler sieht.}
 			{Es handelt sich um eine Anwendung mit grafischer Benutzeroberfläche. Es ist also zwingend von Nöten, dass such das aktuelle Spielgeschehen angezeigt werden kann.}
-			{<Abhängigkeiten>}
+			{Spiel, Spielfeld}
 			{++}
-			{Spieler}	
+			{Client, Spieler}	
 			
 	\fanf	{Hilfe [Ansicht]}
 			{Grafische Oberfläche, in der zum einen das Spielprinzip erklärt wird und zum anderen gezeigt wird wie genau man die Client-Software bedient wird.}
 			{Um unerfahren Benutzer die Bedienung der Software zu erleichtern.}
-			{<Abhängigkeiten>}
+			{Dokumentation, Spiellogik, Hotkeys}
 			{-+}
-			{Nutzer}
+			{Client, Nutzer}
 			
 	\fanf	{Beobachter [Ansicht]}
 			{Grafische Oberfläche, die ein Gast sieht.}
 			{Wenn ein Nutzer einem Spiel nur als Gast zuschaut muss ihm das Spiel trotzdem in eine grafische Oberfläche aufbereitet werden.}
-			{<Abhängigkeiten>}
+			{Spiel, Spielfeld}
 			{+}
-			{Gast}
+			{Client, Gast}
 	
 	\fanf	{Spiel Rendering Engine}
 			{Die Spiel Rendering Engine bereitet die Ansicht des Spielfelds grafisch auf.}
 			{Die Benutzeroberfläche muss während des Spiels mit Inhalt gefüllt werden. Dieser Inhalt muss je nach Spielgeschehen automatisch generiert werden.}
-			{<Abhängigkeiten>}
+			{Spiel, Spielfeld, Spiel [Ansicht], Beobachter [Ansicht]}
 			{++}
 			{Client, Spieler}
 	
@@ -715,28 +705,28 @@ bibtotoc,              % LV im IV
 			{Jede Benutzereingabe muss ausgewertet werden. Nach der Validierung muss dann eine Entscheidung getroffen werden, was als Reaktion auf diese Eingaben passieren muss.}
 			{Spiellogik}
 			{++}
-			{Spieler, KI}
+			{Client, Spieler, KI}
 			
 	\fanf	{Eingaben Validierung}
 			{Einheit die Benutzereingaben auf Korrektheit prüft.}
 			{Um etwaige falsche Benutzereingaben zu erkennen und den Nuzer darauf hin weisen zu können ist es von Nöten, dass alle Benutzereingaben geprüft werden.}
 			{Spiellogik}
-			{<Prio>}
-			{Spieler, KI}
+			{++}
+			{Client, Spieler, KI}
 	
 	\fanf	{Hotkey}
 			{Oft benötigte Funktionen auf bestimmte (besondere) Testen (-Kombinationen) abzubilden.}
 			{Hotkeys sind optionale Features, die im Lastenheft aufgeführt sind und zu einer einfacheren Spielsteuerung und höherem Spielkomfort betragen können.}
-			{<Abhängigkeiten>}
+			{Eingabeverarbeitung}
 			{--}
-			{Spieler}
+			{Client, Spieler}
 			
 	\fanf	{Pausieren}
 			{Das aktuelle Spiel pausieren.}
 			{Pausieren ist ein optionales Feature, das im Lastenheft aufgeführt ist und einem menschliche Spieler im Client zur Verfügung stehen sollte um den Spielkomfort zu erhöhen.}
-			{<Abhängigkeiten>}
+			{Spiel, Spiellogik}
 			{--}
-			{Spieler}
+			{Client, Spieler}
 			
 	
 	\subsection{Quidditchteam-Editor spezifische funktionale Anforderungen}
@@ -812,7 +802,7 @@ bibtotoc,              % LV im IV
 			{Gut dokumentierte Software vereinfacht die Fehlersuche, die Wartung und das hinzufügen von neuen Features.}
 			{-}
 			{+}
-			{<Akteure>}
+			{Kunde, Nutzer}
 	
 	\qanf 	{Benutzerhandbuch}
 			{Zu jeder Komponente des Projektes muss eine Benutzerhandbuchh existieren, in welchem alle Features unmissverständlich erklärt sind, sodass ein neuer Benutzer auf Basis des Benutzerhandbuches die Software bedienen kann.}
