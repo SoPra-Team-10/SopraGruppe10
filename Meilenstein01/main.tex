@@ -389,7 +389,7 @@ bibtotoc,              % LV im IV
 			{Die Teams sind notwendig, da sie der Hauptbestandteil sind, in dem sich alles vereint.}
 			{FA1, FA19, Fans}
 			{++}
-			{<Akteure>}
+			{Team, Spieler, Spielfiguren, Spiel}
 	
 	\fanf	{Spielfiguren}
 			{Es gibt 4 Arten von Spielfiguren, welche in einem Quidditch Spiel unterschiedliche Aufgaben haben. Ein Team besteht insgesamt aus 7 Spielern, wovon es einen Sucher gibt, einen Hüter, 2 Treiber und 3 Jäger. Jeder dieser Spieler besitzt einen Namen und ein Geschlecht. Jedes Team muss dabei ausgeglichen sein, was das Geschlecht angeht, womit immer nur 4 Spieler dem selben Geschlecht angehören dürfen. In der Rundenphase, machen die Spieler zuerst ihre Bewegung, und dann ihre Aktion. Dies bedeutet, dass sie sich erst ein Feld weiterbewegen, und anschließend je nach Wahrscheinlichkeit des Besens ein zweites Feld weiterbewegen, und danach dann erst ihre Aktion wie Quaffel werfen oder Klatscher klopfen durchführen.}
@@ -553,13 +553,6 @@ bibtotoc,              % LV im IV
 			{Spielfeld}
 			{++}
 			{Spiel} 
-			
-	\fanf	{Partie-Konfiguration}
-			{JSON Datei mit Informationen über eine Spiel. Zu den Informationen zählen die maximale Rundenzahl bevor die Überlängenbedingung eintritt, die Zeit, welche die Spieler haben um den nächsten gewünschten Zug zu übermitteln und welche Wahrscheinlichkeiten den einzelnen Ereignissen zugeordnet sind.}
-			{Um das Spiel abwechslungsreicher zu gestalten ist es von Nöten, dass verschieden Abläufe in einer Partie angepasst werden können. Um Kompatibilität zwischen verschiedenen Komponenten zu gewährleisten ist es dabei zudem wichtig, dass diese Dateien einheitlich Formatiert sind.}
-			{Spiellogik}
-			{-+}
-			{Server, Spiel, Systemadministrator}
 	
 	\fanf	{Quidditchteam-Konfiguration}
 			{Lokal hinterlegte Datei im JSON Format in der die Zusammensetzung des Teams eines Spielers hinterlegt ist.}
@@ -584,31 +577,24 @@ bibtotoc,              % LV im IV
 	
 	\fanf	{Ballphase}
 			{In dieser Phase eine Spiels bewegen sich die Bälle über das Spielfeld. Dabei machen die beiden Klatscher ihre Bewegungen in zufälliger Reihenfolge.}
-			{}
+			{Ohne die Einteilung einer Runde in einzelne Phasen wäre das Spielgeschehen äußerst unübersichtlich und schlecht zu kontrollieren und zu verstehen.}
 			{Runde}
 			{+}
 			{Spiel}
 			
 	\fanf	{Spielerphase}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{Es werden die Züge der beiden Spieler ausgeführt, dabei wird jede Runde neu per Zufall bestimmt, welcher Spieler beginnt. Wenn dann ein Spieler an der Reihe ist macht jede Spielfigur im Team des Spielers ihren Zug, wobei dir Reihenfolge in welcher die die Spielfiguren ihre Züge machen via Zufall bestimmt werden.}
+			{Ohne die Einteilung einer Runde in einzelne Phasen wäre das Spielgeschehen äußerst unübersichtlich und schlecht zu kontrollieren und zu verstehen.}
 			{Runde}
 			{+}
-			{Spiel}
+			{Spiel, Spieler, Team, Spielfigur}
 			
 	\fanf	{Fanphase}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{In jeder Runde wird per Zufall bestimmt welcher Fanblock (entweder der von Team 1 oder der von Team 2) als erstes beginnt. Ist ein Fanblock and der Reihe, so werden die Aktionen der einzelnen Fans in zufälliger Reihenfolge ausgeführt.}
+			{Ohne die Einteilung einer Runde in einzelne Phasen wäre das Spielgeschehen äußerst unübersichtlich und schlecht zu kontrollieren und zu verstehen.}
 			{Runde}
 			{+}
-			{Spiel}
-			
-	\fanf	{Zufallsgenerator}
-			{Einheit die per Zufall entscheidet, ob bestimmt Ereignisse eintreten oder nicht.}
-			{An mehreren Stellen in der Spiellogik ist es notwendig, dass via Zufall Entschieden wird ob ein Ereigniss eintritt oder nicht. Dies ist z.B. der Fall wen entschieden werden muss ob der Schiedsrichter ein Foul ahndet oder wenn entschieden werden muss ob ein geworfener Ball geblockt wird.}
-			{Spiellogik}
-			{-+}
-			{Server, Schiedsrichter}
+			{Spiel, Spieler, Team, Schiedsrichter}
 			
 	\fanf	{Spielende}
 			{Die Partie ist vorüber und es gibt einen Gewinner. Dies ist der Fall wenn entweder ein Spieler Disqualifiziert wird oder ein Sucher in der Rundephase den Goldenen Schnatz findet. Gewonnen hat dann das Team, das entweder nicht disqualifiziert wurde oder die meisten Punkte erzielt hat. Bei Punktegleichstand gewinnt das Team, welches den Goldenen Schnatz gefunden hat.}
@@ -616,20 +602,6 @@ bibtotoc,              % LV im IV
 			{Spiellogik, Runde, Goldener Schnatz, Sucher}
 			{+}
 			{Spiel, Spieler, Schiedsrichter}
-			
-	\fanf	{Überlängenbehnadlung}
-			{Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert fest,  ohne dass ein Sieger ermittelt werden kann, so wird das Verhalten des Goldenen Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Goldenen Schnatz findet wird auf 100\% gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft bewegt sich der Goldenen Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gewunden, so fliegt er in der nächsten Rundenphase dem nächsten Sucher ins Gesicht.}
-			{Dadurch wird sichergestellt das ein Spiel spannend bleibt und die Spieler nicht die Lust verlieren, wenn eine Partie zu zäh läuft.}
-			{Spielende, Spiellogik, Runde, Goldener Schnatz, Sucher}
-			{-+}
-			{Spiel, Spieler}
-			
-	\fanf	{Spiellogik}
-			{Einheit, in der die Züge der Teams verarbeitet werden und auf Basis der Spielregeln im Lastenheft Entscheidungen getroffen werden. Zudem wird von der Spiellogik bestimmt welcher Spieler grade am Zug ist.}
-			{Ohne eine Spiellogik wären alle Anwendungen nutzlos.}
-			{<Abhängigkeiten>}
-			{++}
-			{Server, Spiel}
 	
 	\fanf	{Log-Datei}
 			{Datei zum Speichern bestimmter Ereignisse. Diese Datei wird lokal auf dem Endgerät hinterlegt.}
@@ -640,6 +612,35 @@ bibtotoc,              % LV im IV
 			
 	
 	\subsection{Server spezifische funktionale Anforderungen}
+	
+	\fanf	{Spiellogik}
+			{Einheit, in der die Züge der Teams verarbeitet werden und auf Basis der Spielregeln im Lastenheft Entscheidungen getroffen werden. Zudem wird von der Spiellogik bestimmt welcher Spieler grade am Zug ist.}
+			{Ohne eine Spiellogik wären alle Anwendungen nutzlos.}
+			{Spiel, Benutzereingaben Validierung}
+			{++}
+			{Server, Spiel}
+			
+	\fanf	{Partie-Konfiguration}
+			{JSON Datei mit Informationen über eine Spiel. Zu den Informationen zählen die maximale Rundenzahl bevor die Überlängenbedingung eintritt, die Zeit, welche die Spieler haben um den nächsten gewünschten Zug zu übermitteln und welche Wahrscheinlichkeiten den einzelnen Ereignissen zugeordnet sind.}
+			{Um das Spiel abwechslungsreicher zu gestalten ist es von Nöten, dass verschieden Abläufe in einer Partie angepasst werden können. Um Kompatibilität zwischen verschiedenen Komponenten zu gewährleisten ist es dabei zudem wichtig, dass diese Dateien einheitlich Formatiert sind.}
+			{Spiellogik}
+			{-+}
+			{Server, Spiel, Systemadministrator}
+			
+	\fanf	{Überlängenbehnadlung}
+			{Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert fest,  ohne dass ein Sieger ermittelt werden kann, so wird das Verhalten des Goldenen Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Goldenen Schnatz findet wird auf 100\% gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft bewegt sich der Goldenen Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gewunden, so fliegt er in der nächsten Rundenphase dem nächsten Sucher ins Gesicht.}
+			{Dadurch wird sichergestellt das ein Spiel spannend bleibt und die Spieler nicht die Lust verlieren, wenn eine Partie zu zäh läuft.}
+			{Spielende, Spiellogik, Runde, Goldener Schnatz, Sucher}
+			{-+}
+			{Spiel, Spieler}
+	
+	\fanf	{Zufallsgenerator}
+			{Einheit die per Zufall entscheidet, ob bestimmt Ereignisse eintreten oder nicht.}
+			{An mehreren Stellen in der Spiellogik ist es notwendig, dass via Zufall Entschieden wird ob ein Ereigniss eintritt oder nicht. Dies ist z.B. der Fall wen entschieden werden muss ob der Schiedsrichter ein Foul ahndet oder wenn entschieden werden muss ob ein geworfener Ball geblockt wird.}
+			{Spiellogik}
+			{-+}
+			{Server, Schiedsrichter}
+			
 	
 	\subsection{Client spezifische Funktionale Anforderungen}
 	
@@ -895,14 +896,14 @@ bibtotoc,              % LV im IV
 			{Entwickler}
 	
 	\qanf 	{Effizienz}
-			{Die Software sollte Ressourcen schonend arbeiten.}
-			{Eine ressourcenschonende Anwendung ist auch auf älteren Zielsystemen poblemlos nutzbar.}
+			{Die Software sollte Ressourcen schonend arbeiten. Keine Komponente darf mehr als ein Gigabyte Arbeitsspeicher benötigen und Keine Komponente darf mehr als 50\% der auf dem System zur Verfügung stehenden Prozessorleistung benötigen. Zu keiner Zeit darf während einer Party mehr als 1MBit/s an Netzwerkbandbreite benötigt werden um das Spiel ohne Einschränkungen nutzen zu können.}
+			{Eine ressourcenschonende Anwendung ist auch auf älteren Zielsystemen problemlos nutzbar.}
 			{-}
 			{-}
 			{Nutzer, Entwickler}
 	
 	\qanf 	{Kurze Ladezeiten}
-			{Systembedingte Ladezeiten der Software dürfen auf einem aktuellen Mittelklasse Computer fünf Sekunden pro geladenem Teil überschreiten.}
+			{Systembedingte Ladezeiten der Software dürfen auf einem aktuellen Computer zwei Sekunden pro geladenem Teil überschreiten.}
 			{Bei längeren Ladezeiten ist das Benutzererlebnis massiv beeinträchtigt.}
 			{-}
 			{-+}
