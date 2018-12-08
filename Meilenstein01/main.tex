@@ -516,10 +516,10 @@ bibtotoc,              % LV im IV
 			{Spiel}
 			
 	\fanf	{Partie-Konfiguration}
-			{JSON Datei mit Informationen über eine Spiel.}
-			{<Begründung>}
+			{JSON Datei mit Informationen über eine Spiel. Zu den Informationen zählen die maximale Rundenzahl bevor die Überlängenbedingung eintritt, die Zeit, welche die Spieler haben um den nächsten gewünschten Zug zu übermitteln und welche Wahrscheinlichkeiten den einzelnen Ereignissen zugeordnet sind.}
+			{Um das Spiel abwechslungsreicher zu gestalten ist es von Nöten, dass verschieden Abläufe in einer Partie angepasst werden können. Um Kompatibilität zwischen verschiedenen Komponenten zu gewährleisten ist es dabei zudem wichtig, dass diese Dateien einheitlich Formatiert sind.}
 			{Spiellogik}
-			{<Prio>}
+			{-+}
 			{Server, Spiel, Systemadministrator}
 	
 	\fanf	{Quidditchteam-Konfiguration}
@@ -537,31 +537,31 @@ bibtotoc,              % LV im IV
 			{Systemadministrator, Entwickler, Client, KI-Client, Server}
 	
 	\fanf	{Runde}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
+			{Das Spiel läuft in Runden ab. Jede Runde ist dabei in die drei Rundenphasen Ballphase, Spielerphase und Fanphase unterteilt.}
+			{Bei \textit{Fantastic Feasts} handelt es sich laut den Spielregeln um ein Rundenbasiertes Spiel.}
+			{Ballphase, Spielerphase, Fanphase}
 			{+}
-			{Spiel}
+			{Spiel, Spieler, Team, Spielfigur}
 	
 	\fanf	{Ballphase}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
+			{In dieser Phase eine Spiels bewegen sich die Bälle über das Spielfeld. Dabei machen die beiden Klatscher ihre Bewegungen in zufälliger Reihenfolge.}
+			{}
+			{Runde}
 			{+}
 			{Spiel}
 			
 	\fanf	{Spielerphase}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
+			{Runde}
 			{+}
 			{Spiel}
 			
 	\fanf	{Fanphase}
 			{<Beschreibung>}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{Runde}
+			{+}
 			{Spiel}
 			
 	\fanf	{Zufallsgenerator}
@@ -572,21 +572,21 @@ bibtotoc,              % LV im IV
 			{Server, Schiedsrichter}
 			
 	\fanf	{Spielende}
-			{Die Partie ist vorüber und es gibt einen Gewinner}
-			{Bei bestimmt Ereignissen oder Gegebenheiten ist das Spiel zu ende und ein Sieger muss bestimmt werden.}
-			{Spiellogik, Runde}
+			{Die Partie ist vorüber und es gibt einen Gewinner. Dies ist der Fall wenn entweder ein Spieler Disqualifiziert wird oder ein Sucher in der Rundephase den Goldenen Schnatz findet. Gewonnen hat dann das Team, das entweder nicht disqualifiziert wurde oder die meisten Punkte erzielt hat. Bei Punktegleichstand gewinnt das Team, welches den Goldenen Schnatz gefunden hat.}
+			{Das Spielende muss erkannt und geprüft werden, damit ein Spieler der Partie zum Sieger gekrönt werden kann.}
+			{Spiellogik, Runde, Goldener Schnatz, Sucher}
 			{+}
-			{Spiel, Spieler}
+			{Spiel, Spieler, Schiedsrichter}
 			
 	\fanf	{Überlängenbehnadlung}
-			{Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft.}
-			{Zieht sich ein Spiel über zu viele Runden hin, ohne dass ein Sieger ermittelt werden kann, so müssen laut Regelwerk Maßnahmen eingeleitet werden, damit die Partie zum Ende kommt.}
-			{Spielende, Spiellogik, Runde}
+			{Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert fest,  ohne dass ein Sieger ermittelt werden kann, so wird das Verhalten des Goldenen Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Goldenen Schnatz findet wird auf 100\% gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft bewegt sich der Goldenen Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gewunden, so fliegt er in der nächsten Rundenphase dem nächsten Sucher ins Gesicht.}
+			{Dadurch wird sichergestellt das ein Spiel spannend bleibt und die Spieler nicht die Lust verlieren, wenn eine Partie zu zäh läuft.}
+			{Spielende, Spiellogik, Runde, Goldener Schnatz, Sucher}
 			{-+}
 			{Spiel, Spieler}
 			
 	\fanf	{Spiellogik}
-			{Einheit, in der die Züge der Teams verarbeitet werden und auf Basis der Spielregeln im Lastenheft Entscheidungen getroffen werden.}
+			{Einheit, in der die Züge der Teams verarbeitet werden und auf Basis der Spielregeln im Lastenheft Entscheidungen getroffen werden. Zudem wird von der Spiellogik bestimmt welcher Spieler grade am Zug ist.}
 			{Ohne eine Spiellogik wären alle Anwendungen nutzlos.}
 			{<Abhängigkeiten>}
 			{++}
@@ -595,44 +595,9 @@ bibtotoc,              % LV im IV
 	\fanf	{Log-Datei}
 			{Datei zum Speichern bestimmter Ereignisse. Diese Datei wird lokal auf dem Endgerät hinterlegt.}
 			{Um die während der Nutzung der Software aufgetretenen Aktionen im Nachhinein nachvollziehen zu können und daraus Informationen für Statistiken und Wartung ziehen zu können ist es wichtig das diese Aktionen lokal hinterlegt werden.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{Spiellogik}
+			{-}
 			{Client, KI-Client, Server}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{<Titel>}
-			{<Beschreibung>}
-			{<Begründung>}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
 			
 	
 	\subsection{Server spezifische funktionale Anforderungen}
