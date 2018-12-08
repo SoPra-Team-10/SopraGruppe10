@@ -27,6 +27,9 @@ bibtotoc,              % LV im IV
 \usepackage{blindtext}
 \usepackage[scaled]{helvet}
 \usepackage{hyperref}
+\usepackage{comment}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 \usetikzlibrary{calc,shapes.multipart,chains,arrows}
 
@@ -177,7 +180,7 @@ bibtotoc,              % LV im IV
     \input{kontextanalyse.tex}
     \section{Fachwissen}
     \input{Aufgabe_2_Fachwissen.tex}
-    \includepdf[scale = 0.8, pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
+%    \includepdf[scale = 0.8, pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
     \section{Anforderungsdefinition}
     
     \subsection{Akteure}
@@ -271,21 +274,34 @@ bibtotoc,              % LV im IV
 			{FA1}
 			{++}
 			{Spiel}
+			
+	\fanf	{Rasterfelder}
+			{Auf einem Rasterfeld darf sich immer nur maximal ein Spieler befinden. Bei Bällen ist es anders, da dürfen mehrere gleichzeitig auf einem Feld sein, auch zusammen mit einem Spieler.}
+			{Diese Anforderung ist bedeutend für die Spiellogik, dass nicht alle Spieler sich auf einem Rasterfeld versammeln, sondern verteilt sind.}
+			{Spiel}
+			{++}
+			{Spiel}
 	
 	\fanf	{Torring}
 			{Die Torringe sind in der Hüterzone angebracht und dazu da, dass die Teams jeweils Punkten können. Die 3 torringe werden jeweils von einem Torhüter bewacht, welcher verhindern kann, dass das gegnerische Team ein Tor schiessen kann.}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{Diese Anforderung ist bedeutend, da durch die Torringe die Punkte erzielt werden können, welche für beide Teams relevant sind.}
 			{FA4}
 			{++}
 			{Spiel}
 			
 	\fanf	{Schussvektor}
-			{Als Schussvektor wird ein möglicher Wurf bezeichnet, um einen Torring zu treffen. Der Schussvektor geht dabei vom Mittelpunkt des Rasterfeldes, von dem geworfen wird zu dem Feld, zu dem geworfen wird gerade. Alle Rasterfelder, die dabei geschnitten werden, sind so genannte überstrichene Felder. Dies gilt aber nur für Felder, die wirklich geschnitten wurden und nicht nur an einer Ecke tangiert wurden.
-			Um einen möglichen Torschuss zu erzielen, muss der Torschussvektor mit einem Winkel unter 90 Grad auf das Feld eintreffen, andernfalls ist der Torschuss nicht möglich.}
+			{Als Schussvektor wird ein möglicher Wurf bezeichnet, um einen Torring zu treffen. Der Schussvektor geht dabei vom Mittelpunkt des Rasterfeldes, von dem geworfen wird zu dem Feld, zu dem geworfen wird gerade. Alle Rasterfelder, die dabei geschnitten werden, sind so genannte überstrichene Felder. Dies gilt aber nur für Felder, die wirklich geschnitten wurden und nicht nur an einer Ecke tangiert wurden.}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
 			{FA4}
 			{++}
 			{<Akteure>}	
+			
+	\fanf	{Torschuss}
+			{Für einen Torschuss muss ein Spieler einen Schussvektor auf ein Torringfeld auswählen. Das Torringfeld hat zwei rot markierte Kanten, welche jeweils die Toröffnungen sind. geht der Vektor durch eine dieser beiden Öffnungen, so erzielt der Spieler ein Tor. geht der Vektor durch eine der beiden anderen Kanten, so wird kein Tor erzielt. In beiden Fällen liegt der Quaffel am Ende auf dem Torringfeld, was zur Folge hat, dass nach der Rundenphase der Quaffel in den Besitz des abwehrenden Hüters geht.}
+			{Diese Anforderung ist wichtug, da die Teams Punkte erzielen sollen und dazu müssen die einen Torschuss absolvieren.}
+			{Spiel, Quaffel, Quaffel-Werfen, Jäger, Hüter}
+			{++}
+			{Spiel}
 	
 	\fanf	{Entfernung}
 			{Die Entfernung ist die kleinst mögliche Anzahl an Zügen, die man braucht, um Feld A zu Feld B zu kommen. Dabei darf  man sich in alle Richtengen bewegen, also Vertikal, Horizontal und Diagonal. Dies entspricht allerdings nicht immer den überstrichenen Feldern -1!.}
@@ -369,9 +385,9 @@ bibtotoc,              % LV im IV
 			{<Akteure>}
 			
 	\fanf	{Teams}
-			{An einem Spiel sind 2 Teams beteiligt, die gegeneinander spielen. Diese beiden Teams haben einen Namen, ein Team-Motto, ein Logo und eine Hauptfarbe für das Trikot, aber auch eine Ersatzfarbe, falls das andere Team eine ähnliche Farbe hat, gegen das gespielt wird. Jedes Team besteht zudem aus 7 Spieler, wovon einer ein Sucher ist, einer ein Hüter, 2 sind sogenannte Treiber und die restlichen 3 sind Jäger.}
+			{An einem Spiel sind 2 Teams beteiligt, die gegeneinander spielen. Diese beiden Teams haben einen Namen, ein Team-Motto, ein Logo und eine Hauptfarbe für das Trikot, aber auch eine Ersatzfarbe, falls das andere Team eine ähnliche Farbe hat, gegen das gespielt wird. Jedes Team besteht zudem aus 7 Spieler, wovon einer ein Sucher ist, einer ein Hüter, 2 sind sogenannte Treiber und die restlichen 3 sind Jäger. Zusätzlich darf jedes Team noch 7 Fans einladen, die das Team durch Zaubersprüche unterstützen können.}
 			{Die Teams sind notwendig, da sie der Hauptbestandteil sind, in dem sich alles vereint.}
-			{FA1, FA19}
+			{FA1, FA19, Fans}
 			{++}
 			{<Akteure>}
 	
@@ -409,111 +425,134 @@ bibtotoc,              % LV im IV
 			{Spielfeld, Spieler, goldener Schnatz}
 			{++}
 			{Team, Spieler, Spielfigur, Spiel}
+	\fanf	{Quaffel-Werfen}
+			{Der Quaffel kann nur von Jägern und Hütern geworfen werden. Die beiden Typen von Spielern können den Quaffel aufheben, in dem sie einfach auf das Feld des Quaffels sich bewegen und ihn dadurch aufheben. Möchte ein Spieler den Quaffel werfen, so wählt dieser ein Zielfeld aus, und dadurch wird der Schussvektor erstellt. Die von dem Schussvektor überstrichenen Felder werden nun der Reihe nach betrachtet. Jeder Gegner, der auf einem der überstrichenen Felder steht, hat eine bestimmte Wahrscheinlichkeit den Quaffel abzufangen. Gelingt dies einem gegnerischen Hüter oder Jäger, so geht der Ball in seinen Besitz über. Passiert dies aber bei einem Sucher oder Treiber, so springt der Quaffel auf ein zufälliges freies Nachbarfeld des Spielers. 
+			Falls der Quaffel jedoch die überstrichenen Felder durchquert, ohne abgefangen zu werden, so wird der eigentliche Wurf abgehandelt. Der Erfolg des Wurfes ist ebenfalls an eine Wahrscheinlichkeit $P^{d}$ gebunden, dass dieser Erfolgreich ist, wobei \textit{P} eine elementare Wurferfolgswahrscheinlichkeit ist, und \textit{d} die Entfernung zum Zielfeld. BHandelt es sich um einen erfolgreichen Wurf, so landet der Quaffel auf dem Zielfeld, ist dies jedoch nicht der Fsll, so wird der Quaffel zufällig verteilt auf einem \textit{n x n} großen Feld um das Zielfeld, wobei $n = \ceil{\frac{d}{7}}$. Torringfelder gelten hierbei auch als freie Felder, wenn kein Spieler drauf steht und im Zuge dessen können bei einem missglückten Wurf auch Eigentore passieren, wenn der Quaffel dadurch auf einem Torringfeld kommt. 
+			Für einen erfolgreichen Torschuss muss der Spieler der den Quaffel wirft einen Torschussvektor haben. Dieser ist allerdings nur dann gültig, wenn der Vektor durch eine der Rot markierten Seiten eines Torfeldes läuft, wobei dies auch diagonal erlaubt ist. Der Wurf zählt nicht als Tor, wenn der Vektor über eine der anderen Kanten in das Tor geht.} 
+			{Diese Anforderung ist sehr wichtig, da sie essentiell wichtig ist, dass das Team punkten kann. Ohne den Quaffel werfen zu können, kann das Team auch keine Punkte erzielen.}			
+			{Spielfeld, Jäger, Hüter, Quaffel}
+			{++}
+			{Spiel, Spieler}
+			
+	\fanf	{Quaffel Abfangen}
+			{Wird ein Quaffel von einem Spieler geworfen, so besteht eine Wahrscheinlichkeit für jedes überstrichene Feld, auf dem ein gegnerischer Spieler steht, dass er den Quaffel abfängt. Tritt dieser Fall ein, so erhält der gegnerische Spieler den Quaffel und der Wurf war nicht erfolgreich.}
+			{Dies ist wichtig, da nicht jeder Wurf immer erfolgreich sein kann, da sonst der Ballbesitz sich nie ändern würde.}
+			{Spiel, Jäger, Hüter, Quaffel, Quaffel-Werfen}
+			{<Prio>}
+			{Spiel}
+			
+	\fanf	{Quaffel vertändeln}
+			{Ein Spieler kann den Quaffel vertändeln, was bedeutet, dass er aus irgendeinem Grund die Kontrolle über den Quaffel verliert, welcher dann auf einem zufälligem freien Nachbarfeld landet.}
+			{Diese Anforderung ist wichtig, da der Quaffel den Besitz wechseln muss, dass beide Teams punkten können und dies damit möglich wird ohne ein Foul zu begehen.}
+			{Spiel, Jäger, Hüter, Quaffel}
+			{++}
+			{Spiel}
+		
+	\fanf	{Quaffel entreißen}
+			{Ein Jäger darf einem anderen Jäger, sofern dieser auf einem seiner Nachbarfelder ist, diesen entreißen. Dies gelingt allerdings nur mit einer bestimmten Wahrscheinlichkeit. Jäger dürfen auch dem gegnerischen Hüter den Quaffel entreißen, jedoch dies geht nur, wenn sich der Hüter nicht in seiner eigenen Hüterzone befindet.}
+			{Diese Anforderung ist wichtig, da der Quaffel den Besitz wechseln muss, dass beide Teams punkten können und dies damit möglich wird ohne ein Foul zu begehen.}
+			{Spiel, Jäger, Hüter, Quaffel}
+			{++}
+			{Spiel, Spieler}
+			
+	\fanf	{Klatscher Kloppen}
+			{Ein Treiber kann einen Klatscher kloppen, wenn dieser auf dem Feld wie der Klatscher ist. Der Treiber wählt um den Klatscher zu kloppen ein Zielfeld aus, welches Maximal 3 Felder zu ihm entfernt ist. Zusätzlich müssen aber auch alle überstrichenen Felder frei sein, dass der Wurf gültig ist. Ist dies beides der Fall, so landet der Klatscher auf dem Zielfeld, wo mit einer bestimmten Wahrscheinlichkeit der darauf stehende gegnerische Spieler (Jäger, Sucher, Hüter) ausgenockt wird.}
+			{Diese Anforderung bringt eine Schwierigkeit für das Spiel mit, da Spieler dadurch ausgenockt werden können, was das Spiel somit interessanter macht.}
+			{Spielfeld, Treiber, Klatscher}
+			{++}
+			{Spiel, Spieler}
+			
+	\fanf	{Spieler ausgenockt}
+			{Wird ein Spieler von einem Klatscher ausgenockt, so vertändelt dieser Spieler, sofern er den Quaffel hat diesen, und muss das nächste mal wenn er in einer Rundenphase drankommt, entweder noch in dieser oder in der nächsten, aussetzen. Dies bedeutet, dass der Spieler seine Position beibehält und auch auf dieser bleibt, aber keine Aktion mehr ausführen darf für die Rundenphase, also er darf sich nicht bewegen, keine Würfe machen, keine Bälle abfangen und auch keinen Schnatz fangen.}
+			{Die Anforderung ist wichtig, damit klar ist, was bei einem Treffer durch einen Klatscher passiert.}
+			{Klatscher}
+			{+}
+			{Spiel}
+			
 	
 	\fanf	{Fans}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{Als Zuaschauer sind in \textit{Fantastic Feasts} magische Wesen vorgesehen, was zur Folge hat, dass diese Einfluss auf das Spielgeschehen haben können. Fans können während dem Spiel Zaubersprüche sprechen, welche dem Team helfen können oder auch schaden können. Es gibt 5 Arten von Fans, die alle eigene spezifische Zaubersprüche haben mit unterschiedlichen Wirkungen.}
+			{Diese Anforderung gibt dem Spiel \textit{Fantastic Feasts} einen witzigen Aspekt und einen gewissen Schwierigkeitsgrad, da auch von den Fans unerwartete Aktionen passieren können.}
+			{Spielfeld}
+			{+}
 			{Spiel}	
 	
 	\fanf	{Elfen [Fantyp]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{Elfen haben die Eigenschaft einen Spieler von der eigenen oder auch von der gegnerischen Mannschaft auf ein zufälliges freies Spielfeld zu Teleportieren.}
+			{Diese Anforderung gibt dem Spiel ein zufälliges geschehen, was dem eigenen Team helfen kann oder dem gegnerischen Team schaden kann.}
 			{Fans}
-			{<Prio>}
+			{+}
 			{Spiel}
 	
 	\fanf	{Kobolde [Fantyp]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{Kobolde haben die Fähigkeit einen Schockzauber zu sprechen, welcher bewirkt, dass der Spieler den Quaffel fallen lässt, sofern er diesen hat und anschließend auf ein zufälliges freies Nachbarfeld gestoßen wird.}
+			{Diese Anforderung gibt dem Spiel ein zufälliges geschehen, was dem eigenen Team helfen kann oder dem gegnerischen Team schaden kann.}
 			{Fans}
-			{<Prio>}
+			{+}
 			{Spiel}
 	
 	\fanf	{Trolle [Fantyp]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{Da Trolle keine magischen Wesen sind, können sie keinen Zauberspruch ausüben. Dafür sind Trolle sehr Laute Geschöpfe, wodurch sie so laut brüllen können, dass der Spieler, welcher den Quaffel hat, diesen vor Schreck fallen lässt.}
+			{Diese Anforderung gibt dem Spiel ein zufälliges geschehen, was dem eigenen Team helfen kann oder dem gegnerischen Team schaden kann.}
 			{Fans}
-			{<Prio>}
+			{+}
 			{Spiel}
 	
 	\fanf	{Niffler [Fantyp]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{Niffler lieben alles was glänzt, wodurch sie nach dem Schnatz schnappen können, wodurch dieser eine Ausweichbewegung macht auf ein zufälliges freies Nachbarfeld von ihm.}
+			{Diese Anforderung gibt dem Spiel ein zufälliges geschehen, was dem eigenen Team helfen kann oder dem gegnerischen Team schaden kann.}
 			{Fans}
-			{<Prio>}
+			{+}
 			{Spiel}
 	
 	\fanf	{Foul}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{Wie in jeder Sportart ist es in Quidditch möglich sich gegenseitig zu foulen. Es gibt dabei spezifische Fouls die nur von manchen bestimmten Spieler ausgeübt werden können und Fouls die von allen ausgeübt werden können. Nachdem eines der Fouls ausgeübt wurde, wird dieses Foul mit einer jeweils eigenen Wahrscheinlichkeit vom Schiedsrichter entdeckt, woraufhin der ausübende Spieler entsprechend bestraft wird.}
+			{Diese Anforderung gehört zu einer Sportart einfach dazu, da Fouls bei jedem Sport vorkommen und das Spiel so spannender machen.}
+			{Spiel}
+			{+}
 			{Spiel, Schiedsrichter}
 	
 	\fanf	{Flacken [Foul]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{Diese Aktion kann von jedem Spieler ausgeführt werden. Flacken bedeutet, dass ein Spieler sich direkt auf ein Torringfeld stellt, wodurch die Trefferwahrscheinlichkeit für den Schützen auf 0\% sinkt. Falls der Quaffel durch den Wurf auf das Torringfeld gekommen wäre, ohne vorher abgefangen zu werden, so springt der Quaffel auf ein zufälliges freies Nachbarfeld.}
+			{Dieses Foul ermöglicht es dem Team Tore zu verhindern aber auf eine nicht regelkonforme Möglichkeit.}
+			{Foul}
+			{+}
 			{Spiel, Schiedsrichter}
 	
 	\fanf	{Nachtarocken [Foul]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{Diese Aktion kann nur von Jägern ausgeübt werden. Führt ein Jäger diese Aktion aus, so erzielt er zu 100\% ein Tor, in dem er den Quaffel hält und damit auf ein Torringfeld fliegt, und diesen nicht, wie es die Regeln verlangen würden, von einem Feld außerhalb der Torringe wirft.}
+			{Dieses Foul ermöglicht es dem Team Tore mit 100\% zu machen, aber man darf sich nicht erwischen lassen. Durch dieses Foul ist eventuell ein schnelleres Punkte holen ermöglicht und man kann eine Niederlage noch aufholen.}
+			{Foul}
+			{+}
 			{Spiel, Schiedsrichter}
 	
 	\fanf	{Stutschen [Foul]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{Diese Aktion kann nur von Jägern ausgeübt werden. Bei diesem Foul fliegt ein zweiter Jäger in die gegnerische Hüterzone um seinem Team zu helfen Punkte zu machen, obwohl ein Team immer nur einen angreifenden Jäger in der gegnerischen Hüterzone haben darf.}
+			{Dieses Foul hilft dem Team leichter einen Punkt zu machen, ist aber gegen die Regeln.}
+			{Foul}
+			{+}
 			{Spiel, Schiedsrichter}
 	
 	\fanf	{Keilen [Foul]}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{Dieses Foul können alle Spieler ausführen. Hierbei zieht ein Spieler auf das selbe Spielfeld wie ein gegnerischer Spieler, woraufhin dieser den Quaffel, sofern er diesen hat vertändelt und anschließend wird der gegnerische Spieler auf ein zufälliges freies Nachbarfeld verdrängt.}
+			{Dieses Foul bietet die Möglichkeit den Ballbesitz wieder zu ändern, was aber auch nicht regelkonform ist eigentlich.}
+			{Foul}
+			{+}
 			{Spiel, Schiedsrichter}
 	
 	\fanf	{Schnaltzeln [Foul]}
-			{<Beschreibung>}
+			{Dieses Foul können alle Spieler machen außer der Sucher. Dazu bewegt sich ein Spieler auf das Feld des Schnatzes, obwohl er kein Sucher ist, wodurch er verhindert, dass der Sucher den Schnatz fangen kann, da er das Feld blockiert und somit der Schnatz nicht gefangen werden kann.}
 			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
+			{Foul}
+			{+}
 			{Spiel, Schiedsrichter}
-	
-	\fanf	{Wurf mit dem Quaffel}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{<Akteure>}
-	
-	\fanf	{Quaffel Abfangen}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{Spiel}
-	
-	\fanf	{Torschuss}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{Spiel}
-	
-	\fanf	{Klatscher kloppen}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-			{<Abhängigkeiten>}
-			{<Prio>}
-			{Spiel}
+			
+	\fanf	{Setzen auf freies Nachbarfeld}
+			{Soll ein Spieler oder ball auf ein zufälliges freies Nachbarfeld von seiner Position gesetzt werden, aber es sind alle 8 umliegenden Felder bereits voll, oder können durch den Spielfeldrand nicht ausgewählt werden, so wird rekursiv von einem zufällig besetzten Nachbarfeld weiter gesucht, bis sich schließlich ein freies Feld findet. Dies bedeutet, dass der Spieler oder Ball nicht unbedingt auf einem Nachbarfeld seiner Position landet, sondern auch weiter entfernt gesetzt werden kann und so durch andere besetzte Felder sich hindurchtunnelt.}
+			{Diese Anforderung ist notwendig, da man den Fall abdecken muss, falls kein freies Nachbarfeld mehr frei ist.}
+			{Spielfeld}
+			{++}
+			{Spiel} 
 			
 	\fanf	{Partie-Konfiguration}
 			{JSON Datei mit Informationen über eine Spiel.}
