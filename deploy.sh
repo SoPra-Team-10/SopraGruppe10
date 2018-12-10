@@ -63,8 +63,6 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
     git add -A
     git commit -m "$commitMessage"
     git push -f  "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git" master
-    echo '[deploy-complete]: Adding remote'
-    git remote add gitlab "https://oauth2:$GITLAB_TOKEN@pmgit.informatik.uni-ulm.de:sopra-18-19/teams/team10.git"
     echo '[deploy-complete]: Forwarding'
-    git push gitlab master
+    git push "https://oauth2:$GITLAB_TOKEN@pmgit.informatik.uni-ulm.de:sopra-18-19/teams/team10.git" master
 fi
