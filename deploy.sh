@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "On Branch: $TRAVIS_BRANCH"
 
 #deploy gh-pages
 echo '[deploy_gh-pages]: create new temp dir'
@@ -17,7 +18,7 @@ git config user.email "deploy@travis-ci.org"
 
 echo '[deploy_gh-pages]: copy new files'
 if [ "$TRAVIS_BRANCH" == "master" ]; then
-  rm -f *
+    rm -f *
     cp ../../output/* .
 else
     rm -rf "$TRAVIS_BRANCH"
