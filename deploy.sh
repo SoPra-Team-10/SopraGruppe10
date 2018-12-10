@@ -50,6 +50,7 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
     echo '[deploy-complete]: Clone'
     rm -rf output/
     git clone "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git"
+    git submodule init
     cd Complete/
     git config --global push.default simple
 	git config user.name "$commitAuthorName"
