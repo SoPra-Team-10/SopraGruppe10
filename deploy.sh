@@ -56,6 +56,9 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
 	git config user.name "$commitAuthorName"
     git config user.email "$commitAuthorEMail"
     echo '[deploy-complete]: Update submodule'
+    cd Uebungsblaetter
+    git remote set-url origin "https://${GH_REPO_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
+    cd ..
     git submodule update --remote --merge
     echo '[deploy-complete]: Commit'
     git add -A
