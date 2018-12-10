@@ -187,47 +187,47 @@ bibtotoc,              % LV im IV
     
     \fakt	{Nutzer}
 			{Menschlicher Nutzer, der eine Anwendungen bedient.}
-			{Ein Mensch, der entweder als Spieler aktiv an einem Spiel teilnimmt, als Gast passiv einem Spiel zusieht oder den Quidditchteam-Editor benutzt, um ein Team zu erstellen oder anzupassen.}
+			{Ein Mensch, der entweder als Spieler aktiv an einem Spiel teilnimmt, als Gast passiv einem Spiel zusieht oder den Quidditchteam-Editor benutzt.}
 			
 	\fakt	{Spieler}
-			{Nimmt aktiv Einfluss auf das Spielgeschehen.}
-			{Entweder Nutzer oder KI. Nimmt aktiv Einfluss auf das Spielgeschehen, indem er Züge vorgibt, wenn er an der Reihe ist. Muss vor Spielbeginn eine Konfiguration für sein Team angeben.}
+			{Spiet das Spiel \glqq{}Fantastic Feasts\grqq{.}
+			{Nimmt aktiv Einfluss auf das Spielgeschehen. Ist entweder Nutzer oder KI.}
 			
 	\fakt	{Gast}
-			{Beobachtet eine Partie als Außenstehender.}
-			{Nutzer, der mit der Client-Anwendung ein laufendes Spiel beobachtet, jedoch keinen Einfluss auf das Spielgeschehen nehmen kann.}
+			{Nutzer, der mit der Client-Anwendung ein laufendes Spiel beobachtet.}
+			{Beobachtet eine Partie als Außenstehender, hat jedoch keinen Einfluss auf das Spielgeschehen.}
 		
 	\fakt	{Systemadministrator}
-			{Anwendungsnutzer mit erweiterten Rechten, um Server zu verwalten.}
-			{Der Systemadministrator hat zugriff auf die Server-Anwendung. Er ist dafür verantwortlich, eine Instanz der Server Anwendung zu starten und zu betreuen. Zudem hat er Zugriff auf die Partie-Konfiguration und kann diese bei Bedarf verändern.}
+			{Person, die die Möglichkeit hat, die Serveranwendung des Projektes zu verwalten.}
+			{Der Systemadministrator ist dafür verantwortlich, eine Instanz der Serveranwendung zu starten und zu betreuen. Zudem hat er Zugriff auf die Partie-Konfiguration und kann diese bei Bedarf verändern.}
 	
 	\fakt	{Entwickler}
 			{Person, die an der Entwicklung der Anwendung beteiligt ist.}
-			{Diese Software wird von einem Team aus 6 Entwicklern entwickelt und umgesetzt.}	
+			{Der Entwickler implementiert die gesamte Anwendung.}	
 	
 	\fakt	{KI}
 			{Vom Computer gesteuerter Spieler.}
-			{Spieler, dessen Entscheidungen und Züge auf einem Computer von der KI-Client Software getroffen werden.}
+			{Spieler, dessen Entscheidungen und Züge von einem Computerprogramm, dem KI-Client, getroffen werden. Es wird somit ein menschlichen Spieler.}
 	
 	\fakt	{Kunde}
-			{SoPra-Tutor}
-			{Der Kunde kann Anforderungen und zusätzliche Wünsche an das Produkt stellen. Er entscheidet schlussendlich auch darüber, ob das Endprodukt den Anforderungen genügt.}
+			{Der Kunde gibt das Projekt in Auftrag.}
+			{Stellt Anforderungen und Wünsche an das Entwicklerteam und nimmt das Projekt ab.}
 	
 	\fakt	{Client}
-			{Stellt die grafische Oberfläche zur Verfügung, über die ein Nutzer das Spiel \glqq{}Fantastic Feasts\grqq{} spielen kann.}
-			{Mit Hilfe der Client-Software kann der Nutzer entweder als Spieler oder als Gast einem, von einem Server zur Verfügung gestellten Spiel beitreten.}
+			{Programm, das einem Nutzer eine grafische Oberfläche, zum Spielen oder Beobachten des Spiels, zur Verfügung stellt.}
+			{Der Client stellt eine Verbindung zum Server her, visualisiert die empfangenen Daten und sendet seinerseits die Eingaben des Nutzers.}
 	
 	\fakt	{KI-Client}
-			{Anwendung, die die KI steuert.}
-			{Der KI-Client ist die Anwendung, die eine KI steuert. Der Nutzer kann von Außen keinen Einfluss auf die Züge und Entscheidungen des KI-Clients nehmen.}
+			{Simuliert einen menschlichen Gegner.}
+			{Der KI-Client kommuniziert wie der normale Client mit dem Server. Allerdings werden die Entscheidungen von der KI getroffen und nicht von einem Nutzer. Er stellt keine grafische Oberfläche zur Verfügung.}
 	
 	\fakt	{Server}
-			{Zentraler Computer mit spezieller Software, zu dem alle am Spiel beteiligten Clients ein Verbindung aufbauen.}
+			{Zentrale Komponente des Projekts, die alle anderen Komponenten vernetzt.}
 			{Auf dem Server läuft die eigentliche Spiellogik. Er fungiert dabei als Bindeglied zwischen den am Spiel beteiligten Clients und stellt für diese alle benötigten Informationen, wie etwa die Spielfeldkonfiguration oder die Züge des Gegners, bereit.}
 			
 	\fakt	{Quidditchteam-Editor}
-			{Editor für die Team-Konfiguration.}
-			{Mit dieser Anwendung kann ein Nutzer sein, für eine Partie gewünschtes Quiddichteam, im Rahmen bestimmter Grenzen konfigurieren.}
+			{Computerprogramm, mit dem Team-Konfigurationen erstellt und bearbeitet werden können.}
+			{Der Quidditchteam-Editor erstellt Teamkonfigurationsdateien, die später vom Client geladen werden, um ein Spiel zu starten.}
 	
 	\fakt 	{Team}
 			{Einheit aus Spielfiguren die einem spielenden Nutzer zugeordnet ist.}
