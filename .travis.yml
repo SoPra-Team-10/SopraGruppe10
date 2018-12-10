@@ -21,12 +21,12 @@ notifications:
     slack: soprateam10:wlcgvL7tR63frGyGP4BCuqNj
     
 after_success:
-    - sh pullRequestComment.sh
+    - bash pullRequestComment.sh
 
 deploy:
     provider: script
     skip-cleanup: true
     keep-history: true
-    script: sh deploy.sh $TRAVIS_COMMIT
+    script: bash deploy.sh $TRAVIS_COMMIT
     on: 
         all_branches: true

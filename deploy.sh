@@ -40,11 +40,11 @@ rm -rf deployGH-PAGES
 #deploy to commplete repo, only on master
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 if [ "$BRANCH" == "master" ]; then
-  echo '[deploy-complete]: Get data'
+    echo '[deploy-complete]: Get data'
     commitHash="$1"
-    commitMessage=$(git --no-pager log -2 --pretty="%B" | tail -n 1)
-    commitAuthorEMail=$(git --no-pager log -2 --pretty="%cE" | tail -n 1)
-    commitAuthorName=$(git --no-pager log -2 --pretty="%aN" | tail -n 1)
+    commitMessage=$(git --no-pager log -2 --pretty="%B" | head -n 1)
+    commitAuthorEMail=$(git --no-pager log -2 --pretty="%cE" | head -n 1)
+    commitAuthorName=$(git --no-pager log -2 --pretty="%aN" | head -n 1)
     echo "[deploy-complete]: Last commit: $commitHash by $commitAuthorName with email $commitAuthorEMail"
 
     # Remove all output, we don't want to commit binaries
@@ -55,16 +55,12 @@ if [ "$BRANCH" == "master" ]; then
     git config --global push.default simple
 	git config user.name "$commitAuthorName"
     git config user.email "$commitAuthorEMail"
-    echo '[deploy-complete]: Copy'
-    rm -rf Uebungsblaetter
-    mkdir -p Uebungsblaetter
-    cp ../README.md Uebungsblaetter/
-    cp -r ../Meilenstein* Uebungsblaetter/
-    cp -r ../.gitignore Uebungsblaetter/
+    echo '[deploy-complete]: Update submodule'
+    cd Uebungsblaetter
+    git pull origin master
+    cd ..
     echo '[deploy-complete]: Commit'
     git add -A
     git commit -m "$commitMessage"
     git push -f  "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git" master
-	echo '######################################'
-	cat .git/config 
 fi
