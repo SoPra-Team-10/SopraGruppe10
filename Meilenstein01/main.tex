@@ -183,6 +183,9 @@ bibtotoc,              % LV im IV
     \includepdf[scale = 0.8, pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
     \section{Anforderungsdefinition}
     
+	\textbf{Bemerkungen zu den Abhängigkeiten der Anforderungen:} \\
+	Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielsweise besitzt die Mittelzelle implizit alle Abhängigkeiten des Mittelkreises.     
+    
     \subsection{Akteure}
     
     \fakt	{Nutzer}
@@ -229,201 +232,142 @@ bibtotoc,              % LV im IV
 			{Computerprogramm, mit dem Team-Konfigurationen erstellt und bearbeitet werden können.}
 			{Der Quidditchteam-Editor erstellt Teamkonfigurationsdateien, die später vom Client geladen werden, um ein Spiel zu starten.}
 	
-	\fakt 	{Team}
-			{Einheit aus Spielfiguren die einem spielenden Nutzer zugeordnet ist.}
-			{Im Spiel ist jedem Spieler ein Team aus 7 Spielfiguren zugeordnet. Die Zusammensetzung des Team lässt sich mit der Quidditchteam-Editor, den persönlichen Wünschen entsprechend, anpassen.}
-	
-	\fakt 	{Schiedsrichter}
-			{Ahndet Fouls.}
-			{Der Schiedsrichter wird durch eine Software repräsentiert, die mit Hilfe eines Zufallsgenerator entscheidet, ob ein Foul geahndet wird oder nicht.}
-	
-	\fakt	{Spielfigur}	
-			{Spielfigur auf dem Spielfeld}
-			{Eine Spielfigur ist ein Teil eines Teams und kann einen der folgenden Typen besitzen: Sucher, Hüter, Treiber oder Jäger.}
-			
-	\fakt	{Spiel}
-			{Eine Partie Fantastic Feasts.}
-			{Ein Spiel besteht aus genau 2 Teams, Fans, dem Schiedsrichter und einem Spielfeld. Das Steuern der Spiellogik übernimmt der Server. Die Spieler der beiden Teams spielen gegeneinander um den Sieg.}	
-	
-	\subsection{Allgemeine funktionale Anforderungen}
+	\subsection{Allgemeine funktionale Anforderungen} 
 	
 	\fanf	{Quidditch-Spielfeld}
-			{Das Quidditch-Spielfeld hat eine Ovale Form, die in ein Raster von 17x13 quadratischen Feldern eingepasst ist. Auf diesem Feld finden alle Spielhandlungen statt, die während dem Spiel getätigt werden können. Einen Teil des Spielfeldes bilden der Mittelkreis im Zentrum und die Hüterzonen, jeweils an den gegenüberliegenden Enden.}
+			{Das Quidditch-Spielfeld hat eine Ovale Form, die in ein Raster von 17x13 quadratischen Zellen eingepasst ist. Auf diesem Feld finden alle Spielhandlungen statt, die während dem Spiel getätigt werden können.}
 			{Das Spielfeld ist die zentrale Komponente des Spiels, da sich hier während einer Partie sämtliche Abläufe abspielen.}
 			{-}
 			{++}
-			{Team, Spiel, Spieler, KI, Gast, Schiedsrichter}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Mittelkreis}
-			{Der Mittelkreis ist ein Bereich auf dem Quidditch-Spielfeld, der in der Mitte angeordnet ist und aus 3x3 quadratischen Kacheln besteht. Im Mittelkreis befindet sich das Mittelfeld, die zentrale Kachel des Spielfeldes, die durch ein \textit{M} gekennzeichnet ist.}
-			{Der Mittlekreis markiert das Zentrum des Spielfeldes, in dem das Spiel gestartet wird. Zu Beginn dürfen sich hier keine Spielfiguren befinden.}
+			{Der Mittelkreis ist ein Bereich auf dem Quidditch-Spielfeld, der in der Mitte angeordnet ist und aus 3x3 quadratischen Zellen besteht. Zu Beginn dürfen sich hier keine Spielfiguren befinden.}
+			{Der Mittelkreis markiert das Zentrum des Spielfeldes, in dem das Spiel gestartet wird.}
+			{Spielfeld}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Mittelzelle}
+			{Die Mittelzelle stellt den mittleren Punkt des Mittelkreises dar, der sich im Zentrum des Quidditch-Spielfeldes befindet. Dort werden initial die Bälle des Spiels platziert.}
+			{Die Mittelzelle ist der Startpunkt für die Bälle beim Spielstart.}
+			{Mittelkreis}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Hüterzonen}
+			{Die Hüterzonen sind an den jeweils gegenüberliegenden Seiten des Quidditch-Spielfeldes platziert. Die Hüterzonen sind ovalförmig, bestehen aus 11x5 Kacheln und beinhalten jeweils 3 Torringe.}
+			{In den Hüterzonen können die Teams Punkte erzielen.}
 			{Spielfeld}
 			{++}
-			{Spiel}
-	
-	\fanf	{Mittelfeld}
-			{Das Mittelfeld stellt den mittleren Punkt des Mittelkreises dar, der sich im Zentrum des Quidditch-Spielfeldes befindet.}
-			{Auf dem Mittelfeld werden initial die Bälle des Spiels platziert.}
-			{Spielfeld, Mittelkreis}
-			{++}
-			{Spiel}
-	
-	\fanf	{Hüterzone}
-			{Die Hüterzonen sind an den jeweils gegenüberliegenden Seiten des Quidditch-Spielfeldes. Sie beinhalten jeweils 3 Torringe und sind somit die Zonen, in denen die Teams punkten können. Die Hüterzonen sind ovalförmig und bestehen aus 11x5 Kacheln. Außerdem beinhaltet diese Zone die Torringe, durch welche die Teams Punkte machen können.}
-			{Hier finden die wichtigsten Aktionen des Spiels statt: Jäger versuchen, den Quaffel durch die gegnerischen Torringe zu werfen, um Punkte zu erzielen, während der Hüter genau das zu verhindern sucht.}
-			{Spielfeld}
-			{++}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Zelle}
-			{Die Zelle ist die kleinste Einheit des Spielfeldes, auf ihr darf sich immer nur maximal ein Spieler befinden. Bälle können sich jedoch eine Zelle mit einem anderen Ball und / oder einer Spielfigur teilen.}
+			{Die Zelle ist die kleinste Einheit des Spielfeldes, auf ihr darf sich immer nur eine Spielfigur gleichzeitig befinden. Bälle können sich jedoch eine Zelle mit einem anderen Ball und / oder einer Spielfigur teilen.}
 			{Das gesamte Spielfeld ist aus Zellen aufgebaut. Sie bestimmen, wie sich Spielobjekte bewegen können.}
 			{Spielfeld}
 			{++}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Torring}
-			{Jeweils 3 Torringe sind in einer Hüterzone angebracht. Die Teams können Punkte erzielen, indem sie den Quaffel durch einen generischen Torring werfen.}
-			{Die Torringe dienen den Teams als Hauptquelle von Punkten und stellen daher ein zentrales Spielelement dar.}
+			{Die Teams können Punkte erzielen, indem sie den Quaffel durch einen generischen Torring werfen.}
+			{Die Torringe dienen den Teams als Hauptquelle von Punkten.}
 			{Hüterzone}
 			{++}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
-	\fanf	{Schussvektor}
-			{Ein Schussvektor beschreibt, wie ein Ball von einer Spielfigur über das Spielfeld bewegt werden kann. Der Schussvektor zeigt dabei vom Mittelpunkt des Rasterfeldes, von dem geworfen wird, auf das Feld, auf das geworfen wird. Alle Rasterfelder, die dabei geschnitten werden, sind so genannte überstrichene Felder. Dies gilt aber nur für Felder, die wirklich geschnitten wurden und nicht nur an einer Ecke tangiert wurden.}
-			{Der Schussvektor ist wichtig, da über den Vektor entscheiden wird, ob ein Wurf erfolgreich ist oder nicht und auch je nachdem wie der Vektor ausfällt kann ein Tor erzielt werden oder nicht.}
-			{Hüterzone}
+	\fanf	{Schussvektorberechnung}
+			{Ein Schussvektor zeigt vom Mittelpunkt der Startzelle auf die Zielzelle des Wurfs. Alle Zellen, die von diesem Vektor geschnitten werden, sind so genannte überstrichene Felder.}
+			{Ein Schussvektor beschreibt, wie eine Spielfigur einen Ball über das Spielfeld bewegten kann.}
+			{Zelle}
 			{++}
-			{Spiel}	
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
-	\fanf	{Torschuss}
-			{Für einen Torschuss muss ein Spieler einen Schussvektor auf ein Torringfeld auswählen. Das Torringfeld hat zwei rot markierte Kanten, welche jeweils die Toröffnungen sind. geht der Vektor durch eine dieser beiden Öffnungen, so erzielt der Spieler ein Tor. geht der Vektor durch eine der beiden anderen Kanten, so wird kein Tor erzielt. In beiden Fällen liegt der Quaffel am Ende auf dem Torringfeld, was zur Folge hat, dass nach der Rundenphase der Quaffel in den Besitz des abwehrenden Hüters geht.}
-			{Diese Anforderung ist wichtig, da die Teams Punkte erzielen sollen und dazu müssen die einen Torschuss absolvieren.}
-			{Spiel, Quaffel, Quaffel-Werfen, Jäger, Hüter}
-			{++}
-			{Spiel}
-			
-	\fanf	{Punkte}
-			{In dem Spiel \textit{Fantastic Feasts} gibt es zwei verschiedene Möglichkeiten an Punkte zu kommen. Die eine Möglichkeit ist, dass die Jäger und der Hüter versuchen den Quaffel in einen der drei gegnerischen Torringe zu werfen, bzw. verhindern dass das gegnerische Team Tore erzielt. Schafft es jedoch ein Team den Quaffel durch eines der Tore zu werfen, so erhält das Team 10 Punkte. Die andere Möglichkeit ist es den Schnatz zu fangen durch den Sucher. Dies bringt den Team des Suchers, der den Schnatz gefangen hat, 30 Punkte, allerdings ist das Spiel direkt beendet anschließend, wodurch dies nur zu empfehlen ist, wenn man dadurch mehr Punkte als das gegnerische Team bekommt.}
-			{Die punkte sind ein wichtiger Bestandteil des Spiels, da durch sie ein Gewinner und ein Verlierer ermittelt wird.}
-			{Spielfeld, Torschuss, Schnatz fangen}
-			{++}
-			{Spiel}
+	\fanf	{Punkte erzielen}
+			{Es gibt zwei Möglichkeiten, Punkte zu erzielen: Den Quaffel durch ein gegnerischen Torring werfen (entspricht 10 Punkten) oder den Goldenen Schnatz fangen (entspricht 30 Punkten).}
+			{Die Punktezahl zeigt an, welcher Spieler sich im Moment besser schlägt und dient zur Bestimmung des Gewinners am Ende der Partie.}
+			{Schnatz fangen, Quaffel werfen}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
-	\fanf	{Entfernung}
-			{Die Entfernung ist die kleinst mögliche Anzahl an Zügen, die man braucht, um Feld A zu Feld B zu kommen. Dabei darf  man sich in alle Richtengen bewegen, also Vertikal, Horizontal und Diagonal. Dies entspricht allerdings nicht immer den $\text{überstrichenen Feldern} - 1$.}
-			{Die Entfernung ist wichtig für das Spiel, um angeben zu können, welcher Wurf am besten geeignet ist und welcher der ganzen möglichen Schussvektoren am idealsten ist von der Entfernung.}
-			{Spielfeld, Schussvektor}
+	\fanf	{Entfernungsberechnung}
+			{Die Entfernung zwischen zwei Zellen ist die kleinstmögliche Anzahl an Zügen, die man braucht, um Zelle A zu Zelle B zu kommen. Dabei darf  man sich in alle Richtengen bewegen, also Vertikal, Horizontal und Diagonal.}
+			{Die Entfernung ist maßgeblich für den Erfolg von verschiedenen Aktionen, wie z.B. dem Werfen des Quaffels.}
+			{Zelle}
 			{++}
-			{Spieler}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Bälle}
-			{Es gibt 3 verschiedene Arten von Bällen. So existieren der Quaffel, der Klatscher und der Schnatz. Jeder Ball hat seine eigenen spezifischen Fähigkeiten und eigene Funktion in dem Spiel. In einem Quidditch Spiel kommen 4 Bälle vor. Davon ist einer ein Quaffel, einer ein Schnatz und zwei sind Klatscher.}
-			{Die Bälle sind essentieller Bestandteil des Spiels, da sie dem Spiel den Sinn verleihen, dass man Punkte machen kann oder einen Spieler ausnocken kann.}
-			{Spielfeld}
+			{Es gibt 3 verschiedene Arten von Bällen: Der Quaffel, der Klatscher und der Goldene Schnatz.}
+			{Die Bälle sind zentraler Bestandteil des Spiels.}
+			{-}
 			{++}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Quaffel [Ball]}
-			{Der Quaffel ist ein roter Lederball, welcher dazu dient, dass das Team punkten kann. Dies geschieht in dem der Quaffel von den Jägern durch einen der 3 Torringe geschmießen wird. Dies gibt dann 10 Punkte für das Team. Da der Quaffel selber keine Flugfähigkeiten oder andere magische Fähigkeiten hat, muss er immer von einem Jäger mitgetragen werden oder geworfen werden oder von einem Hüter gefangen werden. ein Jäger oder Hüter kann den Quaffel aufnehmen, in dem der Ball er auf das Feld zieht, auf dem der Quaffel liegt, oder wenn der Quaffel auf einem Feld zum liegen kommt, auf dem ein Jäger oder Hüter steht. Zieht ein Treiber oder Sucher auf das Feld des Quaffels oder kommt der Quaffel auf einem der Felder zum liegen, so springt der Quaffel auf ein zufälliges freies Nachbarfeld.}
-			{Der Quaffel wird benötigt, dass das Team Punkte machen kann.}
+			{Der Quaffel ist ein roter Lederball, mit dem die Team Punkte erzielen kann. Dazu muss der Quaffel durch einen gegnerischen Torring befördert werden.}
+			{Der Quaffel ist die zentrale Punktequelle.}
 			{Bälle}
 			{++}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Klatscher [Ball]}
-			{Bei dem Spiel Quidditch gibt es 2 Klatscher, dies sind kleine schwarze Bälle, welcher magische Eigenschaften haben, was in dem Fall bedeutet, dass sie selber fliegen können. Das Ziel von den Klatschern ist es, die Spieler beider Teams von den Besen zu schmeißen. Dies geschieht, in dem der Klatscher sich jedes mal wenn er in der Rundenphase dran ist, einen zufälligen Spieler aussucht, welcher kein Treiber ist. Dann bewegt sich der Klatscher ein Feld auf den Spieler zu. Schafft der Klatscher es auf das selbe Feld wie der Spieler zu kommen, so wird dieser Spieler mit einer gewissen Wahrscheinlichkeit ausgenockt.}
-			{Die Klatscher sind dazu da um dem Spiel einen Witz zu geben, dass manche Spieler zeitweise nicht verfügbar sind.}
+			{Der Klatscher ist ein kleiner schwarzer Ball, der sich von alleine auf Spieler zubewegt (eine Zelle pro Runde), die keine Treiber sind.}
+			{Die Klatscher verleihen dem Spiel zusätzliche taktische Tiefe, da sie Spielfiguren für eine Runde ausschalten können.}
 			{Bälle}
 			{++}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Goldener Schnatz [Ball]}
-
-			{Der goldene Schnatz ist ein kleiner goldener Ball, welcher von dem Sucher gesucht werden muss. Der goldene Schnatz fliegt ebenfalls eigenständig über das Spielfeld, wodurch er versucht zu vermeiden von den Suchern gefangen zu werden. Wird der Schnatz jedoch von einem der beiden Suchern gefangen, so gibt dies 30 Punkte für das Team des Suchers, welcher den Schnatz gefangen hat und das Spiel ist beendet. In jeder Rundenphase sucht der Schnatz sich ein neues Feld aus, auf dass er sich dann eine Position weiter bewegt. Dies geschieht, in dem er den Sucher, der die geringste Entfernung hat nur berücksichtigt und dann unter allen Feldern, die eine größere Entfernung als seine aktuelle Position haben, ein zufälliges Feld weitergeht, so dass er sich von dem Sucher entfernt.}
-			{Der Schnatz verleiht dem Spiel eine Besonderheit, so dass ein Team durch das fangen des Schnatzes die Chance hat, eventuell doch noch zu gewinnen. Außerdem ist somit das Spiel zu ende.}
+			{Der Goldene Schnatz ist eine kleiner goldener Ball, sich von alleine von Suchern wegbewegt (eine Zelle pro Runde).}
+			{Der Goldene Schnatz dient zum Punkteerzielen und führt, wenn er gefangen wird, zum Ende des Partie.}
 			{Bälle}
 			{++}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Besen}
-			{Die Besen sind essentiell für das Spiel, da alle 7 Spieler auf den Besen fliegen müssen. Es gibt im Fall von \textit{Fantastic Feasts}  verschiedene Besenmodelle, welche jeweils unterschiedliche Eigenschaften haben. Dies zeichnet sich dadurch aus, dass die Besen unterschiedliche Wahrscheinlichkeiten haben, mit denen der Spieler des Besens noch ein zweites Feld sich weiter bewegen darf. Dies bedeutet, je besser der Besen ist, desto wahrscheinlicher ist es, dass der Spieler ein zweites Feld weiter darf. Zusätzlich gilt die Besen-Repräsentanz-Regel, welche besagt, dass in jedem Team jeder Typ eines Besens einmal vorkommen muss.}
-			{Die Besen sind wichtig, da die Spieler sich damit fort bewegen und die Besen auch noch Eigenschaften mitbringen, welche für das Spiel wichtig sind.}
-			{Spielfeld}
-			{++}
-			{Spielfigur}
-
-	\fanf	{Zauberfauch [Besen]}
-			{Der Zauberfauch ist der schlechteste Besen den ein Spieler auswählen kann. Die Wahrscheinlichkeit, dass der Spieler ein zweites Feld in einem Zug vorrücken kann beträgt bei dem Besen 10\%.}
-			{Der Besen ist ein wichtiges Feature, welches Einfluss auf das Spiel hat, da je nach Besen der Spieler einen zweiten Zug machen darf.}
-			{Besen}
-			{-+}
+			{Jede Spielfigur besitzt einen Besen, die einen der folgenden Typen haben: Zauberfauch, Sauberwisch 11, Komet 2-60, Nimbus 2001 und Feuerblitz. Der Typ des Besens bestimmt die Wahrscheinlichkeit, mit der eine Spielfigur nach einer Bewegung um ein Feld eine weitere Bewegung ausführen darf. Diese Wahrscheinlichkeit wird in der Partiekonfiguration festgelegt, wobei die Besen in der genannten Reihenfolge aufsteigende Wahrscheinlichkeiten besitzen.}
+			{Die Besen geben den Spielfiguren eine unterschiedliche Qualität.}
 			{-}
-
-	\fanf	{Sauberwisch 11 [Besen]}
-			{Der Sauberwisch 11 ist der zweit schlechteste Besen den ein Spieler auswählen kann. Die Wahrscheinlichkeit, dass der Spieler ein zweites Feld in einem Zug vorrücken kann beträgt bei dem Besen 30\%.}
-			{Der Besen ist ein wichtiges Feature, welches Einfluss auf das Spiel hat, da je nach Besen der Spieler einen zweiten Zug machen darf.}
-			{Besen}
-			{-+}
-			{-}
-
-	\fanf	{Komet 2-60 [Besen]}
-			{Der Komet 2-60 ist der Besen mittlerer Güte den ein Spieler auswählen kann. Die Wahrscheinlichkeit, dass der Spieler ein zweites Feld in einem Zug vorrücken kann beträgt bei dem Besen 50\%.}
-			{Der Besen ist ein wichtiges Feature, welches Einfluss auf das Spiel hat, da je nach Besen der Spieler einen zweiten Zug machen darf.}
-			{Besen}
-			{-+}
-			{-}
-
-	\fanf	{Nimbus 2001  [Besen]}
-			{Der Nimbus 2001 ist der zweit beste Besen den ein Spieler auswählen kann. Die Wahrscheinlichkeit, dass der Spieler ein zweites Feld in einem Zug vorrücken kann beträgt bei dem Besen 70\%.}
-			{Der Besen ist ein wichtiges Feature, welches Einfluss auf das Spiel hat, da je nach Besen der Spieler einen zweiten Zug machen darf.}
-			{Besen}
-			{-+}
-			{-}
-
-	\fanf	{Feuerblitz [Besen]}
-			{Der Feuerblitz ist der beste Besen den ein Spieler auswählen kann. Die Wahrscheinlichkeit, dass der Spieler ein zweites Feld in einem Zug vorrücken kann beträgt bei dem Besen 90\%.}
-			{Der Besen ist ein wichtiges Feature, welches Einfluss auf das Spiel hat, da je nach Besen der Spieler einen zweiten Zug machen darf.}
-			{Besen}
-			{-+}
-			{-}
+			{0}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Teams}
-			{An einem Spiel sind 2 Teams beteiligt, die gegeneinander spielen. Diese beiden Teams haben einen Namen, ein Team-Motto, ein Logo und eine Hauptfarbe für das Trikot, aber auch eine Ersatzfarbe, falls das andere Team eine ähnliche Farbe hat, gegen das gespielt wird. Jedes Team besteht zudem aus 7 Spieler, wovon einer ein Sucher ist, einer ein Hüter, 2 sind sogenannte Treiber und die restlichen 3 sind Jäger. Zusätzlich darf jedes Team noch 7 Fans einladen, die das Team durch Zaubersprüche unterstützen können.}
-			{Die Teams sind notwendig, da sie der Hauptbestandteil sind, in dem sich alles vereint.}
-			{Quidditch-Spielfeld, Spielfigur, Besen, Fans}
-			{++}
+			{Ein Team besteht aus sieben Spielfiguren und sieben Fans. Außerdem hat jedes Team einen Namen, ein Motto, eine Hauptteamfarbe und eine Ersatzteamfarbe. Die sieben Spielfiguren Teilen sich wie folgt auf:  ein Hüter, zwei Treiber, drei Jäger und ein Sucher. Bei den Spielfiguren darf jedes Geschlecht bis zu vier mal vertreten sein. Zudem muss jeder Besentyp einmal vertreten sein. Bei den sieben Fans muss jeder Fantyp mindestens einmal vertreten sein.}
+			{Quidditch ist ein Teamspiel, weshalb Teams benötigt werden.}
+			{Spielfigur, Fans, Besen}
+			{+}
 			{Spieler}
 	
 	\fanf	{Spielfiguren}
-			{Es gibt 4 Arten von Spielfiguren, welche in einem Quidditch Spiel unterschiedliche Aufgaben haben. Ein Team besteht insgesamt aus 7 Spielern, wovon es einen Sucher gibt, einen Hüter, 2 Treiber und 3 Jäger. Jeder dieser Spieler besitzt einen Namen und ein Geschlecht. Jedes Team muss dabei ausgeglichen sein, was das Geschlecht angeht, womit immer nur 4 Spieler dem selben Geschlecht angehören dürfen. In der Rundenphase, machen die Spieler zuerst ihre Bewegung, und dann ihre Aktion. Dies bedeutet, dass sie sich erst ein Feld weiterbewegen, und anschließend je nach Wahrscheinlichkeit des Besens ein zweites Feld weiterbewegen, und danach dann erst ihre Aktion wie Quaffel werfen oder Klatscher klopfen durchführen.}
-			{Spieler sind absolut notwendig für das Spiel, da sie die Aktionen durchführen, welche von dem Menschen gesteuert werden.}
-			{Quidditch-Spielfeld}
+			{Es gibt 4 Arten von Spielfiguren: Jäger, Sucher, Hüter und Treiber. Jede Spielfigur hat dabei einen Namen und ein Geschlecht.}
+			{Die unterschiedlichen Typen der Spielfiguren geben dem Spiel taktische Tiefe.}
+			{-}
 			{++}
-			{Team}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
-	\fanf	{Jäger [Spielertyp]}
-			{Die Jäger sind die Spieler auf dem Spielfeld, welche versuchen die Punkte für das Team mithilfe des Quaffels zu erzielen. Dabei darf jedoch immer nur ein angreifender Jäger in der gegnerischen Hüterzone sein. Trifft der Jäger auf ein Feld auf dem der Quaffel ist, hebt er ihn auf. Um zu werfen, bewegt sich der Jäger auf das gewünschte Feld und nach seiner Bewegung wirft er den Ball auf einen der 3 Torringe.}
-			{Jäger sind wichtig für das Spiel, da diese die Punkte machen, die das Team sammelt.}
+	\fanf	{Jäger [Spielfigur]}
+			{Jäger können den Quaffel aufnehmen und werfen und damit Punkte für ihr Team erzielen.}
+			{Jäger können Punkte für ihr Team erzielen.}
 			{Spielfeld, Quaffel, Torring, Quaffel-Werfen}
 			{++}
 			{Team, Spieler, Spielfigur, Spiel}
 	
-	\fanf	{Treiber [Spielertyp]}
+	\fanf	{Treiber [Spielfigur]}
 			{Die Treiber sind ausgestattet mit Kloppern, welcher dazu dient, die Klatscher von den eigenen Teamkameraden fern zu halten und sie auf die gegnerischen Spieler zu lenken. Kommt ein Treiber auf das Feld eines Klatschers oder falls er bereits schon dort ist, so kann der Treiber in dieser Rundenphase den Klatscher kloppen. Er macht also einen Wurf mit dem Klatscher auf ein Zielfeld.}
 			{Treiber haben die Funktion die eigenen Spieler vor den Klatschern zu beschützen, so dass nicht alle Spieler des Teams vom Besen fliegen.}
 			{Klatscher, Spielfeld, Spieler, Kloppen}
 			{++}
 			{Team, Spieler, Spielfigur, Spiel}
 	
-	\fanf	{Hüter [Spielertyp]}
+	\fanf	{Hüter [Spielfigur]}
 			{Hüter sind die Beschützer der jeweils eigenen Torringe. Hüter können allerdings nur einen Quaffel aufnehmen und dann wieder werfen, zum Beispiel zu einem eigenen Jäger, die Hüter können aber keine Tore erzielen, dies ist nur durch Jäger möglich.}
 			{Der Hüter ist wichtig für das Spiel, da er verhindern soll, dass das gegnerische Team es schafft Punkte zu machen in dem sie den Quaffel durch einen der 3 Torringe werfen.}
 			{Spielfeld, Torringe, Hüterzone, Quaffel, Quaffel-Werfen,Spieler}
 			{++}
 			{Team, Spieler, Spielfigur, Spiel}
 	
-	\fanf	{Sucher [Spielertyp]}
+	\fanf	{Sucher [Spielfigur]}
 			{Der Sucher hat in dem gesamten Spiel nur eine einzige Aufgabe. Seine Aufgabe ist es, den goldenen Schnatz zu suchen und ihn genau dann zu fangen, wenn sein Team durch die zusätzlichen 30 Punkte das Spiel gewinnt.}
 			{Der Sucher ist wichtig für das Spiel, da er die Möglichkeit hat, dass Spiel am Ende noch zu drehen und somit dem Spiel einen zusätzlichen Kick zu verleihen, außerdem ist das Spiel sofort zu Ende, sobald der Schnatz gefangen wurde.}
 			{Spielfeld, Spieler, goldener Schnatz}
