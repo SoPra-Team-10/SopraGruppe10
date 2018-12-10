@@ -65,5 +65,6 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
     git push -f  "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git" master
     echo '[deploy-complete]: Forwarding'
     gitlabUrl="https://oauth2:$GITLAB_TOKEN@pmgit.informatik.uni-ulm.de:sopra-18-19/teams/team10.git"
+    echo "$gitlabUrl"
     git push $gitlabUrl master
 fi
