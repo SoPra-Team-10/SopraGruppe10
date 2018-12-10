@@ -49,7 +49,7 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
     # Remove all output, we don't want to commit binaries
     echo '[deploy-complete]: Clone'
     rm -rf output/
-    git clone "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git"
+    git clone --recurse-submodules "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git"
     cd Complete/
     git config --global push.default simple
 	git config user.name "$commitAuthorName"
@@ -58,7 +58,6 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
     cd Uebungsblaetter
     git remote set-url origin "https://${GH_REPO_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
     cd ..
-    git submodule init
     git submodule update --remote --merge
     echo '[deploy-complete]: Commit'
     git add -A
