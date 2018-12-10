@@ -56,9 +56,7 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
 	git config user.name "$commitAuthorName"
     git config user.email "$commitAuthorEMail"
     echo '[deploy-complete]: Update submodule'
-    cd Uebungsblaetter
-    git pull origin master
-    cd ..
+    git submodule update --remote --merge
     echo '[deploy-complete]: Commit'
     git add -A
     git commit -m "$commitMessage"
