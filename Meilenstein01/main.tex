@@ -351,79 +351,84 @@ bibtotoc,              % LV im IV
 			{Jäger können Punkte für ihr Team erzielen.}
 			{Spielfigur}
 			{++}
-			{Team, Spieler, Spielfigur, Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Treiber [Spielfigur]}
 			{Treiber können den Klatscher schlagen und somit zum Gegner hin und / oder von Teammitgliedern weg befördern.}
 			{Treiber dienen zum Schutz des eigenen Teams vor den Klatschern. Gleichzeitig können sie den Gegner aktiv sabotieren, in dem sie ihm den Klatscher zuspielen..}
 			{Spielfigur}
 			{++}
-			{Team, Spieler, Spielfigur, Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Hüter [Spielfigur]}
-			{Hüter sind die Beschützer der jeweils eigenen Torringe. Hüter können allerdings nur einen Quaffel aufnehmen und dann wieder werfen, zum Beispiel zu einem eigenen Jäger, die Hüter können aber keine Tore erzielen, dies ist nur durch Jäger möglich.}
-			{Der Hüter ist wichtig für das Spiel, da er verhindern soll, dass das gegnerische Team es schafft Punkte zu machen in dem sie den Quaffel durch einen der 3 Torringe werfen.}
-			{Spielfeld, Torringe, Hüterzone, Quaffel, Quaffel-Werfen,Spieler}
+			{Hüter können den Quaffel aufnehmen und versuchen, den Gegner daran zu hindern, ein Tor zu erzielen. Landet der Quaffel auf einem Torring so geht der Quaffel am ende der Rudenphase in den Besitz des Hüters über, wenn er sich selbst in der Hüterzone befindet. Ein Hüter kann selbst keine Tore erzielen.}
+			{Hüter stellen die Verteidigung seines Teams dar.}
+			{Spielfigur, Hüterzone}
 			{++}
-			{Team, Spieler, Spielfigur, Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Sucher [Spielfigur]}
-			{Der Sucher hat in dem gesamten Spiel nur eine einzige Aufgabe. Seine Aufgabe ist es, den goldenen Schnatz zu suchen und ihn genau dann zu fangen, wenn sein Team durch die zusätzlichen 30 Punkte das Spiel gewinnt.}
-			{Der Sucher ist wichtig für das Spiel, da er die Möglichkeit hat, dass Spiel am Ende noch zu drehen und somit dem Spiel einen zusätzlichen Kick zu verleihen, außerdem ist das Spiel sofort zu Ende, sobald der Schnatz gefangen wurde.}
-			{Spielfeld, Spieler, goldener Schnatz}
+			{Sucher versuchen den Goldenen Schnatz zu finden, um Punkte zu erzielen und das Spiel zu beenden.}
+			{Der Sucher beendet das Spiel.}
+			{Spielfigur, Goldener Schnatz}
 			{++}
-			{Team, Spieler, Spielfigur, Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Quaffel-Werfen}
-			{Der Quaffel kann nur von Jägern und Hütern geworfen werden. Die beiden Typen von Spielern können den Quaffel aufheben, in dem sie einfach auf das Feld des Quaffels sich bewegen und ihn dadurch aufheben. Möchte ein Spieler den Quaffel werfen, so wählt dieser ein Zielfeld aus, und dadurch wird der Schussvektor erstellt. Die von dem Schussvektor überstrichenen Felder werden nun der Reihe nach betrachtet. Jeder Gegner, der auf einem der überstrichenen Felder steht, hat eine bestimmte Wahrscheinlichkeit den Quaffel abzufangen. Gelingt dies einem gegnerischen Hüter oder Jäger, so geht der Ball in seinen Besitz über. Passiert dies aber bei einem Sucher oder Treiber, so springt der Quaffel auf ein zufälliges freies Nachbarfeld des Spielers. 
-			Falls der Quaffel jedoch die überstrichenen Felder durchquert, ohne abgefangen zu werden, so wird der eigentliche Wurf abgehandelt. Der Erfolg des Wurfes ist ebenfalls an eine Wahrscheinlichkeit $P^{d}$ gebunden, dass dieser Erfolgreich ist, wobei $P$ eine elementare Wurferfolgswahrscheinlichkeit ist, und $d$ die Entfernung zum Zielfeld. Handelt es sich um einen erfolgreichen Wurf, so landet der Quaffel auf dem Zielfeld, ist dies jedoch nicht der Fall, so wird der Quaffel zufällig verteilt auf einem $n x n$ großen Feld um das Zielfeld, wobei $n = \ceil{\frac{d}{7}}$. Torringfelder gelten hierbei auch als freie Felder, wenn kein Spieler drauf steht und im Zuge dessen können bei einem missglückten Wurf auch Eigentore passieren, wenn der Quaffel dadurch auf einem Torringfeld kommt. 
-			Für einen erfolgreichen Torschuss muss der Spieler der den Quaffel wirft einen Torschussvektor haben. Dieser ist allerdings nur dann gültig, wenn der Vektor durch eine der Rot markierten Seiten eines Torfeldes läuft, wobei dies auch diagonal erlaubt ist. Der Wurf zählt nicht als Tor, wenn der Vektor über eine der anderen Kanten in das Tor geht.} 
-			{Diese Anforderung ist sehr wichtig, da sie essentiell wichtig ist, dass das Team punkten kann. Ohne den Quaffel werfen zu können, kann das Team auch keine Punkte erzielen.}			
-			{Spielfeld, Jäger, Hüter, Quaffel}
+			{Hüter und Jäger können den Quaffel werfen. Der Wurf wird über ein Schussvektor angegeben. Jede gegnerische Spielfigur, die sich auf einer überstrichenen Zelle des Schussvektors befindet, kann den Quaffel abfangen. Wird der Ball von keiner Spielfigur abgefangen, so ist der Wurf mit der Wahrscheinlichkeit $P^d$ erfolgreich, wobei $P$ eine elementare Wurfwahrscheinlichkeit und $d$ die Entfernung zur Zielzelle ist. Ist der Wurf erfolgreich, so landet der Quaffel auf der Zielzelle. Wenn nicht wir der Quaffel auf einem zufälligen freien Zelle in einem $n\times n$ Quadrat um die Zielzelle platziert, wobei $n=\ceil{ \frac{d}{7}}$ ist.}			
+			{Das Werfen des Quaffels ermöglicht Passspiel und das erzielen von Punkten.}
+			{Schussvektorberechnung, Entfernungsberechnung, Spielfigur, Quaffel}
 			{++}
-			{Spiel, Spieler}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Quaffel Abfangen}
-			{Wird ein Quaffel von einem Spieler geworfen, so besteht eine Wahrscheinlichkeit für jedes überstrichene Feld, auf dem ein gegnerischer Spieler steht, dass er den Quaffel abfängt. Tritt dieser Fall ein, so erhält der gegnerische Spieler den Quaffel und der Wurf war nicht erfolgreich.}
-			{Dies ist wichtig, da nicht jeder Wurf immer erfolgreich sein kann, da sonst der Ballbesitz sich nie ändern würde.}
-			{Spiel, Jäger, Hüter, Quaffel, Quaffel-Werfen}
+			{Jede gegnerische Spielfigur auf einer überstrichenen Zelle des Schussvektors eines Wurfes hat eine gewisse Wahrscheinlichkeit, den Quaffel abzufangen. Diese Wahrscheinlichkeit ist in der Partiekonfiguration vermerkt. Gelingt das Abfangen, so landet der Quaffel auf der Zelle der Abfangenden Spielfigur.}
+			{Das Abfangen bietet die Möglichkeit, Würfe des Gegners zu unterbinden.}
+			{Quaffel-Werfen}
 			{++}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
-	\fanf	{Quaffel vertändeln}
-			{Ein Spieler kann den Quaffel vertändeln, was bedeutet, dass er aus irgendeinem Grund die Kontrolle über den Quaffel verliert, welcher dann auf einem zufälligem freien Nachbarfeld landet.}
-			{Diese Anforderung ist wichtig, da der Quaffel den Besitz wechseln muss, dass beide Teams punkten können und dies damit möglich wird ohne ein Foul zu begehen.}
-			{Spiel, Jäger, Hüter, Quaffel}
-			{++}
-			{Spiel}
-		
-	\fanf	{Quaffel entreißen}
-			{Ein Jäger darf einem anderen Jäger, sofern dieser auf einem seiner Nachbarfelder ist, diesen entreißen. Dies gelingt allerdings nur mit einer bestimmten Wahrscheinlichkeit. Jäger dürfen auch dem gegnerischen Hüter den Quaffel entreißen, jedoch dies geht nur, wenn sich der Hüter nicht in seiner eigenen Hüterzone befindet.}
-			{Diese Anforderung ist wichtig, da der Quaffel den Besitz wechseln muss, dass beide Teams punkten können und dies damit möglich wird ohne ein Foul zu begehen.}
-			{Spiel, Jäger, Hüter, Quaffel}
-			{++}
-			{Spiel, Spieler}
-			
-	\fanf	{Klatscher Kloppen}
-			{Ein Treiber kann einen Klatscher kloppen, wenn dieser auf dem Feld wie der Klatscher ist. Der Treiber wählt um den Klatscher zu kloppen ein Zielfeld aus, welches Maximal 3 Felder zu ihm entfernt ist. Zusätzlich müssen aber auch alle überstrichenen Felder frei sein, dass der Wurf gültig ist. Ist dies beides der Fall, so landet der Klatscher auf dem Zielfeld, wo mit einer bestimmten Wahrscheinlichkeit der darauf stehende gegnerische Spieler (Jäger, Sucher, Hüter) ausgenockt wird.}
-			{Diese Anforderung bringt eine Schwierigkeit für das Spiel mit, da Spieler dadurch ausgenockt werden können, was das Spiel somit interessanter macht.}
-			{Spielfeld, Treiber, Klatscher}
-			{++}
-			{Spiel, Spieler}
-			
-	\fanf	{Spieler ausgenockt}
-			{Wird ein Spieler von einem Klatscher ausgenockt, so vertändelt dieser Spieler, sofern er den Quaffel hat diesen, und muss das nächste mal wenn er in einer Rundenphase drankommt, entweder noch in dieser oder in der nächsten, aussetzen. Dies bedeutet, dass der Spieler seine Position beibehält und auch auf dieser bleibt, aber keine Aktion mehr ausführen darf für die Rundenphase, also er darf sich nicht bewegen, keine Würfe machen, keine Bälle abfangen und auch keinen Schnatz fangen.}
-			{Die Anforderung ist wichtig, damit klar ist, was bei einem Treffer durch einen Klatscher passiert.}
-			{Klatscher}
+	\fanf	{Quaffel Verlieren}
+			{Ein Jäger kann den Quaffel verlieren, dass bedeutet, das der Quaffel auf ein freie Nachbarzelle zufällig bewegt wird.}
+			{Durch das Verlieren des Quaffels werden Tore im Alleingang erschwert.}
+			{Spielfigur, Quaffel, Fouls, Klatscher}
 			{+}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+		
+	\fanf	{Quaffel Entreißen}
+			{Ein Jäger darf einem anderen Jäger den Quaffel entreißen, sofern dieser auf einem seiner Nachbarfelder ist. Dies gelingt allerdings nur mit einer bestimmten Wahrscheinlichkeit. Jäger dürfen auch dem gegnerischen Hüter den Quaffel entreißen, jedoch dies geht nur, wenn sich der Hüter nicht in seiner eigenen Hüterzone befindet.}
+			{Bietet zusätzliche Möglichkeiten, den Ball zu erobern.}
+			{Spielfigur, Quaffel}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Tor Erzielen}
+			{Ein Jäger kann ein Tor erzielen, indem er den Quaffel erfolgreich auf eine Torringzelle wirft. Dabei muss der Schussvektor des Wurfes durch die linke oder rechte Seite der Torringzelle gehen.}
+			{Stellt für einen Jäger die Möglichkeit dar, Punkte zu erzielen.}
+			{Torring, Quaffel Werfen, Jäger}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
-	\fanf	{Schnatz fangen}
-			{Der Schnatz kann nur von einem der Sucher aus jedem Team gefangen werden. Dies geschieht, in dem der Sucher aus einem der beiden Teams es schafft auf das selbe Feld wie der Schnatz zu kommen. In dem Moment gilt der Schnatz als gefangen und das Spiel ist beendet.}
-			{Durch das fangen des Schnatzes kriegt das Spiel ein Ende und man hat als Team die Chance eventuell durch die 30 Punkte noch den Sieg zu erreichen.}
+	\fanf	{Klatscher Schlagen}
+			{Ein Treiber kann einen Klatscher schlagen, wenn er sich auf derselben Zelle wie der Klatscher befindet. Der Treiber wählt, um den Klatscher zu schlagen, eine Zielzelle aus, die eine maximale Entfernung von drei zu ihm hat. Zusätzlich müssen auch alle überstrichenen Felder frei sein. Ist dies beides der Fall, so wird das Schlagen des Klatschen wie ein normaler Quaffel-Wurf behandelt, allerdings mit einer 100\% Wahrscheinlichkeit.}
+			{Stellt für den Treiber die Möglichkeit dar, den Katscher zu bewegen.}
+			{Spielfeld, Treiber, Klatscher}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Spieler Betäuben}
+			{Bewegt sich der Klatscher auf deine Zelle, auf der sich eine Spielfigur befindet, die kein Treiber ist, wird diese mit einer gewissen Wahrscheinlichkeit betäubt. Das hat zur Folge, dass diese Spielfigur gegebenenfalls den Quaffel verliert, keine Ball fangen und für eine Runde keine Aktion ausführen kann.}
+			{Stellt ein zusätzliches taktisches Spielelement dar.}
+			{Klatscher, Spielfigur}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Schnatz Fangen}
+			{Befindet sich ein Sucher und der Goldene Schnatz auf derselben Zelle, so fängt der Sucher den Goldenen Schnatz. Dadurch erhält sein Team 30 Punkte und das Spiel ist zu Ende.}
+			{Das Schnatz Fange führ das Ende der Partie herbei.}
 			{goldener Schnatz, Punkte}
 			{++}
-			{Spiel, Spieler}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	
 	\fanf	{Fans}
