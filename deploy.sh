@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "On Branch: $TRAVIS_BRANCH"
 
 #deploy gh-pages
 echo '[deploy_gh-pages]: create new temp dir'
@@ -16,9 +17,8 @@ git config user.name "Travis CI"
 git config user.email "deploy@travis-ci.org"
 
 echo '[deploy_gh-pages]: copy new files'
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
-if [ "$BRANCH" == "master" ]; then
-  rm -f *
+if [ "$TRAVIS_BRANCH" == "master" ]; then
+    rm -f *
     cp ../../output/* .
 else
     rm -rf "$TRAVIS_BRANCH"
@@ -38,8 +38,7 @@ cd ../..
 rm -rf deployGH-PAGES
 
 #deploy to commplete repo, only on master
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
-if [ "$BRANCH" == "master" ]; then
+if [ "$TRAVIS_BRANCH" == "master" ]; then
     echo '[deploy-complete]: Get data'
     commitHash="$1"
     commitMessage=$(git --no-pager log -2 --pretty="%B" | head -n 1)
@@ -50,17 +49,22 @@ if [ "$BRANCH" == "master" ]; then
     # Remove all output, we don't want to commit binaries
     echo '[deploy-complete]: Clone'
     rm -rf output/
-    git clone "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git"
+    git clone --recurse-submodules "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git"
     cd Complete/
     git config --global push.default simple
 	git config user.name "$commitAuthorName"
     git config user.email "$commitAuthorEMail"
     echo '[deploy-complete]: Update submodule'
     cd Uebungsblaetter
-    git pull origin master
+    git remote set-url origin "https://${GH_REPO_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
     cd ..
+    git submodule update --remote --merge
     echo '[deploy-complete]: Commit'
     git add -A
     git commit -m "$commitMessage"
     git push -f  "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git" master
+    echo '[deploy-complete]: Forwarding'
+    gitlabUrl="https://oauth2:$GITLAB_TOKEN@pmgit.informatik.uni-ulm.de:sopra-18-19/teams/team10.git"
+    echo "$gitlabUrl"
+    git push $gitlabUrl master
 fi
