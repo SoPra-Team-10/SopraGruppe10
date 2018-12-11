@@ -762,8 +762,8 @@ von beiden Suchern entfernt ist.}
 	\qanf 	{Plattformunabhängigkeit}
 			{Der Client und der Team-Konfigurator soll auf mindestens einer gängigen Computerbetriebssystem-Plattform (z.B. Linux, Windows) uneingeschränkt benutzbar sein. Des weiteren soll die Serveranwendung und der KI-Client auf mindestens zwei gängigen Computerbetriebssystem-Plattformen (z.B. Linux, Windows) uneingeschränkt benutzbar sein.}
 			{Die Plattformunabhängigkeit ist von großer Bedeutung, da die Anwendungen auf möglichst vielen Zielsystemen funktionieren sollen um die Menge an Endnutzer so wenig wie möglich einzuschränken.}
-			{Programmiersprache}
-			{++}
+			{Programmiersprache, Docker-Container}
+			{+}
 			{Nutzer, Entwickler}
 	
 	\qanf 	{Version-Controlling}
@@ -774,10 +774,10 @@ von beiden Suchern entfernt ist.}
 			{Entwickler}
 	
 	\qanf 	{Continuous Integration}
-			{In die Version-Controlling Lösung mit Hilfe einer CI automatisch jeder gepushte Commit Unit-Tests und der Statischen Codeanalyse unterzogen werden. Zudem soll eine automatisierte Code Dokumentation angestoßen werden. Bei erfolgreichem Abschließen alle Test soll zum Schluss der aktuelle Stand deployed werden.}
+			{Jeder gepushte Commit soll automatisch mit Hilfe der CI Unit-Tests und der Statischen Codeanalyse unterzogen werden. Zudem soll eine automatisierte Code Dokumentation angestoßen werden. Bei erfolgreichem Abschließen aller Tests soll zum Schluss der aktuelle Stand deployed werden.}
 			{Die CI nimmt den Entwicklern Arbeit ab und kann dazu beitragen, dass Fehler frühzeitig erkannt und behoben werden können.}
-			{-}
-			{-+}
+			{Version-Controlling}
+			{0}
 			{Entwickler}
 	
 	\qanf 	{Statische Codeanalyse}
@@ -789,9 +789,9 @@ von beiden Suchern entfernt ist.}
 	
 	\qanf 	{Automatisierte Unit-Tests}
 			{Alle definierten Unit-Tests müssen fehlerfrei bestanden werden.}
-			{Da alle Komponenten möglichst fehlerfrei funktionieren müssen ist es unerlässlich die einzelnen Teil der Software ständig auf ihre Funktionalität zu prüfen, die ist nur effizient möglich wenn automatisiert Test durchgeführt werden, damit Fehler frühzeitig erkannt werden.}
+			{Da alle Komponenten möglichst fehlerfrei funktionieren müssen ist es unerlässlich die einzelnen Teil der Software ständig auf ihre Funktionalität zu prüfen.}
 			{-}
-			{-+}
+			{0}
 			{Entwickler}
 	
 	\qanf 	{Docker Container}
@@ -802,39 +802,39 @@ von beiden Suchern entfernt ist.}
 			{Entwickler}
 	
 	\qanf 	{Dokumentation}
-			{Alle Klassen und Methoden der Software müssen dokumentiert werden. Dabei sollen mindestens alle Übergabeparameter und Rückgabewerte genau spezifiziert werden. Zudem ist sind komplexe Algorithmen detailliert zu dokumentieren. Die gesamte Dokumente ist dabei mit dem Tool Doxygen zu erstellen.}
+			{Alle Klassen und Methoden der Software müssen dokumentiert werden. Dabei sollen mindestens alle Übergabeparameter und Rückgabewerte genau spezifiziert werden. Zudem sind komplexe Algorithmen detailliert zu dokumentieren. Die gesamte Dokumentation ist dabei mit dem Tool Doxygen zu erstellen.}
 			{Gut dokumentierte Software vereinfacht die Fehlersuche, die Wartung und das hinzufügen von neuen Features.}
 			{-}
 			{+}
-			{<Akteure>}
+			{Entwickler}
 	
 	\qanf 	{Benutzerhandbuch}
 			{Zu jeder Komponente des Projektes muss eine Benutzerhandbuch existieren, in welchem alle Features unmissverständlich erklärt sind, sodass ein neuer Benutzer auf Basis des Benutzerhandbuches die Software bedienen kann.}
-			{Das Benutzerhandbuch wird im Lastenheft gefordert.}
+			{Das Benutzerhandbuch erleichtert die Bedienung der Anwendung.}
 			{Dokumentation}
-			{-+}
-			{Nutzer}
+			{0}
+			{Nutzer, Entwickler}
 	
 	\qanf 	{Anwendungssprache}
 			{Das User-Interface der Anwendungen soll in deutscher Sprache gestaltet werden.}
-			{Die Anwendungssprache ist im Lastenheft vorgegeben.}
+			{Die Zielkundschaft spricht überwiegend Deutsch.}
 			{-}
-			{-+}
-			{Nutzer}
+			{0}
+			{Nutzer, Entwickler}
 	
 	\qanf 	{Implementierungssprache}
 			{Die Implementierung der Anwendungen soll in englischer Sprache gehalten sein.}
 			{Die Implementierungssprache ist im Lastenheft vorgegeben.}
 			{-}
-			{-+}
+			{0}
 			{Entwickler}
 	
 	\qanf 	{Dokumentationssprache}
 			{Die Dokumentation der Software kann in englischer oder deutscher Sprache gestaltet sein.}
 			{Die Dokumentationssprache ist im Lastenheft vorgegeben.}
 			{-}
-			{-+}
-			{Entwickler}
+			{0}
+			{Entwickler, Kunde}
 	
 	\qanf 	{Programmiersprache}
 			{Die Software soll in einer der folgenden Programmiersprachen geschrieben sein: Java, C++, C\# Die endgültig verwendete Sprache kann jedoch von Komponente zu Komponente variieren, muss aber mit dem Kunden abgesprochen werden.}
@@ -844,51 +844,42 @@ von beiden Suchern entfernt ist.}
 			{Entwickler}	
 	
 	\qanf 	{Format für Konfigurationsdateien}
-			{Alle Konfigurationsdateien müssen dem \textit{JSON} Standard genügen. Des Weiteren sind alle vom Komitee festgelegten weiteren Standards einzuhalten.}
+			{Alle Konfigurationsdateien müssen den \textit{JSON} Standard erfüllen Des Weiteren sind alle vom Komitee festgelegten weiteren Standards einzuhalten.}
 			{Durch Einheitliche Formate der Konfigurationsdateien lässt sich sicherstellen, das einzelne Komponenten zwischen den Entwicklungsteams ausgetauscht werden können und diese miteinander kompatibel sind. }
 			{-}
 			{+}
 			{Entwickler, Nutzer}
 	
-	
-	JSON!!!###########################
 	\qanf 	{Netzwerkkommunikation}
-			{Die Netzwerkkommunikation zwischen Client und Server soll über sogenannte \textit{Web-Socket-Sessions} realisiert werden, sodass Client und Server ortsunabhängig von einander betrieben werden können.}
-			{Die Netzwerkkommunikation muss gewissen Standards genügen, damit Client- und Serveranwendungen von unterschiedlichen Entwicklerteams mit einander kompatibel sind und Client und Server ortsunabhängig von einander betrieben werden können.}
+			{Die Netzwerkkommunikation zwischen Client und Server soll über sogenannte \textit{Web-Socket-Sessions} realisiert werden, sodass Client und Server ortsunabhängig von einander betrieben werden können. Die Nachrichten sollen im \textit{JSON} formatiert sein.}
+			{Die Netzwerkkommunikation muss gewisse Standards erfüllen, damit Client- und Serveranwendungen von unterschiedlichen Entwicklerteams mit einander kompatibel sind.}
 			{-}
 			{++}
-			{Spiel}
-	
-	\qanf 	{Log-Dateien}
-			{Log-Dateien anlegen um unter anderem den Spielverlauf zu Speichern und eventuelle Fehlfunktionen der Software fest zu halten.}
-			{Log-Dateien können unter anderen die Wartung der Software erleichtern und für zusätzliche Features, wie eine Statistik über den Spielverlauf verwendet werden.}
-			{-}
-			{-}
-			{Spiel}
+			{Server, Client, KI-Client}
 	
 	\qanf 	{Funktionalität}
 			{Die Anwendungen müssen alle im Lastenheft als Minimalanforderungen aufgeführten Anforderungen erfüllen.}
 			{Um die Abnahmen zu bestehen müssen die Minimalanforderungen erfüllt werden.}
 			{-}
 			{++}
-			{Kunde, Nutzer, Entwickler}
+			{Kunde, Entwickler}
 	
 	\qanf 	{Zuverlässigkeit}
-			{Die Anwendungen dürfen niemals komplett abstürzen.}
-			{Durch zu häufiges Abstürzen der Software ist das Benutzererlebnis massiv beeinträchtigt.}
+			{Bei $100$ Spielen darf maximal eine Partie aufgrund eines Fehlers in der Anwendung abgebrochen werden müssen.}
+			{Durch zu häufige Ausfälle der Software ist das Benutzererlebnis massiv beeinträchtigt.}
 			{Robustheit}
 			{+}
-			{Nutzer}
+			{Nutzer, Entwickler}
 	
 	\qanf 	{Robustheit}
 			{Die Anwendungen dürfen nicht aufgrund einer Falschen Benutzereingabe abstürzen, sondern müssen den Benutzer auf seinen Fehler hinweisen.}
 			{Um das Benutzererlebnis nicht zu beeinträchtigen und keine Sicherheitslücken zu verursachen ist es notwendig, dass die Funktion der Software nicht durch fehlerhafte Benutzereingaben beeinträchtigt wird.}
 			{-}
 			{++}
-			{Nutzer}
+			{Nutzer, Entwickler}
 	
 	\qanf 	{Benutzerfreundlichkeit}
-			{Dem Endnutzer muss es möglich sein, alle Komponenten des Projektes nur auf Basis des Mitgelieferten Benutzerhandbuches und den Hilfeseiten die Software ohne Einschränkungen bedienen zu können.}
+			{Dem Endnutzer muss es möglich sein, alle Komponenten des Projektes nur auf Basis des mitgelieferten Benutzerhandbuches und den Hilfeseiten die Software ohne Einschränkungen bedienen zu können.}
 			{Wenn es für die Endnutzer der Software zu kompliziert ist die Software zu Benutzen, dann ist das Benutzererlebnis erheblich gestört und die Software wird nicht Benutzt werden, da die Endbenutzer unzufrieden sind.}
 			{-}
 			{+}
@@ -908,9 +899,8 @@ von beiden Suchern entfernt ist.}
 			{-}
 			{Nutzer, Entwickler}
 	
-	ANSICHT################################################
 	\qanf 	{Kurze Ladezeiten}
-			{Systembedingte Ladezeiten der Software dürfen auf einem aktuellen Computer zwei Sekunden pro geladenem Teil nicht überschreiten.}
+			{Systembedingte Ladezeiten der Software dürfen auf einem aktuellen Computer eine Sekunde pro geladener Ansicht nicht überschreiten.}
 			{Bei längeren Ladezeiten ist das Benutzererlebnis massiv beeinträchtigt.}
 			{-}
 			{-+}
