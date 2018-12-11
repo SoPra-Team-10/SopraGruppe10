@@ -331,7 +331,7 @@ von beiden Suchern entfernt ist.}
 			{Jede Spielfigur besitzt einen Besen, die einen der folgenden Typen haben: Zauberfauch, Sauberwisch 11, Komet 2-60, Nimbus 2001 und Feuerblitz. Der Typ des Besens bestimmt die Wahrscheinlichkeit, mit der eine Spielfigur nach einer Bewegung um ein Feld eine weitere Bewegung ausführen darf. Diese Wahrscheinlichkeit wird in der Partiekonfiguration festgelegt, wobei die Besen in der genannten Reihenfolge aufsteigende Wahrscheinlichkeiten besitzen.}
 			{Die Besen geben den Spielfiguren eine unterschiedliche Qualität.}
 			{-}
-			{0}
+			{+}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Teams}
@@ -339,7 +339,7 @@ von beiden Suchern entfernt ist.}
 			{Quidditch ist ein Teamspiel, weshalb Teams benötigt werden.}
 			{Spielfigur, Fans, Besen}
 			{+}
-			{Spieler}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Spielfiguren}
 			{Es gibt 4 Arten von Spielfiguren: Jäger, Sucher, Hüter und Treiber. Jede Spielfigur hat dabei einen Namen und ein Geschlecht.}
@@ -372,49 +372,49 @@ von beiden Suchern entfernt ist.}
 	\fanf	{Sucher [Spielfigur]}
 			{Sucher versuchen den Goldenen Schnatz zu finden, um Punkte zu erzielen und das Spiel zu beenden.}
 			{Der Sucher beendet das Spiel.}
-			{Spielfigur, Goldener Schnatz}
+			{Spielfigur}
 			{++}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Quaffel-Werfen}
 			{Hüter und Jäger können den Quaffel werfen. Der Wurf wird über ein Schussvektor angegeben. Jede gegnerische Spielfigur, die sich auf einer überstrichenen Zelle des Schussvektors befindet, kann den Quaffel abfangen. Wird der Ball von keiner Spielfigur abgefangen, so ist der Wurf mit der Wahrscheinlichkeit $P^d$ erfolgreich, wobei $P$ eine elementare Wurfwahrscheinlichkeit und $d$ die Entfernung zur Zielzelle ist. Ist der Wurf erfolgreich, so landet der Quaffel auf der Zielzelle. Wenn nicht wir der Quaffel auf einem zufälligen freien Zelle in einem $n\times n$ Quadrat um die Zielzelle platziert, wobei $n=\ceil{ \frac{d}{7}}$ ist.}			
 			{Das Werfen des Quaffels ermöglicht Passspiel und das erzielen von Punkten.}
-			{Schussvektorberechnung, Entfernungsberechnung, Spielfigur, Quaffel}
+			{Schussvektorberechnung, Entfernungsberechnung, Jäger, Hüter, Quaffel}
 			{++}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Quaffel Abfangen}
 			{Jede gegnerische Spielfigur auf einer überstrichenen Zelle des Schussvektors eines Wurfes hat eine gewisse Wahrscheinlichkeit, den Quaffel abzufangen. Diese Wahrscheinlichkeit ist in der Partiekonfiguration vermerkt. Gelingt das Abfangen, so landet der Quaffel auf der Zelle der Abfangenden Spielfigur.}
 			{Das Abfangen bietet die Möglichkeit, Würfe des Gegners zu unterbinden.}
-			{Quaffel-Werfen}
+			{Quaffel-Werfen, Spielfiguren }
 			{++}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Quaffel prallt ab}
 			{Landet der Quaffel auf einer Zelle, auf der sich eine Spielfigur befindet, die weder Hüter noch Jäger ist, so wird der Quaffel auf eine zufällige freie Nachbarzelle gesetzt.}
 			{Nur Jäger und Hüter können direkt mit der Quaffel interagieren.}
-			{Spielfigur, Quaffel}
+			{Sucher, Treiber, Quaffel}
 			{+}
 			{Spieler, KI, Gast, Client, KI-Client, Server}		
 			
 	\fanf	{Quaffel Halten}
 			{Ein Jäger oder Hüter kann den Quaffel halten, was zur Folge hat, dass der Quaffel sich immer auf der selben Zelle befindet wie besagter Jäger bzw. Hüter. Der Quaffel bewegt sich dadurch mit dem Jäger bzw. Hüter mit.}
 			{Jäger und Hüter können sollen den Quaffel, ohne zu passen, über das Spielfeld transportieren können.}
-			{Spielfigur, Quaffel, Fouls, Klatscher}
+			{Jäger, Hüter, Quaffel}
 			{+}
 			{Spieler, KI, Gast, Client, KI-Client, Server}	
 			
 	\fanf	{Quaffel Verlieren}
 			{Ein Jäger kann den Quaffel verlieren, dass bedeutet, das der Quaffel auf ein freie Nachbarzelle zufällig bewegt wird.}
 			{Durch das Verlieren des Quaffels werden Tore im Alleingang erschwert.}
-			{Spielfigur, Quaffel, Fouls, Klatscher}
+			{Jäger, Hüter, Quaffel, Fouls, Klatscher}
 			{+}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 		
 	\fanf	{Quaffel Entreißen}
 			{Ein Jäger darf einem anderen Jäger den Quaffel entreißen, sofern dieser auf einem seiner Nachbarfelder ist. Dies gelingt allerdings nur mit einer bestimmten Wahrscheinlichkeit. Jäger dürfen auch dem gegnerischen Hüter den Quaffel entreißen, jedoch dies geht nur, wenn sich der Hüter nicht in seiner eigenen Hüterzone befindet.}
 			{Bietet zusätzliche Möglichkeiten, den Ball zu erobern.}
-			{Spielfigur, Quaffel}
+			{Jäger, Hüter, Quaffel}
 			{+}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
@@ -435,14 +435,14 @@ von beiden Suchern entfernt ist.}
 	\fanf	{Spieler Betäuben}
 			{Bewegt sich der Klatscher auf deine Zelle, auf der sich eine Spielfigur befindet, die kein Treiber ist, wird diese mit einer gewissen Wahrscheinlichkeit betäubt. Das hat zur Folge, dass diese Spielfigur gegebenenfalls den Quaffel verliert, keine Ball fangen und für eine Runde keine Aktion ausführen kann. Der Klatscher, der den Spiler betäubt hat, wird auf eine zufällige freie Zelle gesetzt.}
 			{Stellt ein zusätzliches taktisches Spielelement dar.}
-			{Klatscher, Spielfigur}
+			{Klatscher, Jäger, Hüter, Sucher}
 			{+}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Schnatz Fangen}
 			{Befindet sich ein Sucher und der Goldene Schnatz auf derselben Zelle, so fängt der Sucher den Goldenen Schnatz mit einer gewissen Wahrscheinlichkeit. Dadurch erhält sein Team 30 Punkte und das Spiel ist zu Ende.}
 			{Das Schnatz Fange führ das Ende der Partie herbei.}
-			{goldener Schnatz, Punkte}
+			{Goldener Schnatz, Sucher, Punkte}
 			{++}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
@@ -450,7 +450,7 @@ von beiden Suchern entfernt ist.}
 	\fanf	{Fans}
 			{Ein Fan kann durch Zaubersprüche das eigenen Team unterstützen oder das gegnerische Team schwächen. Diese Eingriffe in das Spielgeschehen werden  mit einer gewissen Wahrscheinlichkeit geahndet. Die Fans eines Teams werden jeweils vom Spieler des Teams gesteuert. Es gibt die folgenden Typen von Fans: Elfen, Kobolde, Trolle und Niffler die alle unterschiedliche Fähigkeiten beherrschen.}
 			{Sorgen für Abwechslung, Witz, und Überraschungen im Spiel.}
-			{}
+			{-}
 			{0}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
@@ -466,7 +466,7 @@ von beiden Suchern entfernt ist.}
 			{Siehe Fans}
 			{Fans}
 			{0}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Trolle [Fantyp]}
 			{Durch lautes Brüllen sorgen Trolle dafür, dass der Spieler, der den Quaffel besitzt, diesen vor Schreck fallen lässt.}
@@ -534,73 +534,73 @@ von beiden Suchern entfernt ist.}
 	\fanf	{Setzen auf freies Nachbarfeld}
 			{Soll ein Spieler oder Ball auf ein zufälliges freies Nachbarfeld von seiner Position gesetzt werden, jedoch sind alle 8 umliegenden Felder bereits von Spielfiguren besetzt oder aus anderen Gründen nicht zulässig, so wird rekursiv von einem zufällig besetzten Nachbarfeld weiter gesucht, bis sich schließlich ein freies Feld findet. Das bedeutet, dass der Spieler oder Ball nicht unbedingt auf einem Nachbarfeld seiner Position landet, sondern auch weiter entfernt positioniert werden kann.}
 			{Es muss der Fall abgedeckt werden, dass kein freies Nachbarfeld mehr frei ist.}
-			{Spielfeld, Bälle, Spielfigur}
+			{Zelle, Bälle, Spielfigur}
 			{+}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 
 
 	\fanf	{Runde}
 			{Das Spiel läuft in Runden ab. Jede Runde ist dabei in die drei Rundenphasen Ballphase, Spielerphase und Fanphase unterteilt.}
-			{Bei \textit{Fantastic Feasts} handelt es sich laut den Spielregeln um ein Rundenbasiertes Spiel.}
-			{Ballphase, Spielerphase, Fanphase}
+			{Bei \glqq{}Fantastic Feasts\grqq{} handelt es sich laut den Spielregeln um ein Rundenbasiertes Spiel.}
+			{-}
 			{+}
-			{Spiel, Spieler, Team, Spielfigur}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Ballphase}
 			{In dieser Phase eine Spiels bewegen sich die Bälle über das Spielfeld. Dabei machen die beiden Klatscher ihre Bewegungen in zufälliger Reihenfolge.}
 			{sieh Runde}
 			{Runde}
 			{+}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Spielerphase}
 			{Jeder Spieler macht seinen Zug, wobei sich die Teams abwechseln. In jeder Runde wird neu zufällig bestimmt, welches Team dabei beginnt. Die Reihenfolge der Spieler innerhalb eines Teams wird zufällig bestimmt.}
 			{Siehe Runde.}
 			{Runde}
 			{+}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Fanphase}
 			{Jeder Fan macht seinen Zug, wobei sich die Fanblöcke der Teams abwechseln. In jeder Runde wird neu zufällig bestimmt, welcher Fanblock dabei beginnt. Die Reihenfolge der Fans innerhalb eines Fanblocks wird zufällig bestimmt.}
 			{Siehe Runde.}
 			{Runde}
 			{+}
-			{Spiel}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 
 	\fanf	{Disqualifikation}
 			{Werden in der selben Runde mehr als 3 Spielfiguren eines Teams vom Schiedsrichter aus dem Spiel entfernt, gilt das Team als disqualifiziert.}
 			{Unfaires Spielen muss bestraft werden.}
 			{Fouls, Schiedsrichter}
 			{0}
-			{}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Spielende}
 			{Die Partie endet, wenn ein Sucher den Schnatz fängt oder ein Team disqualifiziert wird. Das Team mit den meisten Punkten gewinnt, sofern es nicht disqualifiziert ist.}
 			{Damit das Spiel endet.}
-			{Spiellogik, Runde, Goldener Schnatz, Sucher}
+			{Goldener Schnatz, Sucher, Disqualifikation}
 			{+}
-			{Spiel, Spieler, Schiedsrichter}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Spielfigur platzieren}
 			{Ein Spieler darf seine Spielfiguren in seiner Hälfte des Spilefeldes beliebig platzieren. Es darf jedoch nie mehr als eine Figur auf der selben Zelle platziert sein. Außerdem muss der Mittelkreis unbesetzt sein.}
 			{Zu Beginn des Spiels wählt jeder Spieler ine Aufstellung für sein Team.}
-			{Spiellogik, Runde, Goldener Schnatz, Sucher}
+			{Mittelkreis, Spielbeginn}
 			{+}
-			{Spiel, Spieler, Schiedsrichter}		
+			{Spieler, KI, Gast, Client, KI-Client, Server}	
 			
 	\fanf	{Spielbeginn}
-			{Zu beginn werden alle Spielfiguren von den Spielern und die Bälle mit Ausnahme des Schnatzes auf der Mittelzelle platziert.}
+			{Zu Beginn werden alle Spielfiguren von den Spielern auf dem Spielfeld aber außerhalb des Mittelkreises platziert. Die Bälle, mit Ausnahme des Schnatzes, werden auf der Mittelzelle platziert.}
 			{Nötige Aufstellung zu Spielbeginn.}
-			{Spiellogik, Runde, Goldener Schnatz, Sucher}
+			{-}
 			{+}
-			{Spiel, Spieler, Schiedsrichter}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Überlängenbehandlung}
 			{Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert fest,  ohne dass ein Sieger ermittelt werden kann, so wird das Verhalten des Goldenen Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Goldenen Schnatz findet wird auf 100\% gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft bewegt sich der Goldenen Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gewunden, so bewegt er sich in der nächsten Rundenphase auf die nächste Zelle, auf der sich ein Sucher befindet.}
 			{Dadurch wird sichergestellt, dass ein Spiel spannend bleibt und die Spieler nicht die Lust verlieren, wenn eine Partie zu zäh läuft.}
-			{Spielende, Spiellogik, Runde, Goldener Schnatz, Sucher}
+			{Runde, Goldener Schnatz, Sucher}
 			{-+}
-			{Spiel, Spieler}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 
 
 \subsection{Funktionale Anforderungen: Allgemein}
@@ -608,20 +608,20 @@ von beiden Suchern entfernt ist.}
 	\fanf	{Partie-Konfiguration}
 			{Die Partie-Konfiguration spezifiziert sämtliche Wahrscheinlichkeiten für zufällige Ereignisse im Spiel, sowie die maximale Rundenanzahl, bevor die Überlängenbehandlung eintritt.}
 			{Bietet dem Nutzer die Möglichkeit, eine Partie nach persönlichen Präferenzen zu gestalten.}
-			{-}
+			{Quidditchteam-Editor}
 			{+}
-			{Server, Spiel, Systemadministrator}
+			{Server, Quidditchteam-Editor, Client, KI-Client, Nutzer}
 	
 	\fanf	{Quidditchteam-Konfiguration}
 			{Definiert alle Attribute eines Teams.}
 			{Nutzer sollen sich ihre Teams individuell zusammenstellen können.}
 			{-}
 			{+}
-			{Nutzer, Client, KI-Client, Quidditchteam-Editor, Server}	
+			{Server, Quidditchteam-Editor, Client, KI-Client, Nutzer}	
 			
 	\fanf	{Netzwerkschnittstelle}
 			{Die Clients und Server kommunizieren über eine Netzwerkschnittstelle. Die Clients kommunizieren ausschließlich mit dem Server und nicht untereinander.}
-			{Bei \textit{Fantastic Feasts} handelt sich es um ein Online Multiplayer Spiel. Es ist also notwendig, dass einzelne Komponenten miteinander Kommunizieren können.}
+			{Bei \glqq{}Fantastic Feasts\grqq{} handelt sich es um ein Online Multiplayer Spiel. Es ist also notwendig, dass einzelne Komponenten miteinander Kommunizieren können.}
 			{-}
 			{++}
 			{Systemadministrator, Entwickler, Client, KI-Client, Server}
@@ -629,7 +629,7 @@ von beiden Suchern entfernt ist.}
 	\fanf	{Log-Datei}
 			{Datei zum Speichern bestimmter Ereignisse. Diese Datei wird lokal auf dem Endgerät hinterlegt.}
 			{Um die während der Nutzung der Software aufgetretenen Aktionen im Nachhinein nachvollziehen zu können und daraus Informationen für Statistiken und Wartung zu ziehen, ist es wichtig das Aktionen protokolliert werden.}
-			{###}
+			{-}
 			{-}
 			{Client, KI-Client, Server}
 			
@@ -639,23 +639,23 @@ von beiden Suchern entfernt ist.}
 	\fanf	{Partie-Konfiguration laden}
 			{Der Server muss eine vorgefertigte Partie-Konfiguration laden können.}
 			{Die Partie-Konfiguration definiert maßgeblich den Spielverlauf.}
-			{###}
+			{Partie-Konfiguration}
 			{-+}
-			{Server, Spiel, Systemadministrator}
+			{Server, Systemadministrator}
 	
 	\fanf	{Zufallsgenerator}
 			{Pseudozufallszahlengenerator, der bestimmt, ob ein Ereignis eintritt.}
 			{Viele Ereignisse im Spiel sind zufällig.}
-			{###}
+			{-}
 			{++}
-			{Server, Schiedsrichter}
+			{Server}
 			
 	\fanf	{Spielmechanik}
 			{Der Server interpretiert die Nachrichten der Clients nach den oben definierten Spielregeln und versendet wiederum Updates des Spielzustandes.}
 			{Der Server ist die Zentrale Systemkomponente, die die Partie verwaltet.}
-			{###}
+			{Von den oben definierten Spielregeln.}
 			{++}
-			{###}
+			{Server}
 			
 	
 	\subsection{Funktionale Anforderungen: Client}
@@ -663,74 +663,72 @@ von beiden Suchern entfernt ist.}
 	\fanf	{Hauptmenü [Ansicht]}
 			{Erste grafische Oberfläche die dem Nutzer angezeigt wird, wenn die Anwendung gestartet wurde.}
 			{Das Hauptmenü soll den Zentralen Punkt darstellen von dem aus alle Funktionen der Software zu erreichen. Es soll also unter anderem ein Spiel gestartet werden, die Hilfe aufgerufen werden, die Einstellungen der Anwendung angepasst werden und eventuell vorhandene Statistiken aufgerufen werden können.}
-			{###}
+			{-}
 			{+}
-			{Nutzer}
+			{Nutzer, Client}
 	
 	\fanf	{Spiel beitreten [Ansicht]}
 			{Grafische Oberfläche, die erscheint, wenn man versucht, sich mit einem Server zu verbinden, um eine neue Partie zu starten. Dabei soll man außerdem die Möglichkeit haben, seine Team-Konfiguration anzugeben, die man für die Partie verwenden möchte.}
 			{Der Nutzer muss die Möglichkeit haben, sich komfortabel mit einem Server zu verbinden.}
-			{Abb.}
+			{Hauptmenü [Ansicht]}
 			{+}
-			{Spieler, Gast}
+			{Nutzer, Client}
 	
 	\fanf	{Spiel Ende [Ansicht]}
 			{Grafische Oberfläche die, die Spieler sehen nachdem eine Partie zu Ende ist. Der Nutzer sollte hier auch die Möglichkeit haben die Anwendung zu verlassen oder wieder ins Hauptmenü zurück kehren. Optional ist hier auch Platz für etwaige Statistiken über den Spielverlauf.}
 			{Nach dem Ende einer Partie muss dem Nutzer mitgeteilt werden ob er gewonnen hat oder nicht und wie es von da an weiter geht. }
-			{<Abhängigkeiten>}
-			{-+}
-			{Spieler}
+			{Spiel [Ansicht]}
+			{0}
+			{Nutzer, Client}
 			
 	\fanf	{Team-Konfiguration importieren [Ansicht]}
 			{Grafische Oberfläche zum Importieren einer Team-Konfiguration für ein Spiel.}
 			{Es muss für den Benutzer eine einfachen Weg geben, eine Team Konfiguration im Dateisystem zu suchen und an die Anwendung zu übergeben.}
-			{<Abhängigkeiten>}
-			{-+}
-			{Spieler}
+			{Hauptmenü [Ansicht]}
+			{0}
+			{Spieler, Client}
 			
 	\fanf	{Spiel [Ansicht]}
 			{Grafische Oberfläche, die das Spielgeschehen visualisiert.}
 			{Um dem Nutzer das Spiel zu visualisieren.}
-			{<Abhängigkeiten>}
+			{Hauptmenü [Ansicht]}
 			{++}
-			{Spieler}	
+			{Nutzer, Client}	
 			
 	\fanf	{Hilfe [Ansicht]}
 			{Grafische Oberfläche, in der zum einen das Spielprinzip erklärt wird und zum anderen gezeigt wird, wie genau man die Client-Software bedient.}
 			{Um unerfahren Benutzer die Bedienung der Software zu erleichtern.}
-			{<Abhängigkeiten>}
-			{-+}
-			{Nutzer}
+			{Hauptmenü [Ansicht], Spiel [Ansicht], Beobachter [Ansicht]}
+			{0}
+			{Nutzer, Client}
 			
 	\fanf	{Beobachter [Ansicht]}
 			{Wie die Spiel-Ansicht, nur ohne die Möglichkeit, in das Spiel einzugreifen.}
 			{Damit Zuschauer eine Partie mitverfolgen können.}
-			{<Abhängigkeiten>}
-			{+}
-			{Gast}
-	
+			{Hauptmenü [Ansicht]}
+			{0}
+			{Gast, Client}
 	
 	\fanf	{Eingabeverarbeitung}
 			{Diese Einheit ist für die Verarbeitung von Benutzereingaben verantwortlich.}
 			{Jede Benutzereingabe muss ausgewertet werden. Valide Eingaben werden zum Steuern der Anwendung genutzt.}
 			{Spiellogik}
 			{++}
-			{Spieler, KI}
+			{Spieler, KI, Client, KI-Client}
 			
-	
 	\fanf	{Hotkeys}
 			{Oft benötigte Funktionen werden auf bestimmte (besondere) Tasten (-Kombinationen) abgebildet.}
 			{Hotkeys sind optionale Features, die im Lastenheft aufgeführt sind und zu einer einfacheren Spielsteuerung und höherem Spielkomfort betragen können.}
-			{<Abhängigkeiten>}
-			{--}
-			{Spieler}
+			{Spiel [Ansicht], Hilfemenü [Ansicht]}
+			{-}
+			{Nutzer, Client}
 			
 	\fanf	{Pausieren}
 			{Das aktuelle Spiel pausieren.}
 			{Pausieren ist ein optionales Feature, das im Lastenheft aufgeführt ist und einem menschliche Spieler im Client zur Verfügung stehen sollte, um den Spielkomfort zu erhöhen.}
-			{<Abhängigkeiten>}
+			{Spiel [Ansicht], Hotkeys}
 			{--}
-			{Spieler}
+			{Spieler, Client}
 			
 	
 	\subsection{Funktionale Anforderungen: Quidditchteam-Editor}
@@ -740,21 +738,21 @@ von beiden Suchern entfernt ist.}
 			{Konfiguration eines Teams / Einer Partie.}
 			{Quidditchteam-Konfiguration}
 			{-}
-			{Nutzer}	
+			{Nutzer, Quidditchteam-Editor}	
 	
 	\fanf	{Team- / Partie-Konfiguration erstellen und speichern}
 			{Der Editor kann eine Team- / Partie-Konfiguration erstellen und speichern.}
 			{Konfiguration eines Teams / Einer Partie.}
 			{Quidditchteam-Konfiguration}
 			{-}
-			{Nutzer}	
+			{Nutzer, Quidditchteam-Editor}	
 	
 	\fanf	{Team- / Partie-Konfiguration bearbeiten}
 			{Der Editor kann eine bestehende Team- / Partie-Konfiguration öffnen und bearbeiten.}
 			{Konfiguration eines Teams / Einer Partie.}
 			{Quidditchteam-Konfiguration}
 			{-}
-			{Nutzer}
+			{Nutzer, Quidditchteam-Editor}
 			
 			
 	\subsection{Nicht funktionale Anforderungen}
