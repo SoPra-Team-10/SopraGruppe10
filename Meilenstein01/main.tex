@@ -232,7 +232,7 @@ bibtotoc,              % LV im IV
 			{Computerprogramm, mit dem Team-Konfigurationen erstellt und bearbeitet werden können.}
 			{Der Quidditchteam-Editor erstellt Teamkonfigurationsdateien, die später vom Client geladen werden, um ein Spiel zu starten.}
 	
-	\subsection{Allgemeine funktionale Anforderungen} 
+	\subsection{Funktionale Anforderungen: Spielregeln} 
 	
 	\fanf	{Quidditch-Spielfeld}
 			{Das Quidditch-Spielfeld hat eine Ovale Form, die in ein Raster von 17x13 quadratischen Zellen eingepasst ist. Auf diesem Feld finden alle Spielhandlungen statt, die während dem Spiel getätigt werden können.}
@@ -319,7 +319,9 @@ bibtotoc,              % LV im IV
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Goldener Schnatz [Ball]}
-			{Der Goldene Schnatz ist eine kleiner goldener Ball, sich von alleine von Suchern wegbewegt (eine Zelle pro Runde).}
+			{Der Goldene Schnatz ist eine kleiner goldener Ball, sich von alleine von Suchern wegbewegt (eine Zelle pro Runde). Das bedeutet, er achtet auf den nächsten Sucher, und wählt unter allen möglichen freien Zellen, die eine größere Entfernung zu diesem haben, als seine gegenwärtige, eine zufällige aus, und bewegt sich darauf. Falls es keine solchen Zellen gibt, bewegt sich der Schnatz auf eine zufälliges freie Nachbarzelle. Der Goldene
+Schnatz erscheint zu Beginn der dreizehnten Runde auf einer zufällig gewählten freien Zelle, das möglichst gleich weit
+von beiden Suchern entfernt ist.}
 			{Der Goldene Schnatz dient zum Punkteerzielen und führt, wenn er gefangen wird, zum Ende des Partie.}
 			{Bälle}
 			{++}
@@ -388,6 +390,20 @@ bibtotoc,              % LV im IV
 			{++}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
+	\fanf	{Quaffel prallt ab}
+			{Landet der Quaffel auf einer Zelle, auf der sich eine Spielfigur befindet, die weder Hüter noch Jäger ist, so wird der Quaffel auf eine zufällige freie Nachbarzelle gesetzt.}
+			{Nur Jäger und Hüter können direkt mit der Quaffel interagieren.}
+			{Spielfigur, Quaffel}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}		
+			
+	\fanf	{Quaffel Halten}
+			{Ein Jäger oder Hüter kann den Quaffel halten, was zur Folge hat, dass der Quaffel sich immer auf der selben Zelle befindet wie besagter Jäger bzw. Hüter. Der Quaffel bewegt sich dadurch mit dem Jäger bzw. Hüter mit.}
+			{Jäger und Hüter können sollen den Quaffel, ohne zu passen, über das Spielfeld transportieren können.}
+			{Spielfigur, Quaffel, Fouls, Klatscher}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}	
+			
 	\fanf	{Quaffel Verlieren}
 			{Ein Jäger kann den Quaffel verlieren, dass bedeutet, das der Quaffel auf ein freie Nachbarzelle zufällig bewegt wird.}
 			{Durch das Verlieren des Quaffels werden Tore im Alleingang erschwert.}
@@ -417,14 +433,14 @@ bibtotoc,              % LV im IV
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Spieler Betäuben}
-			{Bewegt sich der Klatscher auf deine Zelle, auf der sich eine Spielfigur befindet, die kein Treiber ist, wird diese mit einer gewissen Wahrscheinlichkeit betäubt. Das hat zur Folge, dass diese Spielfigur gegebenenfalls den Quaffel verliert, keine Ball fangen und für eine Runde keine Aktion ausführen kann.}
+			{Bewegt sich der Klatscher auf deine Zelle, auf der sich eine Spielfigur befindet, die kein Treiber ist, wird diese mit einer gewissen Wahrscheinlichkeit betäubt. Das hat zur Folge, dass diese Spielfigur gegebenenfalls den Quaffel verliert, keine Ball fangen und für eine Runde keine Aktion ausführen kann. Der Klatscher, der den Spiler betäubt hat, wird auf eine zufällige freie Zelle gesetzt.}
 			{Stellt ein zusätzliches taktisches Spielelement dar.}
 			{Klatscher, Spielfigur}
 			{+}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Schnatz Fangen}
-			{Befindet sich ein Sucher und der Goldene Schnatz auf derselben Zelle, so fängt der Sucher den Goldenen Schnatz. Dadurch erhält sein Team 30 Punkte und das Spiel ist zu Ende.}
+			{Befindet sich ein Sucher und der Goldene Schnatz auf derselben Zelle, so fängt der Sucher den Goldenen Schnatz mit einer gewissen Wahrscheinlichkeit. Dadurch erhält sein Team 30 Punkte und das Spiel ist zu Ende.}
 			{Das Schnatz Fange führ das Ende der Partie herbei.}
 			{goldener Schnatz, Punkte}
 			{++}
@@ -432,117 +448,97 @@ bibtotoc,              % LV im IV
 			
 	
 	\fanf	{Fans}
-			{Ein Fan kann durch Zaubersprüche das eigenen Team unterstützen oder das gegnerische Team schwächen. Diese Eingriffe in das Spielgeschehen werden  mit einer gewissen Wahrscheinlichkeit geahndet. Die Fans eines Teams werden jeweils vom Spieler des Teams gesteuert. Es gibt die folgenden Tyen von Fans: Elfen, Kobolde, Trolle und Niffler die alle unterschiedliche Fähigkeiten beherrschen.}
-			{Erhöhen den Schwierigkeitsgrad, sorgen für Witz, und Überraschungen im Spiel.}
+			{Ein Fan kann durch Zaubersprüche das eigenen Team unterstützen oder das gegnerische Team schwächen. Diese Eingriffe in das Spielgeschehen werden  mit einer gewissen Wahrscheinlichkeit geahndet. Die Fans eines Teams werden jeweils vom Spieler des Teams gesteuert. Es gibt die folgenden Typen von Fans: Elfen, Kobolde, Trolle und Niffler die alle unterschiedliche Fähigkeiten beherrschen.}
+			{Sorgen für Abwechslung, Witz, und Überraschungen im Spiel.}
 			{}
 			{0}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Elfen [Fantyp]}
-			{Elfen haben die Eigenschaft einen Spieler von der eigenen oder auch von der gegnerischen Mannschaft auf ein zufälliges freies Spielfeld zu Teleportieren.}
+			{Elfen haben die Fähigkeit, einen Spieler von der eigenen oder auch von der gegnerischen Mannschaft auf eine zufällige freie Zelle zu Teleportieren.}
 			{Siehe Fans}
 			{Fans}
 			{0}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Kobolde [Fantyp]}
-			{Kobolde haben die Fähigkeit einen Schockzauber zu sprechen, welcher bewirkt, dass der Spieler den Quaffel fallen lässt, sofern er diesen hat und anschließend auf ein zufälliges freies Nachbarfeld gestoßen wird.}
+			{Kobolde haben die Fähigkeit, einen Schockzauber zu sprechen, der bewirkt, dass der getroffene Spieler den Quaffel verliert, sofern er diesen hat und anschließend auf eine zufällige freie Nachbarzelle gestoßen wird.}
 			{Siehe Fans}
 			{Fans}
 			{0}
 			{Spiel}
 	
 	\fanf	{Trolle [Fantyp]}
-			{Durch lautes Brüllen sorgen Trolle dafür,dass der Spieler, welcher den Quaffel besitzt, diesen vor Schreck fallen lässt.}
+			{Durch lautes Brüllen sorgen Trolle dafür, dass der Spieler, der den Quaffel besitzt, diesen vor Schreck fallen lässt.}
 			{Siehe Fans}
 			{Fans}
 			{0}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Niffler [Fantyp]}
-			{Niffler lieben alles was glänzt, wodurch sie nach dem Goldenen Schnatz schnappen können, wodurch dieser eine Ausweichbewegung macht auf ein zufälliges freies Nachbarfeld von ihm.}
+			{Niffler können nach dem Goldenen Schnatz schnappen können, wodurch dieser eine Ausweichbewegung macht und sich auf eine zufällige freit Nachbarzelle bewegt.}
 			{Siehe Fans}
 			{Fans}
 			{0}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Schiedsrichter}
-			{Der Schiedsrichter ahndet mit einer gewissen Wahrscheinlichkeit Fouls von Spielern oder Fans. Ahndet der Schiedsrichter eine Aktion so wird die verursachende Spielfigur für eine Runde vom Spiel ausgeschlossen.}
-			{Der Schiedsrichter ist die rechtschaffene Instanz und sorgt für Gerechtigkeit.}
+			{Der Schiedsrichter ahndet mit einer gewissen Wahrscheinlichkeit Fouls von Spielern oder Einmischungen von Fans. Ahndet der Schiedsrichter eine Aktion, so wird die verursachende Spielfigur bis zum nächsten Tor, bzw. der Fan komplett von der Partie ausgeschlossen.}
+			{Der Schiedsrichter ist die rechtschaffene Instanz und sorgt dafür, dass unfaire Aktionen nicht bedenkenlos eingesetzt werden können.}
 			{Spielfigur, Fans}
 			{+}
 			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
 	\fanf	{Foul}
-			{Wie in jeder Sportart ist es in Quidditch möglich sich gegenseitig zu foulen. Es gibt dabei spezifische Fouls die nur von manchen bestimmten Spieler ausgeübt werden können und Fouls die von allen ausgeübt werden können. Nachdem eines der Fouls ausgeübt wurde, wird dieses Foul mit einer jeweils eigenen Wahrscheinlichkeit vom Schiedsrichter entdeckt, woraufhin der ausübende Spieler entsprechend bestraft wird.}
-			{Diese Anforderung gehört zu einer Sportart einfach dazu, da Fouls bei jedem Sport vorkommen und das Spiel so spannender machen.}
-			{Spiel}
+			{Fouls sind Spielzüge, die grundsätzlich möglich, jedoch laut Regelwerk nicht zulässig sind. Es gibt die folgenden Arten von Fouls: Stürmen, Großoffensive, Rammen, Torringe blockieren und Schnatz blockieren. Der Schiedsrichter ahndet diese Fouls mit einer gewissen Wahrscheinlichkeit.}
+			{Fouls stellen eine zusätzliche taktische Spielkomponente dar.}
+			{Spielfigur, Schiedsrichter, Spielfeld}
 			{+}
-			{Spiel, Schiedsrichter}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
-	\fanf	{Flacken [Foul]}
-			{Diese Aktion kann von jedem Spieler ausgeführt werden. Flacken bedeutet, dass ein Spieler sich direkt auf ein Torringfeld stellt, wodurch die Trefferwahrscheinlichkeit für den Schützen auf 0\% sinkt. Falls der Quaffel durch den Wurf auf das Torringfeld gekommen wäre, ohne vorher abgefangen zu werden, so springt der Quaffel auf ein zufälliges freies Nachbarfeld.}
-			{Dieses Foul ermöglicht es dem Team Tore zu verhindern aber auf eine nicht regelkonforme Möglichkeit.}
+	\fanf	{Torring blockieren [Foul]}
+			{Eine Spielfigur darf sich nicht direkt auf einen Torring stellen, da es sonst unmöglich wäre, durch diesen Torring ein Tor zu erzielen. Der Ball hopst im Falle eines blockierten Torrings auf eine freie Nachbarzelle des Torrings.}
+			{Ermöglicht einem Team zu verhindern, dass der Gegner Punkte erzielen kann.}
 			{Foul}
 			{+}
-			{Spiel, Schiedsrichter}
-	
-	\fanf	{Nachtarocken [Foul]}
-			{Diese Aktion kann nur von Jägern ausgeübt werden. Führt ein Jäger diese Aktion aus, so erzielt er zu 100\% ein Tor, in dem er den Quaffel hält und damit auf ein Torringfeld fliegt, und diesen nicht, wie es die Regeln verlangen würden, von einem Feld außerhalb der Torringe wirft.}
-			{Dieses Foul ermöglicht es dem Team Tore mit 100\% zu machen, aber man darf sich nicht erwischen lassen. Durch dieses Foul ist eventuell ein schnelleres Punkte holen ermöglicht und man kann eine Niederlage noch aufholen.}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+
+	\fanf	{Stürmen [Foul]}
+			{Diese Aktion kann nur von Jägern ausgeübt werden. Führt ein Jäger diese Aktion aus, so erzielt er zu 100\% ein Tor, in dem er den Quaffel hält und damit auf einen Torring zieht.}
+			{Stellt eine unfaire Möglichkeit dar, Punkte zu erzielen.}
 			{Foul}
 			{+}
-			{Spiel, Schiedsrichter}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
-	\fanf	{Stutschen [Foul]}
-			{Diese Aktion kann nur von Jägern ausgeübt werden. Bei diesem Foul fliegt ein zweiter Jäger in die gegnerische Hüterzone um seinem Team zu helfen Punkte zu machen, obwohl ein Team immer nur einen angreifenden Jäger in der gegnerischen Hüterzone haben darf.}
-			{Dieses Foul hilft dem Team leichter einen Punkt zu machen, ist aber gegen die Regeln.}
+	\fanf	{Großoffensive [Foul]}
+			{Diese Aktion kann nur von Jägern ausgeübt werden. Es bedeutet, dass sich zwei oder mehr Jäger vom selben Team in der gegnerischen Hüterzone befinden.}
+			{Gibt den Angreifern einen unfairen Vorteil.}
 			{Foul}
 			{+}
-			{Spiel, Schiedsrichter}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
-	\fanf	{Keilen [Foul]}
-			{Dieses Foul können alle Spieler ausführen. Hierbei zieht ein Spieler auf das selbe Spielfeld wie ein gegnerischer Spieler, woraufhin dieser den Quaffel, sofern er diesen hat vertändelt und anschließend wird der gegnerische Spieler auf ein zufälliges freies Nachbarfeld verdrängt.}
-			{Dieses Foul bietet die Möglichkeit den Ballbesitz wieder zu ändern, was aber auch nicht regelkonform ist eigentlich.}
+	\fanf	{Rammen [Foul]}
+			{Dieses Foul können alle Spieler ausführen. Hierbei zieht ein Spieler auf das selbe Spielfeld wie ein gegnerischer Spieler, woraufhin dieser den Quaffel ggf. verliert und anschließend auf eine zufällige freie Nachbarzelle verdrängt wird.}
+			{Dieses Foul bietet die Möglichkeit, dem Gegner den Ball zu entwenden.}
 			{Foul}
 			{+}
-			{Spiel, Schiedsrichter}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 	
-	\fanf	{Schnaltzeln [Foul]}
-			{Dieses Foul können alle Spieler machen außer der Sucher. Dazu bewegt sich ein Spieler auf das Feld des Schnatzes, obwohl er kein Sucher ist, wodurch er verhindert, dass der Sucher den Schnatz fangen kann, da er das Feld blockiert und somit der Schnatz nicht gefangen werden kann.}
+	\fanf	{Schnatz blockieren [Foul]}
+			{Dieses Foul können alle Spieler ausführen mit Ausnahme der Sucher. Dazu bewegt sich ein Spieler auf das Feld des Goldenen Schnatzes, obwohl er kein Sucher ist, wodurch er verhindert, dass Sucher den Goldenen Schnatz fangen können, da sich nie zwei oder mehr Spielfiguren auf ein und der selben Zelle befinden dürfen.}
 			{Diese Anforderung soll es dem Sucher schwerer machen den Schnatz zu fangen, da das gegnerische Team den Schnatz so blockieren kann.}
 			{Foul}
 			{+}
-			{Spiel, Schiedsrichter}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
 			
 	\fanf	{Setzen auf freies Nachbarfeld}
-			{Soll ein Spieler oder Ball auf ein zufälliges freies Nachbarfeld von seiner Position gesetzt werden, aber es sind alle 8 umliegenden Felder bereits voll, oder können durch den Spielfeldrand nicht ausgewählt werden, so wird rekursiv von einem zufällig besetzten Nachbarfeld weiter gesucht, bis sich schließlich ein freies Feld findet. Dies bedeutet, dass der Spieler oder Ball nicht unbedingt auf einem Nachbarfeld seiner Position landet, sondern auch weiter entfernt gesetzt werden kann und so durch andere besetzte Felder sich hindurchtunnelt.}
-			{Diese Anforderung ist notwendig, da man den Fall abdecken muss, falls kein freies Nachbarfeld mehr frei ist.}
-			{Spielfeld}
-			{++}
-			{Spiel} 
-			
-	\fanf	{Partie-Konfiguration}
-			{JSON Datei mit Informationen über eine Spiel. Zu den Informationen zählen die maximale Rundenzahl bevor die Überlängenbedingung eintritt, die Zeit, welche die Spieler haben um den nächsten gewünschten Zug zu übermitteln und welche Wahrscheinlichkeiten den einzelnen Ereignissen zugeordnet sind.}
-			{Um das Spiel abwechslungsreicher zu gestalten ist es von Nöten, dass verschieden Abläufe in einer Partie angepasst werden können. Um Kompatibilität zwischen verschiedenen Komponenten zu gewährleisten ist es dabei zudem wichtig, dass diese Dateien einheitlich Formatiert sind.}
-			{Spiellogik}
-			{-+}
-			{Server, Spiel, Systemadministrator}
-	
-	\fanf	{Quidditchteam-Konfiguration}
-			{Lokal hinterlegte Datei im \textit{JSON} Format in der die Zusammensetzung des Teams eines Spielers hinterlegt ist.}
-			{Die Konfiguration eines Teams muss zwischen dem Team-Editor und dem Client ausgetauscht werden können und muss daher in einer einheitlichen Datei lokal hinterlegt werden.}
-			{Team, Spielfiguren}
+			{Soll ein Spieler oder Ball auf ein zufälliges freies Nachbarfeld von seiner Position gesetzt werden, jedoch sind alle 8 umliegenden Felder bereits von Spielfiguren besetzt oder aus anderen Gründen nicht zulässig, so wird rekursiv von einem zufällig besetzten Nachbarfeld weiter gesucht, bis sich schließlich ein freies Feld findet. Das bedeutet, dass der Spieler oder Ball nicht unbedingt auf einem Nachbarfeld seiner Position landet, sondern auch weiter entfernt positioniert werden kann.}
+			{Es muss der Fall abgedeckt werden, dass kein freies Nachbarfeld mehr frei ist.}
+			{Spielfeld, Bälle, Spielfigur}
 			{+}
-			{Nutzer, Client, KI-Client, Quidditchteam-Editor, Server}	
-			
-	\fanf	{Netzwerkschnittstelle}
-			{Zwei Clients sollen über eine Netzwerkschnittstelle miteinander kommunizieren können.}
-			{Bei \textit{Fantastic Feasts} handelt sich es um ein Online Multiplayer Spiel. Es ist also notwendig, dass einzelne Komponenten miteinander Kommunizieren können.}
-			{-}
-			{++}
-			{Systemadministrator, Entwickler, Client, KI-Client, Server}
-	
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+
+
 	\fanf	{Runde}
 			{Das Spiel läuft in Runden ab. Jede Runde ist dabei in die drei Rundenphasen Ballphase, Spielerphase und Fanphase unterteilt.}
 			{Bei \textit{Fantastic Feasts} handelt es sich laut den Spielregeln um ein Rundenbasiertes Spiel.}
@@ -552,97 +548,128 @@ bibtotoc,              % LV im IV
 	
 	\fanf	{Ballphase}
 			{In dieser Phase eine Spiels bewegen sich die Bälle über das Spielfeld. Dabei machen die beiden Klatscher ihre Bewegungen in zufälliger Reihenfolge.}
-			{}
+			{sieh Runde}
 			{Runde}
 			{+}
 			{Spiel}
 			
 	\fanf	{Spielerphase}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{Jeder Spieler macht seinen Zug, wobei sich die Teams abwechseln. In jeder Runde wird neu zufällig bestimmt, welches Team dabei beginnt. Die Reihenfolge der Spieler innerhalb eines Teams wird zufällig bestimmt.}
+			{Siehe Runde.}
 			{Runde}
 			{+}
 			{Spiel}
 			
 	\fanf	{Fanphase}
-			{<Beschreibung>}
-			{Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
+			{Jeder Fan macht seinen Zug, wobei sich die Fanblöcke der Teams abwechseln. In jeder Runde wird neu zufällig bestimmt, welcher Fanblock dabei beginnt. Die Reihenfolge der Fans innerhalb eines Fanblocks wird zufällig bestimmt.}
+			{Siehe Runde.}
 			{Runde}
 			{+}
 			{Spiel}
+
+	\fanf	{Disqualifikation}
+			{Werden in der selben Runde mehr als 3 Spielfiguren eines Teams vom Schiedsrichter aus dem Spiel entfernt, gilt das Team als disqualifiziert.}
+			{Unfaires Spielen muss bestraft werden.}
+			{Fouls, Schiedsrichter}
+			{0}
+			{}
 			
 	\fanf	{Spielende}
-			{Die Partie ist vorüber und es gibt einen Gewinner. Dies ist der Fall wenn entweder ein Spieler Disqualifiziert wird oder ein Sucher in der Rundenphase den Goldenen Schnatz findet. Gewonnen hat dann das Team, das entweder nicht disqualifiziert wurde oder die meisten Punkte erzielt hat. Bei Punktegleichstand gewinnt das Team, welches den Goldenen Schnatz gefunden hat.}
-			{Das Spielende muss erkannt und geprüft werden, damit ein Spieler der Partie zum Sieger gekrönt werden kann.}
+			{Die Partie endet, wenn ein Sucher den Schnatz fängt oder ein Team disqualifiziert wird. Das Team mit den meisten Punkten gewinnt, sofern es nicht disqualifiziert ist.}
+			{Damit das Spiel endet.}
+			{Spiellogik, Runde, Goldener Schnatz, Sucher}
+			{+}
+			{Spiel, Spieler, Schiedsrichter}
+			
+	\fanf	{Spielfigur platzieren}
+			{Ein Spieler darf seine Spielfiguren in seiner Hälfte des Spilefeldes beliebig platzieren. Es darf jedoch nie mehr als eine Figur auf der selben Zelle platziert sein. Außerdem muss der Mittelkreis unbesetzt sein.}
+			{Zu Beginn des Spiels wählt jeder Spieler ine Aufstellung für sein Team.}
+			{Spiellogik, Runde, Goldener Schnatz, Sucher}
+			{+}
+			{Spiel, Spieler, Schiedsrichter}		
+			
+	\fanf	{Spielbeginn}
+			{Zu beginn werden alle Spielfiguren von den Spielern und die Bälle mit Ausnahme des Schnatzes auf der Mittelzelle platziert.}
+			{Nötige Aufstellung zu Spielbeginn.}
 			{Spiellogik, Runde, Goldener Schnatz, Sucher}
 			{+}
 			{Spiel, Spieler, Schiedsrichter}
 			
 	\fanf	{Überlängenbehandlung}
-			{Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert fest,  ohne dass ein Sieger ermittelt werden kann, so wird das Verhalten des Goldenen Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Goldenen Schnatz findet wird auf 100\% gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft bewegt sich der Goldenen Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gewunden, so fliegt er in der nächsten Rundenphase dem nächsten Sucher ins Gesicht.}
-			{Dadurch wird sichergestellt das ein Spiel spannend bleibt und die Spieler nicht die Lust verlieren, wenn eine Partie zu zäh läuft.}
+			{Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert fest,  ohne dass ein Sieger ermittelt werden kann, so wird das Verhalten des Goldenen Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Goldenen Schnatz findet wird auf 100\% gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft bewegt sich der Goldenen Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gewunden, so bewegt er sich in der nächsten Rundenphase auf die nächste Zelle, auf der sich ein Sucher befindet.}
+			{Dadurch wird sichergestellt, dass ein Spiel spannend bleibt und die Spieler nicht die Lust verlieren, wenn eine Partie zu zäh läuft.}
 			{Spielende, Spiellogik, Runde, Goldener Schnatz, Sucher}
 			{-+}
 			{Spiel, Spieler}
+
+
+\subsection{Funktionale Anforderungen: Allgemein}
+
+	\fanf	{Partie-Konfiguration}
+			{Die Partie-Konfiguration spezifiziert sämtliche Wahrscheinlichkeiten für zufällige Ereignisse im Spiel, sowie die maximale Rundenanzahl, bevor die Überlängenbehandlung eintritt.}
+			{Bietet dem Nutzer die Möglichkeit, eine Partie nach persönlichen Präferenzen zu gestalten.}
+			{-}
+			{+}
+			{Server, Spiel, Systemadministrator}
+	
+	\fanf	{Quidditchteam-Konfiguration}
+			{Definiert alle Attribute eines Teams.}
+			{Nutzer sollen sich ihre Teams individuell zusammenstellen können.}
+			{-}
+			{+}
+			{Nutzer, Client, KI-Client, Quidditchteam-Editor, Server}	
 			
-	\fanf	{Spiellogik}
-			{Einheit, in der die Züge der Teams verarbeitet werden und auf Basis der Spielregeln im Lastenheft Entscheidungen getroffen werden. Zudem wird von der Spiellogik bestimmt welcher Spieler gerade am Zug ist.}
-			{Ohne eine Spiellogik wären alle Anwendungen nutzlos.}
-			{<Abhängigkeiten>}
+	\fanf	{Netzwerkschnittstelle}
+			{Die Clients und Server kommunizieren über eine Netzwerkschnittstelle. Die Clients kommunizieren ausschließlich mit dem Server und nicht untereinander.}
+			{Bei \textit{Fantastic Feasts} handelt sich es um ein Online Multiplayer Spiel. Es ist also notwendig, dass einzelne Komponenten miteinander Kommunizieren können.}
+			{-}
 			{++}
-			{Server, Spiel}
+			{Systemadministrator, Entwickler, Client, KI-Client, Server}
 	
 	\fanf	{Log-Datei}
 			{Datei zum Speichern bestimmter Ereignisse. Diese Datei wird lokal auf dem Endgerät hinterlegt.}
-			{Um die während der Nutzung der Software aufgetretenen Aktionen im Nachhinein nachvollziehen zu können und daraus Informationen für Statistiken und Wartung ziehen zu können ist es wichtig das diese Aktionen lokal hinterlegt werden.}
-			{Spiellogik}
+			{Um die während der Nutzung der Software aufgetretenen Aktionen im Nachhinein nachvollziehen zu können und daraus Informationen für Statistiken und Wartung zu ziehen, ist es wichtig das Aktionen protokolliert werden.}
+			{###}
 			{-}
 			{Client, KI-Client, Server}
 			
 	
-	\subsection{Server spezifische funktionale Anforderungen}
-	
-	\fanf	{Spiellogik}
-			{Einheit, in der die Züge der Teams verarbeitet werden und auf Basis der Spielregeln im Lastenheft Entscheidungen getroffen werden. Zudem wird von der Spiellogik bestimmt welcher Spieler gerade am Zug ist.}
-			{Ohne eine Spiellogik wären alle Anwendungen nutzlos, da die Spiellogik die Einheit bildet, welche alles für das Spiel relevanten Informationen verarbeitet.}
-			{Spiel, Benutzereingaben Validierung}
-			{++}
-			{Server, Spiel}
+	\subsection{Funktionale Anforderungen: Server}
 			
-	\fanf	{Partie-Konfiguration}
-			{JSON Datei mit Informationen über eine Spiel. Zu den Informationen zählen die maximale Rundenzahl bevor die Überlängenbedingung eintritt, die Zeit, welche die Spieler haben um den nächsten gewünschten Zug zu übermitteln und welche Wahrscheinlichkeiten den einzelnen Ereignissen zugeordnet sind.}
-			{Um das Spiel abwechslungsreicher zu gestalten ist es von Nöten, dass verschieden Abläufe in einer Partie angepasst werden können. Um Kompatibilität zwischen verschiedenen Komponenten zu gewährleisten ist es dabei zudem wichtig, dass diese Dateien einheitlich Formatiert sind.}
-			{Spiellogik}
+	\fanf	{Partie-Konfiguration laden}
+			{Der Server muss eine vorgefertigte Partie-Konfiguration laden können.}
+			{Die Partie-Konfiguration definiert maßgeblich den Spielverlauf.}
+			{###}
 			{-+}
 			{Server, Spiel, Systemadministrator}
-			
-	\fanf	{Überlängenbehandlung}
-			{Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert fest,  ohne dass ein Sieger ermittelt werden kann, so wird das Verhalten des Goldenen Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Goldenen Schnatz findet wird auf 100\% gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft bewegt sich der Goldenen Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gewunden, so fliegt er in der nächsten Rundenphase dem nächsten Sucher ins Gesicht.}
-			{Dadurch wird sichergestellt das ein Spiel spannend bleibt und die Spieler nicht die Lust verlieren, wenn eine Partie zu zäh läuft.}
-			{Spielende, Spiellogik, Runde, Goldener Schnatz, Sucher}
-			{-+}
-			{Spiel, Spieler}
 	
 	\fanf	{Zufallsgenerator}
-			{Einheit die per Zufall entscheidet, ob bestimmt Ereignisse eintreten oder nicht.}
-			{An mehreren Stellen in der Spiellogik ist es notwendig, dass via Zufall Entschieden wird ob ein Ereignis eintritt oder nicht. Dies ist z.B. der Fall wen entschieden werden muss ob der Schiedsrichter ein Foul ahndet oder wenn entschieden werden muss ob ein geworfener Ball geblockt wird.}
-			{Spiellogik}
-			{-+}
+			{Pseudozufallszahlengenerator, der bestimmt, ob ein Ereignis eintritt.}
+			{Viele Ereignisse im Spiel sind zufällig.}
+			{###}
+			{++}
 			{Server, Schiedsrichter}
 			
+	\fanf	{Spielmechanik}
+			{Der Server interpretiert die Nachrichten der Clients nach den oben definierten Spielregeln und versendet wiederum Updates des Spielzustandes.}
+			{Der Server ist die Zentrale Systemkomponente, die die Partie verwaltet.}
+			{###}
+			{++}
+			{###}
+			
 	
-	\subsection{Client spezifische Funktionale Anforderungen}
+	\subsection{Funktionale Anforderungen: Client}
 	
 	\fanf	{Hauptmenü [Ansicht]}
 			{Erste grafische Oberfläche die dem Nutzer angezeigt wird, wenn die Anwendung gestartet wurde.}
-			{Das Hauptmenü soll den Zentralen Punkt darstellen von dem aus alle Funktionen der Software zu erreichen. Es soll also unter anderem ein Spiel gestartet werden können, die Hilfe aufgerufen werden können, die Einstellungen der Anwendung angepasst werden können und eventuell vorhandene Statistiken aufgerufen werden können.}
-			{<Abhängigkeiten>}
+			{Das Hauptmenü soll den Zentralen Punkt darstellen von dem aus alle Funktionen der Software zu erreichen. Es soll also unter anderem ein Spiel gestartet werden, die Hilfe aufgerufen werden, die Einstellungen der Anwendung angepasst werden und eventuell vorhandene Statistiken aufgerufen werden können.}
+			{###}
 			{+}
 			{Nutzer}
 	
 	\fanf	{Spiel beitreten [Ansicht]}
-			{Grafische Oberfläche um sich mit einem Server auf dem ein Spiel bereit gestellt wird zu verbinden. Dabei soll man außerdem die Möglichkeit haben seine Team-Konfiguration an zu geben, die man für das neue Spiel verwenden möchte.}
-			{Der Nutzer muss die Möglichkeit haben sich komfortabel mit einem Server verbinden zu können.}
+			{Grafische Oberfläche, die erscheint, wenn man versucht, sich mit einem Server zu verbinden, um eine neue Partie zu starten. Dabei soll man außerdem die Möglichkeit haben, seine Team-Konfiguration anzugeben, die man für die Partie verwenden möchte.}
+			{Der Nutzer muss die Möglichkeit haben, sich komfortabel mit einem Server zu verbinden.}
 			{Abb.}
 			{+}
 			{Spieler, Gast}
@@ -655,56 +682,44 @@ bibtotoc,              % LV im IV
 			{Spieler}
 			
 	\fanf	{Team-Konfiguration importieren [Ansicht]}
-			{Grafische Oberfläche zum importieren bzw. öffnen einer Team-Konfiguration für ein Spiel.}
-			{Es muss für den Benutzer eine einfachen Weg geben eine Team Konfiguration im Dateisystem zu suchen und an die Anwendung zu übergeben.}
+			{Grafische Oberfläche zum Importieren einer Team-Konfiguration für ein Spiel.}
+			{Es muss für den Benutzer eine einfachen Weg geben, eine Team Konfiguration im Dateisystem zu suchen und an die Anwendung zu übergeben.}
 			{<Abhängigkeiten>}
 			{-+}
 			{Spieler}
 			
 	\fanf	{Spiel [Ansicht]}
-			{Grafische Oberfläche die der Spieler sieht.}
-			{Es handelt sich um eine Anwendung mit grafischer Benutzeroberfläche. Es ist also zwingend von Nöten, dass such das aktuelle Spielgeschehen angezeigt werden kann.}
+			{Grafische Oberfläche, die das Spielgeschehen visualisiert.}
+			{Um dem Nutzer das Spiel zu visualisieren.}
 			{<Abhängigkeiten>}
 			{++}
 			{Spieler}	
 			
 	\fanf	{Hilfe [Ansicht]}
-			{Grafische Oberfläche, in der zum einen das Spielprinzip erklärt wird und zum anderen gezeigt wird wie genau man die Client-Software bedient wird.}
+			{Grafische Oberfläche, in der zum einen das Spielprinzip erklärt wird und zum anderen gezeigt wird, wie genau man die Client-Software bedient.}
 			{Um unerfahren Benutzer die Bedienung der Software zu erleichtern.}
 			{<Abhängigkeiten>}
 			{-+}
 			{Nutzer}
 			
 	\fanf	{Beobachter [Ansicht]}
-			{Grafische Oberfläche, die ein Gast sieht.}
-			{Wenn ein Nutzer einem Spiel nur als Gast zuschaut muss ihm das Spiel trotzdem in eine grafische Oberfläche aufbereitet werden.}
+			{Wie die Spiel-Ansicht, nur ohne die Möglichkeit, in das Spiel einzugreifen.}
+			{Damit Zuschauer eine Partie mitverfolgen können.}
 			{<Abhängigkeiten>}
 			{+}
 			{Gast}
 	
-	\fanf	{Spiel Rendering Engine}
-			{Die Spiel Rendering Engine bereitet die Ansicht des Spielfelds grafisch auf.}
-			{Die Benutzeroberfläche muss während des Spiels mit Inhalt gefüllt werden. Dieser Inhalt muss je nach Spielgeschehen automatisch generiert werden.}
-			{<Abhängigkeiten>}
-			{++}
-			{Client, Spieler}
 	
-	\fanf	{Eingabenverarbeitung}
+	\fanf	{Eingabeverarbeitung}
 			{Diese Einheit ist für die Verarbeitung von Benutzereingaben verantwortlich.}
-			{Jede Benutzereingabe muss ausgewertet werden. Nach der Validierung muss dann eine Entscheidung getroffen werden, was als Reaktion auf diese Eingaben passieren muss.}
+			{Jede Benutzereingabe muss ausgewertet werden. Valide Eingaben werden zum Steuern der Anwendung genutzt.}
 			{Spiellogik}
 			{++}
 			{Spieler, KI}
 			
-	\fanf	{Eingaben Validierung}
-			{Einheit die Benutzereingaben auf Korrektheit prüft.}
-			{Um etwaige falsche Benutzereingaben zu erkennen und den Nutzer darauf hin weisen zu können ist es von Nöten, dass alle Benutzereingaben geprüft werden.}
-			{Spiellogik}
-			{<Prio>}
-			{Spieler, KI}
 	
-	\fanf	{Hotkey}
-			{Oft benötigte Funktionen auf bestimmte (besondere) Testen (-Kombinationen) abzubilden.}
+	\fanf	{Hotkeys}
+			{Oft benötigte Funktionen werden auf bestimmte (besondere) Tasten (-Kombinationen) abgebildet.}
 			{Hotkeys sind optionale Features, die im Lastenheft aufgeführt sind und zu einer einfacheren Spielsteuerung und höherem Spielkomfort betragen können.}
 			{<Abhängigkeiten>}
 			{--}
@@ -712,36 +727,36 @@ bibtotoc,              % LV im IV
 			
 	\fanf	{Pausieren}
 			{Das aktuelle Spiel pausieren.}
-			{Pausieren ist ein optionales Feature, das im Lastenheft aufgeführt ist und einem menschliche Spieler im Client zur Verfügung stehen sollte um den Spielkomfort zu erhöhen.}
+			{Pausieren ist ein optionales Feature, das im Lastenheft aufgeführt ist und einem menschliche Spieler im Client zur Verfügung stehen sollte, um den Spielkomfort zu erhöhen.}
 			{<Abhängigkeiten>}
 			{--}
 			{Spieler}
 			
 	
-	\subsection{Quidditchteam-Editor spezifische funktionale Anforderungen}
+	\subsection{Funktionale Anforderungen: Quidditchteam-Editor}
+		
+	\fanf	{Team- / Partie-Konfiguration visualisieren}
+			{Der Editor kann eine geöffnete Team- / Partie-Konfiguration grafisch darstellen und anzeigen, damit ein Nutzer diese bearbeiten kann.}
+			{Konfiguration eines Teams / Einer Partie.}
+			{Quidditchteam-Konfiguration}
+			{-}
+			{Nutzer}	
 	
-	\fanf	{Team Konfiguration bearbeiten}
-			{Grafische Oberfläche in der der Nutzer sein Team nach seinen Wünschen entsprechend anpassen kann.}
-			{Für das Bearbeiten des Teams soll dem Nutzer eine grafische Oberfläche bereit gestellt werden.}
+	\fanf	{Team- / Partie-Konfiguration erstellen und speichern}
+			{Der Editor kann eine Team- / Partie-Konfiguration erstellen und speichern.}
+			{Konfiguration eines Teams / Einer Partie.}
+			{Quidditchteam-Konfiguration}
+			{-}
+			{Nutzer}	
+	
+	\fanf	{Team- / Partie-Konfiguration bearbeiten}
+			{Der Editor kann eine bestehende Team- / Partie-Konfiguration öffnen und bearbeiten.}
+			{Konfiguration eines Teams / Einer Partie.}
 			{Quidditchteam-Konfiguration}
 			{-}
 			{Nutzer}
 			
-	\fanf	{Team Konfiguration öffnen}
-			{'Datei Öffnen' Dialog um die im \textit{JSON} Format gespeicherte Team-Konfiguration von einem beliebigen Ort im Dateisystem zu öffnen.}
-			{Um eine hohe Benutzerfeindlichkeit zu garantieren muss es den Nutzer möglich sein einfach eine bereits erstellt Konfiguration für ein Team einzulesen und die zu bearbeiten.}
-			{Team Konfiguration bearbeiten, Quidditchteam-Konfiguration}
-			{-}
-			{Nutzer}
-	
-	\fanf	{Team Konfiguration speichern}
-			{'Datei Speichern' Dialog um die Team-Konfiguration an einem beliebigen Ort im Dateisystem im \textit{JSON} Format abzulegen.}
-			{Ohne die Möglichkeit die Team-Konfiguration lokal permanent zu speichern wäre das Benutzererlebnis und die Bedienbarkeit der Software massiv beeinträchtigt.}
-			{Team Konfiguration bearbeiten, Quidditchteam-Konfiguration}
-			{-}
-			{Nutzer}
 			
-	
 	\subsection{Nicht funktionale Anforderungen}
 	
 	\qanf 	{Plattformunabhängigkeit}
@@ -835,6 +850,8 @@ bibtotoc,              % LV im IV
 			{+}
 			{Entwickler, Nutzer}
 	
+	
+	JSON!!!###########################
 	\qanf 	{Netzwerkkommunikation}
 			{Die Netzwerkkommunikation zwischen Client und Server soll über sogenannte \textit{Web-Socket-Sessions} realisiert werden, sodass Client und Server ortsunabhängig von einander betrieben werden können.}
 			{Die Netzwerkkommunikation muss gewissen Standards genügen, damit Client- und Serveranwendungen von unterschiedlichen Entwicklerteams mit einander kompatibel sind und Client und Server ortsunabhängig von einander betrieben werden können.}
@@ -870,8 +887,8 @@ bibtotoc,              % LV im IV
 			{++}
 			{Nutzer}
 	
-	\qanf 	{Benutzbarkeit}
-			{Dem Endnutzer muss es möglich sein alle Komponenten des Projektes nur auf Basis des Mitgelieferten Benutzerhandbuches und den Hilfeseiten die Software ohne Einschränkungen bedienen zu können.}
+	\qanf 	{Benutzerfreundlichkeit}
+			{Dem Endnutzer muss es möglich sein, alle Komponenten des Projektes nur auf Basis des Mitgelieferten Benutzerhandbuches und den Hilfeseiten die Software ohne Einschränkungen bedienen zu können.}
 			{Wenn es für die Endnutzer der Software zu kompliziert ist die Software zu Benutzen, dann ist das Benutzererlebnis erheblich gestört und die Software wird nicht Benutzt werden, da die Endbenutzer unzufrieden sind.}
 			{-}
 			{+}
@@ -885,12 +902,13 @@ bibtotoc,              % LV im IV
 			{Entwickler}
 	
 	\qanf 	{Effizienz}
-			{Die Software sollte Ressourcen schonend arbeiten. Keine Komponente darf mehr als ein Gigabyte Arbeitsspeicher benötigen und Keine Komponente darf mehr als 50\% der auf dem System zur Verfügung stehenden Prozessorleistung benötigen. Zudem darf im Durchschnitt während einer Partie nicht mehr als 1MBit/s an Netzwerkbandbreite benötigt werden um das Spiel ohne Einschränkungen nutzen zu können.}
+			{Die Software sollte Ressourcen schonend arbeiten. Keine Komponente darf mehr als ein Gigabyte Arbeitsspeicher benötigen und keine Komponente darf mehr als 50\% der auf dem System zur Verfügung stehenden Prozessorleistung benötigen. Zudem darf im Durchschnitt während einer Partie nicht mehr als 1MBit/s an Netzwerkbandbreite benötigt werden um das Spiel ohne Einschränkungen nutzen zu können.}
 			{Eine ressourcenschonende Anwendung ist auch auf älteren Zielsystemen problemlos nutzbar.}
 			{-}
 			{-}
 			{Nutzer, Entwickler}
 	
+	ANSICHT################################################
 	\qanf 	{Kurze Ladezeiten}
 			{Systembedingte Ladezeiten der Software dürfen auf einem aktuellen Computer zwei Sekunden pro geladenem Teil nicht überschreiten.}
 			{Bei längeren Ladezeiten ist das Benutzererlebnis massiv beeinträchtigt.}
