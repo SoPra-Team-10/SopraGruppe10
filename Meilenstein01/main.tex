@@ -27,6 +27,9 @@ bibtotoc,              % LV im IV
 \usepackage{blindtext}
 \usepackage[scaled]{helvet}
 \usepackage{hyperref}
+\usepackage{comment}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 \usetikzlibrary{calc,shapes.multipart,chains,arrows}
 
@@ -100,8 +103,8 @@ bibtotoc,              % LV im IV
 \newcommand{\anf}[7] {
     \begin{table}[H]
         \centering
-        \begin{tabular}{|p{3.2cm}|p{9.8cm}|}
-            \hline 
+        \begin{tabular}{|p{3.2cm}|p{11.3cm}|}
+        	\hline
             \textbf{ID:} & \textbf{#1} \\ \hline
             \textbf{Titel:} & #2 \\ \hline
             \textbf{Beschreibung:} & #3 \\ \hline
@@ -127,8 +130,8 @@ bibtotoc,              % LV im IV
 \newcommand{\akt}[4] {
     \begin{table}[H]
         \centering
-        \begin{tabular}{|p{3cm}|p{10cm}|}
-            \hline
+        \begin{tabular}{|p{3cm}|p{11.5cm}|}
+        	\hline
             \textbf{ID:} & \textbf{#1} \\ \hline
             \textbf{Titel:} & #2 \\ \hline
             \textbf{Beschreibung:} & #3 \\ \hline
@@ -179,680 +182,733 @@ bibtotoc,              % LV im IV
     \input{Aufgabe_2_Fachwissen.tex}
     \includepdf[scale = 0.8, pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
     \section{Anforderungsdefinition}
-    %TODO
-
+    
+	\textbf{Bemerkungen zu den Abhängigkeiten der Anforderungen:} \\
+	Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielsweise besitzt die Mittelzelle implizit alle Abhängigkeiten des Mittelkreises.  \\ \\
+	 \textbf{Bemerkungen zu den Prioritäten:} \\
+	 \begin{itemize}
+	 	\item[-] Optionale Komponente
+	 	\item[0] Geforderte Komponente
+	 	\item[+] Geforderte, wichtige aber nicht zeitkritisch Komponente
+	 	\item[++] Geforderte, wichtige und zeitkritische Komponente
+	 \end{itemize}
+    
     \subsection{Akteure}
-
-    \fakt	{Anwendungsbenutzer}
-            {Menschlicher Benutzer, der die Anwendungen bedient.}
-            {<Rolle>}
-
-    \fakt	{Spielender Benutzer}
-            {Anwendungsbenutzer, der mit der Client-Anwendung am tatsächlichen Spielgeschehen teilnimmt.}
-            {<Rolle>}
-
-    \fakt	{Beobachtender Benutzer}
-            {<Beschreibung>}
-            {<Rolle>}
-
-    \fakt	{Systemadministrator}
-            {Anwendungsnutzer mit Zusatzqualifikation um Server zu verwalten.}
-            {Der Systemadministrator hat zugriff auf die Server Anwendung. Er ist dafür verantwortlich eine Instanz der Server Anwendung zu starten und zu betreuen. Zudem hat er Zugriff auf die Partie-Konfiguration und kann diese bei bedarf verändern.}
-
-    \fakt	{KI}
-            {<Beschreibung>}
-            {<Rolle>}
-
-    \fakt	{Kunde}
-            {SoPra-Tutor}
-            {<Rolle>}
-
-    \fakt	{Client [Komponente]}
-            {<Beschreibung>}
-            {<Rolle>}
-
-    \fakt	{KI-Client [Komponente]}
-            {<Beschreibung>}
-            {<Rolle>}
-
-    \fakt	{Server [Komponente]}
-            {<Beschreibung>}
-            {<Rolle>}
-
-    \fakt	{Quidditchteam-Editor [Komponente]}
-            {<Beschreibung>}
-            {<Rolle>}
-
-    \fakt 	{Team}
-            {<Beschreibung>}
-            {<Rolle>}
-
-    \fakt 	{Schiedsrichter}
-            {<Beschreibung>}
-            {<Rolle>}
-
-
-    \subsection{Funktionale Anforderungen (allgemein)}
-
-    \fanf	{Quidditch-Spielfeld}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Mittelkreis}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Mittelfeld}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Hüterzone}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Torring}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Schussvektor}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Bälle}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Quaffel [Ball]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Klatscher [Ball]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Goldener Schnatz [Ball]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Besen}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Zauberfauch [Besen]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Sauberwisch 11 [Besen]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Komet 2-60 [Besen]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Nimbus 2001  [Besen]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Feuerblitz [Besen]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Spieler}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}	
-
-    \fanf	{Jäger [Spielertyp]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Treiber [Spielertyp]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Hüter [Spielertyp]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{[Spielertyp] Sucher}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Fans]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}	
-
-    \fanf	{Elfen [Fantyp]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Kobolde [Fantyp]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Trolle [Fantyp]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Niffler [Fantyp]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Foul}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Flacken [Foul]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Nachtarocken [Foul]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Stutschen [Foul]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Keilen [Foul]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Schnaltzeln [Foul]}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Wurf mit dem Quaffel}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Quaffel Abfangen}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Torschuss}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Klatscher kloppen}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Partie-Konfiguration}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Quidditchteam-Konfiguration}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}	
-
-    \fanf	{Netzwerkinterface}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Runde}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Ballphase}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Spielerphase}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Fanphase}
-            {<Beschreibung>}
-            {Diese Anforderung geht aus den im Lastenheft zu Verfügung gestellten Spielregeln für das Spiel \textit{Fantastic Feasts} hervor.}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Zufallsgenerator}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Spielende}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Überlängenbehnadlung}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Spiellogik}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Log-Datei}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{<Titel>}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{<Titel>}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{<Titel>}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{<Titel>}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{<Titel>}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-
-    \subsection{Funktionale Anforderungen (Server)}
-
-    \subsection{Funktionale Anforderungen (Client)}
-
-    \fanf	{Hauptmenü [Client-View]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Connect to Game [Client-View]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{End of Game [Client-View]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Import Team Config [Client-View]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Game Play [Client-View]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}	
-
-    \fanf	{Hilfe [Client-View]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Beobachter [Client-View]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Game Rendering Engine}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Input Handler [Client]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Input Validierung [Client]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Hotkey [Client]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {--}
-            {<Akteure>}
-
-    \fanf	{Pausieren [Client]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {--}
-            {<Akteure>}
-
-
-    \subsection{Funktionale Anforderungen (Quidditchteam-Editor)}
-
-    \fanf	{Edit Team [Team-Editor-View]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \fanf	{Save Team [Team-Editor-View]}
-            {<Beschreibung>}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-
-    \subsection{Nicht funktionale Anforderungen}
-
-    \qanf 	{Plattformunabhängigkeit}
-            {Der Spielclient soll auf mindestens einer gängigen Computerbetriebssystem-Plattform (z.B. Linux, Windows) uneingeschränkt benutzbar sein. Des weiteren soll die Server- und die KI-Komponente auf mindestens zwei gängigen Computerbetriebssystem-Plattformen (z.B. Linux, Windows) uneingeschränkt benutzbar sein.}
-            {<Begründung>}
-            {<Abhängigkeiten>}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Version-Controlling}
-            {Verwaltung und Version-Controlling des Quellcodes mit Hilfe eines Git basierten Version-Controlling Tool.}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Continuous Integration}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Statische Codeanalyse}
-            {Mit Hilfe des Tools 'SonarQube' bzw. 'SonarCloud' soll der gesamt Quellcode einer statischen Analyse unterzogen werden. Dabei darf die technische Codequalität von diesen Tool nicht schlechter als 'B' bewertet werden.}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Qualitätssicherung}
-            {80 Prozent des Quellcodes der einzelnen Komponenten soll durch automatische Test auf Korrektheit geprüft werden}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Docker Container}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Dokumentation}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Benutzerhandbuch}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Anwendungssprache}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Programmiersprache}
-            {Implementierungssprache}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Dokumentationssprache}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Format für Konfigurationsdateien}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Netzwerkkommunikation}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{Rundenspiel}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{<Titel>}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{<Titel>}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{<Titel>}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{<Titel>}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{<Titel>}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-    \qanf 	{<Titel>}
-            {<Beschreibung>}
-            {<Begründung>}
-            {-}
-            {<Prio>}
-            {<Akteure>}
-
-
+    
+    \fakt	{Nutzer}
+			{Menschlicher Nutzer, der eine Anwendungen bedient.}
+			{Ein Mensch, der entweder als Spieler aktiv an einem Spiel teilnimmt, als Gast passiv einem Spiel zusieht oder den Quidditchteam-Editor benutzt.}
+			
+	\fakt	{Spieler}
+			{Spiet das Spiel \glqq{}Fantastic Feasts\grqq{}.}
+			{Nimmt aktiv Einfluss auf das Spielgeschehen. Ist entweder Nutzer oder KI.}
+			
+	\fakt	{Gast}
+			{Nutzer, der mit der Client-Anwendung ein laufendes Spiel beobachtet.}
+			{Beobachtet eine Partie als Außenstehender, hat jedoch keinen Einfluss auf das Spielgeschehen.}
+		
+	\fakt	{Systemadministrator}
+			{Person, die die Möglichkeit hat, die Serveranwendung des Projektes zu verwalten.}
+			{Der Systemadministrator ist dafür verantwortlich, eine Instanz der Serveranwendung zu starten und zu betreuen. Zudem hat er Zugriff auf die Partie-Konfiguration und kann diese bei Bedarf verändern.}
+	
+	\fakt	{Entwickler}
+			{Person, die an der Entwicklung der Anwendung beteiligt ist.}
+			{Der Entwickler implementiert die gesamte Anwendung.}	
+	
+	\fakt	{KI}
+			{Vom Computer gesteuerter Spieler.}
+			{Spieler, dessen Entscheidungen und Züge von einem Computerprogramm, dem KI-Client, getroffen werden. Es wird somit ein menschlichen Spieler.}
+	
+	\fakt	{Kunde}
+			{Der Kunde gibt das Projekt in Auftrag.}
+			{Stellt Anforderungen und Wünsche an das Entwicklerteam und nimmt das Projekt ab.}
+	
+	\fakt	{Client}
+			{Programm, das einem Nutzer eine grafische Oberfläche, zum Spielen oder Beobachten des Spiels, zur Verfügung stellt.}
+			{Der Client stellt eine Verbindung zum Server her, visualisiert die empfangenen Daten und sendet seinerseits die Eingaben des Nutzers.}
+	
+	\fakt	{KI-Client}
+			{Simuliert einen menschlichen Gegner.}
+			{Der KI-Client kommuniziert wie der normale Client mit dem Server. Allerdings werden die Entscheidungen von der KI getroffen und nicht von einem Nutzer. Er stellt keine grafische Oberfläche zur Verfügung.}
+	
+	\fakt	{Server}
+			{Zentrale Komponente des Projekts, die alle anderen Komponenten vernetzt.}
+			{Auf dem Server läuft die eigentliche Spiellogik. Er fungiert dabei als Bindeglied zwischen den am Spiel beteiligten Clients und stellt für diese alle benötigten Informationen, wie etwa die Spielfeldkonfiguration oder die Züge des Gegners, bereit.}
+			
+	\fakt	{Quidditchteam-Editor}
+			{Computerprogramm, mit dem Team-Konfigurationen erstellt und bearbeitet werden können.}
+			{Der Quidditchteam-Editor erstellt Teamkonfigurationsdateien, die später vom Client geladen werden, um ein Spiel zu starten.}
+	
+	\subsection{Funktionale Anforderungen: Spielregeln} 
+	
+	\fanf	{Quidditch-Spielfeld}
+			{Das Quidditch-Spielfeld hat eine Ovale Form, die in ein Raster von 17x13 quadratischen Zellen eingepasst ist. Auf diesem Feld finden alle Spielhandlungen statt, die während dem Spiel getätigt werden können.}
+			{Das Spielfeld ist die zentrale Komponente des Spiels, da sich hier während einer Partie sämtliche Abläufe abspielen.}
+			{-}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Mittelkreis}
+			{Der Mittelkreis ist ein Bereich auf dem Quidditch-Spielfeld, der in der Mitte angeordnet ist und aus 3x3 quadratischen Zellen besteht. Zu Beginn dürfen sich hier keine Spielfiguren befinden.}
+			{Der Mittelkreis markiert das Zentrum des Spielfeldes, in dem das Spiel gestartet wird.}
+			{Spielfeld}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Mittelzelle}
+			{Die Mittelzelle stellt den mittleren Punkt des Mittelkreises dar, der sich im Zentrum des Quidditch-Spielfeldes befindet. Dort werden initial die Bälle des Spiels platziert.}
+			{Die Mittelzelle ist der Startpunkt für die Bälle beim Spielstart.}
+			{Mittelkreis}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Hüterzonen}
+			{Die Hüterzonen sind an den jeweils gegenüberliegenden Seiten des Quidditch-Spielfeldes platziert. Die Hüterzonen sind ovalförmig, bestehen aus 11x5 Kacheln und beinhalten jeweils 3 Torringe.}
+			{In den Hüterzonen können die Teams Punkte erzielen.}
+			{Spielfeld}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Zelle}
+			{Die Zelle ist die kleinste Einheit des Spielfeldes, auf ihr darf sich immer nur eine Spielfigur gleichzeitig befinden. Bälle können sich jedoch eine Zelle mit einem anderen Ball und / oder einer Spielfigur teilen.}
+			{Das gesamte Spielfeld ist aus Zellen aufgebaut. Sie bestimmen, wie sich Spielobjekte bewegen können.}
+			{Spielfeld}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Torring}
+			{Die Teams können Punkte erzielen, indem sie den Quaffel durch einen generischen Torring werfen.}
+			{Die Torringe dienen den Teams als Hauptquelle von Punkten.}
+			{Hüterzone}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Schussvektorberechnung}
+			{Ein Schussvektor zeigt vom Mittelpunkt der Startzelle auf die Zielzelle des Wurfs. Alle Zellen, die von diesem Vektor geschnitten werden, sind so genannte überstrichene Felder.}
+			{Ein Schussvektor beschreibt, wie eine Spielfigur einen Ball über das Spielfeld bewegten kann.}
+			{Zelle}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Punkte erzielen}
+			{Es gibt zwei Möglichkeiten, Punkte zu erzielen: Den Quaffel durch ein gegnerischen Torring werfen (entspricht 10 Punkten) oder den Goldenen Schnatz fangen (entspricht 30 Punkten).}
+			{Die Punktezahl zeigt an, welcher Spieler sich im Moment besser schlägt und dient zur Bestimmung des Gewinners am Ende der Partie.}
+			{Schnatz fangen, Quaffel werfen}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Entfernungsberechnung}
+			{Die Entfernung zwischen zwei Zellen ist die kleinstmögliche Anzahl an Zügen, die man braucht, um Zelle A zu Zelle B zu kommen. Dabei darf  man sich in alle Richtengen bewegen, also Vertikal, Horizontal und Diagonal.}
+			{Die Entfernung ist maßgeblich für den Erfolg von verschiedenen Aktionen, wie z.B. dem Werfen des Quaffels.}
+			{Zelle}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Bälle}
+			{Es gibt 3 verschiedene Arten von Bällen: Der Quaffel, der Klatscher und der Goldene Schnatz.}
+			{Die Bälle sind zentraler Bestandteil des Spiels.}
+			{-}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Quaffel [Ball]}
+			{Der Quaffel ist ein roter Lederball, mit dem die Team Punkte erzielen kann. Dazu muss der Quaffel durch einen gegnerischen Torring befördert werden.}
+			{Der Quaffel ist die zentrale Punktequelle.}
+			{Bälle}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Klatscher [Ball]}
+			{Der Klatscher ist ein kleiner schwarzer Ball, der sich von alleine auf Spieler zubewegt (eine Zelle pro Runde), die keine Treiber sind.}
+			{Die Klatscher verleihen dem Spiel zusätzliche taktische Tiefe, da sie Spielfiguren für eine Runde ausschalten können.}
+			{Bälle}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Goldener Schnatz [Ball]}
+			{Der Goldene Schnatz ist eine kleiner goldener Ball, sich von alleine von Suchern wegbewegt (eine Zelle pro Runde). Das bedeutet, er achtet auf den nächsten Sucher, und wählt unter allen möglichen freien Zellen, die eine größere Entfernung zu diesem haben, als seine gegenwärtige, eine zufällige aus, und bewegt sich darauf. Falls es keine solchen Zellen gibt, bewegt sich der Schnatz auf eine zufälliges freie Nachbarzelle. Der Goldene
+Schnatz erscheint zu Beginn der dreizehnten Runde auf einer zufällig gewählten freien Zelle, das möglichst gleich weit
+von beiden Suchern entfernt ist.}
+			{Der Goldene Schnatz dient zum Punkteerzielen und führt, wenn er gefangen wird, zum Ende des Partie.}
+			{Bälle}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Besen}
+			{Jede Spielfigur besitzt einen Besen, die einen der folgenden Typen haben: Zauberfauch, Sauberwisch 11, Komet 2-60, Nimbus 2001 und Feuerblitz. Der Typ des Besens bestimmt die Wahrscheinlichkeit, mit der eine Spielfigur nach einer Bewegung um ein Feld eine weitere Bewegung ausführen darf. Diese Wahrscheinlichkeit wird in der Partiekonfiguration festgelegt, wobei die Besen in der genannten Reihenfolge aufsteigende Wahrscheinlichkeiten besitzen.}
+			{Die Besen geben den Spielfiguren eine unterschiedliche Qualität.}
+			{-}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Teams}
+			{Ein Team besteht aus sieben Spielfiguren und sieben Fans. Außerdem hat jedes Team einen Namen, ein Motto, eine Hauptteamfarbe und eine Ersatzteamfarbe. Die sieben Spielfiguren Teilen sich wie folgt auf:  ein Hüter, zwei Treiber, drei Jäger und ein Sucher. Bei den Spielfiguren darf jedes Geschlecht bis zu vier mal vertreten sein. Zudem muss jeder Besentyp einmal vertreten sein. Bei den sieben Fans muss jeder Fantyp mindestens einmal vertreten sein.}
+			{Quidditch ist ein Teamspiel, weshalb Teams benötigt werden.}
+			{Spielfigur, Fans, Besen}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Spielfiguren}
+			{Es gibt 4 Arten von Spielfiguren: Jäger, Sucher, Hüter und Treiber. Jede Spielfigur hat dabei einen Namen und ein Geschlecht.}
+			{Die unterschiedlichen Typen der Spielfiguren geben dem Spiel taktische Tiefe.}
+			{-}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Jäger [Spielfigur]}
+			{Jäger können den Quaffel aufnehmen und werfen und damit Punkte für ihr Team erzielen.}
+			{Jäger können Punkte für ihr Team erzielen.}
+			{Spielfigur}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Treiber [Spielfigur]}
+			{Treiber können den Klatscher schlagen und somit zum Gegner hin und / oder von Teammitgliedern weg befördern.}
+			{Treiber dienen zum Schutz des eigenen Teams vor den Klatschern. Gleichzeitig können sie den Gegner aktiv sabotieren, in dem sie ihm den Klatscher zuspielen..}
+			{Spielfigur}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Hüter [Spielfigur]}
+			{Hüter können den Quaffel aufnehmen und versuchen, den Gegner daran zu hindern, ein Tor zu erzielen. Landet der Quaffel auf einem Torring so geht der Quaffel am ende der Rudenphase in den Besitz des Hüters über, wenn er sich selbst in der Hüterzone befindet. Ein Hüter kann selbst keine Tore erzielen.}
+			{Hüter stellen die Verteidigung seines Teams dar.}
+			{Spielfigur, Hüterzone}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Sucher [Spielfigur]}
+			{Sucher versuchen den Goldenen Schnatz zu finden, um Punkte zu erzielen und das Spiel zu beenden.}
+			{Der Sucher beendet das Spiel.}
+			{Spielfigur}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Quaffel-Werfen}
+			{Hüter und Jäger können den Quaffel werfen. Der Wurf wird über ein Schussvektor angegeben. Jede gegnerische Spielfigur, die sich auf einer überstrichenen Zelle des Schussvektors befindet, kann den Quaffel abfangen. Wird der Ball von keiner Spielfigur abgefangen, so ist der Wurf mit der Wahrscheinlichkeit $P^d$ erfolgreich, wobei $P$ eine elementare Wurfwahrscheinlichkeit und $d$ die Entfernung zur Zielzelle ist. Ist der Wurf erfolgreich, so landet der Quaffel auf der Zielzelle. Wenn nicht wir der Quaffel auf einem zufälligen freien Zelle in einem $n\times n$ Quadrat um die Zielzelle platziert, wobei $n=\ceil{ \frac{d}{7}}$ ist.}			
+			{Das Werfen des Quaffels ermöglicht Passspiel und das erzielen von Punkten.}
+			{Schussvektorberechnung, Entfernungsberechnung, Jäger, Hüter, Quaffel}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Quaffel Abfangen}
+			{Jede gegnerische Spielfigur auf einer überstrichenen Zelle des Schussvektors eines Wurfes hat eine gewisse Wahrscheinlichkeit, den Quaffel abzufangen. Diese Wahrscheinlichkeit ist in der Partiekonfiguration vermerkt. Gelingt das Abfangen, so landet der Quaffel auf der Zelle der Abfangenden Spielfigur.}
+			{Das Abfangen bietet die Möglichkeit, Würfe des Gegners zu unterbinden.}
+			{Quaffel-Werfen, Spielfiguren }
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Quaffel prallt ab}
+			{Landet der Quaffel auf einer Zelle, auf der sich eine Spielfigur befindet, die weder Hüter noch Jäger ist, so wird der Quaffel auf eine zufällige freie Nachbarzelle gesetzt.}
+			{Nur Jäger und Hüter können direkt mit der Quaffel interagieren.}
+			{Sucher, Treiber, Quaffel}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}		
+			
+	\fanf	{Quaffel Halten}
+			{Ein Jäger oder Hüter kann den Quaffel halten, was zur Folge hat, dass der Quaffel sich immer auf der selben Zelle befindet wie besagter Jäger bzw. Hüter. Der Quaffel bewegt sich dadurch mit dem Jäger bzw. Hüter mit.}
+			{Jäger und Hüter können sollen den Quaffel, ohne zu passen, über das Spielfeld transportieren können.}
+			{Jäger, Hüter, Quaffel}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}	
+			
+	\fanf	{Quaffel Verlieren}
+			{Ein Jäger kann den Quaffel verlieren, dass bedeutet, das der Quaffel auf ein freie Nachbarzelle zufällig bewegt wird.}
+			{Durch das Verlieren des Quaffels werden Tore im Alleingang erschwert.}
+			{Jäger, Hüter, Quaffel, Fouls, Klatscher}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+		
+	\fanf	{Quaffel Entreißen}
+			{Ein Jäger darf einem anderen Jäger den Quaffel entreißen, sofern dieser auf einem seiner Nachbarfelder ist. Dies gelingt allerdings nur mit einer bestimmten Wahrscheinlichkeit. Jäger dürfen auch dem gegnerischen Hüter den Quaffel entreißen, jedoch dies geht nur, wenn sich der Hüter nicht in seiner eigenen Hüterzone befindet.}
+			{Bietet zusätzliche Möglichkeiten, den Ball zu erobern.}
+			{Jäger, Hüter, Quaffel}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Tor Erzielen}
+			{Ein Jäger kann ein Tor erzielen, indem er den Quaffel erfolgreich auf eine Torringzelle wirft. Dabei muss der Schussvektor des Wurfes durch die linke oder rechte Seite der Torringzelle gehen.}
+			{Stellt für einen Jäger die Möglichkeit dar, Punkte zu erzielen.}
+			{Torring, Quaffel Werfen, Jäger}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Klatscher Schlagen}
+			{Ein Treiber kann einen Klatscher schlagen, wenn er sich auf derselben Zelle wie der Klatscher befindet. Der Treiber wählt, um den Klatscher zu schlagen, eine Zielzelle aus, die eine maximale Entfernung von drei zu ihm hat. Zusätzlich müssen auch alle überstrichenen Felder frei sein. Ist dies beides der Fall, so wird das Schlagen des Klatschen wie ein normaler Quaffel-Wurf behandelt, allerdings mit einer 100\% Wahrscheinlichkeit.}
+			{Stellt für den Treiber die Möglichkeit dar, den Katscher zu bewegen.}
+			{Spielfeld, Treiber, Klatscher}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Spieler Betäuben}
+			{Bewegt sich der Klatscher auf deine Zelle, auf der sich eine Spielfigur befindet, die kein Treiber ist, wird diese mit einer gewissen Wahrscheinlichkeit betäubt. Das hat zur Folge, dass diese Spielfigur gegebenenfalls den Quaffel verliert, keine Ball fangen und für eine Runde keine Aktion ausführen kann. Der Klatscher, der den Spiler betäubt hat, wird auf eine zufällige freie Zelle gesetzt.}
+			{Stellt ein zusätzliches taktisches Spielelement dar.}
+			{Klatscher, Jäger, Hüter, Sucher}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Schnatz Fangen}
+			{Befindet sich ein Sucher und der Goldene Schnatz auf derselben Zelle, so fängt der Sucher den Goldenen Schnatz mit einer gewissen Wahrscheinlichkeit. Dadurch erhält sein Team 30 Punkte und das Spiel ist zu Ende.}
+			{Das Schnatz Fange führ das Ende der Partie herbei.}
+			{Goldener Schnatz, Sucher, Punkte}
+			{++}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	
+	\fanf	{Fans}
+			{Ein Fan kann durch Zaubersprüche das eigenen Team unterstützen oder das gegnerische Team schwächen. Diese Eingriffe in das Spielgeschehen werden  mit einer gewissen Wahrscheinlichkeit geahndet. Die Fans eines Teams werden jeweils vom Spieler des Teams gesteuert. Es gibt die folgenden Typen von Fans: Elfen, Kobolde, Trolle und Niffler die alle unterschiedliche Fähigkeiten beherrschen.}
+			{Sorgen für Abwechslung, Witz, und Überraschungen im Spiel.}
+			{-}
+			{0}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Elfen [Fantyp]}
+			{Elfen haben die Fähigkeit, einen Spieler von der eigenen oder auch von der gegnerischen Mannschaft auf eine zufällige freie Zelle zu Teleportieren.}
+			{Siehe Fans}
+			{Fans}
+			{0}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Kobolde [Fantyp]}
+			{Kobolde haben die Fähigkeit, einen Schockzauber zu sprechen, der bewirkt, dass der getroffene Spieler den Quaffel verliert, sofern er diesen hat und anschließend auf eine zufällige freie Nachbarzelle gestoßen wird.}
+			{Siehe Fans}
+			{Fans}
+			{0}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Trolle [Fantyp]}
+			{Durch lautes Brüllen sorgen Trolle dafür, dass der Spieler, der den Quaffel besitzt, diesen vor Schreck fallen lässt.}
+			{Siehe Fans}
+			{Fans}
+			{0}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Niffler [Fantyp]}
+			{Niffler können nach dem Goldenen Schnatz schnappen können, wodurch dieser eine Ausweichbewegung macht und sich auf eine zufällige freit Nachbarzelle bewegt.}
+			{Siehe Fans}
+			{Fans}
+			{0}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Schiedsrichter}
+			{Der Schiedsrichter ahndet mit einer gewissen Wahrscheinlichkeit Fouls von Spielern oder Einmischungen von Fans. Ahndet der Schiedsrichter eine Aktion, so wird die verursachende Spielfigur bis zum nächsten Tor, bzw. der Fan komplett von der Partie ausgeschlossen.}
+			{Der Schiedsrichter ist die rechtschaffene Instanz und sorgt dafür, dass unfaire Aktionen nicht bedenkenlos eingesetzt werden können.}
+			{Spielfigur, Fans}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Foul}
+			{Fouls sind Spielzüge, die grundsätzlich möglich, jedoch laut Regelwerk nicht zulässig sind. Es gibt die folgenden Arten von Fouls: Stürmen, Großoffensive, Rammen, Torringe blockieren und Schnatz blockieren. Der Schiedsrichter ahndet diese Fouls mit einer gewissen Wahrscheinlichkeit.}
+			{Fouls stellen eine zusätzliche taktische Spielkomponente dar.}
+			{Spielfigur, Schiedsrichter, Spielfeld}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Torring blockieren [Foul]}
+			{Eine Spielfigur darf sich nicht direkt auf einen Torring stellen, da es sonst unmöglich wäre, durch diesen Torring ein Tor zu erzielen. Der Ball hopst im Falle eines blockierten Torrings auf eine freie Nachbarzelle des Torrings.}
+			{Ermöglicht einem Team zu verhindern, dass der Gegner Punkte erzielen kann.}
+			{Foul}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+
+	\fanf	{Stürmen [Foul]}
+			{Diese Aktion kann nur von Jägern ausgeübt werden. Führt ein Jäger diese Aktion aus, so erzielt er zu 100\% ein Tor, in dem er den Quaffel hält und damit auf einen Torring zieht.}
+			{Stellt eine unfaire Möglichkeit dar, Punkte zu erzielen.}
+			{Foul}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Großoffensive [Foul]}
+			{Diese Aktion kann nur von Jägern ausgeübt werden. Es bedeutet, dass sich zwei oder mehr Jäger vom selben Team in der gegnerischen Hüterzone befinden.}
+			{Gibt den Angreifern einen unfairen Vorteil.}
+			{Foul}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Rammen [Foul]}
+			{Dieses Foul können alle Spieler ausführen. Hierbei zieht ein Spieler auf das selbe Spielfeld wie ein gegnerischer Spieler, woraufhin dieser den Quaffel ggf. verliert und anschließend auf eine zufällige freie Nachbarzelle verdrängt wird.}
+			{Dieses Foul bietet die Möglichkeit, dem Gegner den Ball zu entwenden.}
+			{Foul}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Schnatz blockieren [Foul]}
+			{Dieses Foul können alle Spieler ausführen mit Ausnahme der Sucher. Dazu bewegt sich ein Spieler auf das Feld des Goldenen Schnatzes, obwohl er kein Sucher ist, wodurch er verhindert, dass Sucher den Goldenen Schnatz fangen können, da sich nie zwei oder mehr Spielfiguren auf ein und der selben Zelle befinden dürfen.}
+			{Diese Anforderung soll es dem Sucher schwerer machen den Schnatz zu fangen, da das gegnerische Team den Schnatz so blockieren kann.}
+			{Foul}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Setzen auf freies Nachbarfeld}
+			{Soll ein Spieler oder Ball auf ein zufälliges freies Nachbarfeld von seiner Position gesetzt werden, jedoch sind alle 8 umliegenden Felder bereits von Spielfiguren besetzt oder aus anderen Gründen nicht zulässig, so wird rekursiv von einem zufällig besetzten Nachbarfeld weiter gesucht, bis sich schließlich ein freies Feld findet. Das bedeutet, dass der Spieler oder Ball nicht unbedingt auf einem Nachbarfeld seiner Position landet, sondern auch weiter entfernt positioniert werden kann.}
+			{Es muss der Fall abgedeckt werden, dass kein freies Nachbarfeld mehr frei ist.}
+			{Zelle, Bälle, Spielfigur}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+
+
+	\fanf	{Runde}
+			{Das Spiel läuft in Runden ab. Jede Runde ist dabei in die drei Rundenphasen Ballphase, Spielerphase und Fanphase unterteilt.}
+			{Bei \glqq{}Fantastic Feasts\grqq{} handelt es sich laut den Spielregeln um ein Rundenbasiertes Spiel.}
+			{-}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+	
+	\fanf	{Ballphase}
+			{In dieser Phase eine Spiels bewegen sich die Bälle über das Spielfeld. Dabei machen die beiden Klatscher ihre Bewegungen in zufälliger Reihenfolge.}
+			{sieh Runde}
+			{Runde}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Spielerphase}
+			{Jeder Spieler macht seinen Zug, wobei sich die Teams abwechseln. In jeder Runde wird neu zufällig bestimmt, welches Team dabei beginnt. Die Reihenfolge der Spieler innerhalb eines Teams wird zufällig bestimmt.}
+			{Siehe Runde.}
+			{Runde}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Fanphase}
+			{Jeder Fan macht seinen Zug, wobei sich die Fanblöcke der Teams abwechseln. In jeder Runde wird neu zufällig bestimmt, welcher Fanblock dabei beginnt. Die Reihenfolge der Fans innerhalb eines Fanblocks wird zufällig bestimmt.}
+			{Siehe Runde.}
+			{Runde}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+
+	\fanf	{Disqualifikation}
+			{Werden in der selben Runde mehr als 3 Spielfiguren eines Teams vom Schiedsrichter aus dem Spiel entfernt, gilt das Team als disqualifiziert.}
+			{Unfaires Spielen muss bestraft werden.}
+			{Fouls, Schiedsrichter}
+			{0}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Spielende}
+			{Die Partie endet, wenn ein Sucher den Schnatz fängt oder ein Team disqualifiziert wird. Das Team mit den meisten Punkten gewinnt, sofern es nicht disqualifiziert ist.}
+			{Damit das Spiel endet.}
+			{Goldener Schnatz, Sucher, Disqualifikation}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Spielfigur platzieren}
+			{Ein Spieler darf seine Spielfiguren in seiner Hälfte des Spilefeldes beliebig platzieren. Es darf jedoch nie mehr als eine Figur auf der selben Zelle platziert sein. Außerdem muss der Mittelkreis unbesetzt sein.}
+			{Zu Beginn des Spiels wählt jeder Spieler ine Aufstellung für sein Team.}
+			{Mittelkreis, Spielbeginn}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}	
+			
+	\fanf	{Spielbeginn}
+			{Zu Beginn werden alle Spielfiguren von den Spielern auf dem Spielfeld aber außerhalb des Mittelkreises platziert. Die Bälle, mit Ausnahme des Schnatzes, werden auf der Mittelzelle platziert.}
+			{Nötige Aufstellung zu Spielbeginn.}
+			{-}
+			{+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+			
+	\fanf	{Überlängenbehandlung}
+			{Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert fest,  ohne dass ein Sieger ermittelt werden kann, so wird das Verhalten des Goldenen Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Goldenen Schnatz findet wird auf 100\% gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft bewegt sich der Goldenen Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gewunden, so bewegt er sich in der nächsten Rundenphase auf die nächste Zelle, auf der sich ein Sucher befindet.}
+			{Dadurch wird sichergestellt, dass ein Spiel spannend bleibt und die Spieler nicht die Lust verlieren, wenn eine Partie zu zäh läuft.}
+			{Runde, Goldener Schnatz, Sucher}
+			{-+}
+			{Spieler, KI, Gast, Client, KI-Client, Server}
+
+
+\subsection{Funktionale Anforderungen: Allgemein}
+
+	\fanf	{Partie-Konfiguration}
+			{Die Partie-Konfiguration spezifiziert sämtliche Wahrscheinlichkeiten für zufällige Ereignisse im Spiel, sowie die maximale Rundenanzahl, bevor die Überlängenbehandlung eintritt.}
+			{Bietet dem Nutzer die Möglichkeit, eine Partie nach persönlichen Präferenzen zu gestalten.}
+			{Quidditchteam-Editor}
+			{+}
+			{Server, Quidditchteam-Editor, Client, KI-Client, Nutzer}
+	
+	\fanf	{Quidditchteam-Konfiguration}
+			{Definiert alle Attribute eines Teams.}
+			{Nutzer sollen sich ihre Teams individuell zusammenstellen können.}
+			{-}
+			{+}
+			{Server, Quidditchteam-Editor, Client, KI-Client, Nutzer}	
+			
+	\fanf	{Netzwerkschnittstelle}
+			{Die Clients und Server kommunizieren über eine Netzwerkschnittstelle. Die Clients kommunizieren ausschließlich mit dem Server und nicht untereinander.}
+			{Bei \glqq{}Fantastic Feasts\grqq{} handelt sich es um ein Online Multiplayer Spiel. Es ist also notwendig, dass einzelne Komponenten miteinander Kommunizieren können.}
+			{-}
+			{++}
+			{Systemadministrator, Entwickler, Client, KI-Client, Server}
+	
+	\fanf	{Log-Datei}
+			{Datei zum Speichern bestimmter Ereignisse. Diese Datei wird lokal auf dem Endgerät hinterlegt.}
+			{Um die während der Nutzung der Software aufgetretenen Aktionen im Nachhinein nachvollziehen zu können und daraus Informationen für Statistiken und Wartung zu ziehen, ist es wichtig das Aktionen protokolliert werden.}
+			{-}
+			{-}
+			{Client, KI-Client, Server}
+			
+	
+	\subsection{Funktionale Anforderungen: Server}
+			
+	\fanf	{Partie-Konfiguration laden}
+			{Der Server muss eine vorgefertigte Partie-Konfiguration laden können.}
+			{Die Partie-Konfiguration definiert maßgeblich den Spielverlauf.}
+			{Partie-Konfiguration}
+			{-+}
+			{Server, Systemadministrator}
+	
+	\fanf	{Zufallsgenerator}
+			{Pseudozufallszahlengenerator, der bestimmt, ob ein Ereignis eintritt.}
+			{Viele Ereignisse im Spiel sind zufällig.}
+			{-}
+			{++}
+			{Server}
+			
+	\fanf	{Spielmechanik}
+			{Der Server interpretiert die Nachrichten der Clients nach den oben definierten Spielregeln und versendet wiederum Updates des Spielzustandes.}
+			{Der Server ist die Zentrale Systemkomponente, die die Partie verwaltet.}
+			{Von den oben definierten Spielregeln.}
+			{++}
+			{Server}
+			
+	
+	\subsection{Funktionale Anforderungen: Client}
+	
+	\fanf	{Hauptmenü [Ansicht]}
+			{Erste grafische Oberfläche die dem Nutzer angezeigt wird, wenn die Anwendung gestartet wurde.}
+			{Das Hauptmenü soll den Zentralen Punkt darstellen von dem aus alle Funktionen der Software zu erreichen. Es soll also unter anderem ein Spiel gestartet werden, die Hilfe aufgerufen werden, die Einstellungen der Anwendung angepasst werden und eventuell vorhandene Statistiken aufgerufen werden können.}
+			{-}
+			{+}
+			{Nutzer, Client}
+	
+	\fanf	{Spiel beitreten [Ansicht]}
+			{Grafische Oberfläche, die erscheint, wenn man versucht, sich mit einem Server zu verbinden, um eine neue Partie zu starten. Dabei soll man außerdem die Möglichkeit haben, seine Team-Konfiguration anzugeben, die man für die Partie verwenden möchte.}
+			{Der Nutzer muss die Möglichkeit haben, sich komfortabel mit einem Server zu verbinden.}
+			{Hauptmenü [Ansicht]}
+			{+}
+			{Nutzer, Client}
+	
+	\fanf	{Spiel Ende [Ansicht]}
+			{Grafische Oberfläche die, die Spieler sehen nachdem eine Partie zu Ende ist. Der Nutzer sollte hier auch die Möglichkeit haben die Anwendung zu verlassen oder wieder ins Hauptmenü zurück kehren. Optional ist hier auch Platz für etwaige Statistiken über den Spielverlauf.}
+			{Nach dem Ende einer Partie muss dem Nutzer mitgeteilt werden ob er gewonnen hat oder nicht und wie es von da an weiter geht. }
+			{Spiel [Ansicht]}
+			{0}
+			{Nutzer, Client}
+			
+	\fanf	{Team-Konfiguration importieren [Ansicht]}
+			{Grafische Oberfläche zum Importieren einer Team-Konfiguration für ein Spiel.}
+			{Es muss für den Benutzer eine einfachen Weg geben, eine Team Konfiguration im Dateisystem zu suchen und an die Anwendung zu übergeben.}
+			{Hauptmenü [Ansicht]}
+			{0}
+			{Spieler, Client}
+			
+	\fanf	{Spiel [Ansicht]}
+			{Grafische Oberfläche, die das Spielgeschehen visualisiert.}
+			{Um dem Nutzer das Spiel zu visualisieren.}
+			{Hauptmenü [Ansicht]}
+			{++}
+			{Nutzer, Client}	
+			
+	\fanf	{Hilfe [Ansicht]}
+			{Grafische Oberfläche, in der zum einen das Spielprinzip erklärt wird und zum anderen gezeigt wird, wie genau man die Client-Software bedient.}
+			{Um unerfahren Benutzer die Bedienung der Software zu erleichtern.}
+			{Hauptmenü [Ansicht], Spiel [Ansicht], Beobachter [Ansicht]}
+			{0}
+			{Nutzer, Client}
+			
+	\fanf	{Beobachter [Ansicht]}
+			{Wie die Spiel-Ansicht, nur ohne die Möglichkeit, in das Spiel einzugreifen.}
+			{Damit Zuschauer eine Partie mitverfolgen können.}
+			{Hauptmenü [Ansicht]}
+			{0}
+			{Gast, Client}
+	
+	\fanf	{Eingabeverarbeitung}
+			{Diese Einheit ist für die Verarbeitung von Benutzereingaben verantwortlich.}
+			{Jede Benutzereingabe muss ausgewertet werden. Valide Eingaben werden zum Steuern der Anwendung genutzt.}
+			{Spiellogik}
+			{++}
+			{Spieler, KI, Client, KI-Client}
+			
+	\fanf	{Hotkeys}
+			{Oft benötigte Funktionen werden auf bestimmte (besondere) Tasten (-Kombinationen) abgebildet.}
+			{Hotkeys sind optionale Features, die im Lastenheft aufgeführt sind und zu einer einfacheren Spielsteuerung und höherem Spielkomfort betragen können.}
+			{Spiel [Ansicht], Hilfemenü [Ansicht]}
+			{-}
+			{Nutzer, Client}
+			
+	\fanf	{Pausieren}
+			{Das aktuelle Spiel pausieren.}
+			{Pausieren ist ein optionales Feature, das im Lastenheft aufgeführt ist und einem menschliche Spieler im Client zur Verfügung stehen sollte, um den Spielkomfort zu erhöhen.}
+			{Spiel [Ansicht], Hotkeys}
+			{--}
+			{Spieler, Client}
+			
+	
+	\subsection{Funktionale Anforderungen: Quidditchteam-Editor}
+		
+	\fanf	{Team- / Partie-Konfiguration visualisieren}
+			{Der Editor kann eine geöffnete Team- / Partie-Konfiguration grafisch darstellen und anzeigen, damit ein Nutzer diese bearbeiten kann.}
+			{Konfiguration eines Teams / Einer Partie.}
+			{Quidditchteam-Konfiguration}
+			{-}
+			{Nutzer, Quidditchteam-Editor}	
+	
+	\fanf	{Team- / Partie-Konfiguration erstellen und speichern}
+			{Der Editor kann eine Team- / Partie-Konfiguration erstellen und speichern.}
+			{Konfiguration eines Teams / Einer Partie.}
+			{Quidditchteam-Konfiguration}
+			{-}
+			{Nutzer, Quidditchteam-Editor}	
+	
+	\fanf	{Team- / Partie-Konfiguration bearbeiten}
+			{Der Editor kann eine bestehende Team- / Partie-Konfiguration öffnen und bearbeiten.}
+			{Konfiguration eines Teams / Einer Partie.}
+			{Quidditchteam-Konfiguration}
+			{-}
+			{Nutzer, Quidditchteam-Editor}
+			
+			
+	\subsection{Nicht funktionale Anforderungen}
+	
+	\qanf 	{Plattformunabhängigkeit}
+			{Der Client und der Team-Konfigurator soll auf mindestens einer gängigen Computerbetriebssystem-Plattform (z.B. Linux, Windows) uneingeschränkt benutzbar sein. Des weiteren soll die Serveranwendung und der KI-Client auf mindestens zwei gängigen Computerbetriebssystem-Plattformen (z.B. Linux, Windows) uneingeschränkt benutzbar sein.}
+			{Die Plattformunabhängigkeit ist von großer Bedeutung, da die Anwendungen auf möglichst vielen Zielsystemen funktionieren sollen um die Menge an Endnutzer so wenig wie möglich einzuschränken.}
+			{Programmiersprache, Docker-Container}
+			{+}
+			{Nutzer, Entwickler}
+	
+	\qanf 	{Version-Controlling}
+			{Beim Verwalten des Quellcodes soll ein Git basiertes Version-Controlling Werkzeug (\textit{GitHub / GitLab}) verwendet werden.}
+			{Durch das Verwenden eines Versionierungswerkzeuges wird das zusammenarbeiten unterschiedlicher Entwickler erleichtert, da das zusammenführen des Codes größtenteils automatisiert abläuft.}
+			{-}
+			{++}
+			{Entwickler}
+	
+	\qanf 	{Continuous Integration}
+			{Jeder gepushte Commit soll automatisch mit Hilfe der CI Unit-Tests und der Statischen Codeanalyse unterzogen werden. Zudem soll eine automatisierte Code Dokumentation angestoßen werden. Bei erfolgreichem Abschließen aller Tests soll zum Schluss der aktuelle Stand deployed werden.}
+			{Die CI nimmt den Entwicklern Arbeit ab und kann dazu beitragen, dass Fehler frühzeitig erkannt und behoben werden können.}
+			{Version-Controlling}
+			{0}
+			{Entwickler}
+	
+	\qanf 	{Statische Codeanalyse}
+			{Mit Hilfe des Tools 'SonarQube' bzw. 'SonarCloud' soll der gesamt Quellcode einer statischen Analyse unterzogen werden. Dabei darf die technische Codequalität von diesen Tool nicht schlechter als 'B' bewertet werden.}
+			{Quellcode mit einer hohen Codequalität ist weniger anfällig für Fehler und Probleme.}
+			{-}
+			{+}
+			{Entwickler}
+	
+	\qanf 	{Automatisierte Unit-Tests}
+			{Alle definierten Unit-Tests müssen fehlerfrei bestanden werden.}
+			{Da alle Komponenten möglichst fehlerfrei funktionieren müssen ist es unerlässlich die einzelnen Teil der Software ständig auf ihre Funktionalität zu prüfen.}
+			{-}
+			{0}
+			{Entwickler}
+	
+	\qanf 	{Docker Container}
+			{Um die Plattformunabhängigkeit zu gewährleisten soll sowohl die Server Komponente, als auch die KI-Komponenten mit Hilfe eines Docker Container veröffentlicht werden.}
+			{Docker Container bieten den Vorteil, dass die Software nicht auf jedem Zielsystem neu compiliert werden muss sondern, sobald sie auf einem System in einem Docker-Container lauffähig gemacht wurde lässt sich dieser Container in der Regel auf diversen anderen Zielsystemen ausführen.}
+			{Plattformunabhängigkeit}
+			{+}
+			{Entwickler}
+	
+	\qanf 	{Dokumentation}
+			{Alle Klassen und Methoden der Software müssen dokumentiert werden. Dabei sollen mindestens alle Übergabeparameter und Rückgabewerte genau spezifiziert werden. Zudem sind komplexe Algorithmen detailliert zu dokumentieren. Die gesamte Dokumentation ist dabei mit dem Tool Doxygen zu erstellen.}
+			{Gut dokumentierte Software vereinfacht die Fehlersuche, die Wartung und das hinzufügen von neuen Features.}
+			{-}
+			{+}
+			{Entwickler}
+	
+	\qanf 	{Benutzerhandbuch}
+			{Zu jeder Komponente des Projektes muss eine Benutzerhandbuch existieren, in welchem alle Features unmissverständlich erklärt sind, sodass ein neuer Benutzer auf Basis des Benutzerhandbuches die Software bedienen kann.}
+			{Das Benutzerhandbuch erleichtert die Bedienung der Anwendung.}
+			{Dokumentation}
+			{0}
+			{Nutzer, Entwickler}
+	
+	\qanf 	{Anwendungssprache}
+			{Das User-Interface der Anwendungen soll in deutscher Sprache gestaltet werden.}
+			{Die Zielkundschaft spricht überwiegend Deutsch.}
+			{-}
+			{0}
+			{Nutzer, Entwickler}
+	
+	\qanf 	{Implementierungssprache}
+			{Die Implementierung der Anwendungen soll in englischer Sprache gehalten sein.}
+			{Die Implementierungssprache ist im Lastenheft vorgegeben.}
+			{-}
+			{0}
+			{Entwickler}
+	
+	\qanf 	{Dokumentationssprache}
+			{Die Dokumentation der Software kann in englischer oder deutscher Sprache gestaltet sein.}
+			{Die Dokumentationssprache ist im Lastenheft vorgegeben.}
+			{-}
+			{0}
+			{Entwickler, Kunde}
+	
+	\qanf 	{Programmiersprache}
+			{Die Software soll in einer der folgenden Programmiersprachen geschrieben sein: Java, C++, C\# Die endgültig verwendete Sprache kann jedoch von Komponente zu Komponente variieren, muss aber mit dem Kunden abgesprochen werden.}
+			{Es soll eine Programmiersprache verwendet werden, welche von allen Teammitgliedern beherrscht wird.}
+			{-}
+			{++}
+			{Entwickler}	
+	
+	\qanf 	{Format für Konfigurationsdateien}
+			{Alle Konfigurationsdateien müssen den \textit{JSON} Standard erfüllen Des Weiteren sind alle vom Komitee festgelegten weiteren Standards einzuhalten.}
+			{Durch Einheitliche Formate der Konfigurationsdateien lässt sich sicherstellen, das einzelne Komponenten zwischen den Entwicklungsteams ausgetauscht werden können und diese miteinander kompatibel sind. }
+			{-}
+			{+}
+			{Entwickler, Nutzer}
+	
+	\qanf 	{Netzwerkkommunikation}
+			{Die Netzwerkkommunikation zwischen Client und Server soll über sogenannte \textit{Web-Socket-Sessions} realisiert werden, sodass Client und Server ortsunabhängig von einander betrieben werden können. Die Nachrichten sollen im \textit{JSON} formatiert sein.}
+			{Die Netzwerkkommunikation muss gewisse Standards erfüllen, damit Client- und Serveranwendungen von unterschiedlichen Entwicklerteams mit einander kompatibel sind.}
+			{-}
+			{++}
+			{Server, Client, KI-Client}
+	
+	\qanf 	{Funktionalität}
+			{Die Anwendungen müssen alle im Lastenheft als Minimalanforderungen aufgeführten Anforderungen erfüllen.}
+			{Um die Abnahmen zu bestehen müssen die Minimalanforderungen erfüllt werden.}
+			{-}
+			{++}
+			{Kunde, Entwickler}
+	
+	\qanf 	{Zuverlässigkeit}
+			{Bei $100$ Spielen darf maximal eine Partie aufgrund eines Fehlers in der Anwendung abgebrochen werden müssen.}
+			{Durch zu häufige Ausfälle der Software ist das Benutzererlebnis massiv beeinträchtigt.}
+			{Robustheit}
+			{+}
+			{Nutzer, Entwickler}
+	
+	\qanf 	{Robustheit}
+			{Die Anwendungen dürfen nicht aufgrund einer Falschen Benutzereingabe abstürzen, sondern müssen den Benutzer auf seinen Fehler hinweisen.}
+			{Um das Benutzererlebnis nicht zu beeinträchtigen und keine Sicherheitslücken zu verursachen ist es notwendig, dass die Funktion der Software nicht durch fehlerhafte Benutzereingaben beeinträchtigt wird.}
+			{-}
+			{++}
+			{Nutzer, Entwickler}
+	
+	\qanf 	{Benutzerfreundlichkeit}
+			{Dem Endnutzer muss es möglich sein, alle Komponenten des Projektes nur auf Basis des mitgelieferten Benutzerhandbuches und den Hilfeseiten die Software ohne Einschränkungen bedienen zu können.}
+			{Wenn es für die Endnutzer der Software zu kompliziert ist die Software zu Benutzen, dann ist das Benutzererlebnis erheblich gestört und die Software wird nicht Benutzt werden, da die Endbenutzer unzufrieden sind.}
+			{-}
+			{+}
+			{Nutzer}
+			
+	\qanf 	{Wartbarkeit}
+			{Die Software muss so aufgebaut sein, dass einzelne Teilstücke bei Bedarf ohne Umbauten der übrigen Software ersetzbar sind.}
+			{Im Falle einer Fehlfunktion in einem Teilstück der Software muss diese einfach austauschbar sein um den Fehler schnellst möglich beheben zu können. Zudem sollte das Hinzufügen weiterer Features möglich sein um das Produkt stetig weiter entwickeln zu können.}
+			{-}
+			{-+}
+			{Entwickler}
+	
+	\qanf 	{Effizienz}
+			{Die Software sollte Ressourcen schonend arbeiten. Keine Komponente darf mehr als ein Gigabyte Arbeitsspeicher benötigen und keine Komponente darf mehr als 50\% der auf dem System zur Verfügung stehenden Prozessorleistung benötigen. Zudem darf im Durchschnitt während einer Partie nicht mehr als 1MBit/s an Netzwerkbandbreite benötigt werden um das Spiel ohne Einschränkungen nutzen zu können.}
+			{Eine ressourcenschonende Anwendung ist auch auf älteren Zielsystemen problemlos nutzbar.}
+			{-}
+			{-}
+			{Nutzer, Entwickler}
+	
+	\qanf 	{Kurze Ladezeiten}
+			{Systembedingte Ladezeiten der Software dürfen auf einem aktuellen Computer eine Sekunde pro geladener Ansicht nicht überschreiten.}
+			{Bei längeren Ladezeiten ist das Benutzererlebnis massiv beeinträchtigt.}
+			{-}
+			{-+}
+			{Nutzer, Entwickler}
+    
 \end{document}
