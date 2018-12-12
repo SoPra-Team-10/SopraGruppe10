@@ -4,6 +4,7 @@
 
 # Fertige PDFs
  * [Meilenstein01.pdf](https://SoPra-Team-10.github.io/Uebungsblaetter/Meilenstein01.pdf)
+ * [Meilenstein02.pdf](https://SoPra-Team-10.github.io/Uebungsblaetter/Meilenstein02.pdf)
 
 # Build Dependencies
  * Graphviz-Dot
