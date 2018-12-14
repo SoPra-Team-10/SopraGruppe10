@@ -101,13 +101,8 @@ bibtotoc,              % LV im IV
     \tableofcontents
     \pagebreak
 
-    \section{Anwendungsfälle}
-    \includepdf[pages=-]{images/AFD_Client.pdf}
-    \includepdf[pages=-]{images/AFD_Editor.pdf}
-    \includepdf[pages=-]{images/AFD_Party.pdf}
-    \includepdf[pages=-]{images/Client_SM.pdf}
-    \section{Abläufe im System}
-    \subsection{Diagramm 1}
-    \subsection{Diagramm 2}
-    %TODO
+    \includepdf[pages=-, scale=0.8, pagecommand={\section{Anwendungsfälle}\subsection{Client}}]{images/AFD_Client.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Editor}}]{images/AFD_Editor.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Partie}}]{images/AFD_Party.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\section{Abläufe im System}\subsection{State-Machine Client}}]{images/Client_SM.pdf}
 \end{document}
