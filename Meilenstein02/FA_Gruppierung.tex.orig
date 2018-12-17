@@ -27,6 +27,7 @@ FA55,
 FA61
 
 \subsubsection{Spiel spielen}
+<<<<<<< HEAD
 FA14, 
 FA15, 
 FA16, 
@@ -37,15 +38,35 @@ FA20,
 FA55, 
 FA67,
 FA68, 
-FA69,
-FA73 
+FA69
 
+=======
+\begin{itemize} 
+	\item FA14 
+	\item FA15 
+	\item FA16 
+	\item FA17 
+	\item FA18 
+	\item FA19 
+	\item FA20 
+	\item FA55 
+	\item FA67
+	\item FA68 
+	\item FA69 
+\end{itemize}
+\subsubsection{Schwierigkeit einstellen}
+\begin{itemize} 
+	\item FA73 
+\end{itemize}
 \subsubsection{Serverkonfiguration einstellen}
-FA74 
-
+\begin{itemize} 
+	\item FA74 
+\end{itemize}
 \subsubsection{Team-Konfiguration laden}
-FA75 
-
+\begin{itemize} 
+	\item FA75 
+\end{itemize}
+>>>>>>> d8acfce9f502505da01c0d3a78cbef82d8a8bd2e
 \subsubsection{Konfiguration erstellen}
 FA14,
 FA15, 
