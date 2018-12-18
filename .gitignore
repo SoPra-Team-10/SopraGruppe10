@@ -10,6 +10,7 @@
 *.out
 *.run.xml
 *.toc
+*.orig
 
 
 ### Eclipse ###
