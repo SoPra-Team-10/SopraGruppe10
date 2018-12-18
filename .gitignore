@@ -4,6 +4,7 @@
 *.fls
 *.log
 *.pdf
+!main.pdf
 *.texpadtmp
 *.bib
 *.out
