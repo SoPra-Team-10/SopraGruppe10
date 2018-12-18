@@ -101,10 +101,28 @@ bibtotoc,              % LV im IV
     \tableofcontents
     \pagebreak
 
-    \section{Anwendungsfälle}
-    %TODO
-    \section{Abläufe im System}
-    \subsection{Diagramm 1}
-    \subsection{Diagramm 2}
-    %TODO
+    \includepdf[pages=-, scale=0.8, pagecommand={\section{Anwendungsfälle}\subsection{Client}Anwendungsfälle der Client-Anwendung. Der Anwendungsfall \glqq{}Spiel spielen\grqq{} wird unter \ref{ssec:Partie}~ konkretisiert. Hinweis: Der zweite Akteur wurde nur aus Übersichtlichkeitsgründen hinzugefügt und stellt keinen zweiten Nutzer dar.}]{images/AFD_Client.pdf}
+
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{KI-Client}Anwendungsfälle des KI-Clients. Diese Anwendung verbindet sich mit einem Server und simuliert mithilfe einer zuvor konfigurierten KI einen menschlichen Gegenspieler. Der Anwendungsfall \glqq{}Spiel spielen\grqq{} wird unter \ref{ssec:Partie}~ konkretisiert.}]{images/AFD_KIClient.pdf}
+
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Editor}Anwendungsfälle der Editor-Anwendung. Der zweite Akteur wurde nur aus Übersichtlichkeitsgründen hinzugefügt und stellt keinen zweiten Nutzer dar.}]{images/AFD_Editor.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Partie}\label{ssec:Partie}Mögliche Anwendungsfälle, die während einer Partie auftreten. Die Runde stellt einen abstrakten Anwendungsfall dar, der sich aus den einzelenen Phasen einer Runde zusammensetzt.}]{images/AFD_Party.pdf}
+
+
+	\input{FA_Gruppierung.tex}
+    \includepdf[pages=-, scale=0.8, pagecommand={\section{Abläufe im System}\subsection{State-Machine Clientanwendung} Zustandsdiagramm für die verschiedenen Ansichten der Client-Anwendung.}]{images/Client_SM.pdf}
+
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{State-Machine Partie Server} Zustandsdiagramm des Servers für eine komplette Partie, inklusive Anmeldung der Spieler und eventuelle Verbindungsabbrüche.}]{images/SM_Server.pdf}
+
+    \includepdf[pages=-, scale=0.9, pagecommand={\subsection{State-Machine Partie Client}Zustandsdiagramm der Client-Anwendung für eine komplette Partie.}]{images/SM_ClientAnmelden.pdf}
+
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Sequenzdiagramm Spielaufstellung}Kommunikation zwischen Spieler und Server während der Spielaufstellungsphase.}]{images/SD_Spielaufstellung.pdf}
+
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Sequenzdiagramm Spielvorbereitung}Nachrichtenaustausch zwischen Server und den Spielern während der Vorbereitung auf die Partie.}]{images/SD_Spielvorbereitung.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{State-Machine Rundenablauf}}]{images/SM_Rundenablauf.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Sequenzdiagramm Ballphase}}]{images/SD_Ballphase.pdf}
+    \includepdf[pages=-, scale=0.65, pagecommand={\subsection{Sequenzdiagramm Spielerphase}}]{images/SD_Spielerphase.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Sequenzdiagramm Fanphase}}]{images/SD_Fanphase.pdf}
+    \includepdf[pages=-, scale=0.7, pagecommand={\subsection{State-Machine Überlängenbehandlung}}]{images/SM_Ueberlaenge.pdf}
+    \includepdf[pages=-, scale=0.7, pagecommand={\subsection{Sequenzdiagramm Gast}}]{images/SD_Gast.pdf}
 \end{document}
