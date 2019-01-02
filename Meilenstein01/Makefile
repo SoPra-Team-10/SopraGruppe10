@@ -2,7 +2,7 @@ LATEXMK=latexmk
 DOT=dot
 
 all: domaenenmodell.pdf
-	$(LATEXMK) -pdf main.tex
+	$(LATEXMK) -pdf -silent main.tex
 
 domaenenmodell.pdf: domaenenmodell.dot
 	$(DOT) -Tpdf -o domaenenmodell.pdf domaenenmodell.dot
