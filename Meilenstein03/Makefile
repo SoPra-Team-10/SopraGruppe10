@@ -2,7 +2,7 @@ LATEXMK=latexmk
 DOT=dot
 
 all: 
-	$(LATEXMK) -pdf -silent main.tex
+	$(LATEXMK) -pdf main.tex
 
 clean:
 	$(LATEXMK) -c
