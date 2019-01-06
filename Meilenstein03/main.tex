@@ -109,11 +109,11 @@ bibtotoc,              % LV im IV
 	
 	\subsubsection{Schnittstellenarten}
 	
-	Als Benutzerschnittstelle wird, wie im Lastenheft vorgeschrieben, eine GUI verwendet. \textbf{Begründung:} Der Nutzer möchte alle Informationen zu einer gegebenen Konfiguration übersichtlich dargestellt bekommen und anhand dieser Darstellung direkt Änderungen vornehmen können. Hierfür ist eine GUI die intuitivste und sinnvollste Variante, da eine grafische Darstellung eine übersichtliche Visualisierung erlaubt und eine Änderung direkt anhand dieser Visualisierung möglich ist. Zudem kann auf diese Weise die Komponente reibungslos in die Client-Anwendung integriert werden, was ebenfalls im Interesse des Nutzers ist.
+	Als Benutzerschnittstelle wird, wie im Lastenheft vorgeschrieben, eine GUI verwendet. \textbf{Begründung:} Der Nutzer möchte alle Informationen zu einer gegebenen Konfiguration übersichtlich dargestellt bekommen und anhand dieser Darstellung direkt Änderungen vornehmen können. Hierfür ist eine GUI die intuitivste und sinnvollste Variante, da eine grafische Darstellung eine übersichtliche Visualisierung erlaubt und eine Änderung direkt anhand dieser Visualisierung möglich ist. Zudem könnte auf diese Weise die Komponente reibungslos in die Client-Anwendung integriert werden, falls man zu einem späteren Zeitpunkt den Konfigurator im Menü der Client-Anwendung direkt aufrufen möchte.
 	
 	\subsubsection{Dialoge}
 	
-	Im Folgenden werden den bereits formulierten Anforderungen und Anwendungsfällen der Komponente den entsprechenden Dialogen zugeordnet.
+	Im Folgenden werden die bereits formulierten Anforderungen und Anwendungsfälle der Komponente den entsprechenden Dialogen zugeordnet.
 	
 	\begin{tabular}{| l l l l |}
 	\hline
@@ -163,7 +163,7 @@ bibtotoc,              % LV im IV
 	
 	\includegraphics[scale=0.4]{images/teamkonfigurator}
 	
-	Im Teamkonfigurator können alle Paramter eines Teams eingestellt werden. Team- und Spielernamen lassen sich durch ein Textfeld bearbeiten. Teamfarben sind über eine Farbauswahl einstellbar. Das Teamlogo lässt sich aus einer Liste vorhandener Logos auswählen. Fans sowie Besen der Spieler sind über eine Dropdown-Auswahl einstellbar. Das Geschlecht der Spieler lässt sich über Radio-Buttons einstellen. Bei jeder Änderung werden die entsprechenden Bedingungen für eine gültige Konfiguration geprüft und der Nutzer erhält visuelles Feedback (z. B. in Form von roter Schriftfarbe in den entsprechenden Feldern). Über den Button \textit{Abbrechen} lässt sich der Konfigurator jederzeit verlassen. Ist eine gültige Auswahl eingestellt, kann die Konfiguration über \textit{Speichern} in einem separaten Speicherdialog persistiert werden.
+	Im Teamkonfigurator können alle Paramter eines Teams eingestellt werden. Team- und Spielernamen lassen sich durch ein Textfeld bearbeiten. Teamfarben sind über eine Farbauswahl einstellbar. Das Teamlogo lässt sich aus einer Liste vorhandener Logos auswählen. Die Kästen mit den Kreuzen dienen als Platzhalter für Icons, die die verschiedenen Fans und Spieler darstellen und somit unterscheidbar machen. Fans sowie Besen der Spieler sind über eine Dropdown-Auswahl einstellbar. Das Geschlecht der Spieler lässt sich über Radio-Buttons einstellen. Bei jeder Änderung werden die entsprechenden Bedingungen für eine gültige Konfiguration geprüft und der Nutzer erhält visuelles Feedback (z. B. in Form von roter Schriftfarbe in den entsprechenden Feldern). Über den Button \textit{Abbrechen} lässt sich der Konfigurator jederzeit verlassen. Ist eine gültige Auswahl eingestellt, kann die Konfiguration über \textit{Speichern} in einem separaten Speicherdialog persistiert werden.
 	
 	\subsubsection{Team bzw. Partiekonfiguration speichern}
 	
@@ -183,21 +183,21 @@ bibtotoc,              % LV im IV
 	
 	\includegraphics[scale=0.2]{images/konfiguration_ungueltig}
 	
-	Wurde versucht eine Konfiguration mit ungültigen Parametern zu speichern oder trat beim Speichervorgang irgendein anderer Fehler auf, wird der Nutzer über dieses Popup darüber informiert. Der \textit{Ok}-Button führt zurück zum entsprechenden Dialog.
+	Wurde versucht eine Konfiguration mit ungültigen Parametern zu speichern oder trat beim Speichervorgang irgendein anderer Fehler auf, wird der Nutzer über dieses Popup darüber informiert. Der \textit{Ok}-Button des Popupus führt zurück zum entsprechenden Dialog.
 	
-	\subsubsection{Teammenü}
+	\subsubsection{Partiemenü}
 	
 	\includegraphics[scale=0.2]{images/partiemenue}
 	
 	Über das Partiemenü kann eine Auswahl zwischen dem Laden und dem Erstellen einer Partiekonfiguration getroffen werden. Das erfolgt über die entsprechenden Buttons. Über den Button \textit{Verlassen} kann das \texit{Partiemenü} verlassen werden.
 	
-	\subsubsection{Teamkonfigurator}
+	\subsubsection{Partiekonfigurator}
 	
 	\includegraphics[scale=0.4]{images/partiekonfigurator}
 	
-	Im Partiekonfigurator können alle Paramter für eine gültige Teamkonfigurationsdatei eingestellt werden. Dazu gehören unter anderem die Rundenzahl, bis Überlänge erreicht ist, die Zeitspannen für die jeweiligen Spielaktionen und Ereigniswahrscheinlichkeiten. Je nach Art des Parameteres sind Spinner, Slider, Textfelder oder im weiteren Verlauf der Implementierung noch andere Auswahlelemente vorhanden.
+	Im Partiekonfigurator können alle Paramter für eine gültige Partiekonfigurationsdatei eingestellt werden. Dazu gehören unter anderem die Rundenzahl, bis Überlänge erreicht ist, die Zeitspannen für die jeweiligen Spielaktionen und Ereigniswahrscheinlichkeiten. Je nach Art des Parameteres sind Spinner, Slider, Textfelder oder im weiteren Verlauf der Implementierung noch andere Auswahlelemente vorhanden.
 	
-	Über den Button \textit{Speichern} gelangt man in den \textit{Partiekonfiguration speichern}-Dialog. Der Button \textit{Abbrechen} führt zurück ins \textit{Teammenü}.
+	Über den Button \textit{Speichern} gelangt man in den \textit{Partiekonfiguration speichern}-Dialog. Der Button \textit{Abbrechen} führt zurück ins \textit{Partiemenü}.
 	
    
 \end{document}
