@@ -1,0 +1,26 @@
+\subsection{Server}
+Diese Komponente stellt den Server dar. Er hostet Spiele und enthält die Spiellogik. Zu Beginn wird er einmalig vom Systemadministrator gestartet und steht anschließend den Spielern von \textit{Fantastic Feasts} zur Verfügung.
+
+\subsubsection{Schnittstellenarten}
+Als Benutzerschnittstelle wird ein CLI verwendet. \textbf{Begründung:} Der Nutzer kommt mit dieser Komponente über keine Benutzerschnittstelle in Berührung. Deswegen spielen Look and Feel prinzipiell keine Rolle. Die Funktionalität und Praktikabilität stehen im Mittelpunkt. Da der Systemadministrator in der Lage sein sollte, eine Konsole zu bedienen und dies unter Umständen auch vorzieht, besteht von dieser Seite keine Einschränkung. Zudem sind die Interaktionsmöglichkeiten mit dem Server begrenzt – es werden nur wenige Parameter benötigt – was zusätzlich für die Einfachheit einer CLI spricht.
+
+\subsubsection{Dialoge}
+Im Folgenden wird die Anforderung an den Server einem CLI-Dialog zugeordnet.
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{| l l l l |}
+    \hline
+    \textbf{Name} & \textbf{Typ} & \multicolumn{2}{l|}{\textbf{Abgedeckte Anwendungsfälle}} \\\hline
+    ffServerInit & CLI Befehl mit Params & FA74 & Serverkonfiguration einstellen \\\hline
+    ffServerRunning & Response & FA74 & Serverkonfiguration Feedback.\\\hline
+    ffServerError & Response & FA74 & Serverkonfiguration Feedback.\\\hline
+    
+    \end{tabular}
+\end{figure}
+
+\subsubsection{Dialogstrukturdiagramme}  
+Da es sich um eine einfache Bedienung in der Konsole handelt, ist ein Dialogstrukturdiagramm nicht sinnvoll. Prinzipiell kann die Struktur aber wie folgt beschrieben werden: \textbf{ffServerInit:} Der Server lässt sich in der Konsole mit dem Namen der Server-Anwendung und zwei Parametern aufrufen. Der erste Parameter ist die Port-Nummer, über die der Server erreichbar ist. Im zweiten Parameter kann eine gültige Partiekonfigurationsdatei angegeben werden. Darauf gibt es zwei mögliches Antworten. \textbf{ffServerRunning:} War die Initialisierung erfolgreich antwortet der Server mit einer entsprechenden Nachricht in der u. a. die wichtigsten Parameter zusammengefasst werden. \textbf{ffServerEerror:} Im Falle eines Fehlers bei der Initialisierung wird mit einer Fehlernachricht geantwortet.
+
+
+
