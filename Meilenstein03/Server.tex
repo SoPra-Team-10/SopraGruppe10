@@ -2,7 +2,7 @@
 Diese Komponente stellt den Server dar. Er hostet Spiele und enthält die Spiellogik. Zu Beginn wird er einmalig vom Systemadministrator gestartet und steht anschließend den Spielern von \textit{Fantastic Feasts} zur Verfügung.
 
 \subsubsection{Schnittstellenarten}
-Als Benutzerschnittstelle wird ein CLI verwendet. \textbf{Begründung:} Der Nutzer kommt mit dieser Komponente über keine Benutzerschnittstelle in Berührung. Deswegen spielen Look and Feel prinzipiell keine Rolle. Die Funktionalität und Praktikabilität stehen im Mittelpunkt. Da der Systemadministrator in der Lage sein sollte, eine Konsole zu bedienen und dies unter Umständen auch vorzieht, besteht von dieser Seite keine Einschränkung. Zudem sind die Interaktionsmöglichkeiten mit dem Server begrenzt – es werden nur wenige Parameter benötigt – was zusätzlich für die Einfachheit einer CLI spricht.
+Als Benutzerschnittstelle wird ein CLI verwendet. \textbf{Begründung:} Der Nutzer kommt mit dieser Komponente über keine Benutzerschnittstelle in Berührung. Deswegen spielen Look and Feel keine Rolle. Zusätzlich wird der Server nur einmal mit wenigen Parametern gestartet, benötigt zur Laufzeit dann keine weiteren Eingaben und muss auch keinerlei graphische Ausgabe zur Verfügun stellen, weswegen das CLI aureicht.
 
 \subsubsection{Dialoge}
 Im Folgenden wird die Anforderung an den Server einem CLI-Dialog zugeordnet.
@@ -19,8 +19,8 @@ Im Folgenden wird die Anforderung an den Server einem CLI-Dialog zugeordnet.
     \end{tabular}
 \end{figure}
 
-\subsubsection{Dialogstrukturdiagramme}  
-Da es sich um eine einfache Bedienung in der Konsole handelt, ist ein Dialogstrukturdiagramm nicht sinnvoll. Prinzipiell kann die Struktur aber wie folgt beschrieben werden: \textbf{ServerInit:} Der Server lässt sich in der Konsole mit dem Namen der Server-Anwendung und zwei Parametern aufrufen. Der erste Parameter ist die Port-Nummer, über die der Server erreichbar ist. Im zweiten Parameter kann eine gültige Partiekonfigurationsdatei angegeben werden. Darauf gibt es zwei mögliches Antworten. \textbf{ServerRunning:} War die Initialisierung erfolgreich antwortet der Server mit einer entsprechenden Nachricht in der u. a. die wichtigsten Parameter zusammengefasst werden. \textbf{ServerEerror:} Im Falle eines Fehlers bei der Initialisierung wird mit einer Fehlernachricht geantwortet.
+\subsubsection{Dialogstruktur}  
+Die Dialogstruktur des Servers lässt sich wie folgt beschreiben: \textbf{ServerInit:} Der Server lässt sich in der Konsole mit dem Namen der Server-Anwendung und zwei Parametern aufrufen. Der erste Parameter ist die Port-Nummer, über die der Server erreichbar ist. Im zweiten Parameter kann eine gültige Partiekonfigurationsdatei angegeben werden. Darauf gibt es zwei mögliches Antworten. \textbf{ServerRunning:} War die Initialisierung erfolgreich antwortet der Server mit einer entsprechenden Nachricht in der u. a. die wichtigsten Parameter zusammengefasst werden. \textbf{ServerEerror:} Im Falle eines Fehlers bei der Initialisierung wird mit einer Fehlernachricht geantwortet.
 
 
 
