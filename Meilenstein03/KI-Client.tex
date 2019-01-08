@@ -1,0 +1,22 @@
+Der KI-Client wird über die Kommandozeile gestartet. Serverkonfiguration, Team-Konfiguration und der Schwierigkeitsgrad werden beim Start der Anwendung mittels Kommandozeilenparametern gehandhabt. Der Server, mit dem sich der KI-Client verbinden soll wird als Argument übergeben. Die Team-Konfiguration und der Schwierigkeitsgrad können mittels Optionen verändert werden und nehmen ansonsten einen Standardwert an.\\
+Es besteht kein Grund, für diese Komponente eine grafische Oberfläche bereitzustellen, da die Anwendung zur Laufzeit keine Eingabe von einem menschlichen Benutzer erwartet und eine Partie mittels des Clients verfolgt werden kann. \\
+Für eine Kommandozeilenanwendung ist es einfacher, Plattformunabhängigkeit sicherzustellen. Außerdem wird es damit problemlos möglich, dass eine anderes Programm den KI-Client aufruft. Beispielsweise kann dem Client eine Funktion zugefügt werden, gegen die KI zu spielen, ohne dass der Benutzer den KI-Client extern starten muss.\\
+Der KI-Client beendet sich von selbst nach Abschluss einer Partie durch ein reguläres Spielende oder Verbindungsabbruch.\\
+
+\subsubsection{Zulässige Optionen:}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{|p{2cm}|p{12cm} |}
+        \hline
+        Flag & Erklärung \\\hline
+        -s & Legt den Schwierigkeitsgrad fest.\\
+        & Akzeptiert eine ganze Zahl zwischen 0 und 2, wobei 0 für einfach,\\
+        & 1 für mittelschwer und 2 für schwer steht.\\
+        & Bei einer ungültigen Eingabe wird eine Fehlermeldung ausgegeben.\\\hline
+        -t & Legt die Team-Konfiguration fest,\\
+        & Akzeptiert einen String als Pfad zu einer JSON-Datei.\\
+        & Existiert der angegebene Pfad nicht oder ist die Datei keine gültige Konfigurationsdatei,\\
+        & wird eine entsprechende Fehlermeldung ausgegeben.\\\hline
+        --help & Zeigt eine Liste möglicher Optionen an.\\\hline
+    \end{tabular}
+\end{figure}
