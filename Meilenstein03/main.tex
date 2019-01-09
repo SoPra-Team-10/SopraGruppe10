@@ -25,6 +25,7 @@ bibtotoc,              % LV im IV
 \usepackage{multirow}
 \usepackage[final]{pdfpages}
 \usepackage{blindtext}
+\usepackage{listings}
 \usepackage[scaled]{helvet}
 \usepackage{hyperref}
 \usepackage{comment}
@@ -45,7 +46,7 @@ bibtotoc,              % LV im IV
 
 \newcommand{\fullname}{Gruppe 10}
 \newcommand{\titel}{Softwaregrundprojekt Meilenstein 3}
-\newcommand{\jahr}{2018}
+\newcommand{\jahr}{2019}
 \newcommand{\dozent}{Florian Ege}
 \newcommand{\betreuer}{Stefanos Mytilineos}
 \newcommand{\fakultaet}{Ingenieurwissenschaften, Informatik und\\Psychologie}
@@ -103,13 +104,16 @@ bibtotoc,              % LV im IV
   
     \section{Schnittstellenarten, Dialoge und Dialogstruktur}
     \input{MainClientStruktur.tex}
-	\section{Grafische Gestaltung und Nutzungskonzept}
-    \input{MainClientDesign.tex}	
-    
     \subsection{Server}
-    %TODO: Dialogstruktur Server
+    \input{Server}
     \subsection{Team-Editor}
-    %TODO Dialogstruktur Editor
+    \input{DialogStrukturKonfigurator}
     \subsection{KI-Client}
     \input{KI-Client.tex}
+    
+	\section{Grafische Gestaltung und Nutzungskonzept}
+    \input{MainClientDesign.tex}	
+	\section{Grafische Gestaltung und Nutzungskonzept}
+    \input{GraphischeGestaltungKonfigurator}	
+    \input{GraphischeGestaltungServer}	
 \end{document}

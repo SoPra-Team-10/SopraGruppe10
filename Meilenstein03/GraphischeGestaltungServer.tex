@@ -1,0 +1,24 @@
+\subsection{Server}
+	\subsubsection{ServerInit}
+	\lstset{language=bash} 
+	\begin{lstlisting}[frame=single]
+  	$ server 1230 standard_partie.json
+  	... pending
+	\end{lstlisting}
+	Das Beispiel für einen Aufruf des Servers mit entsprechenden Parametern dar. Mit dem ersten Parameter wird eine Port-Nummer angegeben. Mit dem zweiten Parameter wird eine gültige Partiekonfiguration übergeben.
+	
+	\subsubsection{ServerRunning}
+	\lstset{language=bash} 
+	\begin{lstlisting}[frame=single]
+  	Fantastic Feasts server is running on Port 1230 ...
+	\end{lstlisting}
+	Im Falle einer erfolgreichen Initialisierung wird dies dem Systemadministrator über diese Nachricht mitgeteilt. In dieser Nachricht können weitere Informationen über den initialisierten Server verpackt werden.
+	
+	\subsubsection{ServerError}
+	\lstset{language=bash} 
+	\begin{lstlisting}[frame=single]
+  	Error: Initialization failed
+	\end{lstlisting}
+	Im Falle eines Fehlers bei der Initialisierung wird der Systemadministrator mit dieser Fehlermeldung benachrichtigt.
+
+
