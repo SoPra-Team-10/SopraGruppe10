@@ -1,0 +1,9 @@
+Eure Anwendungsfälle sind gut durchdacht und sehr übersichtlich, das gefällt mir sehr.
+Was man bei euren Anwendungsfalldiagrammen (mit ausnahme von 1.4) nicht "herauslesen" kann, sind die Beziehungen eures/r Systems/Komponente
+mit anderen Systemen/Komponenten. Man könnte zum Beispiel im Diagramm für die Editor-Anwendung den Server als Akteur hinzufügen
+und den Anwendungsfall des "Ladens der Konfiguration" erstellen. Es gibt hier jede Menge weitere Möglichkeiten dieses Prinzip anzuwenden.
+Da ihr aber in 1.4 daran gedacht habt empfinde ich das aber nicht als Fehler.
+
+Die Ablaufdiagramme sind 1a, nichts zu meckern. Sehr übersichtlich und nicht zu viel unnötige Informationen.
+
+Ihr bekommt von mir ein ++
