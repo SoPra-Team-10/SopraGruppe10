@@ -101,11 +101,22 @@ bibtotoc,              % LV im IV
     \pagebreak
     \tableofcontents
     \pagebreak
-    
+  
     \section{Schnittstellenarten, Dialoge und Dialogstruktur}
-    \input{DialogStrukturKonfigurator}
+    \subsection{Client}
+    \input{MainClientStruktur.tex}
+    \subsection{Server}
     \input{Server}
+    \subsection{Team- und Partiekonfigurator}
+    \input{DialogStrukturKonfigurator}
+    \subsection{KI-Client}
+    \input{KI-Client.tex}
+    
 	\section{Grafische Gestaltung und Nutzungskonzept}
-    \input{GraphischeGestaltungKonfigurator}	
+    \subsection{Client}
+    \input{MainClientDesign.tex}	
+    \subsection{Server}
     \input{GraphischeGestaltungServer}	
+    \subsection{Team- und Partiekonfiguraton}
+    \input{GraphischeGestaltungKonfigurator}	
 \end{document}
