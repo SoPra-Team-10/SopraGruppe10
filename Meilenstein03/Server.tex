@@ -20,7 +20,16 @@ Im Folgenden wird die Anforderung an den Server einem CLI-Dialog zugeordnet.
 \end{figure}
 
 \subsubsection{Dialogstruktur}  
-Die Dialogstruktur des Servers lässt sich wie folgt beschreiben: \textbf{ServerInit:} Der Server lässt sich in der Konsole mit dem Namen der Server-Anwendung und zwei Parametern aufrufen. Der erste Parameter ist die Port-Nummer, über die der Server erreichbar ist. Im zweiten Parameter kann eine gültige Partiekonfigurationsdatei angegeben werden. Darauf gibt es zwei mögliches Antworten. \textbf{ServerRunning:} War die Initialisierung erfolgreich antwortet der Server mit einer entsprechenden Nachricht in der u. a. die wichtigsten Parameter zusammengefasst werden. \textbf{ServerEerror:} Im Falle eines Fehlers bei der Initialisierung wird mit einer Fehlernachricht geantwortet.
-
-
+Die Dialogstruktur des Servers lässt sich wie folgt beschreiben: \textbf{ServerInit:} Der Server lässt sich in der Konsole mit dem Namen der Server-Anwendung, dem Namen einer gültigen Partie-Konfiguration und einem Parameter aufrufen. Der Parameter ist die Port-Nummer, über die der Server erreichbar ist. Darauf gibt es zwei mögliches Antworten. \textbf{ServerRunning:} War die Initialisierung erfolgreich antwortet der Server mit einer entsprechenden Nachricht. \textbf{ServerEerror:} Im Falle eines Fehlers bei der Initialisierung wird mit einer Fehlernachricht geantwortet.
+\subsubsection{Zulässige Optionen}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{|p{2cm}|p{12cm} |}
+        \hline
+        Flag & Erklärung \\\hline
+        -p & Legt die Portnummer fest.\\
+        \hline
+        -{}-help & Zeigt eine Liste möglicher Optionen an.\\\hline
+    \end{tabular}
+\end{figure}
 
