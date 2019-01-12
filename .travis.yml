@@ -3,14 +3,7 @@ dist: trusty
 before_install:
     - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended latexmk texlive-lang-german texlive-doc-de pgf texlive-font-utils zip inkscape texlive-math-extra graphviz make git openssh-client figlet
       
-addons:
-  #sonarcloud:
-  #  organization: "sopra-team-10" # the key of the org you chose at step #3
-  #  token:
-  #    secure: $SONAR_TOKEN # encrypted value of your token
-
 script:
-    #- sonar-scanner
     - mkdir output
     - cd Meilenstein01
     - make
@@ -23,6 +16,9 @@ script:
     - cd Meilenstein03
     - make
     - mv main.pdf ../output/Meilenstein03.pdf
+    - cd ..
+    - make
+    - mv main.pdf ../output/Meilenstein04.pdf
     - cd ..
 
 notifications:

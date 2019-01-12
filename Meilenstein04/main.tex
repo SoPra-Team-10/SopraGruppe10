@@ -25,6 +25,7 @@ bibtotoc,              % LV im IV
 \usepackage{multirow}
 \usepackage[final]{pdfpages}
 \usepackage{blindtext}
+\usepackage{listings}
 \usepackage[scaled]{helvet}
 \usepackage{hyperref}
 \usepackage{comment}
@@ -44,8 +45,8 @@ bibtotoc,              % LV im IV
 \setlength{\parskip}{1.4ex plus 0.35ex minus 0.3ex} % Absatzabstand, leicht variabel
 
 \newcommand{\fullname}{Gruppe 10}
-\newcommand{\titel}{Softwaregrundprojekt Meilenstein 1}
-\newcommand{\jahr}{2018}
+\newcommand{\titel}{Softwaregrundprojekt Meilenstein 4}
+\newcommand{\jahr}{2019}
 \newcommand{\dozent}{Florian Ege}
 \newcommand{\betreuer}{Stefanos Mytilineos}
 \newcommand{\fakultaet}{Ingenieurwissenschaften, Informatik und\\Psychologie}
@@ -70,78 +71,6 @@ bibtotoc,              % LV im IV
 % Trennungsregeln
 \hyphenation{Sil-ben-trenn-ung}
 
-
-\newcommand{\begriff}[7] {
-	\begin{table}[H]
-		\centering
-		\begin{tabular}{|p{2,5cm}|p{12cm}|}
-			%\hline
-			%\toprule \\
-			\hline
-			\textbf{Begriff} & \textbf{#1} \\ \hline
-			%\midrule \\
-			\textbf{Beschreibung} & #2 \\ \hline
-			%\midrule
-			\textbf{Ist-ein} & #3 \\ \hline
-			%\midrule
-			\textbf{Kann-sein} & #4 \\ \hline
-			%\midrule
-			\textbf{Aspekt} & #5 \\ \hline
-			%\midrule
-			\textbf{Bemerkung} & #6 \\ \hline
-			%\midrule
-			\textbf{Beispiel} & #7 \\ %\hline
-			%\bottomrule
-			\hline
-		\end{tabular}
-	\end{table}
-}
-
-\newcommand{\anf}[7] {
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{|p{3.2cm}|p{11.3cm}|}
-        	\hline
-            \textbf{ID:} & \textbf{#1} \\ \hline
-            \textbf{Titel:} & #2 \\ \hline
-            \textbf{Beschreibung:} & #3 \\ \hline
-            \textbf{Begründung:} & #4 \\ \hline
-            \textbf{Abhängigkeiten:} & #5 \\ \hline
-            \textbf{Priorität:} & #6 \\ \hline
-            \textbf{Akteure:} & #7 \\ \hline
-        \end{tabular}
-    \end{table}
-}
-
-\newcounter{fanfCount}
-\newcommand{\fanf}[6] {
-    \stepcounter{fanfCount}
-    \anf{FA\thefanfCount}{#1}{#2}{#3}{#4}{#5}{#6}
-}
-\newcounter{qanfCount}
-\newcommand{\qanf}[6] {
-    \stepcounter{qanfCount}
-    \anf{QA\theqanfCount}{#1}{#2}{#3}{#4}{#5}{#6}
-}
-
-\newcommand{\akt}[4] {
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{|p{3cm}|p{11.5cm}|}
-        	\hline
-            \textbf{ID:} & \textbf{#1} \\ \hline
-            \textbf{Titel:} & #2 \\ \hline
-            \textbf{Beschreibung:} & #3 \\ \hline
-            \textbf{Rolle:} & #4 \\ \hline
-        \end{tabular}
-    \end{table}
-}
-
-\newcounter{faktCount}
-\newcommand{\fakt}[3] {
-    \stepcounter{faktCount}
-    \akt{AKT\thefaktCount}{#1}{#2}{#3}
-}
 
 \begin{document}
     \thispagestyle{empty}
@@ -172,12 +101,5 @@ bibtotoc,              % LV im IV
     \pagebreak
     \tableofcontents
     \pagebreak
-
-    \section{Kontextanalyse}
-    \input{kontextanalyse.tex}
-    \section{Fachwissen}
-    \input{Aufgabe_2_Fachwissen.tex}
-    \includepdf[scale = 0.8, pagecommand={\section{Domänenmodell}}]{domaenenmodell.pdf}
-    \section{Anforderungsdefinition}
-    \input{Anforderungsdefinition.tex} 
+  
 \end{document}
