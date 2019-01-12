@@ -75,9 +75,9 @@ bibtotoc,              % LV im IV
     \thispagestyle{empty}
     \begin{addmargin*}[4mm]{-10mm}
 
-        \includegraphics[height=1.8cm]{images/unilogo_bild}
+        \includegraphics[height=1.8cm]{../Meilenstein02/images/unilogo_bild}
         \hfill
-        \includegraphics[height=1.8cm]{images/unilogo_wort}\\[1em]
+        \includegraphics[height=1.8cm]{../Meilenstein02/images/unilogo_wort}\\[1em]
 
         {\footnotesize
         %{\bfseries Universität Ulm} \textbar ~89069 Ulm \textbar ~Germany
@@ -101,28 +101,28 @@ bibtotoc,              % LV im IV
     \tableofcontents
     \pagebreak
 
-    \includepdf[pages=-, scale=0.8, pagecommand={\section{Anwendungsfälle}\subsection{Client}Anwendungsfälle der Client-Anwendung. Der Anwendungsfall \glqq{}Spiel spielen\grqq{} wird unter \ref{ssec:Partie}~ konkretisiert. Hinweis: Der zweite Akteur wurde nur aus Übersichtlichkeitsgründen hinzugefügt und stellt keinen zweiten Nutzer dar.}]{images/AFD_Client.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\section{Anwendungsfälle}\subsection{Client}Anwendungsfälle der Client-Anwendung. Der Anwendungsfall \glqq{}Spiel spielen\grqq{} wird unter \ref{ssec:Partie}~ konkretisiert. Hinweis: Der zweite Akteur wurde nur aus Übersichtlichkeitsgründen hinzugefügt und stellt keinen zweiten Nutzer dar.}]{../Meilenstein02/images/AFD_Client.pdf}
 
-    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{KI-Client}Anwendungsfälle des KI-Clients. Diese Anwendung verbindet sich mit einem Server und simuliert mithilfe einer zuvor konfigurierten KI einen menschlichen Gegenspieler. Der Anwendungsfall \glqq{}Spiel spielen\grqq{} wird unter \ref{ssec:Partie}~ konkretisiert.}]{images/AFD_KIClient.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{KI-Client}Anwendungsfälle des KI-Clients. Diese Anwendung verbindet sich mit einem Server und simuliert mithilfe einer zuvor konfigurierten KI einen menschlichen Gegenspieler. Der Anwendungsfall \glqq{}Spiel spielen\grqq{} wird unter \ref{ssec:Partie}~ konkretisiert.}]{../Meilenstein02/images/AFD_KIClient.pdf}
 
-    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Editor}Anwendungsfälle der Editor-Anwendung. Der zweite Akteur wurde nur aus Übersichtlichkeitsgründen hinzugefügt und stellt keinen zweiten Nutzer dar.}]{images/AFD_Editor.pdf}
-    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Partie}\label{ssec:Partie}Mögliche Anwendungsfälle, die während einer Partie auftreten. Die Runde stellt einen abstrakten Anwendungsfall dar, der sich aus den einzelenen Phasen einer Runde zusammensetzt.}]{images/AFD_Party.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Editor}Anwendungsfälle der Editor-Anwendung. Der zweite Akteur wurde nur aus Übersichtlichkeitsgründen hinzugefügt und stellt keinen zweiten Nutzer dar.}]{../Meilenstein02/images/AFD_Editor.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Partie}\label{ssec:Partie}Mögliche Anwendungsfälle, die während einer Partie auftreten. Die Runde stellt einen abstrakten Anwendungsfall dar, der sich aus den einzelenen Phasen einer Runde zusammensetzt.}]{../Meilenstein02/images/AFD_Party.pdf}
 
 
 	\input{FA_Gruppierung.tex}
-    \includepdf[pages=-, scale=0.8, pagecommand={\section{Abläufe im System}\subsection{State-Machine Clientanwendung} Zustandsdiagramm für die verschiedenen Ansichten der Client-Anwendung.}]{images/Client_SM.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\section{Abläufe im System}\subsection{State-Machine Clientanwendung} Zustandsdiagramm für die verschiedenen Ansichten der Client-Anwendung.}]{../Meilenstein02/images/Client_SM.pdf}
 
-    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{State-Machine Partie Server} Zustandsdiagramm des Servers für eine komplette Partie, inklusive Anmeldung der Spieler und eventuelle Verbindungsabbrüche.}]{images/SM_Server.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{State-Machine Partie Server} Zustandsdiagramm des Servers für eine komplette Partie, inklusive Anmeldung der Spieler und eventuelle Verbindungsabbrüche.}]{../Meilenstein02/images/SM_Server.pdf}
 
-    \includepdf[pages=-, scale=0.9, pagecommand={\subsection{State-Machine Partie Client}Zustandsdiagramm der Client-Anwendung für eine komplette Partie.}]{images/SM_ClientAnmelden.pdf}
+    \includepdf[pages=-, scale=0.9, pagecommand={\subsection{State-Machine Partie Client}Zustandsdiagramm der Client-Anwendung für eine komplette Partie.}]{../Meilenstein02/images/SM_ClientAnmelden.pdf}
 
-    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Sequenzdiagramm Spielaufstellung}Kommunikation zwischen Spieler und Server während der Spielaufstellungsphase.}]{images/SD_Spielaufstellung.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Sequenzdiagramm Spielaufstellung}Kommunikation zwischen Spieler und Server während der Spielaufstellungsphase.}]{../Meilenstein02/images/SD_Spielaufstellung.pdf}
 
-    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Sequenzdiagramm Spielvorbereitung}Nachrichtenaustausch zwischen Server und den Spielern während der Vorbereitung auf die Partie.}]{images/SD_Spielvorbereitung.pdf}
-    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{State-Machine Rundenablauf}}]{images/SM_Rundenablauf.pdf}
-    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Sequenzdiagramm Ballphase}}]{images/SD_Ballphase.pdf}
-    \includepdf[pages=-, scale=0.65, pagecommand={\subsection{Sequenzdiagramm Spielerphase}}]{images/SD_Spielerphase.pdf}
-    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Sequenzdiagramm Fanphase}}]{images/SD_Fanphase.pdf}
-    \includepdf[pages=-, scale=0.7, pagecommand={\subsection{State-Machine Überlängenbehandlung}}]{images/SM_Ueberlaenge.pdf}
-    \includepdf[pages=-, scale=0.7, pagecommand={\subsection{Sequenzdiagramm Gast}}]{images/SD_Gast.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Sequenzdiagramm Spielvorbereitung}Nachrichtenaustausch zwischen Server und den Spielern während der Vorbereitung auf die Partie.}]{../Meilenstein02/images/SD_Spielvorbereitung.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{State-Machine Rundenablauf}}]{../Meilenstein02/images/SM_Rundenablauf.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Sequenzdiagramm Ballphase}}]{../Meilenstein02/images/SD_Ballphase.pdf}
+    \includepdf[pages=-, scale=0.65, pagecommand={\subsection{Sequenzdiagramm Spielerphase}}]{../Meilenstein02/images/SD_Spielerphase.pdf}
+    \includepdf[pages=-, scale=0.8, pagecommand={\subsection{Sequenzdiagramm Fanphase}}]{../Meilenstein02/images/SD_Fanphase.pdf}
+    \includepdf[pages=-, scale=0.7, pagecommand={\subsection{State-Machine Überlängenbehandlung}}]{../Meilenstein02/images/SM_Ueberlaenge.pdf}
+    \includepdf[pages=-, scale=0.7, pagecommand={\subsection{Sequenzdiagramm Gast}}]{../Meilenstein02/images/SD_Gast.pdf}
 \end{document}
