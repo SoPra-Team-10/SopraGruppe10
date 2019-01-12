@@ -1,0 +1,148 @@
+\subsection{Nicht funktionale Anforderungen}
+
+\qanf 	{Plattformunabhängigkeit}
+        {Der Client und der Team-Konfigurator soll auf mindestens einer gängigen Computerbetriebssystem-Plattform (z.B. Linux, Windows) uneingeschränkt benutzbar sein. Des weiteren soll die Serveranwendung und der KI-Client auf mindestens zwei gängigen Computerbetriebssystem-Plattformen (z.B. Linux, Windows) uneingeschränkt benutzbar sein.}
+        {Die Plattformunabhängigkeit ist von großer Bedeutung, da die Anwendungen auf möglichst vielen Zielsystemen funktionieren sollen um die Menge an Endnutzer so wenig wie möglich einzuschränken.}
+        {Programmiersprache, Docker-Container}
+        {+}
+        {Nutzer, Entwickler}
+
+\qanf 	{Version-Controlling}
+        {Beim Verwalten des Quellcodes soll ein Git basiertes Version-Controlling Werkzeug (\textit{GitHub / GitLab}) verwendet werden.}
+        {Durch das Verwenden eines Versionierungswerkzeuges wird das zusammenarbeiten unterschiedlicher Entwickler erleichtert, da das zusammenführen des Codes größtenteils automatisiert abläuft.}
+        {-}
+        {++}
+        {Entwickler}
+
+\qanf 	{Continuous Integration}
+        {Jeder gepushte Commit soll automatisch mit Hilfe der CI Unit-Tests und der Statischen Codeanalyse unterzogen werden. Zudem soll eine automatisierte Code Dokumentation angestoßen werden. Bei erfolgreichem Abschließen aller Tests soll zum Schluss der aktuelle Stand deployed werden.}
+        {Die CI nimmt den Entwicklern Arbeit ab und kann dazu beitragen, dass Fehler frühzeitig erkannt und behoben werden können.}
+        {Version-Controlling}
+        {0}
+        {Entwickler}
+
+\qanf 	{Statische Codeanalyse}
+        {Mit Hilfe des Tools 'SonarQube' bzw. 'SonarCloud' soll der gesamt Quellcode einer statischen Analyse unterzogen werden. Dabei darf die technische Codequalität von diesen Tool nicht schlechter als 'B' bewertet werden.}
+        {Quellcode mit einer hohen Codequalität ist weniger anfällig für Fehler und Probleme.}
+        {-}
+        {+}
+        {Entwickler}
+
+\qanf 	{Automatisierte Unit-Tests}
+        {Alle definierten Unit-Tests müssen fehlerfrei bestanden werden.}
+        {Da alle Komponenten möglichst fehlerfrei funktionieren müssen ist es unerlässlich die einzelnen Teil der Software ständig auf ihre Funktionalität zu prüfen.}
+        {-}
+        {0}
+        {Entwickler}
+
+\qanf 	{Docker Container}
+        {Um die Plattformunabhängigkeit zu gewährleisten soll sowohl die Server Komponente, als auch die KI-Komponenten mit Hilfe eines Docker Container veröffentlicht werden.}
+        {Docker Container bieten den Vorteil, dass die Software nicht auf jedem Zielsystem neu compiliert werden muss sondern, sobald sie auf einem System in einem Docker-Container lauffähig gemacht wurde lässt sich dieser Container in der Regel auf diversen anderen Zielsystemen ausführen.}
+        {Plattformunabhängigkeit}
+        {+}
+        {Entwickler}
+
+\qanf 	{Dokumentation}
+        {Alle Klassen und Methoden der Software müssen dokumentiert werden. Dabei sollen mindestens alle Übergabeparameter und Rückgabewerte genau spezifiziert werden. Zudem sind komplexe Algorithmen detailliert zu dokumentieren. Die gesamte Dokumentation ist dabei mit dem Tool Doxygen zu erstellen.}
+        {Gut dokumentierte Software vereinfacht die Fehlersuche, die Wartung und das hinzufügen von neuen Features.}
+        {-}
+        {+}
+        {Entwickler}
+
+\qanf 	{Benutzerhandbuch}
+        {Zu jeder Komponente des Projektes muss eine Benutzerhandbuch existieren, in welchem alle Features unmissverständlich erklärt sind, sodass ein neuer Benutzer auf Basis des Benutzerhandbuches die Software bedienen kann.}
+        {Das Benutzerhandbuch erleichtert die Bedienung der Anwendung.}
+        {Dokumentation}
+        {0}
+        {Nutzer, Entwickler}
+
+\qanf 	{Anwendungssprache}
+        {Das User-Interface der Anwendungen soll in deutscher Sprache gestaltet werden.}
+        {Die Zielkundschaft spricht überwiegend Deutsch.}
+        {-}
+        {0}
+        {Nutzer, Entwickler}
+
+\qanf 	{Implementierungssprache}
+        {Die Implementierung der Anwendungen soll in englischer Sprache gehalten sein.}
+        {Die Implementierungssprache ist im Lastenheft vorgegeben.}
+        {-}
+        {0}
+        {Entwickler}
+
+\qanf 	{Dokumentationssprache}
+        {Die Dokumentation der Software kann in englischer oder deutscher Sprache gestaltet sein.}
+        {Die Dokumentationssprache ist im Lastenheft vorgegeben.}
+        {-}
+        {0}
+        {Entwickler, Kunde}
+
+\qanf 	{Programmiersprache}
+        {Die Software soll in einer der folgenden Programmiersprachen geschrieben sein: Java, C++, C\# Die endgültig verwendete Sprache kann jedoch von Komponente zu Komponente variieren, muss aber mit dem Kunden abgesprochen werden.}
+        {Es soll eine Programmiersprache verwendet werden, welche von allen Teammitgliedern beherrscht wird.}
+        {-}
+        {++}
+        {Entwickler}	
+
+\qanf 	{Format für Konfigurationsdateien}
+        {Alle Konfigurationsdateien müssen den \textit{JSON} Standard erfüllen Des Weiteren sind alle vom Komitee festgelegten weiteren Standards einzuhalten.}
+        {Durch Einheitliche Formate der Konfigurationsdateien lässt sich sicherstellen, das einzelne Komponenten zwischen den Entwicklungsteams ausgetauscht werden können und diese miteinander kompatibel sind. }
+        {-}
+        {+}
+        {Entwickler, Nutzer}
+
+\qanf 	{Netzwerkkommunikation}
+        {Die Netzwerkkommunikation zwischen Client und Server soll über sogenannte \textit{Web-Socket-Sessions} realisiert werden, sodass Client und Server ortsunabhängig von einander betrieben werden können. Die Nachrichten sollen im \textit{JSON} formatiert sein.}
+        {Die Netzwerkkommunikation muss gewisse Standards erfüllen, damit Client- und Serveranwendungen von unterschiedlichen Entwicklerteams mit einander kompatibel sind.}
+        {-}
+        {++}
+        {Server, Client, KI-Client}
+
+\qanf 	{Funktionalität}
+        {Die Anwendungen müssen alle im Lastenheft als Minimalanforderungen aufgeführten Anforderungen erfüllen.}
+        {Um die Abnahmen zu bestehen müssen die Minimalanforderungen erfüllt werden.}
+        {-}
+        {++}
+        {Kunde, Entwickler}
+
+\qanf 	{Zuverlässigkeit}
+        {Bei $100$ Spielen darf maximal eine Partie aufgrund eines Fehlers in der Anwendung abgebrochen werden müssen.}
+        {Durch zu häufige Ausfälle der Software ist das Benutzererlebnis massiv beeinträchtigt.}
+        {Robustheit}
+        {+}
+        {Nutzer, Entwickler}
+
+\qanf 	{Robustheit}
+        {Die Anwendungen dürfen nicht aufgrund einer Falschen Benutzereingabe abstürzen, sondern müssen den Benutzer auf seinen Fehler hinweisen.}
+        {Um das Benutzererlebnis nicht zu beeinträchtigen und keine Sicherheitslücken zu verursachen ist es notwendig, dass die Funktion der Software nicht durch fehlerhafte Benutzereingaben beeinträchtigt wird.}
+        {-}
+        {++}
+        {Nutzer, Entwickler}
+
+\qanf 	{Benutzerfreundlichkeit}
+        {Dem Endnutzer muss es möglich sein, alle Komponenten des Projektes nur auf Basis des mitgelieferten Benutzerhandbuches und den Hilfeseiten die Software ohne Einschränkungen bedienen zu können.}
+        {Wenn es für die Endnutzer der Software zu kompliziert ist die Software zu Benutzen, dann ist das Benutzererlebnis erheblich gestört und die Software wird nicht Benutzt werden, da die Endbenutzer unzufrieden sind.}
+        {-}
+        {+}
+        {Nutzer}
+        
+\qanf 	{Wartbarkeit}
+        {Die Software muss so aufgebaut sein, dass einzelne Teilstücke bei Bedarf ohne Umbauten der übrigen Software ersetzbar sind.}
+        {Im Falle einer Fehlfunktion in einem Teilstück der Software muss diese einfach austauschbar sein um den Fehler schnellst möglich beheben zu können. Zudem sollte das Hinzufügen weiterer Features möglich sein um das Produkt stetig weiter entwickeln zu können.}
+        {-}
+        {-+}
+        {Entwickler}
+
+\qanf 	{Effizienz}
+        {Die Software sollte Ressourcen schonend arbeiten. Keine Komponente darf mehr als ein Gigabyte Arbeitsspeicher benötigen und keine Komponente darf mehr als 50\% der auf dem System zur Verfügung stehenden Prozessorleistung benötigen. Zudem darf im Durchschnitt während einer Partie nicht mehr als 1MBit/s an Netzwerkbandbreite benötigt werden um das Spiel ohne Einschränkungen nutzen zu können.}
+        {Eine ressourcenschonende Anwendung ist auch auf älteren Zielsystemen problemlos nutzbar.}
+        {-}
+        {-}
+        {Nutzer, Entwickler}
+
+\qanf 	{Kurze Ladezeiten}
+        {Systembedingte Ladezeiten der Software dürfen auf einem aktuellen Computer eine Sekunde pro geladener Ansicht nicht überschreiten.}
+        {Bei längeren Ladezeiten ist das Benutzererlebnis massiv beeinträchtigt.}
+        {-}
+        {-+}
+        {Nutzer, Entwickler}

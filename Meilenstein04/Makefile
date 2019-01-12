@@ -1,8 +1,8 @@
-LATEXMK=latexmk
+PDFLATEX=pdflatex
 DOT=dot
 
 all: 
-	$(LATEXMK) -pdf main.tex
+	$(PDFLATEX) -includedirectory=Meilenstein01 -includedirectory=Meilenstein02 -includedirectory=Meilenstein03 main.tex
 
 clean:
 	$(LATEXMK) -c

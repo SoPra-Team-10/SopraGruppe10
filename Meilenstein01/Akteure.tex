@@ -1,0 +1,45 @@
+\subsection{Akteure}
+
+\fakt	{Nutzer}
+        {Menschlicher Nutzer, der eine Anwendungen bedient.}
+        {Ein Mensch, der entweder als Spieler aktiv an einem Spiel teilnimmt, als Gast passiv einem Spiel zusieht oder den Quidditchteam-Editor benutzt.}
+        
+\fakt	{Spieler}
+        {Spiet das Spiel \glqq{}Fantastic Feasts\grqq{}.}
+        {Nimmt aktiv Einfluss auf das Spielgeschehen. Ist entweder Nutzer oder KI.}
+        
+\fakt	{Gast}
+        {Nutzer, der mit der Client-Anwendung ein laufendes Spiel beobachtet.}
+        {Beobachtet eine Partie als Außenstehender, hat jedoch keinen Einfluss auf das Spielgeschehen.}
+    
+\fakt	{Systemadministrator}
+        {Person, die die Möglichkeit hat, die Serveranwendung des Projektes zu verwalten.}
+        {Der Systemadministrator ist dafür verantwortlich, eine Instanz der Serveranwendung zu starten und zu betreuen. Zudem hat er Zugriff auf die Partie-Konfiguration und kann diese bei Bedarf verändern.}
+
+\fakt	{Entwickler}
+        {Person, die an der Entwicklung der Anwendung beteiligt ist.}
+        {Der Entwickler implementiert die gesamte Anwendung.}	
+
+\fakt	{KI}
+        {Vom Computer gesteuerter Spieler.}
+        {Spieler, dessen Entscheidungen und Züge von einem Computerprogramm, dem KI-Client, getroffen werden. Es wird somit ein menschlichen Spieler.}
+
+\fakt	{Kunde}
+        {Der Kunde gibt das Projekt in Auftrag.}
+        {Stellt Anforderungen und Wünsche an das Entwicklerteam und nimmt das Projekt ab.}
+
+\fakt	{Client}
+        {Programm, das einem Nutzer eine grafische Oberfläche, zum Spielen oder Beobachten des Spiels, zur Verfügung stellt.}
+        {Der Client stellt eine Verbindung zum Server her, visualisiert die empfangenen Daten und sendet seinerseits die Eingaben des Nutzers.}
+
+\fakt	{KI-Client}
+        {Simuliert einen menschlichen Gegner.}
+        {Der KI-Client kommuniziert wie der normale Client mit dem Server. Allerdings werden die Entscheidungen von der KI getroffen und nicht von einem Nutzer. Er stellt keine grafische Oberfläche zur Verfügung.}
+
+\fakt	{Server}
+        {Zentrale Komponente des Projekts, die alle anderen Komponenten vernetzt.}
+        {Auf dem Server läuft die eigentliche Spiellogik. Er fungiert dabei als Bindeglied zwischen den am Spiel beteiligten Clients und stellt für diese alle benötigten Informationen, wie etwa die Spielfeldkonfiguration oder die Züge des Gegners, bereit.}
+        
+\fakt	{Quidditchteam-Editor}
+        {Computerprogramm, mit dem Team-Konfigurationen erstellt und bearbeitet werden können.}
+        {Der Quidditchteam-Editor erstellt Teamkonfigurationsdateien, die später vom Client geladen werden, um ein Spiel zu starten.}
