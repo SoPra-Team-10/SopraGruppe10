@@ -71,7 +71,9 @@ bibtotoc,              % LV im IV
 % Trennungsregeln
 \hyphenation{Sil-ben-trenn-ung}
 
-\graphicspath{{../Meilenstein01/},{../Meilenstein02}, {../Meilenstein03}}
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
 
 \newcommand{\begriff}[7] {
 	\begin{table}[H]
