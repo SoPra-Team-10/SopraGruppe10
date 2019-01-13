@@ -23,23 +23,23 @@ digraph G {
     ]
     
     Flacken [
-        label = "Flacken|"
+        label = "Torring Blockieren|"
     ]
 
     Nachtaroken [
-        label = "Nachtaroken|"
+        label = "Stürmen|"
     ]
 
     Stutschen [
-        label = "Stutschen|"
+        label = "Großoffensive|"
     ]
 
     Keilen [
-        label = "Keilen|"
+        label = "Rammen|"
     ]
 
     Schnatzeln [
-        label = "Schnatzeln|"
+        label = "Schnatz blockieren|"
     ]
 
     Flacken -> Foul
