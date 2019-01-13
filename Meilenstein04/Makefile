@@ -1,8 +1,8 @@
-LATEXMK=latexmk
+RUBBER=rubber
 DOT=dot
 
 all: domaenenmodell.pdf foul.pdf fan.pdf besen.pdf wurf.pdf zelle.pdf ball.pdf ballSpieler.pdf
-	$(LATEXMK) -pdf main.tex
+	$(RUBBER) -d main.tex
 
 domaenenmodell.pdf: ../Meilenstein01/domaenenmodell.dot
 	$(DOT) -Tpdf -o domaenenmodell.pdf ../Meilenstein01/domaenenmodell.dot
