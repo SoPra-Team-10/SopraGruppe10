@@ -19,23 +19,23 @@ digraph G {
     ]
 
     Fan [
-        label = "Fan|Bestrafungswahrscheinlichekeit : Real\l"
+        label = "Einmischung|Bestrafungswahrscheinlichekeit : Real\l"
     ]
 
     Elf [
-        label = "Elf|"
+        label = "Teleportation|"
     ]
 
     Kobold [
-        label = "Kobold|"
+        label = "Fernangriff|"
     ]
 
     Troll [
-        label = "Troll|"
+        label = "Impuls|"
     ]
 
     Niffler [
-        label = "Niffler|"
+        label = "Schnatzstoß|"
     ]
 
     Elf -> Fan
