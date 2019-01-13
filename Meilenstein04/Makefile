@@ -5,8 +5,8 @@ all:
 	$(RUBBER) -d  main.tex
 
 clean:
-	rm *.toc
-	rm *.aux
-	rm *.log
-	rm *.out
-	rm *.pdf
+	rm -f *.toc
+	rm -f *.aux
+	rm -f *.log
+	rm -f *.out
+	rm -f *.pdf
