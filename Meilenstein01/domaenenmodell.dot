@@ -15,7 +15,7 @@ digraph G {
         fontname = "Helvetica"
         fontsize = 8
         arrowhead = "onormal"
-        labeldistance = 2
+        labeldistance = 1.5
     ]
 
     Spielfigur [
