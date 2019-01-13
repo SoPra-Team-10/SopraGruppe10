@@ -1,5 +1,5 @@
 \textbf{Bemerkungen zu den Abhängigkeiten der Anforderungen:} \\
-Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielsweise besitzt die Mittelzelle implizit alle Abhängigkeiten des Mittelkreises.  \\ \\
+Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielsweise besitzt die Zentrumszelle implizit alle Abhängigkeiten des Mittelkreises.  \\ \\
  \textbf{Bemerkungen zu den Prioritäten:} \\
  \begin{itemize}
     \item[-] Optionale Komponente
@@ -17,17 +17,17 @@ Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielswei
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
-\fanf	{Mittelkreis}
+\fanf	{Zentrum}
         {Der Mittelkreis ist ein Bereich auf dem Quidditch-Spielfeld, der in der Mitte angeordnet ist und aus 3x3 quadratischen Zellen besteht. Zu Beginn dürfen sich hier keine Spielfiguren befinden.}
-        {Der Mittelkreis markiert das Zentrum des Spielfeldes, in dem das Spiel gestartet wird.}
+        {Der Zentrum markiert das Zentrum des Spielfeldes, in dem das Spiel gestartet wird.}
         {Spielfeld}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
-\fanf	{Mittelzelle}
-        {Die Mittelzelle stellt den mittleren Punkt des Mittelkreises dar, der sich im Zentrum des Quidditch-Spielfeldes befindet. Dort werden initial die Bälle des Spiels platziert.}
-        {Die Mittelzelle ist der Startpunkt für die Bälle beim Spielstart.}
-        {Mittelkreis}
+\fanf	{Zentrumszelle}
+        {Die Zentrumszelle stellt den mittleren Punkt des Zentrums dar, der sich im Zentrum des Quidditch-Spielfeldes befindet. Dort werden initial die Bälle des Spiels platziert.}
+        {Die Zentrumszelle ist der Startpunkt für die Bälle beim Spielstart.}
+        {Zentrum}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
@@ -94,7 +94,7 @@ Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielswei
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
-\fanf	{Goldener Schnatz [Ball]}
+\fanf	{Schnatz [Ball]}
         {Der Goldene Schnatz ist eine kleiner goldener Ball, sich von alleine von Suchern wegbewegt (eine Zelle pro Runde). Das bedeutet, er achtet auf den nächsten Sucher, und wählt unter allen möglichen freien Zellen, die eine größere Entfernung zu diesem haben, als seine gegenwärtige, eine zufällige aus, und bewegt sich darauf. Falls es keine solchen Zellen gibt, bewegt sich der Schnatz auf eine zufälliges freie Nachbarzelle. Der Goldene
 Schnatz erscheint zu Beginn der dreizehnten Runde auf einer zufällig gewählten freien Zelle, das möglichst gleich weit
 von beiden Suchern entfernt ist.}
@@ -218,7 +218,7 @@ von beiden Suchern entfernt ist.}
 \fanf	{Schnatz Fangen}
         {Befindet sich ein Sucher und der Goldene Schnatz auf derselben Zelle, so fängt der Sucher den Goldenen Schnatz mit einer gewissen Wahrscheinlichkeit. Dadurch erhält sein Team 30 Punkte und das Spiel ist zu Ende.}
         {Das Schnatz Fange führ das Ende der Partie herbei.}
-        {Goldener Schnatz, Sucher, Punkte}
+        {Schnatz, Sucher, Punkte}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
@@ -353,19 +353,19 @@ von beiden Suchern entfernt ist.}
 \fanf	{Spielende}
         {Die Partie endet, wenn ein Sucher den Schnatz fängt oder ein Team disqualifiziert wird. Das Team mit den meisten Punkten gewinnt, sofern es nicht disqualifiziert ist.}
         {Damit das Spiel endet.}
-        {Goldener Schnatz, Sucher, Disqualifikation}
+        {Schnatz, Sucher, Disqualifikation}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Spielfigur platzieren}
-        {Ein Spieler darf seine Spielfiguren in seiner Hälfte des Spilefeldes beliebig platzieren. Es darf jedoch nie mehr als eine Figur auf der selben Zelle platziert sein. Außerdem muss der Mittelkreis unbesetzt sein.}
+        {Ein Spieler darf seine Spielfiguren in seiner Hälfte des Spilefeldes beliebig platzieren. Es darf jedoch nie mehr als eine Figur auf der selben Zelle platziert sein. Außerdem muss der Zentrum unbesetzt sein.}
         {Zu Beginn des Spiels wählt jeder Spieler ine Aufstellung für sein Team.}
-        {Mittelkreis, Spielbeginn}
+        {Zentrum, Spielbeginn}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}	
         
 \fanf	{Spielbeginn}
-        {Zu Beginn werden alle Spielfiguren von den Spielern auf dem Spielfeld aber außerhalb des Mittelkreises platziert. Die Bälle, mit Ausnahme des Schnatzes, werden auf der Mittelzelle platziert.}
+        {Zu Beginn werden alle Spielfiguren von den Spielern auf dem Spielfeld aber außerhalb des Zentrums platziert. Die Bälle, mit Ausnahme des Schnatzes, werden auf der Zentrumszelle platziert.}
         {Nötige Aufstellung zu Spielbeginn.}
         {-}
         {+}
@@ -374,7 +374,7 @@ von beiden Suchern entfernt ist.}
 \fanf	{Überlängenbehandlung}
         {Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert fest,  ohne dass ein Sieger ermittelt werden kann, so wird das Verhalten des Goldenen Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Goldenen Schnatz findet wird auf 100\% gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft bewegt sich der Goldenen Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gewunden, so bewegt er sich in der nächsten Rundenphase auf die nächste Zelle, auf der sich ein Sucher befindet.}
         {Dadurch wird sichergestellt, dass ein Spiel spannend bleibt und die Spieler nicht die Lust verlieren, wenn eine Partie zu zäh läuft.}
-        {Runde, Goldener Schnatz, Sucher}
+        {Runde, Schnatz, Sucher}
         {-+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
@@ -384,16 +384,16 @@ von beiden Suchern entfernt ist.}
 \fanf	{Partie-Konfiguration}
         {Die Partie-Konfiguration spezifiziert sämtliche Wahrscheinlichkeiten für zufällige Ereignisse im Spiel, sowie die maximale Rundenanzahl, bevor die Überlängenbehandlung eintritt.}
         {Bietet dem Nutzer die Möglichkeit, eine Partie nach persönlichen Präferenzen zu gestalten.}
-        {Quidditchteam-Editor}
+        {Konfigurator}
         {+}
-        {Server, Quidditchteam-Editor, Client, KI-Client, Nutzer}
+        {Server, Konfigurator, Client, KI-Client, Nutzer}
 
 \fanf	{Quidditchteam-Konfiguration}
         {Definiert alle Attribute eines Teams.}
         {Nutzer sollen sich ihre Teams individuell zusammenstellen können.}
         {-}
         {+}
-        {Server, Quidditchteam-Editor, Client, KI-Client, Nutzer}	
+        {Server, Konfigurator, Client, KI-Client, Nutzer}	
         
 \fanf	{Netzwerkschnittstelle}
         {Die Clients und Server kommunizieren über eine Netzwerkschnittstelle. Die Clients kommunizieren ausschließlich mit dem Server und nicht untereinander.}
@@ -507,28 +507,28 @@ von beiden Suchern entfernt ist.}
         {Spieler, Client}
         
 
-\subsection{Funktionale Anforderungen: Quidditchteam-Editor}
+\subsection{Funktionale Anforderungen: Konfigurator}
     
 \fanf	{Team- / Partie-Konfiguration visualisieren}
         {Der Editor kann eine geöffnete Team- / Partie-Konfiguration grafisch darstellen und anzeigen, damit ein Nutzer diese bearbeiten kann.}
         {Konfiguration eines Teams / Einer Partie.}
         {Quidditchteam-Konfiguration}
         {-}
-        {Nutzer, Quidditchteam-Editor}	
+        {Nutzer, Konfigurator}	
 
 \fanf	{Team- / Partie-Konfiguration erstellen und speichern}
         {Der Editor kann eine Team- / Partie-Konfiguration erstellen und speichern.}
         {Konfiguration eines Teams / Einer Partie.}
         {Quidditchteam-Konfiguration}
         {-}
-        {Nutzer, Quidditchteam-Editor}	
+        {Nutzer, Konfigurator}	
 
 \fanf	{Team- / Partie-Konfiguration bearbeiten}
         {Der Editor kann eine bestehende Team- / Partie-Konfiguration öffnen und bearbeiten.}
         {Konfiguration eines Teams / Einer Partie.}
         {Quidditchteam-Konfiguration}
         {-}
-        {Nutzer, Quidditchteam-Editor}
+        {Nutzer, Konfigurator}
         
 \subsection{Funktionale Anforderungen: KI-Client}
 
