@@ -17,7 +17,7 @@ script:
     - make
     - mv main.pdf ../output/Meilenstein03.pdf
     - cd ..
-    - cd Meilenstein03
+    - cd Meilenstein04
     - make
     - mv main.pdf ../output/Meilenstein04.pdf
     - cd ..
