@@ -1,8 +1,8 @@
-PDFLATEX=pdflatex
+RUBBER=rubber
 DOT=dot
 
 all: 
-	$(PDFLATEX) -includedirectory=Meilenstein01 -includedirectory=Meilenstein02 -includedirectory=Meilenstein03 main.tex
+	$(RUBBER) -d  main.tex
 
 clean:
 	$(LATEXMK) -c
