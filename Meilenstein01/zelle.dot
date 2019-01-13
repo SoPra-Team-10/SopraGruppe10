@@ -1,0 +1,113 @@
+digraph G {
+    fontname = "Helvetica"
+    fontsize = 8
+    rankdir="LR";
+    nodesep = "0.6"
+    splines=ortho
+
+    node [
+        fontname = "Helvetica"
+        fontsize = 8
+        shape = "record"
+    ]
+
+    edge [
+        fontname = "Helvetica"
+        fontsize = 8
+        arrowhead = "onormal"
+        labeldistance = 2
+    ]
+    Spielfeld [
+        label = "Spielfeld|"
+    ]
+
+
+
+    Zelle [
+        label = "Zelle|PositionX : Integer\lPositionY : Integer\l"
+    ]
+
+    Torring [
+        label = "Torring|"
+    ]
+
+    ZentrumsZelle [
+        label = "ZentrumsZelle|"
+    ]
+
+    HueterZelle [
+        label = "HüterZelle|"
+    ]
+
+    StandardZelle [
+        label = "StandardZelle|"
+    ]
+
+    HueterZone [
+        label = "HüterZone|"
+    ]
+
+    Zentrum [
+        label = "Zentrum|"
+    ]
+
+    HueterZone -> Spielfeld [
+        arrowhead = "diamond"
+        headlabel = "1"
+        taillabel = "2"
+    ]
+
+    Zentrum -> Spielfeld [
+        arrowhead = "diamond"
+        headlabel = "1"
+        taillabel = "1"
+    ]
+
+    StandardZelle -> Spielfeld [
+        arrowhead = "diamond"
+        headlabel = "1"
+        taillabel = "106"
+    ]
+
+    Zelle -> Torring [
+        arrowhead="none"
+        arrowtail="onormal"
+        dir="both"
+    ]
+    Zelle -> ZentrumsZelle[
+        arrowhead="none"
+        arrowtail="onormal"
+        dir="both"
+    ]
+
+    Zelle -> HueterZelle[
+        arrowhead="none"
+        arrowtail="onormal"
+        dir="both"
+    ]
+
+    Zelle -> StandardZelle[
+        arrowhead="none"
+        arrowtail="onormal"
+        dir="both"
+    ]
+
+
+    HueterZelle -> HueterZone [
+        arrowhead = "diamond"
+        headlabel = "1"
+        taillabel = "36"
+    ]
+
+    Torring -> HueterZone [
+        arrowhead = "diamond"
+        headlabel = "1"
+        taillabel = "3"
+    ]
+
+    ZentrumsZelle -> Zentrum [
+        arrowhead = "diamond"
+        headlabel = "1"
+        taillabel = "9"
+    ]   
+}    

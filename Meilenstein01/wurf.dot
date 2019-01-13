@@ -1,0 +1,50 @@
+digraph G {
+    fontname = "Helvetica"
+    fontsize = 8
+    rankdir="LR";
+    nodesep = "0.6"
+    splines=ortho
+
+    node [
+        fontname = "Helvetica"
+        fontsize = 8
+        shape = "record"
+    ]
+
+    edge [
+        fontname = "Helvetica"
+        fontsize = 8
+        arrowhead = "onormal"
+        labeldistance = 2
+    ]
+
+    Zelle [
+        label = "Zelle|PositionX : Integer\lPositionY : Integer\l"
+    ]
+
+    Schussvektor [
+        label = "Schussvektor|Start : Zelle\lZiel : Zelle\lEntfernung : Integer\lÜberstricheneSpielFelder : Integer\l"
+    ]
+
+    Torschussvektor [
+        label = "Torschussvektor|"
+    ]
+
+    Torschussvektor -> Schussvektor
+
+    Wurf [
+        label = "Wurf|WurfWahrscheinlichkeit : Real\l"
+    ]
+
+    Schussvektor -> Wurf [
+        arrowhead = "diamond";
+        headlabel = "1"
+        taillabel = "1"
+    ]
+
+    Zelle -> Schussvektor [
+        arrowhead = "odiamond";
+        headlabel = "0..*"
+        taillabel = "2"
+    ]
+}    

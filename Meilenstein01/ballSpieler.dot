@@ -1,0 +1,110 @@
+digraph G {
+    fontname = "Helvetica"
+    fontsize = 8
+    rankdir="LR";
+    nodesep = "0.6"
+    splines=ortho
+
+    node [
+        fontname = "Helvetica"
+        fontsize = 8
+        shape = "record"
+    ]
+
+    edge [
+        fontname = "Helvetica"
+        fontsize = 8
+        arrowhead = "onormal"
+        labeldistance = 2
+    ]
+
+    Besen [
+        label = "Besen|Rang : Real"
+    ]
+
+    Spielfigur [
+        label = "Spielfigur|"
+    ]
+
+    Quaffel [
+        label = "Quaffel|PunktGewinn : Integer"
+    ]
+
+    Klatscher [
+        label = "Klatscher|"
+    ]
+
+    GoldenerSchnatz [
+        label = "GoldenerSchnatz|PunktGewinn : Integer"
+    ]
+
+    Jaeger [
+        label = "Jäger|"
+    ]
+
+    Treiber [
+        label = "Treiber|"
+    ]
+    Hueter [
+        label = "Hüter|"
+    ]
+    Sucher [
+        label = "Sucher|"
+    ]
+
+    Jaeger -> Quaffel [
+        style = "dotted"
+        arrowhead = "normal"
+        label = "Interagiert"
+    ]   
+    Treiber -> Klatscher [
+        style = "dotted"
+        arrowhead = "normal"
+        label = "Interagiert"
+    ]   
+
+    Hueter -> Quaffel [
+        style = "dotted"
+        arrowhead = "normal"
+        label = "Interagiert"
+    ]   
+
+    Sucher -> GoldenerSchnatz [
+        style = "dotted"
+        arrowhead = "normal"
+        label = "Interagiert"
+    ]   
+
+    Spielfigur -> Jaeger [
+        arrowtail = "onormal"
+        arrowhead = "none"
+        dir = "both"
+    ]
+
+    Spielfigur -> Treiber[
+        arrowtail = "onormal"
+        arrowhead = "none"
+        dir = "both"
+    ]
+
+    Spielfigur -> Hueter[
+        arrowtail = "onormal"
+        arrowhead = "none"
+        dir = "both"
+    ]
+
+    Spielfigur -> Sucher[
+        arrowtail = "onormal"
+        arrowhead = "none"
+        dir = "both"
+    ]
+
+
+    Besen -> Spielfigur [
+        arrowtail = "diamond"
+        arrowhead = "none"
+        dir = "both"
+        headlabel = "1"
+        taillabel = "1"
+    ]
+}    
