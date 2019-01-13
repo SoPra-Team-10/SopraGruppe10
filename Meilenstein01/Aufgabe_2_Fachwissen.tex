@@ -4,63 +4,63 @@
 {Spieler, Gast}
 {Zur Beschreibung des Programmverlaufs}
 {-}
-{JägerMaister69}
+{Der Nutzer JägerMaister69 ist der Partie beigetreten.}
 
 \begriff{Spieler}
-{Ein Nutzer, der das Computerspiel \glqq{}Fantastic Feasts\grqq{}  spielt.}
+{Ein Nutzer, der in dem Computerspiel \glqq{}Fantastic Feasts\grqq{} eine Partie gegen einen anderen Nutzer bestreitet. Er meldet sich beim Server als Spieler an und führt die Partie mittels Aktionen. Pro Partie kann es höchstens zwei Spieler geben.}
 {Nutzer}
 {-}
 {Zur Beschreibung des Programmverlaufs}
 {-}
-{-}
+{Der Spieler KäptnCola hat die Partie verlassen.}
 
 \begriff{Gast}
-{Ein Nutzer, der eine laufende Partie beobachtet.}
+{Ein Nutzer, der eine laufende Partie beobachtet. Er kann den derzeitigen Stand der Partie und des Spielfeldes sehen, sie aber nicht beeinflussen.}
 {Nutzer}
 {-}
 {Zur Beschreibung des Programmverlaufs}
 {-}
-{-}
+{Der Nutzer TequilaLove ist der Partie als Gast beigetreten.}
 
 \begriff{Client}
-{Das Computerprogramm, das mit einer grafischen Oberfläche ausgestattet ist und einem Nutzer erlaubt, eine Verbindung mit einem Server herzustellen und damit zu kommunizieren.}
+{Das Computerprogramm, das mit einer grafischen Oberfläche ausgestattet ist und einem Nutzer erlaubt, eine Verbindung mit einem Server herzustellen und damit zu kommunizieren. Der Client erlaubt es einem Nutzer, einer Partie als Spieler mit einer ausgewählten Team-Konfiguration oder Gast beizutreten. Dies wird durch ein Hauptmenü organisiert. In der Partie dient die grafische Oberfläche dazu, das Spielgeschehen zu visualisieren und die Steuerung der Spielfiguren zu vereinfachen.}
 {-}
 {-}
 {Zum Spielen des Spiels \glqq{}Fantastic Feasts\grqq{}}
 {Der Begriff bezieht sich nicht auf den Menschen, der das Programm bedient.}
-{-}
+{Der Client ist eine eigenständige Komponente.}
 
 \begriff{Server}
-{Die zentrale Komponente, in dem die Spiellogik implementiert ist, die Programmbefehle abwickelt und mit dem sich Clients verbinden können, um eine Partie zu spielen oder zu beobachten. Die Kommunikation erfolgt mit JSON.}
+{Die zentrale Komponente, in dem die Spiellogik implementiert ist, die Programmbefehle abwickelt und mit dem sich Clients verbinden können, um eine Partie zu spielen oder zu beobachten. Die Kommunikation erfolgt mit JSON. Es handelt sich dabei um eine Kommandozeilenanwendung. Ein Administrator startet den Server auf einem Port eines Rechners mit einer ausgewählten Partie-Konfiguration.}
 {-}
 {-}
 {Ist für die Kommunikation von Clients, für das Verwalten des Spielgeschehens, Ressourcenverwaltung und die Spiellogik verantwortlich}
 {-}
-{-}
+{Der Server mit mittels der Kommandozeile gestartet.}
 
-\begriff{Team-Editor}
-{Ermöglicht einem Nutzer mit einer grafischen Oberfläche, ein eigenes Team zu erstellen und zu bearbeiten. Die Einstellungen werden danach als JSON-Datei gespeichert.}
+\begriff{Konfigurator}
+{Ermöglicht einem Nutzer mit einer grafischen Oberfläche, Team- und Partie-Konfigurationen zu erstellen, zu editieren, zu speichern und zu laden. Die Einstellungen werden danach als JSON-Datei gespeichert.}
 {-}
 {-}
 {Zur Erstellung von nutzereigenen Teams}
 {-}
-{-}
+{Der Konfigurator hat eine grafische Oberfläche.}
 
 \begriff{KI-Client}
-{Meldet sich beim Server wie ein normaler Client an und simuliert mit einer KI einen menschlichen Spieler. Hat keine grafische Oberfläche. Meldet sich mit dem Nutzernamen \glqq{}KI\grqq{}  ein.}
+{Meldet sich beim Server wie ein normaler Client an und simuliert mit einer KI einen menschlichen Spieler. Hat keine grafische Oberfläche. Meldet sich mit dem Nutzernamen \glqq{}KI\grqq{} an.}
 {-}
 {-}
 {Zum Spielen gegen einen Computergegner}
 {-}
-{-}
+{Der KI-Client verbindet sich mit dem Server.}
 
 \begriff{KI}
-{Definiert die Regeln, nach denen der KI-Client auf die durch den Server vermittelten Geschehen im Spiel reagiert.}
+{Definiert die Regeln, nach denen der KI-Client auf die durch den Server vermittelten Geschehen im Spiel reagiert. Es soll möglich sein, Schwierigkeitsgrade auszuwählen.}
 {-}
 {-}
 {Zum Spielen gegen einen Computergegner}
 {Die KI ist die Logik, nach der der Computer das Spiel spielt und kein Programm.}
-{-}
+{Die KI führt eine Aktion durch.}
 
 \begriff{Spielfeld}
 {Ein grafisch darstellbares Raster, auf dem sich die Spielfiguren bewegen.}
@@ -68,7 +68,7 @@
 {-}
 {Dient als virtuelles Spielbrett mit klar definierten Abgrenzungen}
 {Wird nicht Spielumgebung genannt um Verwechslung mit dem Client zu vermeiden.}
-{-}
+{Die Spielfiguren werden auf dem Spielfeld platziert.}
 
 \begriff{Zelle}
 {Die kleinste Einheit des Spielfeldes, also ein Quadrat davon.}
@@ -76,7 +76,7 @@
 {Zentrumszelle, Torring, Hüterzonenzelle}
 {Mögliche Standorte der Spielobjekte}
 {Wird nicht Feld genannt, um Verwechselungen mit dem Spielfeld zu vermeiden.}
-{-}
+{Ein Spieler wählt die Zelle, auf die er seine Spielfigur bewegen möchte.}
 
 \begriff{Zentrum}
 {Der 3x3 Zellen große Abschnitt in der Mitte des Spielfeldes.}
@@ -84,7 +84,7 @@
 {-}
 {Summe aller Zentrumszellen}
 {Bezieht sich auf das Mittelfeld im Lastenheft.}
-{-}
+{Die Bälle befinden sich zu Spielbeginn im Zentrum.}
 
 \begriff{Hüterzone}
 {Die Bereiche am linken und rechten Rand des Spielfeldes, in denen sich die Torringe befinden.}
@@ -92,7 +92,7 @@
 {-}
 {Summe aller Hüterzonenzellen und Torringe}
 {-}
-{-}
+{Nur eine gegnerische Spielfigur darf sich gleichzeitig in der eigenen Hüterzone befinden.}
 
 \begriff{Torring}
 {Die Zellen, in die beide Teams den Quaffel bewegen wollen. Es wird zwischen eigenen und gegnerischen Torringen unterschieden.}
@@ -100,7 +100,7 @@
 {Eigener Torring, Gegnerischer Torring}
 {Hauptquelle von Punkten}
 {-}
-{-}
+{Die Torringe befinden sich innerhalb der Hüterzone.}
 
 \begriff{Zentrumszelle}
 {Eine Zelle im Zentrum des Spielfeldes (siehe Zentrum).}
@@ -108,7 +108,7 @@
 {-}
 {Startpunkt für Quaffel und Klatscher}
 {-}
-{-}
+{Der Quaffel beginnt das Spiel auf der Zentrumszelle.}
 
 \begriff{Hüterzonenzelle}
 {Eine Zelle in einer Hüterzone.}
@@ -116,7 +116,7 @@
 {-}
 {Limitierendes Element für das Abliefern der Quaffel}
 {-}
-{-}
+{Betritt ein Jäger eine Hüterzonenezelle, wird geprüft, ob sich bereits ein weiterer Jäger desselben Teams auf einer anderen Hüterzonenzelle befindet.}
 
 \begriff{Spielobjekt}
 {Jedes Objekt, das sich auf dem Spielfeld befindet und darauf bewegt werden kann.}
@@ -124,15 +124,15 @@
 {Ball, Spielfigur}
 {-}
 {Nicht zu verwechseln mit Spielfigur.}
-{-}
+{Die Spielobjekte werden vom Client visualisiert.}
 
 \begriff{Ball}
-{Ein Spielobjekt, das nicht direkt, nur indirekt von einem Spieler beeinflusst werden kann.}
+{Ein Spielobjekt, das nicht direkt, nur indirekt von einem Spieler beeinflusst werden kann. Bälle erfüllen bestimmte Funktionen und dienen als zentrale Elemente, um die herum die Spieler ihre Aktionen richten.}
 {Spielobjekt}
 {Quaffel, Klatscher, Schnatz}
 {Festpunkte zur Steuerung des Spielverlaufs}
 {-}
-{-}
+{Der Quaffel ist ein Ball.}
 
 \begriff{Spielfigur}
 {Ein Spielobjekt, das von einem Spieler direkt gesteuert wird. Jede Spielfigur hat einen Namen, einen Besenrang, ein Geschlecht, ein Team und eine Rolle. Man unterscheidet außerdem zwischen eigenen und gegnerischen Spielfiguren.}
@@ -140,7 +140,7 @@
 {Hüter, Sucher, Jäger, Treiber}
 {Mitglieder eines Teams}
 {Spieler im Lastenheft}
-{Name: Luke Skywalker, Rolle: Hüter des Teams \glqq{}Jedi\grqq{}, Geschlecht: männlich, Besenrang: 5}
+{Zu Spielbeginn platzieren die Spieler ihre Spielfiguren auf dem Spielfeld.}
 
 \begriff{Quaffel}
 {Passives Objekt, mit dem Jäger und Hüter interagieren können und von ihnen nach Möglichkeit in einen gegnerischen Torring befördert werden soll.}
@@ -148,10 +148,10 @@
 {-}
 {Zentrales Spielobjekt}
 {-}
-{-}
+{Der Quaffel bietet den Spielern die Möglichkeit, Punkte zu sammeln.}
 
 \begriff{Klatscher}
-{Ball, der sich von selbst auf Spielfiguren zubewegt, die keine Treiber sind und diese betäuben kann. Kann von Treibern geschlagen werden, was technisch gesehen einem Wurf entspricht.}
+{Ball, der sich von selbst auf Spielfiguren zubewegt, die keine Treiber sind und diese betäuben kann. Kann von Treibern geschlagen und dadurch beeinflusst werden.}
 {Ball}
 {-}
 {Zusätzliches taktisches Spielelement}
@@ -172,7 +172,7 @@
 {-}
 {Beschreibung des Spielablaufs}
 {-}
-{Spieler VodkaVodka98 spielt gegen Spieler LongEiländ}
+{Spieler VodkaVodka98 spielt eine Partie gegen Spieler LongEiländ}
 
 \begriff{Hüter}
 {Spielfigur, deren Aufgabe es ist, den Quaffel von den eigenen Zielfeldern fernzuhalten.}
@@ -180,15 +180,15 @@
 {Eigener Hüter, Gegnerischer Hüter}
 {Letzte Verteidigungslinie}
 {-}
-{Siehe \glqq{}Spielfigur\grqq{} }
+{Nach einem erfolgreichen Torschuss bekommt der gegnerische Hüter den Quaffel.}
 
 \begriff{Sucher}
-{Spielfigur, die den Schnatz jagt.}
+{Spielfigur, die durch Einfangen des Schnatzes eine Partie beenden kann.}
 {Spielfigur}
 {Eigener Sucher, Gegnerischer Sucher}
 {Beendet die Partie}
 {-}
-{Darth Vader, gegnerischer Sucher, Besenrang 2}
+{Darth Vader, Sucher, Besenrang 2}
 
 \begriff{Jäger}
 {Spielfigur, die den Quaffel in ein einen gegnerischen Torring befördern soll.}
@@ -196,7 +196,7 @@
 {Eigener Jäger, Gegnerischer Jäger}
 {Holt Punkte für das eigene Team}
 {-}
-{Han Solo, eigener Jäger, Besenrang 3}
+{Han Solo, Jäger, Besenrang 3}
 
 \begriff{Treiber}
 {Spielfigur, mit der der Spieler eigene Spielfiguren vor Klatschern schützt und gegnerische damit abschießen kann.}
@@ -204,10 +204,10 @@
 {Eigener Treiber, Gegnerischer Treiber}
 {Interagiert mit Klatschern}
 {-}
-{Boba Fett, gegnerischer Treiber, Besenrang 4}
+{Boba Fett, Treiber, Besenrang 4}
 
 \begriff{Geschlecht}
-{Jede Spielfigur ist entweder männlich oder weiblich.}
+{Ein Parameter, der bei der Team-Konfiguration für jede Spielfigur entweder auf \glqq{}männlich\grqq{} oder \glqq{}weiblich\grqq{} gesetzt werden muss.}
 {-}
 {-}
 {Team-Editierung}
@@ -215,12 +215,12 @@
 {-}
 
 \begriff{Team}
-{Die Menge aller Spielfiguren auf dem Spielfeld, die von einem einzigen Spieler kontrolliert wird. Ein Team hat einen Namen, ein Motto, ein Logo, eine Hauptfarbe und eine Ersatzfarbe.}
+{Die Menge aller Spielfiguren auf dem Spielfeld, die von einem einzigen Spieler kontrolliert wird. Ein Team hat einen Namen, ein Motto, ein Logo, eine Hauptfarbe und eine Ersatzfarbe. Ein Nutzer hat die Möglichkeit, seine Team-Konfiguration mit dem Client zu ändern. Die Team-Konfigurationen können mit dem Konfigurator verändert und erstellt werden.}
 {eigenes Team, gegnerisches Team}
 {-}
 {Beschreibung einer Partie}
 {-}
-{Galaktisches Imperium, Motto: \glqq{}Unbegrenzte MAAACHT!\grqq{}, [Todesstern als Logo], Hauptfarbe: Schwarz, Ersatzfarbe: Rot}
+{Ein Nutzer wählt sein aktives Team im Client aus.}
 
 \begriff{Punkte}
 {Der Spieler mit mehr Punkten am Ende der Partie gewinnt. Werden durch das Platzieren des Quaffel in einem gegnerischen Torring oder das Finden des Schnatzes erhalten.}
@@ -247,12 +247,12 @@
 {Yoda hat Besenrang 1.}
 
 \begriff{Aktion}
-{Jede durch einen Spieler hervorgerufene Änderung der Spielsituation.}
+{Jede durch einen Spieler hervorgerufene Änderung der Spielsituation. Ein Spieler führt Aktionen mittels des Client durch.}
 {-}
 {Ziehen, Schießen, Schlagen, Einmischung, Übernahme}
 {Weiterführung der Partie}
 {-}
-{Obi-Wan Kenobi zieht von Zelle 8:7 auf Zelle 9:7.}
+{Spieler steuern das Spielgeschehen durch Aktionen.}
 
 \begriff{Ziehen}
 {Die Bewegung einer Spielfigur von einer Zelle auf eine andere durch direkten Befehl des Spielers.}
@@ -292,15 +292,15 @@
 {Teleportation, Fernangriff, Impuls, Schnatzjagd}
 {Zusätzliche taktische Element}
 {Ersetzt die \glqq{}Fans\grqq{}  aus dem Lastenheft.}
-{Lando Calrissian wird auf Zelle 6:6 teleportiert.}
+{Der Schiedsrichter erkennt eine Einmischung mit einer in der Partie-Konfiguration festgelegten Wahrscheinlichkeit.}
 
 \begriff{Teleportation}
-{Einmischung, die eine Spielfigur auf eine zufällige Zelle teleportiert.}
+{Einmischung, die eine Spielfigur auf eine zufällige Zelle bewegt.}
 {Einmischung}
 {-}
 {-}
 {Ersetzt \glqq{}Elfen\grqq{}  aus Lastenheft}
-{Siehe \glqq{}Einmischungen\grqq{} }
+{Lando Calrissian wird auf Zelle 6:6 teleportiert.}
 
 \begriff{Fernangriff}
 {Trifft eine gegnerische Spielfigur. Ziel verliert gegebenenfalls den Quaffel und wird auf eine zufällige benachbarte, freie Zelle bewegt.}
@@ -311,7 +311,7 @@
 {Jango Fett wird von Fernangriff auf Zelle 5:6 gestoßen}
 
 \begriff{Impuls}
-{Wenn eine Spielfigur den Quaffel hält, wird sie bei Benutzung verloren.}
+{Wenn der Quaffel von einer Spielfigur gehalten wird, wird er von dieser verloren.}
 {Einmischung}
 {-}
 {-}
@@ -327,12 +327,12 @@
 {Ein Schnatzstoß treibt den Schnatz auf Zelle 4:12.}
 
 \begriff{Entfernung}
-{Eine Entfernung zwischen zwei Zellen ist die minimale Anzahl von Zügen, in denen eine Spielfigur von der einen auf die andere ziehen kann.}
+{Eine Entfernung zwischen zwei Zellen ist, wie oft eine Spielfigur mindestens ziehen muss, um von der Einen auf die Andere zu  gelangen.}
 {-}
 {-}
 {Spielfeldgeometrie}
 {-}
-{-}
+{Die Entfernung zwischen dem Jäger und dem Torring beträgt drei Zellen.}
 
 \begriff{Schussvektor}
 {Pfeil vom Mittelpunkt einer Zelle zum Mittelpunkt einer anderen.}
@@ -340,7 +340,7 @@
 {Torschussvektor}
 {Spielfeldgeometrie}
 {-}
-{-}
+{Der Client visualisiert den Schussvektor für einen Schuss vom jeweiligen Jäger auf die vom Spieler ausgewählte Zelle.}
 
 \begriff{Torschussvektor}
 {Schussvektor zu einem Schuss, der möglicherweise in einem Torschuss resultiert. (Ein Schussvektor, der die linke oder rechte Seite eines Torrings schneidet.)}
@@ -348,7 +348,7 @@
 {-}
 {Punkte sammeln}
 {-}
-{-}
+{Der Torschussvektor wird an den Server übermittelt um zu berechnen, ob er erfolgreich ist.}
 
 \begriff{Torschuss}
 {Ein Jäger schießt den Quaffel in einen Torring und holt damit Punkte für sei Team.}
@@ -356,31 +356,31 @@
 {-}
 {Punkte sammeln}
 {Nur erfolgreiche Schüsse auf das Tor werden als Torschüsse bezeichnet.}
-{Darth Sidious schießt den Quaffel in ein eigenes Tor.}
+{Darth Sidious führt einen erfolgreichen Torschuss aus.}
 
-\begriff{Zugphase}
-{Phase, in der eine Spielfigur Aktionen durchführt. Beginnt, sobald der Spieler die Möglichkeit hat, die jeweilige Spielfigur zu steuern und endet, sobald er ihr den letzten Befehl für diesen Zug gegeben hat. Ein Zug enthält mehrere Zugphasen.}
+\begriff{Runde}
+{Der Zeitraum, in dem jedes Spielobjekt auf dem Spielfeld einmal in einer Rundenphase gesteuert wird und jede verfügbare Einmischung einmal ausgeführt werden kann.}
+{-}
+{-}
+{Zeiteinteilung}
+{Nicht die Rundenphasephase einer Spielfigur}
+{Die Überlängenbehandlung tritt nach einer in der Partie-Konfiguration festgelegten Anzahl Runden in Kraft.}
+
+\begriff{Rundenphase}
+{Ein Zeitraum, in dem eine einzelne Spielfigur entweder von einem Spieler oder automatisch vom Server gesteuert werden kann. Eine Runde besteht aus mehreren Rundenphasen.}
 {-}
 {-}
 {Zeiteinteilung}
 {}
-{Leia Organa ist dran.}
-
-\begriff{Zug}
-{Von der ersten Aktion eines Spielers bis zur ersten Aktion des Gegners.}
-{-}
-{-}
-{Zeiteinteilung}
-{Nicht die Zugphase einer Spielfigur}
-{Bierdurst69 ist am Zug.}
+{Leia Organa bewegt sich in ihrer Rundenphasephase zwei Zellen nach rechts.}
 
 \begriff{Endphase}
-{Letzter Teil eines Zuges. Der Spieler kann darin Einmischungen vornehmen.}
+{Letzter Teil einer Runde. Der Spieler kann darin Einmischungen vornehmen.}
 {-}
 {-}
 {Zeiteinteilung}
 {-}
-{-}
+{In diesem Fall, wird die KI während der Endphase Teleportation einsetzen, um den gegnerischen Jäger von den eigenen Torringen fernzuhalten.}
 
 \begriff{Verlieren}
 {Der Quaffel wird auf eine zufällige Zelle bewegt, die an die Zelle angrenzt, auf der sich die Spielfigur, die bis jetzt in Ballbesitz war, befindet.}
@@ -396,7 +396,7 @@
 {-}
 {Beschreibung des Spielgeschehens}
 {-}
-{-}
+{Ein Hüter kann den Quaffel halten.}
 
 \begriff{Übernahme}
 {Ein Jäger neben einer gegnerischen Spielfigur, die den Quaffel hält, kann diesen mit einer bestimmten Wahrscheinlichkeit übernehmen und hält ihn anschließend selbst.}
@@ -420,7 +420,7 @@
 {Torring Blockieren, Stürmen, Großoffensive, Rammen, Schnatz Blockieren}
 {Taktische Elemente}
 {-}
-{Qui-Gon Jinn blockiert den Schnatz.}
+{Qui-Gon Jinn wird wegen eines Fouls durch den Schiedsrichter vom Spielfeld entfernt.}
 
 \begriff{Torring Blockieren}
 {Eine eigene Spielfigur besetzt einen eigenen Torring, was eine Torschuss verhindert.}
@@ -428,7 +428,7 @@
 {-}
 {Taktik}
 {\glqq{}Flackern\grqq{}  im Pflichtenheft}
-{-}
+{In diesem Fall wird die KI, nach Möglichkeit, den Jäger anweisen, den Torring zu blockieren.}
 
 \begriff{Stürmen}
 {Ein Jäger, der den Quaffel hält, zieht auf einen gegnerischen Torring, was das Abliefern garantiert.}
@@ -471,9 +471,9 @@
 {Sheev Palpatine wurde vom Schiedsrichter vom Spielfeld entfernt.}
 
 \begriff{Disqualifikation}
-{Tritt ein wenn drei oder mehr Spielfiguren eines Spielers in der selben Rundenphase durch den Schiedsrichter aus dem Spiel entfernt wurden. Führt zur Niederlage des Spielers.}
+{Tritt ein wenn drei oder mehr Spielfiguren eines Spielers in der selben Runde durch den Schiedsrichter aus dem Spiel entfernt sind. Führt zur Niederlage des Spielers.}
 {-}
 {-}
 {Erhöhtes Risiko}
 {-}
-{CubaLibre wurde disqualifiziert. CaptainCola gewinnt die Partie.}
+{CubaLibre gewinnt die Partie durch Disqualifikation des Gegners.}
