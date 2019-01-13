@@ -18,6 +18,7 @@ script:
     - mv main.pdf ../output/Meilenstein03.pdf
     - cd ..
     - cd Meilenstein04
+    - make clean
     - make
     - mv main.pdf ../output/Meilenstein04.pdf
     - cd ..
