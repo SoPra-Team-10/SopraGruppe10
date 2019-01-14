@@ -1,3 +1,5 @@
+Im Folgenden Sind alle funktionalen Anforderungen aufgeführt. Dies sind also Anforderungen, die am Ende im Code realisiert werden müssen um alle geforderten Funktionen erfüllen zu können. Dabei besitzt jede Anforderung eine eindeutige ID über welche sie im gesamten Dokument referenziert ist.
+
 \textbf{Bemerkungen zu den Abhängigkeiten der Anforderungen:} \\
 Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielsweise besitzt die Zentrumszelle implizit alle Abhängigkeiten des Zentrums.  \\ \\
  \textbf{Bemerkungen zu den Prioritäten:} \\
@@ -9,6 +11,8 @@ Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielswei
  \end{itemize}
 
 \subsection{Funktionale Anforderungen: Spielregeln} 
+
+Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich primäre mit Funktionen, die entweder direkt aus den Spielregeln hervor gehen oder Teil der Umsetzung der Spielmechanik sind.
 
 \fanf	{Quidditch-Spielfeld}
         {Das Quidditch-Spielfeld hat eine Ovale Form, die in ein Raster von 17x13 quadratischen Zellen eingepasst ist. Auf diesem Feld finden alle Spielhandlungen statt, die während dem Spiel getätigt werden können.}
@@ -379,6 +383,8 @@ Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielswei
 
 \subsection{Funktionale Anforderungen: Allgemein}
 
+Bei den nachfolgenden Anforderungen handelt es sich um die funktionalen Anforderungen, die für alle Komponenten des Projektes relevant sind.
+
 \fanf	{Partie-Konfiguration}
         {Die Partie-Konfiguration spezifiziert sämtliche Wahrscheinlichkeiten für zufällige Ereignisse im Spiel, sowie die maximale Rundenanzahl, bevor die Überlängenbehandlung eintritt.}
         {Bietet dem Nutzer die Möglichkeit, eine Partie nach persönlichen Präferenzen zu gestalten.}
@@ -409,6 +415,8 @@ Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielswei
         
 
 \subsection{Funktionale Anforderungen: Server}
+
+Die folgenden funktionalen Anforderungen betreffen nur die Server Anwendung.
         
 \fanf	{Partie-Konfiguration laden}
         {Der Server muss eine vorgefertigte Partie-Konfiguration laden können.}
@@ -433,6 +441,8 @@ Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielswei
         
 
 \subsection{Funktionale Anforderungen: Client}
+
+Die folgenden funktionalen Anforderungen betreffen nur die Client Anwendung.
 
 \fanf	{Hauptmenü [Ansicht]}
         {Erste grafische Oberfläche die dem Nutzer angezeigt wird, wenn die Anwendung gestartet wurde.}
@@ -507,6 +517,8 @@ Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielswei
 
 \subsection{Funktionale Anforderungen: Konfigurator}
     
+Die folgenden funktionalen Anforderungen betreffen nur die Konfigurator Anwendung.
+
 \fanf	{Team- / Partie-Konfiguration visualisieren}
         {Der Konfigurator kann eine geöffnete Team- / Partie-Konfiguration grafisch darstellen und anzeigen, damit ein Nutzer diese bearbeiten kann.}
         {Konfiguration eines Teams / Einer Partie.}
@@ -529,6 +541,8 @@ Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielswei
         {Nutzer, Konfigurator}
         
 \subsection{Funktionale Anforderungen: KI-Client}
+
+Die folgenden funktionalen Anforderungen betreffen nur die KI-Client Anwendung.
 
 \fanf	{Schwierigkeitsgrad einstellen}
         {In der KI-Clientanwendung hat ein Nutzer die Möglichkeit, die Spielstärke der KI einzustellen.}
