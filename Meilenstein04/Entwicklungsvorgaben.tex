@@ -1,1 +1,9 @@
-%TODO
+Alle Teile der Anwendung werden in C++17 geschrieben. Als Compiler wird dafür entweder GCC oder MSVC verwendet, als Buildsystem CMake.
+Zur statischen Codeanalyse wird Clang-Tidy verwendet, Unit Tests werden mit Google-Test bzw. Google-Mock implementiert.
+Um undefiniertes Verhalten zu vermeiden wird der Code mit Adress Sanitizer überprüft.
+
+Als Vorgehensmodell wird während der Entwicklung der Softwareteile Scrum verwendet, die Dauer eines Sprints beträgt 2 Wochen. Für jede Komponente wird ein Ansprechpartner definiert, dieser übernimmt die Koordination der Entwicklung dieser Komponente. TODO Pflichten des Auftraggebers. 
+Das Entwicklungsteam besteht aus sechs Entwicklern, zusätzlich agiert der Tutor als Scrummaster. Der Quellcode wird mithilfe von Git versioniert, für jede Komponente existiert ein eigenes Repository, die Entwicklung der Features erfolgt auf dedizierten Feature-Branches, so dass der master-Branch immer in einem funktionalen Zustand bleibt.
+
+Alle Teile des Quellcodes werden mithilfe von Doxygen-Kommentaren dokumentiert. TODO styleguide
+
