@@ -15,7 +15,7 @@ digraph G {
         fontname = "Helvetica"
         fontsize = 8
         arrowhead = "onormal"
-        labeldistance = 1.5
+        labeldistance = 1.8
     ]
 
     Spielfigur [
@@ -98,11 +98,13 @@ digraph G {
         arrowhead = "diamond"
         headlabel = "1"
         taillabel = "1"
+        labelangle = 30 
     ]
     Sucher -> Team [
         arrowhead = "diamond"
         headlabel = "1"
         taillabel = "1"
+        labelangle = 30 
     ]
 
     Team -> Spielfeld [
