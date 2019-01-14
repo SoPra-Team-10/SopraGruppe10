@@ -147,6 +147,10 @@ bibtotoc,              % LV im IV
     \akt{AKT\thefaktCount}{#1}{#2}{#3}
 }
 
+\newcommand{\fkt}[5]{
+	#1 & #2 & #3 & #4 & #5\\\hline
+}
+
 \begin{document}
     \thispagestyle{empty}
     \begin{addmargin*}[4mm]{-10mm}
@@ -219,7 +223,7 @@ bibtotoc,              % LV im IV
     \section{Datenmodell}
     %TODO
     \section{Funktionen}
-    %TODO
+    \input{funktionen}
 
     \part{Randbedingungen}
     \section{Qualität}

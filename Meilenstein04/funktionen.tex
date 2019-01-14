@@ -1,0 +1,28 @@
+\subsection{Client}
+\begin{tabular}{|p{2cm}|p{3cm}|p{2.8cm}|p{2.8cm}|p{4cm}|}
+	\textbf{Name} & \textbf{Parameter} & \textbf{Vorbedingung} & \textbf{Nachbedingung} & \textbf{Beschreibung}\\\hline
+	\fkt{Stats anzeigen}{Team1, Team2, Punktestand, Rundennummer, aktuelle Spielfigur}{-}{-}{Zeigt die Stats in der Spielansicht an.}
+	\fkt{Spielfeld rendern}{mögliche Aktionen}{-}{-}{Zeigt das Spielfeld, die Spielfiguren und mögliche Ausführbare Aktionen der aktuell aktiven Spielfigur in der Spielansicht an.}
+	\fkt{Aktion registrieren}{Aktion}{Aktion ist in der gegebenen Situation möglich.}{-}{Fügt eine Aktion einer Liste von auszuführenden Aktionen zu.}
+	\fkt{Pausieren}{-}{-}{-}{Wechselt in den Pause-Dialog.}
+	\fkt{Aktionen zurücksetzen}{Liste registrierter Aktionen}{Liste der registrierter Aktionen ist nicht leer}{-}{Leert die Liste von registrierter Aktionen}
+	\fkt{Zug ausführen}{Liste registrierter auszuführender Aktionen}{Liste registrierter Aktionen ist nicht leer.}{-}{Sendet die Liste registrierter Aktionen an den Server zur Verarbeitung.}
+	\fkt{Legende anzeigen}{Team1, Team2}{-}{-}{Zeigt alle Spielfiguren in der Legende am unteren Rand der Spielansicht an.}
+	\fkt{Statusmeldung anzeigen}{Statusmeldung}{-}{-}{Fügt den Statusmeldungen am unteren Rand der Spielansicht an.}
+	\fkt{Spiel verlassen}{-}{-}{Positive Antwort in dem sich öffnenden Bestätigungs-Popup}{Wechselt in den Hauptmenüdialog.}
+	\fkt{Spiel beenden}{-}{-}{Positive Antwort in dem sich öffnenden Bestätigungs-Popup}{Schließt die Anwendung.}
+	\fkt{Hilfe anzeigen}{-}{-}{-}{Wechselt in den Hilfedialog.}
+	\fkt{Team ändern}{-}{-}{Eine gültige Team-Konfiguration ist ausgewählt.}{Öffnet das \glqq{}Team ändern\grqq{}-Popup und ändert die aktive Team-Konfiguration.}
+	\fkt{Spielsuche öffnen}{-}{Eine gültige Team-Konfiguration ist aktiv.}{-}{Wechselt in den Spielsuche-Dialog}
+	\fkt{Hauptmenü öffnen}{-}{-}{-}{Wechselt in den Hauptmenü-Dialog.}
+	\fkt{Serververbindung aufbauen}{Serveradresse, Port, als Gast}{-}{Auf der gegebenen Serveradresse und Portnummer läuft ein Spiel-Server.}{Verbindet sich mit dem angegebenen Server.}
+	\fkt{Hotkeys öffnen}{-}{-}{-}{Wechselt in den Hotkey-Dialog.}
+	\fkt{Spiel fortsetzen}{-}{-}{-}{Wechselt vom Pause-Dialog zurück in die Spielansicht.}
+	\fkt{Spielende-Dialog öffnen}{Punktestand, Name des Gewinners}{-}{-}{Wechselt in den Spielende-Dialog und zeigt darin den Endpunktestand und den Namen des Gewinners an.}
+\end{tabular}
+
+\subsection{Server}
+\begin{tabular}{|p{2cm}|p{3cm}|p{2.8cm}|p{2.8cm}|p{4cm}|}
+	\textbf{Name} & \textbf{Parameter} & \textbf{Vorbedingung} & \textbf{Nachbedingung} & \textbf{Beschreibung}\\\hline
+	
+\end{tabular}
