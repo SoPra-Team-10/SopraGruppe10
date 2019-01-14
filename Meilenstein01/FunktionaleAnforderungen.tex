@@ -1,5 +1,5 @@
 \textbf{Bemerkungen zu den Abhängigkeiten der Anforderungen:} \\
-Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielsweise besitzt die Zentrumszelle implizit alle Abhängigkeiten des Mittelkreises.  \\ \\
+Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielsweise besitzt die Zentrumszelle implizit alle Abhängigkeiten des Zentrums.  \\ \\
  \textbf{Bemerkungen zu den Prioritäten:} \\
  \begin{itemize}
     \item[-] Optionale Komponente
@@ -18,21 +18,21 @@ Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielswei
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Zentrum}
-        {Der Mittelkreis ist ein Bereich auf dem Quidditch-Spielfeld, der in der Mitte angeordnet ist und aus 3x3 quadratischen Zellen besteht. Zu Beginn dürfen sich hier keine Spielfiguren befinden.}
-        {Der Zentrum markiert das Zentrum des Spielfeldes, in dem das Spiel gestartet wird.}
+        {Das Zentrum ist ein Bereich auf dem Quidditch-Spielfeld, der in der Mitte angeordnet ist und aus 3x3 quadratischen Zellen besteht. Zu Beginn dürfen sich hier keine Spielfiguren befinden.}
+        {Das Zentrum markiert den Bereich um die Zentrumszelle des Spielfeldes, in dem das Spiel gestartet wird.}
         {Spielfeld}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Zentrumszelle}
-        {Die Zentrumszelle stellt den mittleren Punkt des Zentrums dar, der sich im Zentrum des Quidditch-Spielfeldes befindet. Dort werden initial die Bälle des Spiels platziert.}
+        {Die Zentrumszelle stellt den mittleren Punkt des Zentrums dar.}
         {Die Zentrumszelle ist der Startpunkt für die Bälle beim Spielstart.}
         {Zentrum}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Hüterzonen}
-        {Die Hüterzonen sind an den jeweils gegenüberliegenden Seiten des Quidditch-Spielfeldes platziert. Die Hüterzonen sind ovalförmig, bestehen aus 11x5 Kacheln und beinhalten jeweils 3 Torringe.}
+        {Die Hüterzonen sind an den jeweils gegenüberliegenden Seiten des Quidditch-Spielfeldes platziert. Die Hüterzonen sind oval förmig, bestehen aus $11x5$ Zellen und beinhalten jeweils drei Torringe.}
         {In den Hüterzonen können die Teams Punkte erzielen.}
         {Spielfeld}
         {++}
@@ -46,14 +46,14 @@ Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielswei
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Torring}
-        {Die Teams können Punkte erzielen, indem sie den Quaffel durch einen generischen Torring werfen.}
+        {Die Teams können Punkte erzielen, indem sie den Quaffel durch einen gegnerischen Torring werfen.}
         {Die Torringe dienen den Teams als Hauptquelle von Punkten.}
         {Hüterzone}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Schussvektorberechnung}
-        {Ein Schussvektor zeigt vom Mittelpunkt der Startzelle auf die Zielzelle des Wurfs. Alle Zellen, die von diesem Vektor geschnitten werden, sind so genannte überstrichene Felder.}
+        {Ein Schussvektor zeigt vom Mittelpunkt der Startzelle auf die Zielzelle des Wurfs. Alle Zellen, die von diesem Vektor geschnitten werden, sind so genannte überstrichene Zellen.}
         {Ein Schussvektor beschreibt, wie eine Spielfigur einen Ball über das Spielfeld bewegten kann.}
         {Zelle}
         {++}
@@ -67,51 +67,49 @@ Abhängigkeiten werden aus Gründen der Übersichtlichkeit vererbt. Beispielswei
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Entfernungsberechnung}
-        {Die Entfernung zwischen zwei Zellen ist die kleinstmögliche Anzahl an Zügen, die man braucht, um Zelle A zu Zelle B zu kommen. Dabei darf  man sich in alle Richtengen bewegen, also Vertikal, Horizontal und Diagonal.}
+        {Die Entfernung zwischen zwei Zellen ist die kleinstmögliche Anzahl an Zügen, die man braucht, um von Zelle A zu Zelle B zu kommen. Dabei darf  man sich in alle Richtungen bewegen, also vertikal, horizontal und Diagonal.}
         {Die Entfernung ist maßgeblich für den Erfolg von verschiedenen Aktionen, wie z.B. dem Werfen des Quaffels.}
         {Zelle}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Bälle}
-        {Es gibt 3 verschiedene Arten von Bällen: Der Quaffel, der Klatscher und der Goldene Schnatz.}
+        {Es gibt 3 verschiedene Arten von Bällen: Den Quaffel, die Klatscher und den Schnatz.}
         {Die Bälle sind zentraler Bestandteil des Spiels.}
         {-}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Quaffel [Ball]}
-        {Der Quaffel ist ein roter Lederball, mit dem die Team Punkte erzielen kann. Dazu muss der Quaffel durch einen gegnerischen Torring befördert werden.}
+        {Der Quaffel ist ein roter Lederball, mit dem die Team Punkte erzielen kann.}
         {Der Quaffel ist die zentrale Punktequelle.}
         {Bälle}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Klatscher [Ball]}
-        {Der Klatscher ist ein kleiner schwarzer Ball, der sich von alleine auf Spieler zubewegt (eine Zelle pro Runde), die keine Treiber sind.}
+        {Die Klatscher sind kleine schwarze Bälle, die sich von alleine auf Spieler zubewegen (eine Zelle pro Runde), die keine Treiber sind.}
         {Die Klatscher verleihen dem Spiel zusätzliche taktische Tiefe, da sie Spielfiguren für eine Runde ausschalten können.}
         {Bälle}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Schnatz [Ball]}
-        {Der Goldene Schnatz ist eine kleiner goldener Ball, sich von alleine von Suchern wegbewegt (eine Zelle pro Runde). Das bedeutet, er achtet auf den nächsten Sucher, und wählt unter allen möglichen freien Zellen, die eine größere Entfernung zu diesem haben, als seine gegenwärtige, eine zufällige aus, und bewegt sich darauf. Falls es keine solchen Zellen gibt, bewegt sich der Schnatz auf eine zufälliges freie Nachbarzelle. Der Goldene
-Schnatz erscheint zu Beginn der dreizehnten Runde auf einer zufällig gewählten freien Zelle, das möglichst gleich weit
-von beiden Suchern entfernt ist.}
-        {Der Goldene Schnatz dient zum Punkteerzielen und führt, wenn er gefangen wird, zum Ende des Partie.}
+        {Der Schnatz ist eine kleiner goldener Ball, sich von alleine von Suchern wegbewegt (eine Zelle pro Runde). Das bedeutet, er achtet auf den nächsten Sucher, und wählt unter allen möglichen freien Zellen, die eine größere Entfernung zu diesem haben, als seine gegenwärtige, eine zufällige aus, und bewegt sich auf diese Zelle. Falls es keine solchen Zellen gibt, bewegt sich der Schnatz auf eine zufällige freie Nachbarzelle. Der Schnatz erscheint zu Beginn der dreizehnten Runde auf einer zufällig gewählten freien Zelle, die möglichst gleich weit von beiden Suchern entfernt ist.}
+        {Der Schnatz dient zum Punkteerzielen und führt, wenn er gefangen wird, zum Ende des Partie.}
         {Bälle}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Besen}
-        {Jede Spielfigur besitzt einen Besen, die einen der folgenden Typen haben: Zauberfauch, Sauberwisch 11, Komet 2-60, Nimbus 2001 und Feuerblitz. Der Typ des Besens bestimmt die Wahrscheinlichkeit, mit der eine Spielfigur nach einer Bewegung um ein Feld eine weitere Bewegung ausführen darf. Diese Wahrscheinlichkeit wird in der Partiekonfiguration festgelegt, wobei die Besen in der genannten Reihenfolge aufsteigende Wahrscheinlichkeiten besitzen.}
+        {Jede Spielfigur besitzt einen Besen, die einen der folgenden Typen haben: Zauberfauch, Sauberwisch 11, Komet 2-60, Nimbus 2001 oder Feuerblitz. Der Typ des Besens bestimmt die Wahrscheinlichkeit, mit der eine Spielfigur nach einer Bewegung um eine Zelle eine weitere Bewegung ausführen darf. Diese Wahrscheinlichkeit wird in der Partiekonfiguration festgelegt, wobei die Besen in der genannten Reihenfolge aufsteigende Wahrscheinlichkeiten besitzen.}
         {Die Besen geben den Spielfiguren eine unterschiedliche Qualität.}
         {-}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Teams}
-        {Ein Team besteht aus sieben Spielfiguren und sieben Fans. Außerdem hat jedes Team einen Namen, ein Motto, eine Hauptteamfarbe und eine Ersatzteamfarbe. Die sieben Spielfiguren Teilen sich wie folgt auf:  ein Hüter, zwei Treiber, drei Jäger und ein Sucher. Bei den Spielfiguren darf jedes Geschlecht bis zu vier mal vertreten sein. Zudem muss jeder Besentyp einmal vertreten sein. Bei den sieben Fans muss jeder Fantyp mindestens einmal vertreten sein.}
+        {Ein Team besteht aus sieben Spielfiguren und sieben Einmischungen. Außerdem hat jedes Team einen Namen, ein Motto, eine Hauptteamfarbe und eine Ersatzteamfarbe. Die sieben Spielfiguren Teilen sich wie folgt auf:  ein Hüter, zwei Treiber, drei Jäger und ein Sucher. Bei den Spielfiguren darf jedes Geschlecht bis zu vier mal vertreten sein. Zudem muss jeder Besentyp einmal vertreten sein. Bei den sieben Fans muss jeder Fantyp mindestens einmal vertreten sein.}
         {Quidditch ist ein Teamspiel, weshalb Teams benötigt werden.}
         {Spielfigur, Fans, Besen}
         {+}
@@ -133,7 +131,7 @@ von beiden Suchern entfernt ist.}
 
 \fanf	{Treiber [Spielfigur]}
         {Treiber können den Klatscher schlagen und somit zum Gegner hin und / oder von Teammitgliedern weg befördern.}
-        {Treiber dienen zum Schutz des eigenen Teams vor den Klatschern. Gleichzeitig können sie den Gegner aktiv sabotieren, in dem sie ihm den Klatscher zuspielen..}
+        {Treiber dienen zum Schutz des eigenen Teams vor den Klatschern. Gleichzeitig können sie den Gegner aktiv sabotieren, in dem sie ihm den Klatscher zuspielen.}
         {Spielfigur}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
@@ -146,14 +144,14 @@ von beiden Suchern entfernt ist.}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Sucher [Spielfigur]}
-        {Sucher versuchen den Goldenen Schnatz zu finden, um Punkte zu erzielen und das Spiel zu beenden.}
+        {Sucher versuchen den Schnatz zu finden, um Punkte zu erzielen und das Spiel zu beenden.}
         {Der Sucher beendet das Spiel.}
         {Spielfigur}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
-\fanf	{Quaffel-Werfen}
-        {Hüter und Jäger können den Quaffel werfen. Der Wurf wird über ein Schussvektor angegeben. Jede gegnerische Spielfigur, die sich auf einer überstrichenen Zelle des Schussvektors befindet, kann den Quaffel abfangen. Wird der Ball von keiner Spielfigur abgefangen, so ist der Wurf mit der Wahrscheinlichkeit $P^d$ erfolgreich, wobei $P$ eine elementare Wurfwahrscheinlichkeit und $d$ die Entfernung zur Zielzelle ist. Ist der Wurf erfolgreich, so landet der Quaffel auf der Zielzelle. Wenn nicht wir der Quaffel auf einem zufälligen freien Zelle in einem $n\times n$ Quadrat um die Zielzelle platziert, wobei $n=\ceil{ \frac{d}{7}}$ ist.}			
+\fanf	{Quaffel Schießen}
+        {Hüter und Jäger können den Quaffel schießen. Der Wurf wird über ein Schussvektor angegeben. Jede gegnerische Spielfigur, die sich auf einer überstrichenen Zelle des Schussvektors befindet, kann den Quaffel abfangen. Wird der Ball von keiner Spielfigur abgefangen, so ist der Wurf mit der Wahrscheinlichkeit $P^d$ erfolgreich, wobei $P$ eine elementare Wurfwahrscheinlichkeit und $d$ die Entfernung zur Zielzelle ist. War der Schuss erfolgreich, so landet der Quaffel auf der Zielzelle. Wenn nicht wird der Quaffel auf einer zufälligen freien Zelle in einem $n\times n$ Quadrat um die Zielzelle platziert, wobei $n=\ceil{ \frac{d}{7}}$ ist.}			
         {Das Werfen des Quaffels ermöglicht Passspiel und das erzielen von Punkten.}
         {Schussvektorberechnung, Entfernungsberechnung, Jäger, Hüter, Quaffel}
         {++}
@@ -166,7 +164,7 @@ von beiden Suchern entfernt ist.}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
-\fanf	{Quaffel prallt ab}
+\fanf	{Quaffel Abprallen}
         {Landet der Quaffel auf einer Zelle, auf der sich eine Spielfigur befindet, die weder Hüter noch Jäger ist, so wird der Quaffel auf eine zufällige freie Nachbarzelle gesetzt.}
         {Nur Jäger und Hüter können direkt mit der Quaffel interagieren.}
         {Sucher, Treiber, Quaffel}
@@ -174,8 +172,8 @@ von beiden Suchern entfernt ist.}
         {Spieler, KI, Gast, Client, KI-Client, Server}		
         
 \fanf	{Quaffel Halten}
-        {Ein Jäger oder Hüter kann den Quaffel halten, was zur Folge hat, dass der Quaffel sich immer auf der selben Zelle befindet wie besagter Jäger bzw. Hüter. Der Quaffel bewegt sich dadurch mit dem Jäger bzw. Hüter mit.}
-        {Jäger und Hüter können sollen den Quaffel, ohne zu passen, über das Spielfeld transportieren können.}
+        {Ein Jäger oder Hüter kann den Quaffel halten, wodurch sich der Quaffel immer auf der selben Zelle befindet wie besagter Jäger bzw. Hüter.}
+        {Jäger und Hüter sollen den Quaffel, ohne zu passen, über das Spielfeld transportieren können.}
         {Jäger, Hüter, Quaffel}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}	
@@ -187,8 +185,8 @@ von beiden Suchern entfernt ist.}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
     
-\fanf	{Quaffel Entreißen}
-        {Ein Jäger darf einem anderen Jäger den Quaffel entreißen, sofern dieser auf einem seiner Nachbarfelder ist. Dies gelingt allerdings nur mit einer bestimmten Wahrscheinlichkeit. Jäger dürfen auch dem gegnerischen Hüter den Quaffel entreißen, jedoch dies geht nur, wenn sich der Hüter nicht in seiner eigenen Hüterzone befindet.}
+\fanf	{Quaffel Übernehmen}
+        {Ein Jäger darf von einem anderen Jäger den Quaffel übernehmen, sofern dieser auf einem seiner Nachbarzellen ist. Dies gelingt allerdings nur mit einer bestimmten Wahrscheinlichkeit. Jäger dürfen auch von einem gegnerischen Hüter den Quaffel übernehmen, jedoch dies geht nur, wenn sich der Hüter nicht in seiner eigenen Hüterzone befindet.}
         {Bietet zusätzliche Möglichkeiten, den Ball zu erobern.}
         {Jäger, Hüter, Quaffel}
         {+}
@@ -202,78 +200,78 @@ von beiden Suchern entfernt ist.}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Klatscher Schlagen}
-        {Ein Treiber kann einen Klatscher schlagen, wenn er sich auf derselben Zelle wie der Klatscher befindet. Der Treiber wählt, um den Klatscher zu schlagen, eine Zielzelle aus, die eine maximale Entfernung von drei zu ihm hat. Zusätzlich müssen auch alle überstrichenen Felder frei sein. Ist dies beides der Fall, so wird das Schlagen des Klatschen wie ein normaler Quaffel-Wurf behandelt, allerdings mit einer 100\% Wahrscheinlichkeit.}
+        {Ein Treiber kann einen Klatscher schlagen, wenn er sich auf derselben Zelle wie der Klatscher befindet. Der Treiber wählt, um den Klatscher zu schlagen, eine Zielzelle aus, die eine maximale Entfernung von drei zu ihm hat. Zusätzlich müssen auch alle überstrichenen Zellen frei sein. Ist dies beides der Fall, so wird das Schlagen des Klatschers wie ein normaler Quaffel-Wurf behandelt, allerdings mit einer Wahrscheinlichkeit von $100\%$.}
         {Stellt für den Treiber die Möglichkeit dar, den Katscher zu bewegen.}
         {Spielfeld, Treiber, Klatscher}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Spieler Betäuben}
-        {Bewegt sich der Klatscher auf deine Zelle, auf der sich eine Spielfigur befindet, die kein Treiber ist, wird diese mit einer gewissen Wahrscheinlichkeit betäubt. Das hat zur Folge, dass diese Spielfigur gegebenenfalls den Quaffel verliert, keine Ball fangen und für eine Runde keine Aktion ausführen kann. Der Klatscher, der den Spiler betäubt hat, wird auf eine zufällige freie Zelle gesetzt.}
+        {Bewegt sich der Klatscher auf deine Zelle, auf der sich eine Spielfigur befindet, die kein Treiber ist, wird diese mit einer gewissen Wahrscheinlichkeit betäubt. Das hat zur Folge, dass diese Spielfigur gegebenenfalls den Quaffel verliert, keinen Ball fangen und für eine Runde keine Aktion ausführen kann. Der Klatscher, der den Spieler betäubt hat, wird auf eine zufällige freie Zelle gesetzt.}
         {Stellt ein zusätzliches taktisches Spielelement dar.}
         {Klatscher, Jäger, Hüter, Sucher}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Schnatz Fangen}
-        {Befindet sich ein Sucher und der Goldene Schnatz auf derselben Zelle, so fängt der Sucher den Goldenen Schnatz mit einer gewissen Wahrscheinlichkeit. Dadurch erhält sein Team 30 Punkte und das Spiel ist zu Ende.}
+        {Befinden sich ein Sucher und der Schnatz auf derselben Zelle, so fängt der Sucher den Schnatz mit einer gewissen Wahrscheinlichkeit. Dadurch erhält sein Team 30 Punkte und das Spiel ist zu Ende.}
         {Das Schnatz Fange führ das Ende der Partie herbei.}
         {Schnatz, Sucher, Punkte}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 
-\fanf	{Fans}
-        {Ein Fan kann durch Zaubersprüche das eigenen Team unterstützen oder das gegnerische Team schwächen. Diese Eingriffe in das Spielgeschehen werden  mit einer gewissen Wahrscheinlichkeit geahndet. Die Fans eines Teams werden jeweils vom Spieler des Teams gesteuert. Es gibt die folgenden Typen von Fans: Elfen, Kobolde, Trolle und Niffler die alle unterschiedliche Fähigkeiten beherrschen.}
+\fanf	{Einmischung}
+        {Eine  Einmischung ist eine Aktion, die das eigene Team unterstützt und / oder das gegnerische Team schwächt. Diese Einmischungen werden mit einer gewissen Wahrscheinlichkeit durchgeführt und wird vom jeweiligen Spieler in der Endphase ausgelöst. Es gibt die folgenden Typen von Einmischungen: Teleportation, Fernangiff, Impus und Schnatzstoß.}
         {Sorgen für Abwechslung, Witz, und Überraschungen im Spiel.}
         {-}
         {0}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
-\fanf	{Elfen [Fantyp]}
-        {Elfen haben die Fähigkeit, einen Spieler von der eigenen oder auch von der gegnerischen Mannschaft auf eine zufällige freie Zelle zu Teleportieren.}
-        {Siehe Fans}
-        {Fans}
+\fanf	{Teleportation [Einmischungstyp]}
+        {Bei der Teleportation wird ein Spieler von der eigenen oder auch von der gegnerischen Mannschaft auf eine zufällige freie Zelle teleportiert.}
+        {Siehe Einmischung}
+        {Einmischung}
         {0}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
-\fanf	{Kobolde [Fantyp]}
-        {Kobolde haben die Fähigkeit, einen Schockzauber zu sprechen, der bewirkt, dass der getroffene Spieler den Quaffel verliert, sofern er diesen hat und anschließend auf eine zufällige freie Nachbarzelle gestoßen wird.}
-        {Siehe Fans}
-        {Fans}
+\fanf	{Fernangriff [Einmischungstyp]}
+        {Der Fernangriff bewirkt, dass der getroffene Spieler den Quaffel verliert, sofern er diesen hat und anschließend auf eine zufällige freie Nachbarzelle gestoßen wird.}
+        {Siehe Einmischung}
+        {Einmischung}
         {0}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
-\fanf	{Trolle [Fantyp]}
-        {Durch lautes Brüllen sorgen Trolle dafür, dass der Spieler, der den Quaffel besitzt, diesen vor Schreck fallen lässt.}
-        {Siehe Fans}
-        {Fans}
+\fanf	{Impuls [Einmischungstyp]}
+        {Der Impuls sorgt dafür, dass ein Spieler den Quaffel verliert.}
+        {Siehe Einmischung}
+        {Einmischung}
         {0}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
-\fanf	{Niffler [Fantyp]}
-        {Niffler können nach dem Goldenen Schnatz schnappen können, wodurch dieser eine Ausweichbewegung macht und sich auf eine zufällige freit Nachbarzelle bewegt.}
-        {Siehe Fans}
-        {Fans}
+\fanf	{Schnatzstoß [Einmischungstyp]}
+        {Bei einem Schnatzstoß macht der Schnatz eine Ausweichbewegung auf eine freie Nachbarzelle.}
+        {Siehe Einmischung}
+        {Einmischung}
         {0}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Schiedsrichter}
-        {Der Schiedsrichter ahndet mit einer gewissen Wahrscheinlichkeit Fouls von Spielern oder Einmischungen von Fans. Ahndet der Schiedsrichter eine Aktion, so wird die verursachende Spielfigur bis zum nächsten Tor, bzw. der Fan komplett von der Partie ausgeschlossen.}
+        {Der Schiedsrichter ahndet mit einer gewissen Wahrscheinlichkeit Fouls von Spielern oder Einmischungen. Ahndet der Schiedsrichter eine Aktion, so wird die verursachende Spielfigur bis zum nächsten Tor blockiert, bzw. genau diese Einmischung ist für die restliche Partie gebannt.}
         {Der Schiedsrichter ist die rechtschaffene Instanz und sorgt dafür, dass unfaire Aktionen nicht bedenkenlos eingesetzt werden können.}
-        {Spielfigur, Fans}
+        {Spielfigur, Einmischung}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Foul}
-        {Fouls sind Spielzüge, die grundsätzlich möglich, jedoch laut Regelwerk nicht zulässig sind. Es gibt die folgenden Arten von Fouls: Stürmen, Großoffensive, Rammen, Torringe blockieren und Schnatz blockieren. Der Schiedsrichter ahndet diese Fouls mit einer gewissen Wahrscheinlichkeit.}
+        {Fouls sind Spielzüge, die grundsätzlich möglich, jedoch laut Regelwerk nicht zulässig sind. Es gibt die folgenden Arten von Fouls: Stürmen, Großoffensive, Rammen, Torringe blockieren und Schnatz blockieren.}
         {Fouls stellen eine zusätzliche taktische Spielkomponente dar.}
         {Spielfigur, Schiedsrichter, Spielfeld}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Torring blockieren [Foul]}
-        {Eine Spielfigur darf sich nicht direkt auf einen Torring stellen, da es sonst unmöglich wäre, durch diesen Torring ein Tor zu erzielen. Der Ball hopst im Falle eines blockierten Torrings auf eine freie Nachbarzelle des Torrings.}
+        {Eine Spielfigur darf sich nicht direkt auf einen Torring stellen, da es sonst unmöglich wäre, durch diesen Torring ein Tor zu erzielen. Steht eine Spielfigur dennoch auf einer Torringszelle, so ist dies ein Faul}
         {Ermöglicht einem Team zu verhindern, dass der Gegner Punkte erzielen kann.}
         {Foul}
         {+}
@@ -301,22 +299,22 @@ von beiden Suchern entfernt ist.}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Schnatz blockieren [Foul]}
-        {Dieses Foul können alle Spieler ausführen mit Ausnahme der Sucher. Dazu bewegt sich ein Spieler auf das Feld des Goldenen Schnatzes, obwohl er kein Sucher ist, wodurch er verhindert, dass Sucher den Goldenen Schnatz fangen können, da sich nie zwei oder mehr Spielfiguren auf ein und der selben Zelle befinden dürfen.}
+        {Dieses Foul können alle Spieler ausführen mit Ausnahme der Sucher. Dazu bewegt sich ein Spieler auf das Feld des Schnatzes, obwohl er kein Sucher ist, wodurch er verhindert, dass Sucher den Schnatz fangen können, da sich nie zwei oder mehr Spielfiguren auf ein und der selben Zelle befinden dürfen.}
         {Diese Anforderung soll es dem Sucher schwerer machen den Schnatz zu fangen, da das gegnerische Team den Schnatz so blockieren kann.}
         {Foul}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Setzen auf freies Nachbarfeld}
-        {Soll ein Spieler oder Ball auf ein zufälliges freies Nachbarfeld von seiner Position gesetzt werden, jedoch sind alle 8 umliegenden Felder bereits von Spielfiguren besetzt oder aus anderen Gründen nicht zulässig, so wird rekursiv von einem zufällig besetzten Nachbarfeld weiter gesucht, bis sich schließlich ein freies Feld findet. Das bedeutet, dass der Spieler oder Ball nicht unbedingt auf einem Nachbarfeld seiner Position landet, sondern auch weiter entfernt positioniert werden kann.}
-        {Es muss der Fall abgedeckt werden, dass kein freies Nachbarfeld mehr frei ist.}
+        {Soll ein Spieler oder Ball auf ein zufälliges freies Nachbarzelle von seiner Position gesetzt werden, jedoch sind alle acht umliegenden Zellen bereits von Spielfiguren besetzt oder aus anderen Gründen nicht zulässig, so wird rekursiv von einem zufällig besetzten Nachbarzelle weiter gesucht, bis sich schließlich eine freie Zelle findet. Das bedeutet, dass der Spieler oder Ball nicht unbedingt auf einem Nachbarzelle seiner Position landet, sondern auch weiter entfernt positioniert werden kann.}
+        {Es muss der Fall abgedeckt werden, dass kein freies Nachbarzelle mehr frei ist.}
         {Zelle, Bälle, Spielfigur}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 
 \fanf	{Runde}
-        {Das Spiel läuft in Runden ab. Jede Runde ist dabei in die drei Rundenphasen Ballphase, Spielerphase und Fanphase unterteilt.}
+        {Das Spiel läuft in Runden ab. Jede Runde ist dabei in die drei Rundenphasen unterteilt: Ballphase, Spielerphase und Endphase.}
         {Bei \glqq{}Fantastic Feasts\grqq{} handelt es sich laut den Spielregeln um ein Rundenbasiertes Spiel.}
         {-}
         {+}
@@ -330,14 +328,14 @@ von beiden Suchern entfernt ist.}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Spielerphase}
-        {Jeder Spieler macht seinen Zug, wobei sich die Teams abwechseln. In jeder Runde wird neu zufällig bestimmt, welches Team dabei beginnt. Die Reihenfolge der Spieler innerhalb eines Teams wird zufällig bestimmt.}
+        {Jeder Spieler macht seine Aktion, wobei sich die Teams abwechseln. In jeder Runde wird neu zufällig bestimmt, welches Team dabei beginnt. Die Reihenfolge der Spieler innerhalb eines Teams wird zufällig bestimmt.}
         {Siehe Runde.}
         {Runde}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
-\fanf	{Fanphase}
-        {Jeder Fan macht seinen Zug, wobei sich die Fanblöcke der Teams abwechseln. In jeder Runde wird neu zufällig bestimmt, welcher Fanblock dabei beginnt. Die Reihenfolge der Fans innerhalb eines Fanblocks wird zufällig bestimmt.}
+\fanf	{Endphase}
+        {Die Teams lösen abwechselnd die gewünschten Einmischungen aus. In jeder Runde wird neu zufällig bestimmt, welches Team dabei beginnt. Die Reihenfolge der Einmischungen innerhalb eines Teams wird zufällig bestimmt.}
         {Siehe Runde.}
         {Runde}
         {+}
@@ -358,22 +356,22 @@ von beiden Suchern entfernt ist.}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Spielfigur platzieren}
-        {Ein Spieler darf seine Spielfiguren in seiner Hälfte des Spilefeldes beliebig platzieren. Es darf jedoch nie mehr als eine Figur auf der selben Zelle platziert sein. Außerdem muss der Zentrum unbesetzt sein.}
-        {Zu Beginn des Spiels wählt jeder Spieler ine Aufstellung für sein Team.}
+        {Ein Spieler darf seine Spielfiguren in seiner Hälfte des Spilefeldes beliebig platzieren. Es darf jedoch nie mehr als eine Figur auf der selben Zelle platziert sein. Außerdem muss das Zentrum unbesetzt sein.}
+        {Zu Beginn des Spiels wählt jeder Spieler eine Aufstellung für sein Team.}
         {Zentrum, Spielbeginn}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}	
         
 \fanf	{Spielbeginn}
-        {Zu Beginn werden alle Spielfiguren von den Spielern auf dem Spielfeld aber außerhalb des Zentrums platziert. Die Bälle, mit Ausnahme des Schnatzes, werden auf der Zentrumszelle platziert.}
+        {Zu Beginn werden alle Spielfiguren von den Spielern auf dem Spielfeld platziert. Die Bälle, mit Ausnahme des Schnatzes, werden auf der Zentrumszelle platziert.}
         {Nötige Aufstellung zu Spielbeginn.}
         {-}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Überlängenbehandlung}
-        {Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert fest,  ohne dass ein Sieger ermittelt werden kann, so wird das Verhalten des Goldenen Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Goldenen Schnatz findet wird auf 100\% gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft bewegt sich der Goldenen Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gewunden, so bewegt er sich in der nächsten Rundenphase auf die nächste Zelle, auf der sich ein Sucher befindet.}
-        {Dadurch wird sichergestellt, dass ein Spiel spannend bleibt und die Spieler nicht die Lust verlieren, wenn eine Partie zu zäh läuft.}
+        {Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert festgelegt wurde, ohne dass ein Sieger ermittelt wurde, so wird das Verhalten des Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Schnatz findet wird auf $100\%$ gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft bewegt sich der Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gewunden, so bewegt er sich in der nächsten Rundenphase auf die nächste Zelle zu, auf der sich ein Sucher befindet.}
+        {Dadurch wird sichergestellt, dass ein Spiel spannend bleibt und die Spieler nicht die Lust verlieren.}
         {Runde, Schnatz, Sucher}
         {-+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
@@ -404,7 +402,7 @@ von beiden Suchern entfernt ist.}
 
 \fanf	{Log-Datei}
         {Datei zum Speichern bestimmter Ereignisse. Diese Datei wird lokal auf dem Endgerät hinterlegt.}
-        {Um die während der Nutzung der Software aufgetretenen Aktionen im Nachhinein nachvollziehen zu können und daraus Informationen für Statistiken und Wartung zu ziehen, ist es wichtig das Aktionen protokolliert werden.}
+        {Um die während der Nutzung der Software aufgetretenen Aktionen im Nachhinein nachvollziehen zu können und daraus Informationen für Statistiken und Wartung zu ziehen.}
         {-}
         {-}
         {Client, KI-Client, Server}
@@ -416,7 +414,7 @@ von beiden Suchern entfernt ist.}
         {Der Server muss eine vorgefertigte Partie-Konfiguration laden können.}
         {Die Partie-Konfiguration definiert maßgeblich den Spielverlauf.}
         {Partie-Konfiguration}
-        {-+}
+        {0}
         {Server, Systemadministrator}
 
 \fanf	{Zufallsgenerator}
@@ -451,7 +449,7 @@ von beiden Suchern entfernt ist.}
         {Nutzer, Client}
 
 \fanf	{Spiel Ende [Ansicht]}
-        {Grafische Oberfläche die, die Spieler sehen nachdem eine Partie zu Ende ist. Der Nutzer sollte hier auch die Möglichkeit haben die Anwendung zu verlassen oder wieder ins Hauptmenü zurück kehren. Optional ist hier auch Platz für etwaige Statistiken über den Spielverlauf.}
+        {Grafische Oberfläche, die die Spieler sehen nachdem eine Partie zu Ende ist. Der Nutzer sollte hier auch die Möglichkeit haben die Anwendung zu verlassen oder wieder ins Hauptmenü zurück kehren. Optional ist hier auch Platz für etwaige Statistiken über den Spielverlauf.}
         {Nach dem Ende einer Partie muss dem Nutzer mitgeteilt werden ob er gewonnen hat oder nicht und wie es von da an weiter geht. }
         {Spiel [Ansicht]}
         {0}
@@ -503,37 +501,37 @@ von beiden Suchern entfernt ist.}
         {Das aktuelle Spiel pausieren.}
         {Pausieren ist ein optionales Feature, das im Lastenheft aufgeführt ist und einem menschliche Spieler im Client zur Verfügung stehen sollte, um den Spielkomfort zu erhöhen.}
         {Spiel [Ansicht], Hotkeys}
-        {--}
+        {-}
         {Spieler, Client}
         
 
 \subsection{Funktionale Anforderungen: Konfigurator}
     
 \fanf	{Team- / Partie-Konfiguration visualisieren}
-        {Der Editor kann eine geöffnete Team- / Partie-Konfiguration grafisch darstellen und anzeigen, damit ein Nutzer diese bearbeiten kann.}
+        {Der Konfigurator kann eine geöffnete Team- / Partie-Konfiguration grafisch darstellen und anzeigen, damit ein Nutzer diese bearbeiten kann.}
         {Konfiguration eines Teams / Einer Partie.}
-        {Quidditchteam-Konfiguration}
+        {Quidditchteam-Konfiguration, Partie-Konfiguration}
         {-}
         {Nutzer, Konfigurator}	
 
 \fanf	{Team- / Partie-Konfiguration erstellen und speichern}
-        {Der Editor kann eine Team- / Partie-Konfiguration erstellen und speichern.}
+        {Der Konfigurator kann eine Team- / Partie-Konfiguration erstellen und speichern.}
         {Konfiguration eines Teams / Einer Partie.}
-        {Quidditchteam-Konfiguration}
+        {Quidditchteam-Konfiguration, Partie-Konfiguration}
         {-}
         {Nutzer, Konfigurator}	
 
 \fanf	{Team- / Partie-Konfiguration bearbeiten}
-        {Der Editor kann eine bestehende Team- / Partie-Konfiguration öffnen und bearbeiten.}
+        {Der Konfigurator kann eine bestehende Team- / Partie-Konfiguration öffnen und bearbeiten.}
         {Konfiguration eines Teams / Einer Partie.}
-        {Quidditchteam-Konfiguration}
+        {Quidditchteam-Konfiguration, Partie-Konfiguration}
         {-}
         {Nutzer, Konfigurator}
         
 \subsection{Funktionale Anforderungen: KI-Client}
 
 \fanf	{Schwierigkeitsgrad einstellen}
-        {In der KI-Clientanwendung hat ein Nutzer die Möglichlkeit, die Spielstärke der KI einzustellen.}
+        {In der KI-Clientanwendung hat ein Nutzer die Möglichkeit, die Spielstärke der KI einzustellen.}
         {Um dem Nutzer unterschiedlich starke KI-Gegner zur Verfügung zu stellen.}
         {-}
         {-}
@@ -547,7 +545,7 @@ von beiden Suchern entfernt ist.}
         {Nutzer, KI}
 
 \fanf	{Team-Konfiguration laden}
-        {Der Nutzer kann der KI eine gewünschte Team-Konfiguration zuweisen, indem er eine bereits erstellte Konfiguration läd.}
+        {Der Nutzer kann der KI eine gewünschte Team-Konfiguration zuweisen, indem er eine bereits erstellte Konfiguration lädt.}
         {Um der KI ein gewünschte Team-Konfiguration zuzuweisen.}
         {Team-Konfiguration}
         {-}
