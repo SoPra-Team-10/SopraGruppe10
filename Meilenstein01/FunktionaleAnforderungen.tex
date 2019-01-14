@@ -50,23 +50,23 @@ Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich pri
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Torring}
-        {Die Teams können Punkte erzielen, indem sie den Quaffel durch einen gegnerischen Torring werfen.}
+        {Die Teams können Punkte erzielen, indem sie den Quaffel durch einen gegnerischen Torring schießen.}
         {Die Torringe dienen den Teams als Hauptquelle von Punkten.}
         {Hüterzone}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Schussvektorberechnung}
-        {Ein Schussvektor zeigt vom Mittelpunkt der Startzelle auf die Zielzelle des Wurfs. Alle Zellen, die von diesem Vektor geschnitten werden, sind so genannte überstrichene Zellen.}
+        {Ein Schussvektor zeigt vom Mittelpunkt der Startzelle auf die Zielzelle des Schusses. Alle Zellen, die von diesem Vektor geschnitten werden, sind so genannte überstrichene Zellen.}
         {Ein Schussvektor beschreibt, wie eine Spielfigur einen Ball über das Spielfeld bewegten kann.}
         {Zelle}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Punkte erzielen}
-        {Es gibt zwei Möglichkeiten, Punkte zu erzielen: Den Quaffel durch ein gegnerischen Torring werfen (entspricht 10 Punkten) oder den Goldenen Schnatz fangen (entspricht 30 Punkten).}
+        {Es gibt zwei Möglichkeiten, Punkte zu erzielen: Torschüsse (entspricht 10 Punkten) oder den Goldenen Schnatz fangen (entspricht 30 Punkten).}
         {Die Punktezahl zeigt an, welcher Spieler sich im Moment besser schlägt und dient zur Bestimmung des Gewinners am Ende der Partie.}
-        {Schnatz fangen, Quaffel werfen}
+        {Schnatz fangen, Quaffel schießen}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
@@ -93,20 +93,20 @@ Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich pri
 
 \fanf	{Klatscher [Ball]}
         {Die Klatscher sind kleine schwarze Bälle, die sich von alleine auf Spieler zubewegen (eine Zelle pro Runde), die keine Treiber sind.}
-        {Die Klatscher verleihen dem Spiel zusätzliche taktische Tiefe, da sie Spielfiguren für eine Runde ausschalten können.}
+        {Die Klatscher verleihen dem Spiel zusätzliche taktische Tiefe, da sie Spielfiguren betäuben können.}
         {Bälle}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Schnatz [Ball]}
-        {Der Schnatz ist eine kleiner goldener Ball, sich von alleine von Suchern wegbewegt (eine Zelle pro Runde). Das bedeutet, er achtet auf den nächsten Sucher, und wählt unter allen möglichen freien Zellen, die eine größere Entfernung zu diesem haben, als seine gegenwärtige, eine zufällige aus, und bewegt sich auf diese Zelle. Falls es keine solchen Zellen gibt, bewegt sich der Schnatz auf eine zufällige freie Nachbarzelle. Der Schnatz erscheint zu Beginn der dreizehnten Runde auf einer zufällig gewählten freien Zelle, die möglichst gleich weit von beiden Suchern entfernt ist.}
+        {Der Schnatz ist eine kleiner, goldener Ball, der sich von alleine von Suchern wegbewegt (eine Zelle pro Runde). Das bedeutet, er achtet auf den nächsten Sucher und wählt unter allen möglichen freien Zellen, die eine größere Entfernung zu diesem haben, als seine gegenwärtige, eine zufällige aus, und bewegt sich auf diese Zelle. Falls es keine solchen Zellen gibt, bewegt sich der Schnatz auf eine zufällige freie Nachbarzelle. Der Schnatz erscheint zu Beginn der dreizehnten Runde auf einer zufällig gewählten freien Zelle, die möglichst gleich weit von beiden Suchern entfernt ist.}
         {Der Schnatz dient zum Punkteerzielen und führt, wenn er gefangen wird, zum Ende des Partie.}
         {Bälle}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Besen}
-        {Jede Spielfigur besitzt einen Besen, die einen der folgenden Typen haben: Zauberfauch, Sauberwisch 11, Komet 2-60, Nimbus 2001 oder Feuerblitz. Der Typ des Besens bestimmt die Wahrscheinlichkeit, mit der eine Spielfigur nach einer Bewegung um eine Zelle eine weitere Bewegung ausführen darf. Diese Wahrscheinlichkeit wird in der Partiekonfiguration festgelegt, wobei die Besen in der genannten Reihenfolge aufsteigende Wahrscheinlichkeiten besitzen.}
+        {Jede Spielfigur besitzt einen Besen, die einen der folgenden Typen haben: Zauberfauch, Sauberwisch 11, Komet 2-60, Nimbus 2001 oder Feuerblitz. Der Rang des Besens bestimmt die Wahrscheinlichkeit, mit der eine Spielfigur nach einer Bewegung um eine Zelle eine weitere Bewegung ausführen darf. Diese Wahrscheinlichkeit wird in der Partiekonfiguration festgelegt, wobei die Besen in der genannten Reihenfolge aufsteigende Wahrscheinlichkeiten besitzen.}
         {Die Besen geben den Spielfiguren eine unterschiedliche Qualität.}
         {-}
         {+}
@@ -127,7 +127,7 @@ Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich pri
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Jäger [Spielfigur]}
-        {Jäger können den Quaffel aufnehmen und werfen und damit Punkte für ihr Team erzielen.}
+        {Jäger können den Quaffel aufnehmen und schießen und damit Punkte für ihr Team erzielen.}
         {Jäger können Punkte für ihr Team erzielen.}
         {Spielfigur}
         {++}
@@ -141,7 +141,7 @@ Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich pri
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Hüter [Spielfigur]}
-        {Hüter können den Quaffel aufnehmen und versuchen, den Gegner daran zu hindern, ein Tor zu erzielen. Landet der Quaffel auf einem Torring so geht der Quaffel am ende der Rudenphase in den Besitz des Hüters über, wenn er sich selbst in der Hüterzone befindet. Ein Hüter kann selbst keine Tore erzielen.}
+        {Hüter können den Quaffel aufnehmen und versuchen, den Gegner daran zu hindern, ein Tor zu erzielen. Landet der Quaffel auf einem Torring so geht der Quaffel am Ende der Rundenphase in den Besitz des Hüters über, wenn er sich selbst in der Hüterzone befindet. Ein Hüter kann selbst keine Tore erzielen.}
         {Hüter stellen die Verteidigung seines Teams dar.}
         {Spielfigur, Hüterzone}
         {++}
@@ -156,14 +156,14 @@ Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich pri
         
 \fanf	{Quaffel Schießen}
         {Hüter und Jäger können den Quaffel schießen. Der Wurf wird über ein Schussvektor angegeben. Jede gegnerische Spielfigur, die sich auf einer überstrichenen Zelle des Schussvektors befindet, kann den Quaffel abfangen. Wird der Ball von keiner Spielfigur abgefangen, so ist der Wurf mit der Wahrscheinlichkeit $P^d$ erfolgreich, wobei $P$ eine elementare Wurfwahrscheinlichkeit und $d$ die Entfernung zur Zielzelle ist. War der Schuss erfolgreich, so landet der Quaffel auf der Zielzelle. Wenn nicht wird der Quaffel auf einer zufälligen freien Zelle in einem $n\times n$ Quadrat um die Zielzelle platziert, wobei $n=\ceil{ \frac{d}{7}}$ ist.}			
-        {Das Werfen des Quaffels ermöglicht Passspiel und das erzielen von Punkten.}
+        {Das Schießen des Quaffels ermöglicht Passspiel und das erzielen von Punkten.}
         {Schussvektorberechnung, Entfernungsberechnung, Jäger, Hüter, Quaffel}
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Quaffel Abfangen}
         {Jede gegnerische Spielfigur auf einer überstrichenen Zelle des Schussvektors eines Wurfes hat eine gewisse Wahrscheinlichkeit, den Quaffel abzufangen. Diese Wahrscheinlichkeit ist in der Partiekonfiguration vermerkt. Gelingt das Abfangen, so landet der Quaffel auf der Zelle der Abfangenden Spielfigur.}
-        {Das Abfangen bietet die Möglichkeit, Würfe des Gegners zu unterbinden.}
+        {Das Abfangen bietet die Möglichkeit, Schüsse des Gegners zu unterbinden.}
         {Quaffel-Werfen, Spielfiguren }
         {++}
         {Spieler, KI, Gast, Client, KI-Client, Server}
@@ -197,14 +197,14 @@ Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich pri
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Tor Erzielen}
-        {Ein Jäger kann ein Tor erzielen, indem er den Quaffel erfolgreich auf eine Torringzelle wirft. Dabei muss der Schussvektor des Wurfes durch die linke oder rechte Seite der Torringzelle gehen.}
+        {Ein Jäger kann ein Tor erzielen, indem er den Quaffel erfolgreich auf eine Torringzelle schießt. Dabei muss der Schussvektor des Wurfes durch die linke oder rechte Seite der Torringzelle gehen.}
         {Stellt für einen Jäger die Möglichkeit dar, Punkte zu erzielen.}
         {Torring, Quaffel Werfen, Jäger}
         {+}
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Klatscher Schlagen}
-        {Ein Treiber kann einen Klatscher schlagen, wenn er sich auf derselben Zelle wie der Klatscher befindet. Der Treiber wählt, um den Klatscher zu schlagen, eine Zielzelle aus, die eine maximale Entfernung von drei zu ihm hat. Zusätzlich müssen auch alle überstrichenen Zellen frei sein. Ist dies beides der Fall, so wird das Schlagen des Klatschers wie ein normaler Quaffel-Wurf behandelt, allerdings mit einer Wahrscheinlichkeit von $100\%$.}
+        {Ein Treiber kann einen Klatscher schlagen, wenn er sich auf derselben Zelle wie der Klatscher befindet. Der Treiber wählt, um den Klatscher zu schlagen, eine Zielzelle aus, die eine maximale Entfernung von drei zu ihm hat. Zusätzlich müssen auch alle überstrichenen Zellen frei sein. Ist dies beides der Fall, so wird das Schlagen des Klatschers wie ein normaler Quaffel-Schuss behandelt, allerdings mit einer Wahrscheinlichkeit von $100\%$.}
         {Stellt für den Treiber die Möglichkeit dar, den Katscher zu bewegen.}
         {Spielfeld, Treiber, Klatscher}
         {+}
@@ -226,7 +226,7 @@ Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich pri
         
 
 \fanf	{Einmischung}
-        {Eine  Einmischung ist eine Aktion, die das eigene Team unterstützt und / oder das gegnerische Team schwächt. Diese Einmischungen werden mit einer gewissen Wahrscheinlichkeit durchgeführt und wird vom jeweiligen Spieler in der Endphase ausgelöst. Es gibt die folgenden Typen von Einmischungen: Teleportation, Fernangiff, Impus und Schnatzstoß.}
+        {Eine  Einmischung ist eine Aktion, die das eigene Team unterstützt und / oder das gegnerische Team schwächt. Diese Einmischungen werden mit einer gewissen Wahrscheinlichkeit vom Schiedsrichter geahndet und wird vom jeweiligen Spieler in der Endphase ausgelöst. Es gibt die folgenden Typen von Einmischungen: Teleportation, Fernangiff, Impus und Schnatzstoß.}
         {Sorgen für Abwechslung, Witz, und Überraschungen im Spiel.}
         {-}
         {0}
@@ -275,7 +275,7 @@ Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich pri
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Torring blockieren [Foul]}
-        {Eine Spielfigur darf sich nicht direkt auf einen Torring stellen, da es sonst unmöglich wäre, durch diesen Torring ein Tor zu erzielen. Steht eine Spielfigur dennoch auf einer Torringszelle, so ist dies ein Faul}
+        {Eine Spielfigur darf sich nicht direkt auf einen Torring stellen, da es sonst unmöglich wäre, durch diesen Torring ein Tor zu erzielen. Steht eine Spielfigur dennoch auf einer Torringszelle, so ist dies ein Foul}
         {Ermöglicht einem Team zu verhindern, dass der Gegner Punkte erzielen kann.}
         {Foul}
         {+}
@@ -303,7 +303,7 @@ Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich pri
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Schnatz blockieren [Foul]}
-        {Dieses Foul können alle Spieler ausführen mit Ausnahme der Sucher. Dazu bewegt sich ein Spieler auf das Feld des Schnatzes, obwohl er kein Sucher ist, wodurch er verhindert, dass Sucher den Schnatz fangen können, da sich nie zwei oder mehr Spielfiguren auf ein und der selben Zelle befinden dürfen.}
+        {Dieses Foul können alle Spielfiguren ausführen, mit Ausnahme der Sucher. Dazu bewegt sich ein Spieler auf das Feld des Schnatzes, obwohl er kein Sucher ist, wodurch er verhindert, dass Sucher den Schnatz fangen können, da sich nie zwei oder mehr Spielfiguren auf ein und der selben Zelle befinden dürfen.}
         {Diese Anforderung soll es dem Sucher schwerer machen den Schnatz zu fangen, da das gegnerische Team den Schnatz so blockieren kann.}
         {Foul}
         {+}
@@ -318,7 +318,7 @@ Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich pri
 
 
 \fanf	{Runde}
-        {Das Spiel läuft in Runden ab. Jede Runde ist dabei in die drei Rundenphasen unterteilt: Ballphase, Spielerphase und Endphase.}
+        {Das Spiel läuft in Runden ab. Jede Runde ist dabei in Phasen unterteilt: Ballphase, Spielerphase und Endphase.}
         {Bei \glqq{}Fantastic Feasts\grqq{} handelt es sich laut den Spielregeln um ein Rundenbasiertes Spiel.}
         {-}
         {+}
@@ -346,7 +346,7 @@ Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich pri
         {Spieler, KI, Gast, Client, KI-Client, Server}
 
 \fanf	{Disqualifikation}
-        {Werden in der selben Runde mehr als 3 Spielfiguren eines Teams vom Schiedsrichter aus dem Spiel entfernt, gilt das Team als disqualifiziert.}
+        {Werden in derselben Runde mehr als 3 Spielfiguren eines Teams vom Schiedsrichter aus dem Spiel entfernt, gilt das Team als disqualifiziert.}
         {Unfaires Spielen muss bestraft werden.}
         {Fouls, Schiedsrichter}
         {0}
@@ -374,7 +374,7 @@ Die im Folgenden aufgeführten funktionalen Anforderungen beschäftigen sich pri
         {Spieler, KI, Gast, Client, KI-Client, Server}
         
 \fanf	{Überlängenbehandlung}
-        {Reaktionen, welche getroffen werden, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert festgelegt wurde, ohne dass ein Sieger ermittelt wurde, so wird das Verhalten des Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Schnatz findet wird auf $100\%$ gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft bewegt sich der Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gewunden, so bewegt er sich in der nächsten Rundenphase auf die nächste Zelle zu, auf der sich ein Sucher befindet.}
+        {Reaktionen, welche eintreten, falls eine Partie zu lange läuft. Zieht sich ein Spiel über mehr Runden hin, als in der Partie-Konfiguration über einen Höchstwert festgelegt wurde, ohne dass ein Sieger ermittelt wurde, so wird das Verhalten des Schnatz angepasst. Die Wahrscheinlichkeit, dass ein Sucher den Schnatz fängt, wird auf $100\%$ gesetzt. Falls dann nach drei Runden das Spiel immer noch läuft, bewegt sich der Schnatz ohne Suchern auszuweichen in die Mitte des Spielfelds und verharrt dort. Wird der dort nach weiteren drei Runden immer noch nicht gefangen, so bewegt er sich in der nächsten Runde auf die nächste Zelle zu, auf der sich ein Sucher befindet.}
         {Dadurch wird sichergestellt, dass ein Spiel spannend bleibt und die Spieler nicht die Lust verlieren.}
         {Runde, Schnatz, Sucher}
         {-+}
@@ -392,7 +392,7 @@ Bei den nachfolgenden Anforderungen handelt es sich um die funktionalen Anforder
         {+}
         {Server, Konfigurator, Client, KI-Client, Nutzer}
 
-\fanf	{Quidditchteam-Konfiguration}
+\fanf	{Team-Konfiguration}
         {Definiert alle Attribute eines Teams.}
         {Nutzer sollen sich ihre Teams individuell zusammenstellen können.}
         {-}
@@ -458,8 +458,8 @@ Die folgenden funktionalen Anforderungen betreffen nur die Client Anwendung.
         {+}
         {Nutzer, Client}
 
-\fanf	{Spiel Ende [Ansicht]}
-        {Grafische Oberfläche, die die Spieler sehen nachdem eine Partie zu Ende ist. Der Nutzer sollte hier auch die Möglichkeit haben die Anwendung zu verlassen oder wieder ins Hauptmenü zurück kehren. Optional ist hier auch Platz für etwaige Statistiken über den Spielverlauf.}
+\fanf	{Spielende [Ansicht]}
+        {Grafische Oberfläche, die die Spieler sehen, nachdem eine Partie zu Ende ist. Der Nutzer sollte hier auch die Möglichkeit haben die Anwendung zu verlassen oder wieder ins Hauptmenü zurückzukehren. Optional ist hier auch Platz für etwaige Statistiken über den Spielverlauf.}
         {Nach dem Ende einer Partie muss dem Nutzer mitgeteilt werden ob er gewonnen hat oder nicht und wie es von da an weiter geht. }
         {Spiel [Ansicht]}
         {0}
@@ -467,7 +467,7 @@ Die folgenden funktionalen Anforderungen betreffen nur die Client Anwendung.
         
 \fanf	{Team-Konfiguration importieren [Ansicht]}
         {Grafische Oberfläche zum Importieren einer Team-Konfiguration für ein Spiel.}
-        {Es muss für den Benutzer eine einfachen Weg geben, eine Team Konfiguration im Dateisystem zu suchen und an die Anwendung zu übergeben.}
+        {Es muss für den Benutzer einen einfachen Weg geben, eine Team Konfiguration im Dateisystem zu suchen und an die Anwendung zu übergeben.}
         {Hauptmenü [Ansicht]}
         {0}
         {Spieler, Client}
@@ -502,7 +502,7 @@ Die folgenden funktionalen Anforderungen betreffen nur die Client Anwendung.
         
 \fanf	{Hotkeys}
         {Oft benötigte Funktionen werden auf bestimmte (besondere) Tasten (-Kombinationen) abgebildet.}
-        {Hotkeys sind optionale Features, die im Lastenheft aufgeführt sind und zu einer einfacheren Spielsteuerung und höherem Spielkomfort betragen können.}
+        {Hotkeys sind optionale Features, die im Lastenheft aufgeführt sind und zu einer einfacheren Spielsteuerung und höherem Spielkomfort beitragen können.}
         {Spiel [Ansicht], Hilfemenü [Ansicht]}
         {-}
         {Nutzer, Client}
