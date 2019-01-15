@@ -33,7 +33,7 @@ digraph G {
     Torschussvektor -> Schussvektor
 
     Wurf [
-        label = "Wurf|WurfWahrscheinlichkeit : Real\l"
+        label = "Schuss|SchussWahrscheinlichkeit : Real\l"
     ]
 
     Schussvektor -> Wurf [

@@ -114,7 +114,7 @@ digraph G {
     ]
 
     Fan [
-        label = "Fan|Bestrafungswahrscheinlichekeit : Real\l"
+        label = "Einmischung|Bestrafungswahrscheinlichekeit : Real\l"
     ]
 
     Fan -> Team [
