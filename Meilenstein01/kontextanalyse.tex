@@ -1,37 +1,46 @@
-\subsection{Einleitung}
-Bei dem Projekt handelt es sich um die Konzeption und Implementierung eines online Multiplayer-Spiels aus der Welt von Harry Potter – genauer: \textit{Fantastic Feasts}. Es ist eine rundenbasierte Form des bekannten Spiels Quidditch.
+\section{Einleitung}
+Bei diesem Dokument handelt es sich um das Pflichtenheft zum Projekt \textit{Fantastic Feasts}. Es dient dazu, das zu entwickelnde System vollständig zu spezifizieren und alle bisher erarbeiteten Entwurfsdokumente strukturiert zusammen zu fassen. Es baut auf dem Lastenheft auf, in dem bereits eine Anforderungen und Spefizikationen des Auftraggebers formuliert wurden, ist jedoch umfangreicher und detaillierter, was die Anforderungen und Spezifikationen des Systems betrifft. Damit stellt es den Vertrag zwischen Entwicklern und Auftraggebern dar. Alle hier aufgelisteten Leistungen müssen vom Entwicklerteam erbracht werden. Insgesamt richtet sich das Dokument sowohl an die Entwickler, die es als Referenz in der Implementierungsphase verwenden, als auch an den Kunden, der eine umfangreiche und genaue Beschreibung der zu erwartenden Leistungen zur Hand hat.
 
+Bei dem Projekt handelt es sich um die Konzeption und Implementierung eines online Multiplayer-Spiels aus der Welt von Harry Potter – genauer: \textit{Fantastic Feasts}. Es ist eine rundenbasierte Form des bekannten Spiels Quidditch.
 
 Im Mittelpunkt des Projekts steht das Erlernen von Fähigkeiten im Umgang mit einem größeren Softwareprojekt. Es werden keine kommerziellen Ziele verfolgt.
 
-Der Auftraggeber – im weitesten Sinne die Universität Ulm – verfolgt das Ziel, den Studenten Fähigkeiten zu vermitteln und sie anschließend nach genau definierten Maßstäben zu bewerten. Zu diesen Fähigkeiten gehört folgendes:
+Auftraggeber des Projektes ist die Servicegruppe Informatik der Universität Ulm, die das Modul Softwaregrundprojekt veranstaltet. Die Umsetzung erfolgt durch sechs Studenten der Informationssystemtechnik, die das Entwicklerteam bilden.
+
+Das Dokument gliedert sich in fünf Teile:
+
+\begin{itemize}
+\item Teil I: Überblick
+\item Teil II: Anforderungsanalyse
+\item Teil III: Softwarespezifikation
+\item Teil IV: Randbedingungen
+\item Teil V: Anhang
+\end{itemize}
+
+Teil I beschreibt den Kontext und alle Rahmenbedingungen des Projekts. Teil II formuliert Fachwissen der Systemdomäne, den Anwendungskontext sowie funktionalen Anforderungen des Systems. Teil III spezifiziert das Softwaresystem aus Sicht der Entwickler. Benutzerschnittstellen, Nutzungskonzept, Datenmodell und die einzelnen Funktionen des Systems werden hier beschrieben, wobei auf die Anforderungen Bezug genommen wird. In Teil IV werden Qualitätsanforderungen an den System formuliert und Wege beschrieben, wie ihre Einhaltung überprüft werden kann. Teil IV stellt den Anhang dar, in dem gegebenenfalls Quellen und Referenzen auf andere Dokumente aufgeführt werden.
+
+
+\section{Motivation}
+Die Motivation für das Projekt lässt sich in die des Auftraggebers und die der Auftragnehmer aufteilen.
+
+Der Auftraggeber – im weitesten Sinne die Universität Ulm – verfolgt das Ziel, den Studenten Fähigkeiten zu vermitteln und sie anschließend nach genau definierten Maßstäben zu bewerten:
 
 Zunächst einmal stehen Planen, Formulieren von Anforderungen und Modellierung von Software an. Es folgt die Auseinandersetzung mit verschiedenen Plattformen und Technologien auf die für die Implementierung zurückgegriffen werden soll. Gleichzeitig wird das Ziel verfolgt, übergeordnete Fähigkeiten zur Qualitätssicherung, zur Versionenverwaltung oder zu agilen Entwicklungsprozessen im Team zu erwerben. 
 Erst dann kommen praktische Programmierfähigkeiten zum tragen. Auch hier ist es das Ziel, diese auszubauen.
 
-Die Studierenden – in diesem Fall 6 Studenten der Informationssystemtechnik – verfolgen das Ziel, das Projekt nach den Anforderungen im Lastenheft erfolgreich umzusetzen und die Abnahmeprüfung zu bestehen.
+Darüber hinaus liegt es im Interesse der Universität Ulm aus Prestigegründen gute Absolve ten ihres Bachelor-Programms auszubilden.
 
-
-
-
-
-\subsection{Motivation}
-Die Motivation für das Projekt lässt sich – wie bei den Zielen – in die der Universität und die der Studenten aufteilen.
-
-Die Universität gibt die Inhalte vor. Diese sollen von den Studenten bestmöglich erlernt werden, da es Teil ihrer Ausbildung darstellt. Die Universität will somit ihrem Auftrag der Lehre gerecht werden.
+Die Auftragnehmer – in diesem Fall sechs Studenten der Informationssystemtechnik – verfolgen das Ziel, das Projekt nach den Anforderungen im Lastenheft erfolgreich umzusetzen und die Abnahmeprüfung zu bestehen. Mit dem Erwerb und Ausbau der oben genannten Fähigkeiten leisten sie einen wichtigen Beitrag zu einer erfolgreichen Ausbildung in ihrem Fach. Zusätzlich soll ein Spiel entwickelt werden, das funktioniert und Spaß macht.
  
 
-Für die Studenten ist die Motivation der Erwerb und Ausbau der oben genannten Fähigkeiten und im weitesten Sinne eine erfolgreiche Ausbildung in ihrem Fach. Zusätzlich soll ein Spiel entwickelt werden, das funktioniert und Spaß macht.
- 
-
-\subsection{Vision}
-Das fertige System soll folgendermaßen aufgebaut sein: Einer Client-Server-Architektur folgend kommunizieren ein oder mehrere Clients mit dem Server, auf dem die Spiellogik läuft. Die Spieler haben client-seitig eine ansprechende und lebendige GUI, über die sie \textit{Fantastic Feasts} spielen, eine Partie als Zuschauer verfolgen, Charaktere und Ausrüstung zu Teams mitsamt Farben und Logo zusammen stellen können und die Möglichkeit haben, Partien zu konfigurieren. Begleitet wird die visuelle Darstellung von Soundeffekten und einer thematisch Ansprechenden Spielmusik.
+\section{Vision}
+Das fertige System folgt einer Client-Server-Architektur. Darin kommunizieren ein oder mehrere Clients mit dem Server, auf dem die Spiellogik läuft. Die Spieler haben client-seitig eine ansprechende GUI, über die sie \textit{Fantastic Feasts} spielen, eine Partie als Zuschauer verfolgen, Charaktere und Ausrüstung zu Teams mitsamt Farben und Logo zusammen stellen können und die Möglichkeit haben, Partien zu konfigurieren. Begleitet wird die visuelle Darstellung von Soundeffekten und einer thematisch Ansprechenden Spielmusik.
 
 Im durch und durch taktischen Spiel mit zwei sich genüberstehenden Quidditch-Teams können die Spieler Runde für Runde Spielfiguren auf Besen über das Spielfeld jagen lassen, Punkte erzielen, den Gegner sabotieren und Publikumseffekte zu ihrem Vorteil einsetzen. Doch selbst bei noch so guter Taktik kann ihnen der Zufall einen Strich durch die Rechnung machen, da nicht immer alles so eintritt, wie es sich die einzelnen Spieler vielleicht erhofft haben.
 
 Was die Spielmodi betrifft, ist das Kern-Szenario das Multiplayer-Spiel. Hier entsteht durch den Wettstreit zweier Spieler die größte Spannung. Doch um das Spiel auch alleine spielbar zu machen, existiert ein Singleplayer-Modus. Eine ausgefeilte KI mit voraussichtlich mehreren Schwierigkeitsstufen stellt für Einzelspieler eine spannende Herausforderung dar. Wer sich noch auf den großen Wettkampf vorbereitet, die Taktik andere Spieler erlernen will oder einfach Spaß am Zuschauen hat, kann sich im Zuschauer-Modus in andere Multiplayer-Partien einklinken. Damit bleibt einer breiten Zielgruppe an Spielern kaum etwas zu wünschen übrig.
 
-\subsection{Projektkontext}
+\section{Projektkontext}
 Auftraggeber des Projektes ist die Servicegruppe Informatik der Universität Ulm, die das Modul Softwaregrundprojekt veranstaltet. Der Tutor Stefanos Mytilineos vertritt den Auftraggeber während der Projektlaufzeit, in höherer Instanz ist Florian Ege verantwortlich. Als weiterer Stakeholder tritt das Team auf, das das Projekt letztendlich entwickelt. Es besteht aus sechs Studenten der Informationssystemtechnik: Tarik Enderes, Tim Luchterhand, Jonas Merkle, Paul Nykiel, Björn Petersen und Michael von Hohnhorst. Diese bearbeiten das Projekt nicht in Vollzeit, da sie parallel den weiteren Verlauf ihres Studiums verfolgen. 
 
 Indirekt am Entwicklungsprozess beteiligt ist das Standardisierungskomitee, in das auch aus diesem Team ein Vertreter geschickt wird. Dort werden alle nötigen Protokolle und Schnittstellen definiert, die bei der Entwicklung von \textit{Fantastic Feasts} benötigt werden. Weitere Stakeholder, die jedoch erst später in Erscheinung treten, sind andere Teams, die gegebenenfalls auf einen Komponenten dieses Projektes angewiesen sind. Sie werden auf einer bevorstehenden Messe zu potenziellen Kunden. In ihrem Interesse liegt eine saubere Implementierung bei gleichzeitig guter Dokumentation des Komponenten. Zu guter letzt muss dieses Projekt sowie die Einzelleistung eines jeden Team-Mitgliedes die Prüfer in der Abnahmeprüfung überzeugen – sie stellen so gesehen die wichtigsten Kunden dar.
