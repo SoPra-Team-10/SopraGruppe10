@@ -1,7 +1,34 @@
-Der KI-Client wird über die Kommandozeile gestartet. Serverkonfiguration, Team-Konfiguration und der Schwierigkeitsgrad werden beim Start der Anwendung mittels Kommandozeilenparametern gehandhabt. Der Server, mit dem sich der KI-Client verbinden soll wird als Argument übergeben. Die Team-Konfiguration und der Schwierigkeitsgrad können mittels Optionen verändert werden und nehmen ansonsten einen Standardwert an.\\
+Diese Komponente simuliert einen Menschlichen Gegner, der sich wie ein normaler Client bei einem Spielserver anmeldet und dann autonom seine Spielentscheidungen trifft.
+
+\subsubsection{Schnittstellenarten}
 Es besteht kein Grund, für diese Komponente eine grafische Oberfläche bereitzustellen, da die Anwendung zur Laufzeit keine Eingabe von einem menschlichen Benutzer erwartet und eine Partie mittels des Clients verfolgt werden kann. \\
 Für eine Kommandozeilenanwendung ist es einfacher, Plattformunabhängigkeit sicherzustellen. Außerdem wird es damit problemlos möglich, den KI-Client aus einem anderen Programm zu starten. Beispielsweise kann dem Client eine Funktion hinzugefügt werden, gegen die KI zu spielen, ohne dass der Benutzer den KI-Client extern starten muss.\\
-Der KI-Client beendet sich von selbst nach Abschluss einer Partie durch ein reguläres Spielende oder Verbindungsabbruch.\\
+
+\subsubsection{Dialoge}
+Im Folgenden werden die Anforderungen an den KI-Client einem CLI-Dialog zugeordnet.
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{| l l l p{4cm} |}
+    \hline
+    \textbf{Name} & \textbf{Typ} & \multicolumn{2}{l|}{\textbf{Abgedeckte Anwendungsfälle}} \\\hline
+    Init & CLI Befehl mit Params & FA73 - FA75 & Schwierigkeit, Server- und Team-Konfiguration einstellen.\\\hline
+	InitFailure & Response & FA73 - FA75 & Feedback.\\\hline
+    WaitingForGame & Response & FA55 & Netzwerkschnittstelle, allgemeine Kommunikation.\\\hline
+    Playing & Response & allgemein & Feedback.\\\hline
+    AttemptingReconnect & Response & FA55 & Netzwerkschnittstelle, allgemeine Kommunikation.\\\hline
+    ConnectionLost & Response & FA55 & Netzwerkschnittstelle, allgemeine Kommunikation.\\\hline
+    \end{tabular}
+\end{figure}
+
+\subsubsection{Dialogstruktur}  
+\textbf{Init:} Der KI-Client wird über die Kommandozeile gestartet. Serverkonfiguration, Team-Konfiguration, die maximale Anzahl an Reconnect-Versuchen und der Schwierigkeitsgrad werden beim Start der Anwendung mittels Kommandozeilenparametern gehandhabt. Der Server, mit dem sich der KI-Client verbinden soll wird als Argument übergeben. Die Team-Konfiguration und der Schwierigkeitsgrad können mittels Optionen verändert werden und nehmen ansonsten einen Standardwert an.\\
+\textbf{InitFailure:} Wird eine ungültige Option angegeben, ist der Server nicht erreichbar oder wurde eine ungültige Team-Konfigurationsdatei geladen, so erscheint eine Fehlermeldung mit entsprechenden Hinweisen.\\
+\textbf{WaitingForGame:} War die Initialisierung erfolgreich und der KI-Client konnte sich mit dem Server verbinden, so erscheint eine Nachricht, die darauf hinweist, dass noch auf den Beginn der Partie gewartet wird.\\
+\textbf{Playing:} Während einer laufenden Partie wird ein Hinweis angezeigt.\\
+\textbf{AttemptingReconnect:} Bei einem Verbindungsabbruch zeigt der KI-Client eine Meldung an und versucht automatisch, die Verbindung wiederherzustellen.\\
+\textbf{ConnectionLost:} Konnte sich der KI-Client nicht innerhalb der angegebenen Anzahl von Versuchen erneut mit dem Server verbinden, so erscheint eine Fehlermeldung und das Programm beendet sich.\\
+Der KI-Client beendet sich außerdem nach Abschluss einer Partie durch ein reguläres Spielende. 
 
 \subsubsection{Zulässige Optionen:}
 \begin{figure}[H]
@@ -17,6 +44,8 @@ Der KI-Client beendet sich von selbst nach Abschluss einer Partie durch ein regu
         & Akzeptiert einen String als Pfad zu einer JSON-Datei.\\
         & Existiert der angegebene Pfad nicht oder ist die Datei keine gültige Konfigurationsdatei,\\
         & wird eine entsprechende Fehlermeldung ausgegeben.\\\hline
+		-r & Reconnects: Spezifiziert, wie oft der KI-Client versucht, die Verbindung nach einem Verbindungsabbruch 
+		wiederherzustellen. Standardwert ist 5.\\\hline
         -{}-help & Zeigt eine Liste möglicher Optionen an.\\\hline
     \end{tabular}
 \end{figure}
