@@ -5,8 +5,8 @@ Hier wird angegeben, welche grundlegenden Funktionen jede Komponente erfüllen m
     \begin{tabular}{|p{2cm}|p{2.9cm}|p{2.9cm}|p{2.9cm}|p{2.9cm}|}
         \hline
         \textbf{Name} & \textbf{Parameter} & \textbf{Vorbedingung} & \textbf{Nachbedingung} & \textbf{Beschreibung}\\\hline
-        \fkt{Stats anzeigen}{Team1, Team2, Punktestand, Rundennummer, aktuelle Spielfigur}{-}{-}{Zeigt die Stats in der Spielansicht an.}
-        \fkt{Spielfeld rendern}{mögliche Aktionen}{-}{-}{Zeigt das Spielfeld, die Spielfiguren und mögliche Ausführbare Aktionen der aktuell aktiven Spielfigur in der Spielansicht an.}
+        \fkt{Status anzeigen}{Team1, Team2, Punktestand, Rundennummer, aktuelle Spielfigur}{-}{-}{Zeigt den aktuellen Status der Partie in der Spielansicht an.}
+        \fkt{Spielfeld rendern}{mögliche Aktionen}{-}{-}{Zeigt das Spielfeld, die Spielfiguren und mögliche ausführbare Aktionen der aktuell aktiven Spielfigur in der Spielansicht an.}
         \fkt{Aktion registrieren}{Aktion}{Aktion ist in der gegebenen Situation möglich.}{-}{Fügt eine Aktion einer Liste von auszuführenden Aktionen zu.}
     \end{tabular}
 \end{figure}
@@ -16,13 +16,13 @@ Hier wird angegeben, welche grundlegenden Funktionen jede Komponente erfüllen m
     \begin{tabular}{|p{2cm}|p{2.9cm}|p{2.9cm}|p{2.9cm}|p{2.9cm}|}
         \hline
         \fkt{Pausieren}{-}{-}{-}{Wechselt in den Pause-Dialog.}
-        \fkt{Aktionen zurücksetzen}{Liste registrierter Aktionen}{Liste der registrierter Aktionen ist nicht leer}{-}{Leert die Liste von registrierter Aktionen}
-        \fkt{Zug ausführen}{Liste registrierter auszuführender Aktionen}{Liste registrierter Aktionen ist nicht leer.}{-}{Sendet die Liste registrierter Aktionen an den Server zur Verarbeitung.}
+        \fkt{Aktionen zurücksetzen}{Liste registrierter Aktionen}{Liste der registrierter Aktionen ist nicht leer}{-}{Leert die Liste der registrierten Aktionen}
+        \fkt{Zug ausführen}{Liste registrierter Aktionen}{Liste registrierter Aktionen ist nicht leer.}{-}{Sendet die Liste registrierter Aktionen an den Server zur Verarbeitung.}
         \fkt{Legende anzeigen}{Team1, Team2}{-}{-}{Zeigt alle Spielfiguren in der Legende am unteren Rand der Spielansicht an.}
-        \fkt{Statusmel-dung anzeigen}{Statusmeldung}{-}{-}{Fügt den Statusmeldungen am unteren Rand der Spielansicht an.}
-        \fkt{Spiel verlassen}{-}{-}{Positive Antwort in dem sich öffnenden Bestätigungs-Popup}{Wechselt in den Hauptmenüdialog.}
+        \fkt{Statusmel-dung anzeigen}{Statusmeldung}{-}{-}{Fügt den Statusmeldungen am unteren Rand der Spielansicht die übergebene Statusmeldung an.}
+        \fkt{Spiel verlassen}{-}{-}{Positive Antwort in dem sich öffnenden Bestätigungs-Popup}{Wechselt in den Hauptmenü-Dialog.}
         \fkt{Spiel beenden}{-}{-}{Positive Antwort in dem sich öffnenden Bestätigungs-Popup}{Schließt die Anwendung.}
-        \fkt{Hilfe anzeigen}{-}{-}{-}{Wechselt in den Hilfedialog.}
+        \fkt{Hilfe anzeigen}{-}{-}{-}{Wechselt in den Hilfe-Dialog.}
     \end{tabular}
 \end{figure}
 
@@ -33,7 +33,7 @@ Hier wird angegeben, welche grundlegenden Funktionen jede Komponente erfüllen m
         \fkt{Team ändern}{-}{-}{Eine gültige Team-Konfiguration ist ausgewählt.}{Öffnet das \glqq{}Team ändern\grqq{}-Popup und ändert die aktive Team-Konfiguration.}
         \fkt{Spielsuche öffnen}{-}{Eine gültige Team-Konfiguration ist aktiv.}{-}{Wechselt in den Spielsuche-Dialog}
         \fkt{Hauptmenü öffnen}{-}{-}{-}{Wechselt in den Hauptmenü-Dialog.}
-        \fkt{Serverver-bindung aufbauen}{Serveradresse, Port, als Gast}{-}{Auf der gegebenen Serveradresse und Portnummer läuft ein Spiel-Server.}{Verbindet sich mit dem angegebenen Server.}
+        \fkt{Serverver-bindung aufbauen}{Serveradresse, Port, als Gast}{-}{Auf dem jeweiligen Port des Rechners mit der Adresse ist ein Spielserver initialisiert.}{Verbindet sich mit dem angegebenen Server.}
         \fkt{Hotkeys öffnen}{-}{-}{-}{Wechselt in den Hotkey-Dialog.}
         \fkt{Spiel fortsetzen}{-}{-}{-}{Wechselt vom Pause-Dialog zurück in die Spielansicht.}
         \fkt{Spielende-Dialog öffnen}{Punktestand, Name des Gewinners}{-}{-}{Wechselt in den Spielende-Dialog und zeigt darin den Endpunktestand und den Namen des Gewinners an.}
@@ -46,9 +46,9 @@ Hier wird angegeben, welche grundlegenden Funktionen jede Komponente erfüllen m
     \begin{tabular}{|p{2cm}|p{2.9cm}|p{2.9cm}|p{2.9cm}|p{2.9cm}|}
         \hline
         \textbf{Name} & \textbf{Parameter} & \textbf{Vorbedingung} & \textbf{Nachbedingung} & \textbf{Beschreibung}\\\hline
-        \fkt{Initialisieren}{Port, Partie-Konfiguration}{-}{Initialisierung erfolgreich}{Startet den Server, damit sich Clients damit verbinden können.}
+        \fkt{Initialisieren}{Port, Partie-Konfiguration}{Gültiger Port angegeben}{Initialisierung erfolgreich}{Startet den Server, damit sich Clients damit verbinden können.}
         \fkt{Spiel starten}{-}{Zwei Spieler sind verbunden.}{-}{Benachrichtigt die verbundenen Clients, dass das Spiel gestartet wurde.}
-        \fkt{Aktionen empfangen}{-}{Clients sind verbunden.}{-}{Wartet auf Informationen vom Client eines Spielers darüber, welche Aktionen durchgeführt werden sollen und verarbeitet diese Informationen zu einer Liste von durchzuführenden Aktionen.}
+        \fkt{Aktionen empfangen}{Partie ist nicht pausiert}{Clients sind verbunden.}{-}{Wartet auf Informationen vom Client eines Spielers darüber, welche Aktionen durchgeführt werden sollen und verarbeitet diese Informationen zu einer Liste von durchzuführenden Aktionen.}
         \fkt{Spiel-situation aktualisieren}{Liste von Aktionen}{Clients sind verbunden, Spiel ist nicht pausiert.}{-}{Ändert die Spielsituation anhand der durchzuführenden Aktionen und schickt die aktuelle Spielsituation an alle verbundenen Clients.}
     \end{tabular}
 \end{figure}
@@ -75,7 +75,7 @@ Hier wird angegeben, welche grundlegenden Funktionen jede Komponente erfüllen m
         \fkt{Teamkon-figurator öffnen}{-}{-}{-}{Wechselt in den Temkonfigurator-Dialog.}
         \fkt{Pertiekon-figurator öffnen}{-}{-}{-}{Wechselt in den Partiekonfigurator-Dialog.}
         \fkt{Konfigura-tion laden}{Dateipfad}{Datei im Pfad ist eine Konfigurations-Datei.}{-}{Öffnet eine Konfigurationsdatei und lädt sie in den Konfigurator zur Bearbeitung.}
-        \fkt{Konfigura-tion speichern}{Konfiguration, Pfad}{Konfiguration erfüllt alle Bedingungen.}{-}{Speichert die aktuelle Konfiguration als Konfigurations-Datei.}
+        \fkt{Konfigura-tion speichern}{Konfiguration, Pfad}{Konfiguration erfüllt alle Bedingungen.}{-}{Speichert die übergebene Konfiguration als Konfigurations-Datei.}
     \end{tabular}
 \end{figure}
 
@@ -85,7 +85,7 @@ Hier wird angegeben, welche grundlegenden Funktionen jede Komponente erfüllen m
     \begin{tabular}{|p{2cm}|p{2.9cm}|p{2.9cm}|p{2.9cm}|p{2.9cm}|}
         \hline
         \textbf{Name} & \textbf{Parameter} & \textbf{Vorbedingung} & \textbf{Nachbedingung} & \textbf{Beschreibung}\\\hline
-        \fkt{Serverver-bindung herstellen}{Adresse, Port}{Adresse und Port führen zu einem initialisierten Spielserver.}{Verbindung ist erfolgreich.}{Verbindet den KI-Client mit dem angegebenen Server.}
+        \fkt{Serverver-bindung herstellen}{Adresse, Port}{Auf dem jeweiligen Port des Rechners mit der Adresse ist ein Spielserver initialisiert.}{Verbindung ist erfolgreich.}{Verbindet den KI-Client mit dem angegebenen Server.}
         \fkt{Spielsitua-tion empfangen}{-}{-}{-}{Wartet auf Informationen zur Spielsituation vom Server.}
         \fkt{Spieler-phase durchführen}{-}{-}{-}{Berechnet, welche Aktionen in der aktuellen Spielerphase durchgeführt werden sollen und schickt sie an den Server.}
         \fkt{Endphase durchführen}{-}{-}{-}{Berechnet, welche Einmischungen in der aktuellen Endphase ausgeführt werden sollen und schickt sie an den Server.}
