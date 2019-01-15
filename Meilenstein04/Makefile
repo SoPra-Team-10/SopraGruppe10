@@ -5,5 +5,8 @@ all:
 	$(RUBBER) -d  main.tex
 
 clean:
-	$(LATEXMK) -c
-	rm *.pdf
+	rm -f *.toc
+	rm -f *.aux
+	rm -f *.log
+	rm -f *.out
+	rm -f *.pdf
