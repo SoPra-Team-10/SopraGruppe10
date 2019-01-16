@@ -1,0 +1,40 @@
+digraph G {
+    fontname = "Helvetica"
+    fontsize = 8
+    rankdir="LR";
+    nodesep = "0.6"
+    splines=ortho
+
+    node [
+        fontname = "Helvetica"
+        fontsize = 8
+        shape = "record"
+    ]
+
+    edge [
+        fontname = "Helvetica"
+        fontsize = 8
+        arrowhead = "onormal"
+        labeldistance = 2
+    ]
+
+    Ball [
+        label = "Ball|Position: Zelle\l"
+    ]
+
+    Quaffel [
+        label = "Quaffel|PunktGewinn : Integer"
+    ]
+
+    Klatscher [
+        label = "Klatscher|"
+    ]
+
+    GoldenerSchnatz [
+        label = "GoldenerSchnatz|PunktGewinn : Integer"
+    ]
+
+    Quaffel -> Ball
+    Klatscher -> Ball
+    GoldenerSchnatz -> Ball
+}    

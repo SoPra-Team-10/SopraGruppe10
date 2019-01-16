@@ -1,0 +1,60 @@
+digraph G {
+    fontname = "Helvetica"
+    fontsize = 8
+    rankdir="LR";
+    nodesep = "0.6"
+    splines=ortho
+
+    node [
+        fontname = "Helvetica"
+        fontsize = 8
+        shape = "record"
+    ]
+
+    edge [
+        fontname = "Helvetica"
+        fontsize = 8
+        arrowhead = "onormal"
+        labeldistance = 1.4
+    ]
+
+    Besen [
+        label = "Besen|Rang : Real"
+    ]
+
+    BesenAnnotation [
+        label = "Rang ist proportional zur\nWahrscheinlichkeit eine zusätzliche\nBewegung ausführen zu dürfen"
+        shape = "note"
+    ]
+
+    Besen -> BesenAnnotation [
+        arrowhead = "none"
+        style = "dotted"
+    ]
+
+    Zunderfauch [
+        label = "Zunderfauch|"
+    ]
+
+    Sauberwisch11 [
+        label = "Sauberwisch11|"
+    ]
+
+    Komet2_60 [
+        label = "Komet2_60|"
+    ]
+
+    Nimbus2001 [
+        label = "Nimbus2001|"
+    ]
+
+    Feuerblitz [
+        label = "Feuerblitz|"
+    ]
+
+    Zunderfauch -> Besen
+    Sauberwisch11 -> Besen
+    Komet2_60 -> Besen
+    Nimbus2001 -> Besen
+    Feuerblitz -> Besen
+}    
