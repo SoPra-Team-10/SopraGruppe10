@@ -1,0 +1,50 @@
+digraph G {
+    fontname = "Helvetica"
+    fontsize = 8
+    rankdir="LR";
+    nodesep = "0.6"
+    splines=ortho
+
+    node [
+        fontname = "Helvetica"
+        fontsize = 8
+        shape = "record"
+    ]
+
+    edge [
+        fontname = "Helvetica"
+        fontsize = 8
+        arrowhead = "onormal"
+        labeldistance = 2
+    ]
+
+    Foul [
+        label = "Foul|Bestrafungswahrscheinlichkeit : Real\l"
+    ]
+    
+    Flacken [
+        label = "Torring Blockieren|"
+    ]
+
+    Nachtaroken [
+        label = "Stürmen|"
+    ]
+
+    Stutschen [
+        label = "Großoffensive|"
+    ]
+
+    Keilen [
+        label = "Rammen|"
+    ]
+
+    Schnatzeln [
+        label = "Schnatz blockieren|"
+    ]
+
+    Flacken -> Foul
+    Nachtaroken -> Foul
+    Stutschen -> Foul
+    Keilen -> Foul
+    Schnatzeln -> Foul
+}    

@@ -1,0 +1,55 @@
+digraph G {
+    fontname = "Helvetica"
+    fontsize = 8
+    rankdir="LR";
+    nodesep = "0.6"
+    splines=ortho
+
+    node [
+        fontname = "Helvetica"
+        fontsize = 8
+        shape = "record"
+    ]
+
+    edge [
+        fontname = "Helvetica"
+        fontsize = 8
+        arrowhead = "onormal"
+        labeldistance = 2
+    ]
+
+    Fan [
+        label = "Einmischung|Bestrafungswahrscheinlichekeit : Real\l"
+    ]
+
+    Elf [
+        label = "Teleportation|"
+    ]
+
+    Kobold [
+        label = "Fernangriff|"
+    ]
+
+    Troll [
+        label = "Impuls|"
+    ]
+
+    Niffler [
+        label = "Schnatzstoß|"
+    ]
+
+    Elf -> Fan
+    Kobold -> Fan
+    Troll -> Fan
+    Niffler -> Fan
+
+    FanAnn [
+        label = "Jede der vier Rassen muss\nmindestens einmal pro Teamvorkommen"
+        shape = "note"
+    ]
+
+    Fan -> FanAnn [
+        arrowhead = "none"
+        style = "dotted"
+    ]
+}    

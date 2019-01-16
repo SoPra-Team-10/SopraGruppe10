@@ -1,0 +1,9 @@
+Alle Teile der Anwendung werden in C++17 geschrieben. Als Compiler wird dafür entweder der GNU-C++-Compiler (GCC) oder Visual C++ (MSVC) verwendet, als Buildsystem wird CMake genutzt.
+Zur statischen Codeanalyse wird Clang-Tidy verwendet, Unit Tests werden mit Google-Test bzw. Google-Mock implementiert.
+Um undefiniertes Verhalten zu vermeiden wird das Programm während der Ausführung mit Adress Sanitizer überprüft.
+
+Der Entwicklungsprozess der Softwaremodule gestaltet sich als agiler Scrum-Prozess mit einer Sprintdauer von zwei Wochen. Für jede Komponente wird ein Ansprechpartner definiert, der die Koordination der Entwicklung übernimmt.
+Das Entwicklungsteam besteht aus sechs Entwicklern, zusätzlich agiert der Tutor als Scrummaster. Der Quellcode wird mithilfe von Git versioniert, wobei für jede Komponente ein eigenes Repository existiert. Die Entwicklung der Features erfolgt auf dedizierten Feature-Branches, sodass der master-Branch immer in einem funktionierenden Zustand bleibt.
+
+Alle Teile des Quellcodes werden mithilfe von Doxygen-Kommentaren dokumentiert. Im wesentlichen soll sich während des Entwicklungsprozess an den Linux-Kernel-Styleguide \footnote{https://www.kernel.org/doc/html/v4.20/process/coding-style.html} gehalten werden. Zwei wesentliche Abweichungen von diesem Styleguide sind eine Einrückungstiefe von 4 Zeichen, sowie die Platzierung der öffnenden Klammer bei Funktionsaufrufen \footnote{Siehe Absatz 3 des Styleguides} in der selben Zeile.
+

@@ -147,6 +147,10 @@ bibtotoc,              % LV im IV
     \akt{AKT\thefaktCount}{#1}{#2}{#3}
 }
 
+\newcommand{\fkt}[5]{
+	#1 & #2 & #3 & #4 & #5\\\hline
+}
+
 \begin{document}
     \thispagestyle{empty}
     \begin{addmargin*}[4mm]{-10mm}
@@ -178,14 +182,7 @@ bibtotoc,              % LV im IV
     \pagebreak
 
     \part{Überblick}
-    \section{Einleitung}
-    %TODO
-    \section{Motivation}
-    %TODO
-    \section{Vision}
-    %TODO
-    \section{Projektkontext}
-    %TODO
+    \input{../Meilenstein01/kontextanalyse.tex}
 
     \part{Anforderungsanalyse} 
     \section{Fachwissen}
@@ -194,6 +191,7 @@ bibtotoc,              % LV im IV
     \input{../Meilenstein01/Akteure.tex}
 	\input{AnwendungsfaelleUndAblaeufe.tex}
     \section{Anforderungsdefinition}
+    \input{../Meilenstein01/Akteure.tex}
     \input{../Meilenstein01/FunktionaleAnforderungen.tex} 
 
     \part{Softwarespezifikation}
@@ -217,20 +215,17 @@ bibtotoc,              % LV im IV
 
     \section{Nutzungskonzept}
     %TODO
-    \section{Datenmodell}
-    %TODO
+    \input{Datenmodell}
     \section{Funktionen}
-    %TODO
+    \input{funktionen}
 
     \part{Randbedingungen}
     \section{Qualität}
     \input{../Meilenstein01/NichtFunktionaleAnforderungen.tex}
     \section{Betriebskonzept}
-    %TODO
+    \input{Betriebskonzept}
     \section{Entwicklungsvorgaben}
-    %TODO
+    \input{Entwicklungsvorgaben}
     \section{Abnahmekriterien}
-    %TODO
-
-    \part{Anhang}
+    \input{Abnahmekriterien}
 \end{document}
