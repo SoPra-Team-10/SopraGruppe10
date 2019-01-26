@@ -1,5 +1,5 @@
 \section{KI-Client}
-\includegraphics[width=15cm]{images/KI_Client_Komponenten.png}
+\includegraphics[width=16cm]{images/KI-Komponenten.png}
 
 \begin{description}
 	\item[KI-Client:] 
@@ -7,13 +7,13 @@
 	\\
 	\item[Manager:]
 	Diese Komponente verwaltet die Daten des KI-Client, insbesondere die aktuelle Spielsituation und verarbeitet die Anwendungsparameter.\\ Der Manager empfängt vom JSON-Konverter die aktuelle Spielsituation und aktualisiert seine gespeicherten Daten entsprechend. Er übergibt seine Daten an die KI, damit diese Entscheidungen über die durchzuführenden Aktionen treffen kann. Anschließend empfängt er die Entscheidungen der KI und aktualisiert die gespeicherte Spielsituation entsprechend, bevor er sie dem JSON-Konverter übergibt.\\
-	Außerdem verwaltet der Manager die verwendete Team-Konfiguration. Dabei ist er dafür zuständig, die Konfigurations-Datei im angegebenen Pfad zu öffnen. Die eingelesene Daten übergibt er dann dem JSON-Konverter, erhält die extrahierten Daten zurück und gibt sie der KI für die Platzierung der Spielfiguren bei Spielbeginn. Das ist sinnvoll, da damit vermieden wird, dass der JSON-Konverter und die KI Anwendungsparameter berücksichtigen müssen.
+	Zu Beginn einer Partie erhält der Manager vom JSON-Konverter die Daten aus der zu verwendende Team-Konfigurationsdatei. 
 	\\
 	\item[JSON-Konverter:]
-	Diese Komponente fungiert als Dolmetscher für die Kommunikation zwischen KI-Client und Server.\\
+	Diese Komponente fungiert als Dolmetscher für die Kommunikation zwischen KI-Client, Server und Team-Konfigurator.\\
 	Der JSON-Konverter empfängt die vom Server kommenden Nachrichten im JSON-Format und extrahiert daraus Daten über die aktuelle Spielsituation, die er anschließend dem Manager übergibt. Andersherum empfängt er Daten vom Manager, verpackt sie in einer Nachricht im JSON-Format und sendet sie an den Server.\\
-	Außerdem extrahiert der JSON-Konverter die Daten der Team-Konfiguration im JSON-Format, die er vom Manager erhält in und gibt sie diesem zurück.
-	Der JSON-Konverter wird aus dem Manager ausgelagert, damit er einfacher an die festgelegte Form der Nachrichten, sowie an die Bedürfnisse des Managers angepasst werden kann.
+	Außerdem liest der JSON-Konverter Team-Konfigurationsdateien, extrahiert die Daten und gibt sie an den Manager weiter.\\
+	Das Übersetzen der JSON-Dateien wird in eine eigene Komponente ausgelagert, damit der Manager unabhängig von den Konventionen der JSON-Nachrichten ist und das Subsystem leicht an diese angepasst werden kann.
 	\\
 	\item[Künstliche Intelligenz] 
 	Diese Komponente trifft Entscheidungen über durchzuführende Aktionen anhand der aktuellen Spielsituation.\\
