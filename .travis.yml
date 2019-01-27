@@ -6,14 +6,17 @@ before_install:
 script:
     - mkdir output
     - cd Meilenstein01
+    - make clean
     - make
     - mv main.pdf ../output/Meilenstein01.pdf
     - cd ..
     - cd Meilenstein02
+    - make clean
     - make
     - mv main.pdf ../output/Meilenstein02.pdf
     - cd ..
     - cd Meilenstein03
+    - make clean
     - make
     - mv main.pdf ../output/Meilenstein03.pdf
     - cd ..
@@ -21,6 +24,11 @@ script:
     - make clean
     - make
     - mv main.pdf ../output/Meilenstein04.pdf
+    - cd ..
+    - cd Meilenstein05
+    - make clean
+    - make
+    - mv main.pdf ../output/Meilenstein05.pdf
     - cd ..
 
 notifications:
