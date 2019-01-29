@@ -1,5 +1,8 @@
 \section{KI-Client}
-\includegraphics[width=16cm]{images/KI-Komponenten.png}
+\begin{center}
+	\includegraphics[width=16cm]{images/KI-Komponenten.png}
+\end{center}
+
 
 \begin{description}
 	\item[KI-Client:] 
@@ -12,7 +15,7 @@
 	\\
 	\item[JSON-Parser:]
 	Diese Komponente fungiert als Dolmetscher für die Kommunikation zwischen KI-Client, Server und Team-Konfigurator.\\
-	Der JSON-Parser empfängt die vom Web Socket kommenden Nachrichten im JSON-Format und extrahiert daraus Daten über die aktuelle Spielsituation, die er anschließend dem Manager übergibt. Andersherum empfängt er Daten vom Manager, verpackt sie in einer Nachricht im JSON-Format und sendet sie an das Web Socket.\\
+	Der JSON-Parser empfängt die vom Kommunikator kommenden Nachrichten im JSON-Format und extrahiert daraus Daten über die aktuelle Spielsituation, die er anschließend dem Manager übergibt. Andersherum empfängt er Daten vom Manager, verpackt sie in einer Nachricht im JSON-Format und sendet sie an den Kommunikator.\\
 	Außerdem liest der JSON-Parser Team-Konfigurationsdateien, extrahiert die Daten und gibt sie an den Manager weiter.\\
 	Das Übersetzen der JSON-Dateien wird in eine eigene Komponente ausgelagert, damit der Manager unabhängig von den Konventionen der JSON-Nachrichten ist und das Subsystem leicht an diese angepasst werden kann.
 	\\
@@ -22,9 +25,9 @@
 	Die interne Struktur der künstlichen Intelligenz enthält eine Logik für jede Spielfiguren-Rolle und jede mögliche Einmischung, da jede Spielfigur anhand ihrer Aufgabe und Spezialisierung handeln muss.\\
 	Die KI soll dabei unabhängig von den anderen Komponenten sein, damit sie problemlos zu jedem Zeitpunkt optimiert und für unterschiedliche Schwierigkeitsstufen ausgetauscht werden kann.
 	\\
-	\item[Web Socket]
+	\item[Kommunikator]
 	Diese Komponente ist dafür zuständig, mit dem Server zu Kommunizieren.\\
-	Das Web Socket stellt eine Verbindung mit dem angegebenen Server her, hält sie aufrecht und versucht, sie bei Verbindungsabbruch wiederherzustellen. Es empfängt Nachrichten vom Server und gibt sie unverarbeitet an den JSON-Parser weiter und überträgt umgekehrt die vom JSON-Parser kommenden Daten an den Server.\\
+	Der Kommunikator stellt eine Verbindung mit dem angegebenen Server her, hält sie aufrecht und versucht, sie bei Verbindungsabbruch wiederherzustellen. Er empfängt Nachrichten vom Server und gibt sie unverarbeitet an den JSON-Parser weiter und überträgt umgekehrt die vom JSON-Parser kommenden Daten an den Server.\\
 	Diese Funktionen werden ausgelagert, um die Testbarkeit des JSON-Parsers zu verbessern.
 \end{description}
 
