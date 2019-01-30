@@ -21,31 +21,34 @@
 	\\
 	\item[Künstliche Intelligenz] 
 	Diese Komponente trifft Entscheidungen über durchzuführende Aktionen anhand der aktuellen Spielsituation.\\
-	Die künstliche Intelligenz, kurz KI, empfängt Daten vom Manager und verarbeitet sie in ihrer jeweiligen Logik, um die nächste durchzuführende Aktion zu ermitteln. Sobald sie eine Entscheidung getroffen hat, teilt es diese dem Manager zur weiteren Verarbeitung mit.\\
+	Die künstliche Intelligenz, kurz KI, empfängt Daten vom Manager und verarbeitet sie in ihrer jeweiligen Logik, um die nächste durchzuführende Aktion zu ermitteln. Sobald sie eine Entscheidung getroffen hat, teilt sie diese dem Manager zur weiteren Verarbeitung mit.\\
 	Die interne Struktur der künstlichen Intelligenz enthält eine Logik für jede Spielfiguren-Rolle und jede mögliche Einmischung, da jede Spielfigur anhand ihrer Aufgabe und Spezialisierung handeln muss.\\
 	Die KI soll dabei unabhängig von den anderen Komponenten sein, damit sie problemlos zu jedem Zeitpunkt optimiert und für unterschiedliche Schwierigkeitsstufen ausgetauscht werden kann.
 	\\
 	\item[Kommunikator]
-	Diese Komponente ist dafür zuständig, mit dem Server zu Kommunizieren.\\
+	Diese Komponente ist dafür zuständig, mit dem Server zu kommunizieren.\\
 	Der Kommunikator stellt eine Verbindung mit dem angegebenen Server her, hält sie aufrecht und versucht, sie bei Verbindungsabbruch wiederherzustellen. Er empfängt Nachrichten vom Server und gibt sie unverarbeitet an den JSON-Parser weiter und überträgt umgekehrt die vom JSON-Parser kommenden Daten an den Server.\\
-	Diese Funktionen werden ausgelagert, um die Testbarkeit des JSON-Parsers zu verbessern.
+	Diese Funktionen werden von einer separaten Komponente übernommen, da sie in anderen Subsystemen ebenfalls gebraucht werden und der Kommunikator dort wiederverwendet werden kann. 
 \end{description}
 
 Die funktionalen Anforderungen gemäß dem Pflichtenheft werden den Komponenten folgendermaßen zugeteilt:
 
-\begin{tabular}{|l|l|}
-	\hline
-	\textbf{Komponente} & \textbf{Abgedeckte funktionale Anforderungen}\\\hline
-	Manager & FA1 - FA8\\
-	& FA10 - FA20\\
-	& FA44 - FA47\\
-	& FA73 - FA75\\\hline
-	JSON-Parser & FA54 - FA55\\\hline
-	Künstliche Intelligenz & FA17 - FA 21\\
-	& FA26 - FA28\\
-	& FA30 - FA35\\
-	& FA37 - FA42\\
-	&FA46 - FA47\\
-	&FA50\\\hline
-	
-\end{tabular}
+\begin{center}
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Komponente} & \textbf{Abgedeckte funktionale Anforderungen}\\\hline
+		Manager & FA1 - FA8\\
+		& FA10 - FA20\\
+		& FA44 - FA47\\
+		& FA73 - FA75\\\hline
+		JSON-Parser & FA54\\\hline
+		Künstliche Intelligenz & FA17 - FA 21\\
+		& FA26 - FA28\\
+		& FA30 - FA35\\
+		& FA37 - FA42\\
+		&FA46 - FA47\\
+		&FA50\\\hline
+		Kommunikator & FA55\\\hline
+		
+	\end{tabular}
+\end{center}
