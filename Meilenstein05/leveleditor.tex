@@ -2,7 +2,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.6]{images/Leveleditor.pdf}
+    \includegraphics[scale=0.6]{images/Konfigurator.pdf}
 \end{figure}
 
 \subsection{Beschreibungen}
@@ -11,17 +11,18 @@
 
 \item[Konfigurator]
 
-Bei dem Subsystem Konfigurator handelt es sich um eine graphische Benutzeroberfläche, welche zum Erstellen von Partie-Konfigurationen, sowie zum Erstellen von Team-Konfigurationen  geeignet ist. Der Konfigurator ist ein eigenes Programm, und somit unabhängig von den anderen Anwendungen.
+Beim Subsystem Konfigurator handelt es sich um eine graphische Benutzeroberfläche, die der Erstellung von Partie- oder Team-Konfigurationen dient. Der Konfigurator ist ein eigenes Programm, und somit unabhängig von den anderen Anwendungen.
 
-\item[Team-Konfiguration]
-Die Team-Konfiguration ist eine der Komponenten, die das Subsystem Konfigurator besitzt. In der Team-Konfiguration kann der Spieler sein Team erstellen, mit seinen gewünschten Parametern. Dies muss der Spieler nur einmal machen und anschließend kann er seine Konfiguration abspeichern. Ebenso ist die Team-Konfiguration aber auch in der Lage, eine bereits vorhandene Konfiguration, die vom JSON-Parser geladen wurde anzuzeigen und zu bearbeiten.
+\item[Team-Konfig-Manager]
+Der Team-Konfig-Manager verwaltet eine Team-Konfiguration. Er kommuniziert über den Controller mit der View und nimmt ebenfalls neue Daten von dieser entgegen. Bevor die Daten, die der Nutzer in der graphischen Oberfläche einstellt, in einem Team-Konfigurations-Objekt gespeichert werden, werden sie zuvor noch von der Konfigurationsvalidierung überprüft, sodass sichergestellt ist, dass nur gültige Konfigurationen erstellt werden können. Der Team-Konfig-Manager kümmert sich nur um die programminterne Repräsentation der Konfiguration und ist deshalb streng von der Anzeige sowie dem JSON-Parser getrennt.
 
-\item[Partie-Konfiguration]
-Die Partie-Konfiguration ist eine Komponente des Subsystems Konfigurator und ist dazu gedacht, dass ein Spieler eine Partie mit seinen gewünschten Einstellungen erstellen kann. In der dafür vorgesehenen graphischen Oberfläche kann der Spieler dann seine Einstellungen leicht einstellen, welche von der Partie-Konfiguration in einem gültigen JSON-Format abgespeichert werden. Die Partie-Konfiguration kann ebenfalls auch eine vom JSON-Parser geladene Partie-Konfiguration anzeigen und diese kann dann bearbeitet werden.	
+\item[Partie-Konfig-Manager]
+Der Team-Konfig-Manager verhält sich analog zum Team-Konfig-Manager. Er unterscheidet sich lediglich in der Konfigurationsvalidierung, die natürlich auf eine ebenfalls unterschiedliche Repräsentation der Konfiguration zugeschnitten ist.
 
+\item[Team-Konfi-Manager]
+Der Controller kümmert sich streng nach dem MVC-Pattern um die Kommunikation zwischen den Konfig-Managern un der graphischen Anzeige. Änderungen des Nutzers in der GUI werden an den passenden Konfig-Manager weitergegeben und andersherum erhält die GUI über den Controller immer den aktuellsten Zustand der Konfiguration.
 \item[JSON-Parser]
-Der JSON-Parser ist ebenfalls eine Komponente des Subsystems Konfigurator und dient dem abspeichern oder Laden der Team, bzw Partie-Konfiguration. Somit stellt der JSON-Parser eine eigene Komponente dar, über die die gewünschten Einstellungen für das Team oder die Partie abgespeichert werden, bzw geladen werden, in dem er diese Einstellung in das JSON-Format parst, bzw vom JSON-Format wieder zurückparst, so dass die Einstellungen wieder aus dem JSON-Format ausgelesen werden können.
-
+Der JSON-Parser serialisiert bzw. deserialisiert die Konfigurationen, um sie zu speichern, bzw. zu laden. Er erhäkt von den Konfig-Managern ein Konfigurationsobjekt und serialisiert dieses, damit es im Filesystem gespeichert werden kann oder lädt eine Konfiguration aus einer Datei und gibt sie an den passenden Konfig-Manager weiter.
 \end{description}
 
 \subsection{Zuordnung der Funktionalen Anforderungen}
