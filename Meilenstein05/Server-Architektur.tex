@@ -15,22 +15,22 @@
 			Beim Subsystem Server handelt es sich um die Konsolenanwendung, die als Schnittstelle für zwei oder mehr Clients dient. Die Serveranwendung kümmert sich dabei primär um die Spielsteuerung und agiert dabei unabhängig von den Client-Anwendungen.
 			
 			\item[Spielmechanik]
-			Die Spielmechanik ist die zentrale Komponente des Server Subsystems. Diese bildet dabei die komplette Partie intern ab. In der Spielmechanik sind also zu jeder Zeit die aktuellsten Status der Spielobjekte hinterlegt. Während eines Spiels senden die Clients ihre gewünschten Zügen an den Server. Die Spielmechanik wertet die Züge, nachdem sie validiert und vom Schiedsrichter geprüft wurden, aus und aktualisiert dann gegebenenfalls die aktuelle Spielsituation. Die aktualisierte Spielsituation wird im Anschluss wieder vom Server aus an zu den einzelnen Clients ausgegeben. Als zentrale Komponente des Server Subsystems ist es zwingend notwendig, das diese Komponente als Einheit gesehen wird, das ohne diesen Teil kein das Spielen nicht möglich wäre.
+			Die Spielmechanik ist die zentrale Komponente des Server Subsystems. Diese bildet dabei die komplette Partie intern ab. In der Spielmechanik sind also zu jeder Zeit die aktuellsten Status der Spielobjekte hinterlegt. Während eines Spiels senden die Clients ihre gewünschten Züge an den Server. Die Spielmechanik wertet die Züge, nachdem sie validiert und vom Schiedsrichter geprüft wurden, aus und aktualisiert dann gegebenenfalls die aktuelle Spielsituation. Diese wird im Anschluss wieder vom Server aus zu den einzelnen Clients ausgegeben. Als zentrale Komponente des Server Subsystems ist es zwingend notwendig, dass diese Komponente als Einheit gesehen wird, da ohne diesen Teil kein das Spielen nicht möglich wäre.
 			
 			\item[Zug-Validierung]
-			Die Zug-Validierung prüft ob die Züge, die von einem Spieler über seinen Client übermittelt werden grundsätzlich möglich sind. Dabei wird jedoch nicht geprüft ob der gewünschte Zug ein Foul darstellt. Notwendig ist diese Prüfung, da nicht sichergestellt ist, dass jede Client-Anwendung tatsächlich prüft ob die Züge die ein Spieler tätigen will auch grundsätzlich möglich sind. Die Komponente ist aus der eigentlichen Spielmechanik ausgegliedert, da die Zug-Validierung auch in anderen Subsystem eingesetzt werden könnte, z.b. einer Client-Anwendung.			
+			Die Zug-Validierung prüft, ob die Züge, die von einem Spieler über seinen Client übermittelt werden, grundsätzlich möglich sind. Dabei wird jedoch nicht geprüft ob der gewünschte Zug ein Foul darstellt. Notwendig ist diese Prüfung, da nicht sichergestellt ist, dass jede Client-Anwendung tatsächlich prüft ob die Züge die ein Spieler tätigen will auch grundsätzlich möglich sind. Die Komponente ist aus der eigentlichen Spielmechanik ausgegliedert, da die Zug-Validierung auch in anderen Subsystem eingesetzt werden könnte, z.b. einer Client-Anwendung.			
 			
 			\item[Schiedsrichter]
-			Die Schiedsrichter Komponente des Server Subsystem. Möchte ein Spieler einen verbotenen Zug tätigen wird in der Schiedsrichter Komponente die Entscheidung getroffen, ob der Zug von der Spielmechanik trotzdem ausgeführt wird oder ob der Spieler bestraft wird. Diese Komponente ist aus der Spielmechanik ausgegliedert, da da das Spiel grundsätzlich auch ohne diese Komponente möglich ist und daher diese Komponente in einem nachgelagerten Entwicklungsschritt implementiert werden kann.
+			Die Schiedsrichter Komponente des Server Subsystems. Möchte ein Spieler einen verbotenen Zug tätigen, wird in der Schiedsrichter Komponente die Entscheidung getroffen, ob der Spieler bestraft wird. Diese Komponente ist aus der Spielmechanik ausgegliedert, da da das Spiel grundsätzlich auch ohne diese Komponente möglich ist und daher diese Komponente in einem nachgelagerten Entwicklungsschritt implementiert werden kann.
 			
 			\item[Zufalls-Entscheidungen]
 			Dies Komponente stellt der Spielmechanik und der Schiedsrichter Komponente eine Schnittstelle zur Verfügung, die es erlaubt die vielen Zufalls-Ereignisse in einer Partie auszuwerten.
 			
 			\item[Kommunikator]
-			Die Kommunikator bilden die Komponente, die sich um die Datenübertragung zwischen der Server- und den Client-Anwendungen kümmert. Dabei werden dort zum einen die Status der Verbindungen zu ein Clients überwacht und verwaltet, zum anderen wir die Datenübertragung in beide Richtungen bereitgestellt. Da auch in den Client-Anwendungen eine ähnliche Komponente von Nöten ist, bietet es sich an diese Funktionalitäten in einer eigenen Komponente auszulagern.
+			Der Kommunikator bildet die Komponente, die sich um die Datenübertragung zwischen der Server- und den Client-Anwendungen kümmert. Dabei werden dort zum einen die Status der Verbindungen zu den Clients überwacht und verwaltet. Zum anderen wir die Datenübertragung in beide Richtungen bereitgestellt. Da auch in den Client-Anwendungen eine ähnliche Komponente von Nöten ist, bietet es sich an, diese Funktionalitäten in einer eigenen Komponente auszulagern.
 			
 			\item[JSON-Parser]
-			Der JSON-Parser wandelt die JSON-Daten in interne Objekte der Software um und umgekehrt. Da auch in den Client-Anwendungen eine ähnliche Komponente von Nöten ist, bietet es sich an diese Funktionalitäten in einer eigenen Komponente auszulagern.  
+			Der JSON-Parser (de-) serialisiert die Objekte der Spiellogik. Da auch in den Client-Anwendungen eine ähnliche Komponente von Nöten ist, bietet es sich an, diese Funktionalitäten in einer eigenen Komponente auszulagern.  
 
 		\end{description}
 		
