@@ -21,6 +21,10 @@ Der Team-Konfig-Manager verhält sich analog zum Team-Konfig-Manager. Er untersc
 
 \item[Controller]
 Der Controller kümmert sich streng nach dem MVC-Pattern um die Kommunikation zwischen den Konfig-Managern un der graphischen Anzeige. Änderungen des Nutzers in der GUI werden an den passenden Konfig-Manager weitergegeben und andersherum erhält die GUI über den Controller immer den aktuellsten Zustand der Konfiguration.
+
+\item[View]
+Die View visualisiert die Daten der Konfigurationen, damit sie bequem vom Nutzer angepasst werden können. Sie ist nach dem MVC-Pattern streng von den anderen Komponenten getrennt.
+
 \item[JSON-Parser]
 Der JSON-Parser serialisiert bzw. deserialisiert die Konfigurationen, um sie zu speichern, bzw. zu laden. Er erhäkt von den Konfig-Managern ein Konfigurationsobjekt und serialisiert dieses, damit es im Filesystem gespeichert werden kann oder lädt eine Konfiguration aus einer Datei und gibt sie an den passenden Konfig-Manager weiter.
 \end{description}
