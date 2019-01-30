@@ -1,8 +1,9 @@
+\subsection{UML2-Komponentendiagramm}
 \begin{center}
 	\includegraphics[width=16cm]{images/KI-Komponenten.png}
 \end{center}
 
-
+\subsection{Beschreibungen}
 \begin{description}
 	\item[KI-Client:] 
 	Das Subsystem KI-Client ist eine Kommandozeilenanwendung, die sich wie ein Nutzer-Client mit einem Server verbindet, einer Partie beitritt und, gesteuert von einer KI, einen menschlichen Spieler simuliert. 
@@ -29,6 +30,8 @@
 	Der Kommunikator stellt eine Verbindung mit dem angegebenen Server her, hält sie aufrecht und versucht, sie bei Verbindungsabbruch wiederherzustellen. Er empfängt Nachrichten vom Server und gibt sie unverarbeitet an den JSON-Parser weiter und überträgt umgekehrt die vom JSON-Parser kommenden Daten an den Server.\\
 	Diese Funktionen werden von einer separaten Komponente übernommen, da sie in anderen Subsystemen ebenfalls gebraucht werden und der Kommunikator dort wiederverwendet werden kann. 
 \end{description}
+
+\subsection{Zuordnung der Funktionalen Anforderungen}
 
 Die funktionalen Anforderungen gemäß dem Pflichtenheft werden den Komponenten folgendermaßen zugeteilt:
 
