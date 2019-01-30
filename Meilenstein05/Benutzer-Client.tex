@@ -59,8 +59,8 @@
 				Das Partie-Modell ist eine stark vereinfachte Variante der Spiellogik auf dem Server. Sie beschränkt sich darauf, einen Partie-Zustand eindeutig zu beschreiben und die Regeln für erlaubte Spielzüge zu kennen. So wird ermöglicht, dass der Spieler nur erlaubte Züge durchführen kann und diese Information nicht jedes mal vom Server angefordert werden muss. Zusätzlich hilft das Model dabei, eine konsistente Darstellung der Partie zu erhalten, da die View sich stets an den Zuständen des Models orientiert.
 			\end{description}
 			
-			\item[Web Sockets]
-			Der Web Socket bildet die Komponente, die sich um die Datenübertragung mit dem Server kümmert. Daten über den Spielzustand werden vom Server empfangen und Spieleraktionen werden an den Server gesendet.
+			\item[Kommunikator]
+			Der Kommunikator bildet die Komponente, die sich um die Datenübertragung mit dem Server kümmert. Daten über den Spielzustand werden vom Server empfangen und Spieleraktionen werden an den Server gesendet.
 			
 			\item[JSON-Parser]
 			Der JSON-Parser wandelt die JSON-Daten in interne Objekte der Software um und umgekehrt. Da auch in den Client-Anwendungen eine ähnliche Komponente von Nöten ist, bietet es sich an diese Funktionalitäten in einer eigenen Komponente auszulagern.  
