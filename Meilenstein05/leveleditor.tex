@@ -1,47 +1,44 @@
-\section{Konfigurator}
+\subsection{UML2-Komponentendiagramm}
 
-	\subsection{UML2-Komponentendiagramm}
-		
-		
-		\begin{figure}[H]
-    		\centering
-    		 \includegraphics[scale=0.6]{images/Leveleditor.pdf}
-		\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/Leveleditor.pdf}
+\end{figure}
 
-	\subsection{Beschreibungen}
+\subsection{Beschreibungen}
 
-		\begin{description}
-			
-			\item[Konfigurator]
-			
-			Bei dem Subsystem Konfigurator handelt es sich um eine graphische Benutzeroberfläche, welche zum Erstellen von Partie-Konfigurationen, sowie zum Erstellen von Team-Konfigurationen  geeignet ist. Der Konfigurator ist ein eigenes Programm, und somit unabhängig von den anderen Anwendungen.
-			
-			\item[Team-Konfiguration]
-			Die Team-Konfiguration ist eine der Komponenten, die das Subsystem Konfigurator besitzt. In der Team-Konfiguration kann der Spieler sein Team erstellen, mit seinen gewünschten Parametern. Dies muss der Spieler nur einmal machen und anschließend kann er seine Konfiguration abspeichern. Ebenso ist die Team-Konfiguration aber auch in der Lage, eine bereits vorhandene Konfiguration, die vom JSON-Parser geladen wurde anzuzeigen und zu bearbeiten.
-			
-			\item[Partie-Konfiguration]
-			Die Partie-Konfiguration ist eine Komponente des Subsystems Konfigurator und ist dazu gedacht, dass ein Spieler eine Partie mit seinen gewünschten Einstellungen erstellen kann. In der dafür vorgesehenen graphischen Oberfläche kann der Spieler dann seine Einstellungen leicht einstellen, welche von der Partie-Konfiguration in einem gültigen JSON-Format abgespeichert werden. Die Partie-Konfiguration kann ebenfalls auch eine vom JSON-Parser geladene Partie-Konfiguration anzeigen und diese kann dann bearbeitet werden.	
-			
-			\item[JSON-Parser]
-			Der JSON-Parser ist ebenfalls eine Komponente des Subsystems Konfigurator und dient dem abspeichern oder Laden der Team, bzw Partie-Konfiguration. Somit stellt der JSON-Parser eine eigene Komponente dar, über die die gewünschten Einstellungen für das Team oder die Partie abgespeichert werden, bzw geladen werden, in dem er diese Einstellung in das JSON-Format parst, bzw vom JSON-Format wieder zurückparst, so dass die Einstellungen wieder aus dem JSON-Format ausgelesen werden können.
+\begin{description}
 
-		\end{description}
-		
-	\subsection{Zuordnung der Funktionalen Anforderungen}
-	
-	Die funktionalen Anforderungen gemäß dem Pflichtenheft werden den Komponenten folgendermaßen zugeteilt:
+\item[Konfigurator]
 
-	\begin{table}[h]
-	\centering
-	\begin{tabular}{|l|l|}
-		\hline
-		\textbf{Komponente} & \textbf{Abgedeckte funktionale Anforderungen}\\ \hline
-		Team-Konfiguration & FA53, FA70 \\ \hline
-		
-		Partie-Konfiguration & FA54, FA70 \\ \hline
-		
-		JSON-Konverter & FA71, FA72 \\ \hline
+Bei dem Subsystem Konfigurator handelt es sich um eine graphische Benutzeroberfläche, welche zum Erstellen von Partie-Konfigurationen, sowie zum Erstellen von Team-Konfigurationen  geeignet ist. Der Konfigurator ist ein eigenes Programm, und somit unabhängig von den anderen Anwendungen.
 
-	
-	\end{tabular}
-	\end{table}
+\item[Team-Konfiguration]
+Die Team-Konfiguration ist eine der Komponenten, die das Subsystem Konfigurator besitzt. In der Team-Konfiguration kann der Spieler sein Team erstellen, mit seinen gewünschten Parametern. Dies muss der Spieler nur einmal machen und anschließend kann er seine Konfiguration abspeichern. Ebenso ist die Team-Konfiguration aber auch in der Lage, eine bereits vorhandene Konfiguration, die vom JSON-Parser geladen wurde anzuzeigen und zu bearbeiten.
+
+\item[Partie-Konfiguration]
+Die Partie-Konfiguration ist eine Komponente des Subsystems Konfigurator und ist dazu gedacht, dass ein Spieler eine Partie mit seinen gewünschten Einstellungen erstellen kann. In der dafür vorgesehenen graphischen Oberfläche kann der Spieler dann seine Einstellungen leicht einstellen, welche von der Partie-Konfiguration in einem gültigen JSON-Format abgespeichert werden. Die Partie-Konfiguration kann ebenfalls auch eine vom JSON-Parser geladene Partie-Konfiguration anzeigen und diese kann dann bearbeitet werden.	
+
+\item[JSON-Parser]
+Der JSON-Parser ist ebenfalls eine Komponente des Subsystems Konfigurator und dient dem abspeichern oder Laden der Team, bzw Partie-Konfiguration. Somit stellt der JSON-Parser eine eigene Komponente dar, über die die gewünschten Einstellungen für das Team oder die Partie abgespeichert werden, bzw geladen werden, in dem er diese Einstellung in das JSON-Format parst, bzw vom JSON-Format wieder zurückparst, so dass die Einstellungen wieder aus dem JSON-Format ausgelesen werden können.
+
+\end{description}
+
+\subsection{Zuordnung der Funktionalen Anforderungen}
+
+Die funktionalen Anforderungen gemäß dem Pflichtenheft werden den Komponenten folgendermaßen zugeteilt:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Komponente} & \textbf{Abgedeckte funktionale Anforderungen}\\ \hline
+        Team-Konfiguration & FA53, FA70 \\ \hline
+
+        Partie-Konfiguration & FA54, FA70 \\ \hline
+
+        JSON-Konverter & FA71, FA72 \\ \hline
+
+
+    \end{tabular}
+\end{table}
