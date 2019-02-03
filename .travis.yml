@@ -30,7 +30,12 @@ script:
     - make
     - mv main.pdf ../output/Meilenstein05.pdf
     - cd ..
-
+    - cd Meilenstein06
+    - make clean
+    - make
+    - mv main.pdf ../output/Meilenstein06.pdf
+    - cd ..
+    
 notifications:
     slack: soprateam10:wlcgvL7tR63frGyGP4BCuqNj
     
