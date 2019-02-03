@@ -8,6 +8,7 @@
  * [Meilenstein03.pdf](https://SoPra-Team-10.github.io/Uebungsblaetter/Meilenstein03.pdf)
  * [Meilenstein04.pdf](https://SoPra-Team-10.github.io/Uebungsblaetter/Meilenstein04.pdf)
  * [Meilenstein05.pdf](https://SoPra-Team-10.github.io/Uebungsblaetter/Meilenstein05.pdf)
+ * [Meilenstein06.pdf](https://SoPra-Team-10.github.io/Uebungsblaetter/Meilenstein06.pdf)
 
 # Build Dependencies
  * Graphviz-Dot
