@@ -3,3 +3,36 @@
         \centering
         \includegraphics[scale=1]{images/JSON-Parser.pdf}
     \end{figure}
+
+\subsection{Beschreibung}
+	\subsubsection{JSON-Parser (Klasse)}
+	
+		\begin{description}
+                
+        	\item[deserialize (Methode)]
+        	Die deserialize Methode dient dazu einen dem JSON-Format konformen String in ein JSON-Object umzuwandeln. Dabei wird bei der Umsetzung dieser Funktionalität auf Methoden und Strukturen aus einer Software-Bibliothek eines Drittanbieters zurückgegriffen. 
+        	
+        	\item[serialize (Methode)]
+        	Die serialize Methode dient dazu aus einem JSON-Object ein dem JSON-Format genügenden String zu erzeugen. Wie auch schon bei der deserialize Methode wird dabei auf Methoden und Strukturen aus einer Software-Bibliothek eines Drittanbieters zurückgegriffen. 
+
+    	\end{description}
+    	
+    \subsubsection{basic\_json (Externe Bibliothek)}
+		Bei dieser Klasse Handelt es sich um eine externe Bibliothek, die verschiedenste Methoden und Strukturen zur Verfügung stellt um in einem C++ Projekt mit Objekten mit JSON-Struktur einfach zu arbeiten. Vermutlich wird die von \textit{Niels Lohmann} entwickelte freie JSON Bibliothek namens \textit{JSON for Modern C++} verwendet werden. Genauere Informationen zu dieser Bibliothek sind unter folgendem Link zu finden: \\ \url{https://github.com/nlohmann/json}
+
+\subsection{Zuordnung der Funktionalen Anforderungen}
+
+Die funktionalen Anforderungen gemäß dem Pflichtenheft werden den Komponenten folgendermaßen zugeteilt:
+
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|l|l|}
+    	\hline
+    	\textbf{Methode} & \textbf{Abgedeckte funktionale Anforderungen}\\ \hline
+    	deserialize & keine explizite FA vorhanden  \\ \hline
+    	serialize & keine explizite FA vorhanden \\ \hline
+
+
+	\end{tabular}
+\end{table}
