@@ -10,11 +10,25 @@
 		\begin{description}
                 
         	\item[deserialize (Methode)]
-        	Die deserialize Methode dient dazu einen dem JSON-Format konformen String in ein JSON-Object umzuwandeln. Dabei wird bei der Umsetzung dieser Funktionalität auf Methoden und Strukturen aus einer Software-Bibliothek eines Drittanbieters zurückgegriffen. 
+        	Die private deserialize Methode dient dazu einen dem JSON-Format konformen String in ein JSON-Object umzuwandeln. Dabei wird bei der Umsetzung dieser Funktionalität auf Methoden und Strukturen aus einer Softwarebibliothek eines Drittanbieters zurückgegriffen. 
         	
         	\item[serialize (Methode)]
-        	Die serialize Methode dient dazu aus einem JSON-Object ein dem JSON-Format genügenden String zu erzeugen. Wie auch schon bei der deserialize Methode wird dabei auf Methoden und Strukturen aus einer Software-Bibliothek eines Drittanbieters zurückgegriffen. 
+        	Die private serialize Methode dient dazu aus einem JSON-Object ein dem JSON-Format genügenden String zu erzeugen. Wie auch schon bei der deserialize Methode wird dabei auf Methoden und Strukturen aus einer Softwarebibliothek eines Drittanbieters zurückgegriffen. 
+        	
+        	\item[readTeamConfig (Methode)]
+        	Mit Hilfe der readTeamConfig Methode kann die Team-Konf-iguration aus der Team-Konfigurationsdatei eingelesen werden und in ein internes TeamObject umgewandelt werden. Diese wird dann im Model hinterlegt. Im Hintergrund greift diese Methode auf die deserialize Methode zurück.
+        	
+        	\item[convertJsonToTeamObject (Methode)]
+        	Die convertJsonToTeamObject Methode dient dazu die vom Server empfangenen Daten über das gegnerische Team in ein internes TeamObject umzuwandeln. Diese wird dann im Model hinterlegt. Im Hintergrund greift diese Methode auf die deserialize Methode zurück. 
+        	\item[convertTeamObjectToJson (Methode)]
+        	Die convertGameDataToJson Methode bildet das Gegenstück zur convertJsonToTeamObject Methode. Es kann also ein internes GameTeam in einen JSON konformen String konvertiert werden, welcher dann an den Server versendet werden kann. Im Hintergrund greift diese Methode auf die serialize Methode zurück.
+        	
+        	\item[convertJsonToGameData (Methode)]
+        	Die convertJsonToGameData Methode dient dazu die vom Server empfangenen Daten über das aktuelle Spielgeschehen aus dem JSON-Format in ein Internes GameObject zu konvertieren. Diese wird dann im Model hinterlegt. Im Hintergrund greift diese Methode auf die deserialize Methode zurück. 
 
+			\item[convertGameDataToJson (Methode)]
+        	Die convertGameDataToJson Methode bildet das Gegenstück zur convertJsonToGameData Methode. Es kann also ein internes GameObject in einen JSON konformen String konvertiert werden, welcher dann an den Server versendet werden kann. Im Hintergrund greift diese Methode auf die serialize Methode zurück. 
+        	
     	\end{description}
     	
     \subsubsection{basic\_json (Externe Bibliothek)}
@@ -22,17 +36,19 @@
 
 \subsection{Zuordnung der Funktionalen Anforderungen}
 
-Die funktionalen Anforderungen gemäß dem Pflichtenheft werden den Komponenten folgendermaßen zugeteilt:
+Die Funktionalen Anforderungen werden den Methoden folgendermaßen zugeteilt:
 
 
 \begin{table}[h]
 	\centering
 	\begin{tabular}{|l|l|}
     	\hline
-    	\textbf{Methode} & \textbf{Abgedeckte funktionale Anforderungen}\\ \hline
-    	deserialize & keine explizite FA vorhanden  \\ \hline
-    	serialize & keine explizite FA vorhanden \\ \hline
-
+    	\textbf{Funktionale Anforderungen} & \textbf{Methoden} \\ \hline
+    	FA54 & readTeamConfig \\ \hline
+    	FA54 & convertJsonToTeamObject \\ \hline
+    	FA54 & convertTeamObjectToJson \\ \hline
+    	FA53 & convertGameDataToJson \\ \hline
+    	FA53 & convertJsonToGameData \\ \hline
 
 	\end{tabular}
 \end{table}
