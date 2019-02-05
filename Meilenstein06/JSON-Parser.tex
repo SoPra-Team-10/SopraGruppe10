@@ -5,26 +5,29 @@
     \end{figure}
 
 \subsection{Beschreibung}
+
 	\subsubsection{JSON-Parser (Klasse)}
+	
+		Der JSON-Parser übernimmt das Serialisieren und Deserialisieren von Objekten in einen String im JSON-Format. Diese Funktionalität wird benötigt, da alle Daten, die über das Netzwerk versendet werden oder aus einer Datei eingelesen werden diesem Format entsprechen müssen.
 	
 		\begin{description}
                 
         	\item[deserialize (Methode)]
-        	Die private deserialize Methode dient dazu einen dem JSON-Format konformen String in ein JSON-Object umzuwandeln. Dabei wird bei der Umsetzung dieser Funktionalität auf Methoden und Strukturen aus einer Softwarebibliothek eines Drittanbieters zurückgegriffen. 
+        	Die private deserialize Methode dient dazu, einen dem JSON-Format konformen String in ein JSON-Object umzuwandeln. Dabei wird bei der Umsetzung dieser Funktionalität auf Methoden und Strukturen aus einer Softwarebibliothek eines Drittanbieters zurückgegriffen. 
         	
         	\item[serialize (Methode)]
-        	Die private serialize Methode dient dazu aus einem JSON-Object ein dem JSON-Format genügenden String zu erzeugen. Wie auch schon bei der deserialize Methode wird dabei auf Methoden und Strukturen aus einer Softwarebibliothek eines Drittanbieters zurückgegriffen. 
+        	Die private serialize Methode dient dazu, aus einem JSON-Object ein dem JSON-Format genügenden String zu erzeugen. Wie auch schon bei der deserialize Methode wird dabei auf Methoden und Strukturen aus einer Softwarebibliothek eines Drittanbieters zurückgegriffen. 
         	
         	\item[readTeamConfig (Methode)]
         	Mit Hilfe der readTeamConfig Methode kann die Team-Konf-iguration aus der Team-Konfigurationsdatei eingelesen werden und in ein internes TeamObject umgewandelt werden. Diese wird dann im Model hinterlegt. Im Hintergrund greift diese Methode auf die deserialize Methode zurück.
         	
         	\item[convertJsonToTeamObject (Methode)]
-        	Die convertJsonToTeamObject Methode dient dazu die vom Server empfangenen Daten über das gegnerische Team in ein internes TeamObject umzuwandeln. Diese wird dann im Model hinterlegt. Im Hintergrund greift diese Methode auf die deserialize Methode zurück. 
+        	Die convertJsonToTeamObject Methode dient dazu, die vom Server empfangenen Daten über das gegnerische Team in ein internes TeamObject umzuwandeln. Diese wird dann im Model hinterlegt. Im Hintergrund greift diese Methode auf die deserialize Methode zurück. 
         	\item[convertTeamObjectToJson (Methode)]
         	Die convertGameDataToJson Methode bildet das Gegenstück zur convertJsonToTeamObject Methode. Es kann also ein internes GameTeam in einen JSON konformen String konvertiert werden, welcher dann an den Server versendet werden kann. Im Hintergrund greift diese Methode auf die serialize Methode zurück.
         	
         	\item[convertJsonToGameData (Methode)]
-        	Die convertJsonToGameData Methode dient dazu die vom Server empfangenen Daten über das aktuelle Spielgeschehen aus dem JSON-Format in ein Internes GameObject zu konvertieren. Diese wird dann im Model hinterlegt. Im Hintergrund greift diese Methode auf die deserialize Methode zurück. 
+        	Die convertJsonToGameData Methode dient dazu, die vom Server empfangenen Daten über das aktuelle Spielgeschehen aus dem JSON-Format in ein Internes GameObject zu konvertieren. Diese wird dann im Model hinterlegt. Im Hintergrund greift diese Methode auf die deserialize Methode zurück. 
 
 			\item[convertGameDataToJson (Methode)]
         	Die convertGameDataToJson Methode bildet das Gegenstück zur convertJsonToGameData Methode. Es kann also ein internes GameObject in einen JSON konformen String konvertiert werden, welcher dann an den Server versendet werden kann. Im Hintergrund greift diese Methode auf die serialize Methode zurück. 
@@ -33,6 +36,8 @@
     	
     \subsubsection{basic\_json (Externe Bibliothek)}
 		Bei dieser Klasse Handelt es sich um eine externe Bibliothek, die verschiedenste Methoden und Strukturen zur Verfügung stellt um in einem C++ Projekt mit Objekten mit JSON-Struktur einfach zu arbeiten. Vermutlich wird die von \textit{Niels Lohmann} entwickelte freie JSON Bibliothek namens \textit{JSON for Modern C++} verwendet werden. Genauere Informationen zu dieser Bibliothek sind unter folgendem Link zu finden: \\ \url{https://github.com/nlohmann/json}
+
+\newpage
 
 \subsection{Zuordnung der Funktionalen Anforderungen}
 
