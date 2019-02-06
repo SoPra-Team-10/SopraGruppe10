@@ -5,15 +5,16 @@
 \end{center}
 
 \subsection{Beschreibung}
+	Die View dient lediglich als Schnittstelle zwischen Benutzer und Controller. Sie soll selbst keine Logik enthalten und basierend auf den Daten des Models den aktuellen Spielzustand anzeigen. 
 	Im Folgenden werden die eingetragenen Methoden erklärt. Da in der gesamten Komponente der View auf eine externe Bibliothek zurückgegriffen werden wird, ist dies auf dem Diagramm entsprechend angedeutet.
 \begin{description}
 	\item[render (Methode)]
 		Die render-Methode von Klassen in der View rendert bei jedem Aufruf die enthaltenen Objekte auf dem Anwendungsfenster.
 	\item[notify (Methode)]
-		Die notify-Methode von Klassen in der View leitet die entsprechenden Event der Elemente in der GUI an den Controller weiter.
+		Die notify-Methode von Klassen in der View leitet die entsprechenden Events der Elemente in der GUI an den Controller weiter.
 	
 	\item[sfml (externe Bibliothek)]
-		Bei sfml handelt es sich um eine portable API für C++. Insgesamt stellt es eine komplette Multimedia-Bibliothek dar. Hier wird es als Fenster-Manager und GUI-Bibliothek sowie zur Darstellung von 2D-Grafik-Objekten und ggf. zum Abspielen von Musik verwendet.
+		Bei sfml handelt es sich um eine portable API für C++. Insgesamt stellt es eine komplette Multimedia-Bib liothek dar. Hier wird es als Fenster-Manager und GUI-Bibliothek sowie zur Darstellung von 2D-Grafik-Objekten und ggf. zum Abspielen von Musik verwendet.
 		Da eine endgültige Festlegung auf diese Bibliothek noch nicht stattgefunden hat, ist ihre Verwendung auf dem Klassendiagramm nur angedeutet und noch nicht fest eingearbeitet. Die Bezeichnungen der entsprechenden Klassen im Diagramm sind daher möglichst allgemein gehalten.
 \end{description}
 
