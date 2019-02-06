@@ -5,6 +5,7 @@
     \end{figure}
 
 \subsection{Beschreibung}
+Die Model ist für die Repräsentation für die Daten verantwortlich. Hier sind alle Daten hinterlegt, die für das Spiel relevant sind und angezeigt werden in der Benutzeroberfläche. Die Daten wertet der Controller aus und gibt diese dann der View weiter, welche diese dann auf der Benutzeroberfläche an.
 	\subsubsection{Gamerepresentation (Klasse)}
 	
 		\begin{description}
@@ -25,7 +26,7 @@
         	In dem Konstruktor für das Matchfield, wird das eigentliche Spielfeld erstellt. Dazu erstellt diese Klasse ein Array von Zellen, welche das Spielfeld repräsentieren. Außerdem gibt es noch Bereiche, die besonders sind, aber auch Zellen auf dem Spielfeld sind. So sind die Torringe ebenfalls in einem Array hinterlegt, das Zentrum ist als Vektor hinterlegt und das Mittelfeld ist ebenfalls als Array hinterlegt.
         \end{description}
         
-        \subsubsection{Team (Klasse}
+        \subsubsection{Team (Klasse)}
         \begin{description}
         	\item[Konstruktor (Methode)]
         	Das Team ist ebenfalls Bestandteil der Klasse Gamerepresentation. In dem Team werden die 7 Spieler instantiiert, so wie der Name, die Trickotfarbe und die Ersatzfarbe für die Trickots.
