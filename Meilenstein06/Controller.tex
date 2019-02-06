@@ -24,9 +24,9 @@
 		\hline
 		connectToServer & Parameter serverAdress und port sind ungleich Null & - & Veranlasst über den JSON-Parser den Kommunikator dazu, eine Verbindung mit dem in den Parametern spezifiziertem Server aufzubauen. Gibt true zurück, wenn der Verbindungsaufbau erfolgreich war, ansonsten false.\\\hline
 		\multicolumn{4}{|l|}{UserInputHandler} \\\hline
-		validateAction & - & - & Fordert vom Partie-Model eine Liste aller gültigen Actions an und gibt true zurück wenn die als Parameter übergebene Action darin enthalten ist, ansonsten false.\\\hline
+		validateAction & - & - & Fordert vom Partie-Model Daten an und entscheidet danach, ob die geforderte Action durchgeführt werden kann. Gibt true zurück wenn die als Parameter übergebene Action gültig ist, ansonsten false.\\\hline
 		orderAction & validateAction gibt für die als Parameter übergebene Action true zurück. & - & Übergibt die auszuführende Aktion an den GameController. Ruft die Methode validateAction auf und gibt deren Rückgabewert zurück.\\\hline
-		displayPossibleActions & - & - & Fordert vom Partie-Model eine Liste aller möglichen Aktionen an und gibt sie an die Partie-View weiter, um sie dem Spieler anzuzeigen.\\\hline
+		displayPossibleActions & - & - & Fordert vom Partie-Model Daten an und berechnet alle möglichen Aktionen und gibt sie an die Partie-View weiter, um sie dem Spieler anzuzeigen.\\\hline
 		\multicolumn{4}{|l|}{Interference} \\\hline
 		banish & - & - & Verringert das Attribut available um eins.\\\hline
 		
