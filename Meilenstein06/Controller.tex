@@ -1,21 +1,22 @@
 \section{Controller}
+\subsection{Klassendiagramm}
 \begin{center}
 	\includegraphics[width=18cm]{images/Klassendiagram_Controller}
 \end{center}
-
+\subsection{Beschreibung}
 	Im Folgenden werden die eingetragenen Methoden erklärt.
 \begin{center}
 	\begin{tabular}{|p{4.7cm}|p{3.5cm}|p{3.5cm}|p{4.3cm}|}
 		\hline
 		\textbf{Name} & \textbf{Vorbedingungen} & \textbf{Nachbedingungen} & \textbf{Erklärung}\\\hline
-		\multicolumn{4}{|l|}{MenuController} \\\hline
+		\multicolumn{4}{|l|}{\textbf{MenuController}} \\\hline
 		closeGame & - & Positive Antwort in einem Popup-Fenster & Beendet die Anwendung\\\hline
 		changeSetting & ClientSetting mit dem angegebenen settingName existiert & Der Wert von newValue wird akzeptiert & Ändert das Attribut value des ClientSetting mit dem Attribut name, der dem Parameter settingName entspricht, auf den Wert des Parameters newValue.\\\hline
 		getSetting& ClientSetting mit dem angegebenen settingName existiert & - & Liefert den derzeitigen Wert des Attributs value des ClientSetting, dessen Attribut name mit dem Parameter settingName übereinstimmt.\\\hline
-		\multicolumn{4}{|l|}{GameController} \\\hline
+		\multicolumn{4}{|l|}{\textbf{GameController}} \\\hline
 		receiveData & - & - & Empfängt Daten vom JSON-Parser und übergibt sie dem ServerInputHandler\\\hline
 		transmitData & - & - & Empfängt Daten vom UserInputHandler und sendet sie über den JSON-Parser und den Kommunikator zum Server\\\hline
-		\multicolumn{4}{|l|}{LobbyController} \\\hline
+		\multicolumn{4}{|l|}{\textbf{LobbyController}} \\\hline
 		changeTeamConfiguration & - & Parameter path ist ein gültiger Pfad zu einer Team-Konfigurations-Datei & Ändert den Wert von teamConfiguration, in dem der Pfad zu der zu verwendenden Team-Konfigurations-Datei gespeichert ist.\\\hline
 		
 	\end{tabular}
@@ -23,16 +24,16 @@
 	\begin{tabular}{|p{4.7cm}|p{3.5cm}|p{3.5cm}|p{4.3cm}|}	
 		\hline
 		connectToServer & Parameter serverAdress und port sind ungleich Null & - & Veranlasst über den JSON-Parser den Kommunikator dazu, eine Verbindung mit dem in den Parametern spezifiziertem Server aufzubauen. Gibt true zurück, wenn der Verbindungsaufbau erfolgreich war, ansonsten false.\\\hline
-		\multicolumn{4}{|l|}{UserInputHandler} \\\hline
+		\multicolumn{4}{|l|}{\textbf{UserInputHandler}} \\\hline
 		validateAction & - & - & Fordert vom Partie-Model Daten an und entscheidet danach, ob die geforderte Action durchgeführt werden kann. Gibt true zurück wenn die als Parameter übergebene Action gültig ist, ansonsten false.\\\hline
 		orderAction & validateAction gibt für die als Parameter übergebene Action true zurück. & - & Übergibt die auszuführende Aktion an den GameController. Ruft die Methode validateAction auf und gibt deren Rückgabewert zurück.\\\hline
 		displayPossibleActions & - & - & Fordert vom Partie-Model Daten an und berechnet alle möglichen Aktionen und gibt sie an die Partie-View weiter, um sie dem Spieler anzuzeigen.\\\hline
-		\multicolumn{4}{|l|}{Interference} \\\hline
+		\multicolumn{4}{|l|}{\textbf{Interference}} \\\hline
 		banish & - & - & Verringert das Attribut available um eins.\\\hline
 		
 	\end{tabular}
 \end{center}
-
+\subsection{Zuordnung der Funktionalen Anforderungen}
 Die Funktionalen Anforderungen werden den Methoden folgendermaßen zugeteilt:
 \begin{center}
 	\begin{tabular}{|l|l|}
