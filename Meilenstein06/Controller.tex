@@ -6,9 +6,9 @@
 \subsection{Beschreibung}
 	Im Folgenden werden die eingetragenen Methoden erklärt.
 \begin{center}
-	\begin{tabular}{|p{4.7cm}|p{3.5cm}|p{3.5cm}|p{4.3cm}|}
+	\begin{tabular}{|p{4.0cm}|p{2.2cm}|p{2.2cm}|p{4.7cm}|}
 		\hline
-		\textbf{Name} & \textbf{Vorbedingungen} & \textbf{Nachbedingungen} & \textbf{Erklärung}\\\hline
+		\textbf{Name} & \textbf{Vorbedin-gungen} & \textbf{Nachbedin-gungen} & \textbf{Erklärung}\\\hline
 		\multicolumn{4}{|l|}{\textbf{MenuController}} \\\hline
 		closeGame & - & Positive Antwort in einem Popup-Fenster & Beendet die Anwendung\\\hline
 		changeSetting & ClientSetting mit dem angegebenen settingName existiert & Der Wert von newValue wird akzeptiert & Ändert das Attribut value des ClientSetting mit dem Attribut name, der dem Parameter settingName entspricht, auf den Wert des Parameters newValue.\\\hline
@@ -17,11 +17,11 @@
 		receiveData & - & - & Empfängt Daten vom JSON-Parser und übergibt sie dem ServerInputHandler\\\hline
 		transmitData & - & - & Empfängt Daten vom UserInputHandler und sendet sie über den JSON-Parser und den Kommunikator zum Server\\\hline
 		\multicolumn{4}{|l|}{\textbf{LobbyController}} \\\hline
-		changeTeamConfiguration & - & Parameter path ist ein gültiger Pfad zu einer Team-Konfigurations-Datei & Ändert den Wert von teamConfiguration, in dem der Pfad zu der zu verwendenden Team-Konfigurations-Datei gespeichert ist.\\\hline
+		changeTeamCon-figuration & - & Parameter path ist ein gültiger Pfad zu einer Team-Konfigurations-Datei & Ändert den Wert von teamConfiguration, in dem der Pfad zu der zu verwendenden Team-Konfigurations-Datei gespeichert ist.\\\hline
 		
 	\end{tabular}
 	
-	\begin{tabular}{|p{4.7cm}|p{3.5cm}|p{3.5cm}|p{4.3cm}|}	
+	\begin{tabular}{|p{4.0cm}|p{2.2cm}|p{2.2cm}|p{4cm}|}	
 		\hline
 		connectToServer & Parameter serverAdress und port sind ungleich Null & - & Veranlasst über den JSON-Parser den Kommunikator dazu, eine Verbindung mit dem in den Parametern spezifiziertem Server aufzubauen. Gibt true zurück, wenn der Verbindungsaufbau erfolgreich war, ansonsten false.\\\hline
 		\multicolumn{4}{|l|}{\textbf{UserInputHandler}} \\\hline
@@ -69,6 +69,10 @@ Die Funktionalen Anforderungen werden den Methoden folgendermaßen zugeteilt:
 		FA56 & GameController::receiveData\\
 		& GameController::transmitData\\\hline
 		FA60-FA61 & MenuController::showScreen\\\hline
+	\end{tabular}
+
+	\begin{tabular}{|p{5.5cm}|l|}
+		\hline
 		FA67 & UserInputHandler::orderActions\\
 		& UserInputHandler::validateActions\\
 		& MenuController::showScreen\\
