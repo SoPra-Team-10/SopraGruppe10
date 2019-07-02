@@ -35,6 +35,11 @@ script:
     - make
     - mv main.pdf ../output/Meilenstein06.pdf
     - cd ..
+    - cd Endabnahme
+    - make clean
+    - make
+    - mv main.pdf ../output/Endabnahme.pdf
+    - cd ..
     
 notifications:
   slack: soprateam10:VZTkLGCdekl9mruMlJivbk5q
