@@ -47,22 +47,22 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
     echo "[deploy-complete]: Last commit: $commitHash by $commitAuthorName with email $commitAuthorEMail"
 
     # Remove all output, we don't want to commit binaries
-    echo '[deploy-complete]: Clone'
-    rm -rf output/
-    git clone --recurse-submodules "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git"
-    cd Complete/
-    git config --global push.default simple
-	git config user.name "$commitAuthorName"
-    git config user.email "$commitAuthorEMail"
-    echo '[deploy-complete]: Update submodule'
-    cd Uebungsblaetter
-    git remote set-url origin "https://${GH_REPO_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
-    cd ..
-    git submodule update --remote --merge
-    echo '[deploy-complete]: Commit'
-    git add -A
-    git commit -m "$commitMessage"
-    git push -f  "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git" master
+    #echo '[deploy-complete]: Clone'
+    #rm -rf output/
+    #git clone --recurse-submodules "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git"
+    #cd Complete/
+    #git config --global push.default simple
+	#git config user.name "$commitAuthorName"
+    #git config user.email "$commitAuthorEMail"
+    #echo '[deploy-complete]: Update submodule'
+    #cd Uebungsblaetter
+    #git remote set-url origin "https://${GH_REPO_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
+    #cd ..
+    #git submodule update --remote --merge
+    #echo '[deploy-complete]: Commit'
+    #git add -A
+    #git commit -m "$commitMessage"
+    #git push -f  "https://${GH_REPO_TOKEN}@github.com/SoPra-Team-10/Complete.git" master
     #echo '[deploy-complete]: Forwarding'
     #gitlabUrl="https://oauth2:$GITLAB_TOKEN@pmgit.informatik.uni-ulm.de:sopra-18-19/teams/team10.git"
     #echo "$gitlabUrl"
