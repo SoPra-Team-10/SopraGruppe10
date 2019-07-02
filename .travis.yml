@@ -37,7 +37,7 @@ script:
     - cd ..
     
 notifications:
-    slack: soprateam10:wlcgvL7tR63frGyGP4BCuqNj
+  slack: soprateam10:VZTkLGCdekl9mruMlJivbk5q
     
 after_success:
     - bash pullRequestComment.sh
