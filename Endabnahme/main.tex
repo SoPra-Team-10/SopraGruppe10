@@ -45,7 +45,7 @@ bibtotoc,              % LV im IV
 \setlength{\parskip}{1.4ex plus 0.35ex minus 0.3ex} % Absatzabstand, leicht variabel
 
 \newcommand{\fullname}{Gruppe 10}
-\newcommand{\titel}{Pflichtenheft Endabnahme}
+\newcommand{\titel}{Softwaregrundprojekt Meilenstein 4}
 \newcommand{\jahr}{2019}
 \newcommand{\dozent}{Florian Ege}
 \newcommand{\betreuer}{Stefanos Mytilineos}
@@ -74,6 +74,82 @@ bibtotoc,              % LV im IV
 \makeatletter
 \@addtoreset{section}{part}
 \makeatother
+
+\newcommand{\begriff}[7] {
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|p{2,5cm}|p{12cm}|}
+			%\hline
+			%\toprule \\
+			\hline
+			\textbf{Begriff} & \textbf{#1} \\ \hline
+			%\midrule \\
+			\textbf{Beschreibung} & #2 \\ \hline
+			%\midrule
+			\textbf{Ist-ein} & #3 \\ \hline
+			%\midrule
+			\textbf{Kann-sein} & #4 \\ \hline
+			%\midrule
+			\textbf{Aspekt} & #5 \\ \hline
+			%\midrule
+			\textbf{Bemerkung} & #6 \\ \hline
+			%\midrule
+			\textbf{Beispiel} & #7 \\ %\hline
+			%\bottomrule
+			\hline
+		\end{tabular}
+	\end{table}
+}
+
+\newcommand{\anf}[7] {
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|p{3.2cm}|p{11.3cm}|}
+        	\hline
+            \textbf{ID:} & \textbf{#1} \\ \hline
+            \textbf{Titel:} & #2 \\ \hline
+            \textbf{Beschreibung:} & #3 \\ \hline
+            \textbf{Begründung:} & #4 \\ \hline
+            \textbf{Abhängigkeiten:} & #5 \\ \hline
+            \textbf{Priorität:} & #6 \\ \hline
+            \textbf{Akteure:} & #7 \\ \hline
+        \end{tabular}
+    \end{table}
+}
+
+\newcounter{fanfCount}
+\newcommand{\fanf}[6] {
+    \stepcounter{fanfCount}
+    \anf{FA\thefanfCount}{#1}{#2}{#3}{#4}{#5}{#6}
+}
+\newcounter{qanfCount}
+\newcommand{\qanf}[6] {
+    \stepcounter{qanfCount}
+    \anf{QA\theqanfCount}{#1}{#2}{#3}{#4}{#5}{#6}
+}
+
+\newcommand{\akt}[4] {
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|p{3cm}|p{11.5cm}|}
+        	\hline
+            \textbf{ID:} & \textbf{#1} \\ \hline
+            \textbf{Titel:} & #2 \\ \hline
+            \textbf{Beschreibung:} & #3 \\ \hline
+            \textbf{Rolle:} & #4 \\ \hline
+        \end{tabular}
+    \end{table}
+}
+
+\newcounter{faktCount}
+\newcommand{\fakt}[3] {
+    \stepcounter{faktCount}
+    \akt{AKT\thefaktCount}{#1}{#2}{#3}
+}
+
+\newcommand{\fkt}[5]{
+	#1 & #2 & #3 & #4 & #5\\\hline
+}
 
 \begin{document}
     \thispagestyle{empty}
@@ -104,7 +180,49 @@ bibtotoc,              % LV im IV
     \pagebreak
     \tableofcontents
     \pagebreak
-    
-	%Hier Könnte alles stehen%
 
+    \part{Überblick}
+    \input{../Meilenstein01/kontextanalyse.tex}
+
+    \part{Anforderungsanalyse} 
+    \section{Fachwissen}
+    \input{../Meilenstein01/Aufgabe_2_Fachwissen.tex}
+    \section{Anwendungskontext}
+    \input{../Meilenstein01/Akteure.tex}
+	\input{../Meilenstein04/AnwendungsfaelleUndAblaeufe.tex}
+    \section{Anforderungsdefinition} \label{FAs}
+    \input{../Meilenstein01/FunktionaleAnforderungen.tex} 
+
+    \part{Softwarespezifikation}
+    \section{Schnittstellenarten, Dialoge und Dialogstruktur}
+    \subsection{Client}
+    \input{../Meilenstein03/MainClientStruktur.tex}
+    \subsection{Server}
+    \input{../Meilenstein03/Server.tex}
+    \subsection{Team- und Partiekonfigurator}
+    \input{../Meilenstein03/DialogStrukturKonfigurator.tex}
+    \subsection{KI-Client}
+    \input{../Meilenstein03/KI-Client.tex}
+    
+	\section{Grafische Gestaltung und Nutzungskonzept}
+    \subsection{Client}
+    \input{../Meilenstein03/MainClientDesign.tex}	
+    \subsection{Server}
+    \input{../Meilenstein03/GraphischeGestaltungServer}	
+    \subsection{Team- und Partiekonfiguration}
+    \input{../Meilenstein03/GraphischeGestaltungKonfigurator}	
+
+    \input{../Meilenstein04/Datenmodell}
+    \section{Funktionen}
+    \input{../Meilenstein04/funktionen}
+
+    \part{Randbedingungen}
+    \section{Qualität}
+    \input{../Meilenstein01/NichtFunktionaleAnforderungen.tex}
+    \section{Betriebskonzept}
+    \input{../Meilenstein04/Betriebskonzept}
+    \section{Entwicklungsvorgaben}
+    \input{../Meilenstein04/Entwicklungsvorgaben}
+    \section{Abnahmekriterien}
+    \input{../Meilenstein04/Abnahmekriterien}
 \end{document}
