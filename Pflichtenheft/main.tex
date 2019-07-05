@@ -25,6 +25,7 @@ bibtotoc,              % LV im IV
 \usepackage{multirow}
 \usepackage[final]{pdfpages}
 \usepackage{blindtext}
+\usepackage{listings}
 \usepackage[scaled]{helvet}
 \usepackage{hyperref}
 \usepackage{comment}
@@ -44,8 +45,8 @@ bibtotoc,              % LV im IV
 \setlength{\parskip}{1.4ex plus 0.35ex minus 0.3ex} % Absatzabstand, leicht variabel
 
 \newcommand{\fullname}{Gruppe 10}
-\newcommand{\titel}{Endabnahmedokument}
-\newcommand{\jahr}{2018/2019}
+\newcommand{\titel}{Softwaregrundprojekt Meilenstein 4}
+\newcommand{\jahr}{2019}
 \newcommand{\dozent}{Florian Ege}
 \newcommand{\betreuer}{Stefanos Mytilineos}
 \newcommand{\fakultaet}{Ingenieurwissenschaften, Informatik und\\Psychologie}
@@ -70,6 +71,9 @@ bibtotoc,              % LV im IV
 % Trennungsregeln
 \hyphenation{Sil-ben-trenn-ung}
 
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
 
 \newcommand{\begriff}[7] {
 	\begin{table}[H]
@@ -143,6 +147,10 @@ bibtotoc,              % LV im IV
     \akt{AKT\thefaktCount}{#1}{#2}{#3}
 }
 
+\newcommand{\fkt}[5]{
+	#1 & #2 & #3 & #4 & #5\\\hline
+}
+
 \begin{document}
     \thispagestyle{empty}
     \begin{addmargin*}[4mm]{-10mm}
@@ -173,13 +181,48 @@ bibtotoc,              % LV im IV
     \tableofcontents
     \pagebreak
 
-    \section{Verwendete Technologien}
-    \input{Technologien.tex}
+    \part{Überblick}
+    \input{../Meilenstein01/kontextanalyse.tex}
+
+    \part{Anforderungsanalyse} 
+    \section{Fachwissen}
+    \input{../Meilenstein01/Aufgabe_2_Fachwissen.tex}
+    \section{Anwendungskontext}
+    \input{../Meilenstein01/Akteure.tex}
+	\input{../Meilenstein04/AnwendungsfaelleUndAblaeufe.tex}
+    \section{Anforderungsdefinition} \label{FAs}
+    \input{../Meilenstein01/FunktionaleAnforderungen.tex} 
+
+    \part{Softwarespezifikation}
+    \section{Schnittstellenarten, Dialoge und Dialogstruktur}
+    \subsection{Client}
+    \input{../Meilenstein03/MainClientStruktur.tex}
+    \subsection{Server}
+    \input{../Meilenstein03/Server.tex}
+    \subsection{Team- und Partiekonfigurator}
+    \input{../Meilenstein03/DialogStrukturKonfigurator.tex}
+    \subsection{KI-Client}
+    \input{../Meilenstein03/KI-Client.tex}
     
-    \section{Projekttagebuch}
-    \input{Projekttagebuch.tex}
-    
-    \section{UML - Komponentendiagramm}
-    \input{Komponentendiagramm.tex}
-    
+	\section{Grafische Gestaltung und Nutzungskonzept}
+    \subsection{Client}
+    \input{../Meilenstein03/MainClientDesign.tex}	
+    \subsection{Server}
+    \input{../Meilenstein03/GraphischeGestaltungServer}	
+    \subsection{Team- und Partiekonfiguration}
+    \input{../Meilenstein03/GraphischeGestaltungKonfigurator}	
+
+    \input{../Meilenstein04/Datenmodell}
+    \section{Funktionen}
+    \input{../Meilenstein04/funktionen}
+
+    \part{Randbedingungen}
+    \section{Qualität}
+    \input{../Meilenstein01/NichtFunktionaleAnforderungen.tex}
+    \section{Betriebskonzept}
+    \input{../Meilenstein04/Betriebskonzept}
+    \section{Entwicklungsvorgaben}
+    \input{../Meilenstein04/Entwicklungsvorgaben}
+    \section{Abnahmekriterien}
+    \input{../Meilenstein04/Abnahmekriterien}
 \end{document}
