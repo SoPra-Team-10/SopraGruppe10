@@ -1,0 +1,17 @@
+Der Server und die KI wurden in C++17 geschrieben.
+Als Compiler wurde dafür der GNU-C++-Compiler (GCC) (Version 8.3, Lizenziert unter GPL 3) verwendet,
+als Buildsystem wurde CMake (Version 3.10, Lizenziert unter BSD-3) genutzt.
+Zur statischen Codeanalyse wird Clang-Tidy (Version 6.0, Lizenziert unter Apache 2) verwendet,
+Unit Tests werden mit Google-Test bzw. Google-Mock (Version 2.56, Lizenziert unter BSD-3) implementiert.
+Um undefiniertes Verhalten zu vermeiden wird das Programm während der Ausführung mit Adress Sanitizer (Version 5.0, Lizenziert unter Apache 2) überprüft.
+
+Alle Teile des Quellcodes wurden mithilfe von Doxygen-Kommentaren (Version 1.8, Lizenziert unter GPL) dokumentiert.
+
+Es wurde sich während des Entwicklungsprozess an den Linux-Kernel-Styleguide gehalten werden. Zwei wesentliche Abweichungen von diesem Styleguide sind eine Einrückungstiefe von 4 Zeichen, sowie die Platzierung der öffnenden Klammer bei Funktionsaufrufen in der selben Zeile (die Unterscheidung bei der platizierung von öffnenden geschweiften Klammern ist wohl ursprünglich K\&R zuzuschreiben, die Begründung hierfür ist, dass Funktionen sich nicht verschachteln lassen, dies
+ist in C++ mit Lambdas nicht mehr so eindeutig der Fall).
+
+Als Entwicklungsumgebung wurden die IDE CLion (Version 2019.1, proprietär) sowie der Editor vim (Version 8.0, Lizenziert als Careware).
+
+Als externe Librarys wurde libwebsockets (Version 3.1.0, LGPL 2, \url{https://github.com/warmcat/libwebsockets}), 
+nlohmann::json (Version 3.6.0 bzw. 3.6.1, MIT, \url{https://github.com/nlohmann/json}) sowie 
+MLP (GPL 3, \url{https://github.com/aul12/MLP}) verwendet.
