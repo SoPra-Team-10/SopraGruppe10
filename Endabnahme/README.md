@@ -1,20 +1,20 @@
 # Teil 1: Produktpräsentation
 ## Ablauf:
 ### Überblick
- * Server geschrieben
+ * Server geschrieben (statt Editor)
  * Server und KI in C++
  * Client in Vue
  * Editor gekauft (Team03, Java)
  * Theoretisch eigener Editor (auch Vue)
 
 ### Demo
- * Client starten
+ * Client starten (Michael)
  * Menü zeigen (Michael)
- * Server starten, Log erklären (Paul)
- * KI Starten (multiple Lobbys, alle Mods) (Paul)
+ * Server starten (Log erklären, Features: mehrere Lobbys, alle Mods) (Paul)
+ * KI Starten (Paul)
  * Client verbindet sich (Michael)
- * Spectator (Paul)
- * Spielen (mit allen Fans!, 3 bis 5 Runden) (Tim, nicht sichtbar)
+ * Spectator und Logs gleichzeitig Zeigen (Paul)
+ * Spielen (mit allen Fans!, 3 bis 5 Runden) (Tim)
 
 ### USPs
  * Modularität (Tim)
@@ -26,13 +26,8 @@
  * PRs (Reviews, GameLogic TODO welcher zeigen)
  * Issue Tracker, Issue Board (Tarik)
  * Doku (Doxygen); README (Björn)
-
  * CI für Client (Tarik)
  * Komisches SVG Programm? (Michael wenn dann)
-
-
-### Abschluss
- * GPLv3 mit toller Musik
 
 # Teil 2: Tests und Dokumente Reviewen
  * Dokumente reviewen (Jonas hat auf Laptop)
@@ -43,4 +38,4 @@
  * Game-Ding (Tim)
  * Communication (Paul)
  * KI (Tim (Tarik))
- * Client (keine Ahnung)
+ * Client (Tarik, Michael)
