@@ -1,3 +1,4 @@
+\subsection{Server und KI}
 Der Server und die KI wurden in C++17 geschrieben.
 Als Compiler wurde dafür der GNU-C++-Compiler (GCC) (Version 8.3, Lizenziert unter GPL 3) verwendet,
 als Buildsystem wurde CMake (Version 3.10, Lizenziert unter BSD-3) genutzt.
@@ -16,3 +17,68 @@ Als Entwicklungsumgebung wurden die IDE CLion (Version 2019.1, proprietär) sowi
 Als externe Librarys wurde libwebsockets (Version 3.1.0, LGPL 2, \url{https://github.com/warmcat/libwebsockets}), 
 nlohmann::json (Version 3.6.0 bzw. 3.6.1, MIT, \url{https://github.com/nlohmann/json}) sowie 
 MLP (GPL 3, \url{https://github.com/aul12/MLP}) verwendet.
+
+\subsection{Client}
+
+\subsubsection{Framework und Dependencies}
+	\paragraph{Vue.js}
+	Als Frontend-Framwork wurde Vue.js verwendet, das es u. a. erlaubt, umfangreiche SPAs zu entwickeln (Version 2.6.10, \url{https://vuejs.org/}, mit vue-template-compiler: 2.5.21).
+	
+	\paragraph{Fontawesome}
+Fontawesome bietet eine umfangreiche Sammlung kostenloser SVG-Grafiken zur Gestaltunge von UIs, die sich einfach einbinden und konfigurieren lassen. \url{https://fontawesome.com/}
+- fortawesome/fontawesome-svg-core: 1.2.19
+- fortawesome/free-solid-svg-icons: 5.9.0
+- fortawesome/vue-fontawesome: 0.1.6
+
+	\paragraph{Animate.css}
+Animated.css bietet eine Sammlung vorgefertigter CSS-Animationen, die sich einfach in die Anwendung einbinden lassen. \url{https://daneden.github.io/animate.css/}
+- animate.css: 3.7.2
+
+	\paragraph{Umfassendes JavaScript}
+Mit diesem Package lassen sich auch die neuesten Features von JavaScript bis hin zu ES2018 in die Anwendung integrieren. Babel (siehe unten), erlaubt es dann, diese Features in von allen Browsern unterstütztes JavaScript zu übersetzen. \url{https://www.npmjs.com/package/core-js}
+- core-js: 2.6.5
+
+	\paragraph{vuex}
+Vuex ist eine Erweiterung für Vue, die Features für application state management nach dem Vorbild von Redux zur Verfügung stellt. \url{https://vuex.vuejs.org/}
+- vuex: 3.1.1
+
+\subsubsection{Dev-Dependencies}
+Um den Entwicklungsprozess möglichst produktiv zu gestalten, wurden einige Dev-Dependencies eingesetzt:
+
+	\paragraph{Vue CLI}
+Die Vue CLI erlaubt ein schnelles Setup von neuen Vue-Projketen über die Kommandozeile. Dabei können vorab oder nachträglich über einfache Befehle Konfigurationen vorgenommen werden. \url{https://cli.vuejs.org/}
+- vue/cli-service: 3.6.0
+
+	\paragraph{ESLint}
+Da JavaScript eine dynamische Programmiersprache ist, kann die Fehlersuche von Zeit zu Zeit recht umständlich sein.
+Mit ESLint, einem JavaScript Linter, können viele Fehler (und spezifizierte Stil-Regeln) vorab erkannt bzw. durchgesetzt werden. Hier wird es in Verbindung mit Babel (neuste ECMA Script Syntax-Unterstützung) und Prettier verwendet. \url{https://eslint.org/}
+- eslint: 5.16.0
+- eslint-loader: 2.1.2
+- eslint-plugin-vue: 5.0.0
+- eslint-config-prettier: 4.3.0
+- eslint-plugin-prettier: 3.1.0
+- babel-eslint: 10.0.1
+- vue/cli-plugin-eslint: 3.6.0
+
+	\paragraph{Babel}
+Babel erlaubt es, die neuesten Features von JavaScript (ECMA Script) zu verwenden, ohne auf eine vollständige Browser-Unterstützung angewiesen zu sein. Babel übersetzt die neuesten Features in Code mit einer von allen Browsern unterstützten Version von ECMA Script. \url{https://babeljs.io/}
+- babel/core: 7.4.4
+
+	\paragraph{Prettier}
+Prettier ist ein Style Formatter, der hier im Zusammenspiel mit ESLint zum Einsatz kommt. Bei jedem Speichervorgang werden die Style-Guides des Vue-Core-Teams automatisch umgesetzt. Es entsteht eine saubere und einheitliche code base. \url{https://prettier.io/}
+- prettier: 1.18.2
+- vue/cli-plugin-babel: 3.6.0
+
+Das genaue Setup für Linting und Formatierung ist von diesem (\url{https://medium.com/@gogl.alex/how-to-properly-set-up-eslint-with-prettier-for-vue-or-nuxt-in-vscode-e42532099a9c}) Medium-Artikel inspiriert.
+
+
+\subsubsection{Tools}
+
+	\paragraph{VisualStudio}
+Als Texteditor kam für den Client ausschließlich VisualStudio Code zum Einsatz. \url{https://code.visualstudio.com/}
+
+	\paragraph{Affinity Designer}
+Zum Erstellen von Spielgrafiken wurde die kommerzielle Software Affinity Designer v1.7.1 von Serif verwendet. \url{https://affinity.serif.com/de/designer/}
+
+
+
