@@ -2,28 +2,28 @@
 ## Ablauf:
 ### Überblick
  * Server geschrieben (statt Editor)
- * Server und KI in C++
- * Client in Vue
+ * Server und KI in C++17
+ * Client in Vue.js
  * Editor gekauft (Team03, Java)
  * Theoretisch eigener Editor (auch Vue)
 
 ### Demo
- * Client starten (Michael)
- * Menü zeigen (Michael)
- * Server starten (Log erklären, Features: mehrere Lobbys, alle Mods) (Paul)
- * KI Starten (Paul)
- * Client verbindet sich (Michael)
+ * Client starten (Michael redet, Laptop Michael)
+ * Menü zeigen (s.o.)
+ * Server starten: Log erklären, Features: mehrere Lobbys, alle Mods (Paul redet, Laptop Paul)
+ * KI Starten (s.o.)
+ * Client verbindet sich (Tim redet, nutzt Michaels Laptop, Pauls Laptop an Beamer)
  * Spectator und Logs gleichzeitig Zeigen (Paul)
- * Spielen (mit allen Fans!, 3 bis 5 Runden) (Tim)
+ * Spielen (mit allen Fans!, 3 bis 5 Runden) (Tim, Pauls Laptop mit Log und Spectator an Beamer)
 
 ### USPs
  * Modularität (Tim)
- * Unit Tests (zeigen in GameLogic) (Paul bedient, Björn spricht Zahl feststellen); Mock Tests; Asan
+ * Unit Tests (zeigen in GameLogic) (Paul bedient, Björn spricht 383 Tests); Mock Tests; Asan
  * Integration testing (Paul)
- * CI (Tests, Shuffle) (Travis übersicht, Jonas)
- * Statische Analyze, Wall Werror (Tim), muss kompilieren
- * Git-Flow
- * PRs (Reviews, GameLogic TODO welcher zeigen)
+ * CI (Tests, Shuffle, insgesamt fast 3000 Builds in CI) (Travis übersicht, Jonas)
+ * Statische Analyze, Wall Wextra Wpedantic Werror (Tim), muss kompilieren
+ * Git-Flow (Jonas)
+ * PRs: Reviews, GameLogic TODO welcher zeigen (Jonas)
  * Issue Tracker, Issue Board (Tarik)
  * Doku (Doxygen); README (Björn)
  * CI für Client (Tarik)
