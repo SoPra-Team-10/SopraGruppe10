@@ -9,12 +9,12 @@ Zur statischen Codeanalyse wurde Clang-Tidy (Version 6.0, Lizenziert unter Apach
 als weiteres Tool zur Codeanalyse wurde der Sonar-Scanner (Version 3.3.0.1492, proprietär) in Verbindung mit der Community-Edition des Webinterface SonarCloud (\url{https://sonarcloud.io}) genutzt.
 
 Unit- und Mock-Tests wurden mit Google-Test bzw. Google-Mock (Version 2.56, Lizenziert unter BSD-3) implementiert.
-Um undefiniertes Verhalten zu vermeiden wurde das Programm während der Ausführung mit Adress Sanitizer (Version 5.0, Lizenziert unter Apache 2) überprüft.
+Um undefiniertes Verhalten zu vermeiden, wurde das Programm während der Ausführung mit Adress Sanitizer (Version 5.0, Lizenziert unter Apache 2) überprüft.
 
 \subsubsection{Dokumenation und Styleguide}
 Alle Teile des Quellcodes wurden mithilfe von Doxygen-Kommentaren (Version 1.8, Lizenziert unter GPLv2) dokumentiert.
 
-Es wurde sich während des Entwicklungsprozess an den Linux-Kernel-Styleguide gehalten werden. 
+Es wurde sich während des Entwicklungsprozess an den Linux-Kernel-Styleguide gehalten. 
 Zwei wesentliche Abweichungen von diesem Styleguide sind eine Einrückungstiefe von 4 Spaces, sowie die Platzierung der öffnenden Klammer bei Funktionsaufrufen in der selben Zeile 
 (die Unterscheidung bei der Platzierung von öffnenden geschweiften Klammern ist wohl ursprünglich K\&R zuzuschreiben, die diese Inkonsistenz damit begründen, 
 dass Funktionen sich nicht verschachteln lassen, das ist mit C++11 durch Lambdas nicht mehr der Fall).
