@@ -35,7 +35,7 @@
 
 # Teil 3: Einzelding
  * GameModel (Jonas)
- * GameController (Björn)
+ * GameController, Team03 Editor(Björn)
  * Game-Ding (Tim)
  * Communication (Paul)
  * KI (Tim (Tarik))
