@@ -1,6 +1,6 @@
 # Teil 1: Produktpräsentation
 ## Ablauf:
-### Überblick
+### Überblick (Michael)
  * Server geschrieben (statt Editor)
  * Server und KI in C++17
  * Client in Vue.js
@@ -20,13 +20,14 @@
  * Modularität (Tim)
  * Unit Tests (zeigen in GameLogic) (Paul bedient, Björn spricht 383 Tests); Mock Tests; Asan
  * Integration testing (Paul)
- * CI (Tests, Shuffle, insgesamt fast 3000 Builds in CI) (Travis übersicht, Jonas)
  * Statische Analyze, Wall Wextra Wpedantic Werror (Tim), muss kompilieren
+ * CI (Tests, Shuffle, insgesamt fast 3000 Builds in CI) (Travis übersicht, Jonas)
  * Git-Flow (Jonas)
  * PRs: Reviews, GameLogic TODO welcher zeigen (Jonas)
  * Issue Tracker, Issue Board (Tarik)
  * Doku (Doxygen); README (Björn)
  * CI für Client (Tarik)
+ * Lint für js (Michael)
  * Komisches SVG Programm? (Michael wenn dann)
 
 # Teil 2: Tests und Dokumente Reviewen
