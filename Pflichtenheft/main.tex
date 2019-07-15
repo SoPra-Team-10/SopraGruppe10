@@ -1,0 +1,228 @@
+\NeedsTeXFormat{LaTeX2e}
+\documentclass[a4paper,12pt,
+headsepline,           % Linie zw. Kopfzeile und Text
+oneside,               % einseitig
+pointlessnumbers,      % keine Punkte nach den letzten Ziffern in Überschriften
+bibtotoc,              % LV im IV
+%DIV=15,               % Satzspiegel auf 15er Raster, schmalere Ränder   
+%BCOR15mm               % Bindekorrektur
+%,draft
+]{scrartcl}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc} % this is needed for umlauts
+\usepackage[ngerman]{babel} % this is needed for umlauts
+\usepackage[T1]{fontenc} 
+\usepackage{commath}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{tikz-timing}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage[final]{pdfpages}
+\usepackage{blindtext}
+\usepackage{listings}
+\usepackage[scaled]{helvet}
+\usepackage{hyperref}
+\usepackage{comment}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\usetikzlibrary{calc,shapes.multipart,chains,arrows}
+
+\KOMAoptions{DIV=last} % Neuberechnung Satzspiegel nach Laden von Paket helvet
+
+\usepackage{scrpage2}
+\pagestyle{useheadings}
+
+\renewcommand{\familydefault}{\sfdefault} 
+
+\setlength{\parindent}{0pt}   % kein linker Einzug der ersten Absatzzeile
+\setlength{\parskip}{1.4ex plus 0.35ex minus 0.3ex} % Absatzabstand, leicht variabel
+
+\newcommand{\fullname}{Gruppe 10}
+\newcommand{\titel}{Pflichtenheft}
+\newcommand{\jahr}{2019}
+\newcommand{\dozent}{Florian Ege}
+\newcommand{\betreuer}{Stefanos Mytilineos}
+\newcommand{\fakultaet}{Ingenieurwissenschaften, Informatik und\\Psychologie}
+\newcommand{\institut}{Institut für Softwaretechnik und Programmiersprachen}
+
+\pdfinfo{
+    /Author (\fullname)
+    /Title (\titel)
+    /Producer     (pdfeTex 3.14159-1.30.6-2.2)
+    /Keywords ()
+}
+
+\hypersetup{
+    pdftitle=\titel,
+    pdfauthor=\fullname,
+    pdfsubject={Softwaregrundprojekt-Abgabe},
+    pdfproducer={pdfeTex 3.14159-1.30.6-2.2},
+    colorlinks=false,
+    pdfborder=0 0 0	% keine Box um die Links!
+}
+
+% Trennungsregeln
+\hyphenation{Sil-ben-trenn-ung}
+
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
+
+\newcommand{\begriff}[7] {
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|p{2,5cm}|p{12cm}|}
+			%\hline
+			%\toprule \\
+			\hline
+			\textbf{Begriff} & \textbf{#1} \\ \hline
+			%\midrule \\
+			\textbf{Beschreibung} & #2 \\ \hline
+			%\midrule
+			\textbf{Ist-ein} & #3 \\ \hline
+			%\midrule
+			\textbf{Kann-sein} & #4 \\ \hline
+			%\midrule
+			\textbf{Aspekt} & #5 \\ \hline
+			%\midrule
+			\textbf{Bemerkung} & #6 \\ \hline
+			%\midrule
+			\textbf{Beispiel} & #7 \\ %\hline
+			%\bottomrule
+			\hline
+		\end{tabular}
+	\end{table}
+}
+
+\newcommand{\anf}[7] {
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|p{3.2cm}|p{11.3cm}|}
+        	\hline
+            \textbf{ID:} & \textbf{#1} \\ \hline
+            \textbf{Titel:} & #2 \\ \hline
+            \textbf{Beschreibung:} & #3 \\ \hline
+            \textbf{Begründung:} & #4 \\ \hline
+            \textbf{Abhängigkeiten:} & #5 \\ \hline
+            \textbf{Priorität:} & #6 \\ \hline
+            \textbf{Akteure:} & #7 \\ \hline
+        \end{tabular}
+    \end{table}
+}
+
+\newcounter{fanfCount}
+\newcommand{\fanf}[6] {
+    \stepcounter{fanfCount}
+    \anf{FA\thefanfCount}{#1}{#2}{#3}{#4}{#5}{#6}
+}
+\newcounter{qanfCount}
+\newcommand{\qanf}[6] {
+    \stepcounter{qanfCount}
+    \anf{QA\theqanfCount}{#1}{#2}{#3}{#4}{#5}{#6}
+}
+
+\newcommand{\akt}[4] {
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|p{3cm}|p{11.5cm}|}
+        	\hline
+            \textbf{ID:} & \textbf{#1} \\ \hline
+            \textbf{Titel:} & #2 \\ \hline
+            \textbf{Beschreibung:} & #3 \\ \hline
+            \textbf{Rolle:} & #4 \\ \hline
+        \end{tabular}
+    \end{table}
+}
+
+\newcounter{faktCount}
+\newcommand{\fakt}[3] {
+    \stepcounter{faktCount}
+    \akt{AKT\thefaktCount}{#1}{#2}{#3}
+}
+
+\newcommand{\fkt}[5]{
+	#1 & #2 & #3 & #4 & #5\\\hline
+}
+
+\begin{document}
+    \thispagestyle{empty}
+    \begin{addmargin*}[4mm]{-10mm}
+
+        \includegraphics[height=1.8cm]{images/unilogo_bild}
+        \hfill
+        \includegraphics[height=1.8cm]{images/unilogo_wort}\\[1em]
+
+        {\footnotesize
+        %{\bfseries Universität Ulm} \textbar ~89069 Ulm \textbar ~Germany
+        \hspace*{115mm}\parbox[t]{35mm}{\bfseries Fakultät für\\
+        \fakultaet\\
+        \mdseries \institut}\\[2cm]
+
+        \parbox{140mm}{\bfseries \LARGE \titel}\\[2.5em]
+        {\footnotesize Softwaregrundprojekt an der Universität Ulm}\\[3em]
+
+        {\footnotesize \bfseries Vorgelegt von:}\\
+        {\footnotesize \fullname\\}\\ [1em]
+        {\footnotesize \bfseries Dozent:}\\
+        {\footnotesize \dozent\\}\\[1em]
+        {\footnotesize \bfseries Betreuer:}\\
+        {\footnotesize \betreuer}\\ [1em]
+        {\footnotesize \jahr}
+        }
+    \end{addmargin*}
+    \pagebreak
+    \tableofcontents
+    \pagebreak
+
+    \part{Überblick}
+    \input{../Meilenstein01/kontextanalyse.tex}
+
+    \part{Anforderungsanalyse} 
+    \section{Fachwissen}
+    \input{../Meilenstein01/Aufgabe_2_Fachwissen.tex}
+    \section{Anwendungskontext}
+    \input{../Meilenstein01/Akteure.tex}
+	\input{../Meilenstein04/AnwendungsfaelleUndAblaeufe.tex}
+    \section{Anforderungsdefinition} \label{FAs}
+    \input{../Meilenstein01/FunktionaleAnforderungen.tex} 
+
+    \part{Softwarespezifikation}
+    \section{Schnittstellenarten, Dialoge und Dialogstruktur}
+    \subsection{Client}
+    \input{../Meilenstein03/MainClientStruktur.tex}
+    \subsection{Server}
+    \input{../Meilenstein03/Server.tex}
+    \subsection{Team- und Partiekonfigurator}
+    \input{../Meilenstein03/DialogStrukturKonfigurator.tex}
+    \subsection{KI-Client}
+    \input{../Meilenstein03/KI-Client.tex}
+    
+	\section{Grafische Gestaltung und Nutzungskonzept}
+    \subsection{Client}
+    \input{../Meilenstein03/MainClientDesign.tex}	
+    \subsection{Server}
+    \input{../Meilenstein03/GraphischeGestaltungServer}	
+    \subsection{Team- und Partiekonfiguration}
+    \input{../Meilenstein03/GraphischeGestaltungKonfigurator}	
+
+    \input{../Meilenstein04/Datenmodell}
+    \section{Funktionen}
+    \input{../Meilenstein04/funktionen}
+
+    \part{Randbedingungen}
+    \section{Qualität}
+    \input{../Meilenstein01/NichtFunktionaleAnforderungen.tex}
+    \section{Betriebskonzept}
+    \input{../Meilenstein04/Betriebskonzept}
+    \section{Entwicklungsvorgaben}
+    \input{../Meilenstein04/Entwicklungsvorgaben}
+    \section{Abnahmekriterien}
+    \input{../Meilenstein04/Abnahmekriterien}
+\end{document}
